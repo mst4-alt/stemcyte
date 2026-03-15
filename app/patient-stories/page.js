@@ -1,0 +1,276 @@
+import PageContent from '../../components/PageContent';
+
+export const metadata = {
+  title: 'Patient Stories | StemCyte',
+};
+
+const css = `
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
+
+/* NAV */
+
+/* HERO */
+.hero { position:relative; min-height:540px; display:flex; align-items:flex-end; overflow:hidden; }
+.hero .bg { position:absolute; inset:0; background-image:url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=1600&q=80'); background-size:cover; background-position:center; }
+.hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%); }
+.hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
+.hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:48px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:680px; margin-bottom:16px; color:#fff; }
+.hero .sub { font-size:17px; color:rgba(255,255,255,0.55); max-width:540px; line-height:1.7; }
+
+/* SHARED */
+.section { padding:80px 48px; max-width:1100px; margin:0 auto; }
+.section-full { padding:80px 48px; }
+.section-full .inner { max-width:1100px; margin:0 auto; }
+.divider { max-width:1100px; margin:0 auto; padding:0 48px; }
+.divider-line { height:1px; background:#E8E2DC; }
+.sh { margin-bottom:40px; }
+.sh .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:10px; }
+.sh h2 { font-family:'Playfair Display',serif; font-size:36px; font-weight:400; letter-spacing:-0.5px; margin-bottom:10px; line-height:1.15; }
+.sh p { font-size:16px; color:#8A857A; max-width:520px; line-height:1.7; }
+
+/* PATIENT STORIES */
+.story { background:#fff; border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); overflow:hidden; margin-bottom:24px; display:grid; grid-template-columns:280px 1fr; }
+.story .story-img { background:#F3F0F8; display:flex; align-items:center; justify-content:center; min-height:240px; }
+.story .story-img img { width:100%; height:100%; object-fit:cover; }
+.story .story-img .placeholder { font-size:12px; color:#B0AB9E; text-align:center; padding:20px; }
+.story .story-inner { padding:40px; }
+.story .tag { display:inline-block; padding:4px 12px; border-radius:100px; font-size:10px; font-weight:700; margin-bottom:16px; }
+.story h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; margin-bottom:8px; line-height:1.3; }
+.story .diag { font-size:13px; color:#6C1A55; font-weight:700; margin-bottom:12px; }
+.story p { font-size:15px; color:#8A857A; line-height:1.7; margin-bottom:8px; }
+
+/* FEATURED QUOTE */
+.feat-quote { text-align:center; padding:80px 48px; max-width:720px; margin:0 auto; }
+.feat-quote blockquote { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; font-style:italic; color:#2C2A26; line-height:1.4; margin-bottom:16px; }
+.feat-quote cite { font-family:'Lato',sans-serif; font-size:14px; font-style:normal; font-weight:700; color:#2C2A26; display:block; }
+.feat-quote .role { font-size:12px; color:#B0AB9E; font-weight:400; }
+
+/* QUOTE CARDS */
+.quotes { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:40px; }
+.quote-card { background:#fff; border-radius:12px; padding:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
+.quote-card blockquote { font-size:15px; color:#4A4540; line-height:1.7; font-style:italic; margin-bottom:16px; }
+.quote-card cite { font-style:normal; font-size:14px; font-weight:700; color:#2C2A26; display:block; }
+.quote-card .role { font-size:12px; color:#B0AB9E; }
+
+/* PBA QUOTES */
+.pba-quotes { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; }
+.pba-card { background:#fff; border-radius:12px; padding:24px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
+.pba-card blockquote { font-size:14px; color:#6B665D; line-height:1.7; font-style:italic; margin-bottom:12px; }
+.pba-card cite { font-style:normal; font-size:13px; font-weight:700; color:#2C2A26; display:block; }
+.pba-card .when { font-size:11px; color:#B0AB9E; }
+
+/* CTA */
+.cta-banner { margin:80px 48px; border-radius:16px; background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:80px 64px; text-align:center; position:relative; overflow:hidden; }
+.cta-banner::before { content:''; position:absolute; width:500px; height:500px; border-radius:50%; background:rgba(192,106,165,0.08); top:-200px; right:-100px; }
+.cta-banner h2 { font-family:'Playfair Display',serif; font-size:36px; color:#fff; margin-bottom:12px; position:relative; }
+.cta-banner h2 em { font-style:italic; color:#E8A0D0; }
+.cta-banner p { font-size:16px; color:rgba(255,255,255,0.5); margin-bottom:32px; position:relative; }
+.cta-banner .btns { display:flex; gap:12px; justify-content:center; position:relative; }
+.btn-w { background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; }
+.btn-gd { background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:'Lato',sans-serif; }
+
+/* FOOTER */
+
+/* ANIMATIONS */
+.anim { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.anim.vis { opacity:1; transform:translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width:900px) {
+  .hero .ct { padding:140px 24px 48px; }
+  .hero h1 { font-size:34px; }
+  .section, .section-full, .divider { padding-left:24px; padding-right:24px; }
+  .quotes { grid-template-columns:1fr; }
+  .pba-quotes { grid-template-columns:1fr; }
+  .story { grid-template-columns:1fr; }
+  .story .story-img { min-height:200px; }
+  .cta-banner { margin:48px 20px; padding:48px 24px; }
+}
+@media (max-width:600px) {
+  .hero h1 { font-size:28px; }
+  .cta-banner .btns { flex-direction:column; align-items:center; }
+}
+`;
+
+const html = `<!-- NAV -->
+<nav class="nav at-top" id="nav">
+  <a href="/" class="logo">Stem<b>Cyte</b></a>
+  <div class="links">
+    <a href="/the-science">The Science</a>
+    <a href="/why-stemcyte">Why StemCyte</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/patient-stories" class="active">Patient Stories</a>
+    <a href="/faq">FAQ</a>
+  </div>
+  <div class="rg">
+    
+    <a href="/pricing" class="cta">Enroll now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="bg"></div>
+  <div class="vig"></div>
+  <div class="ct">
+    <div class="lbl">Patient Stories</div>
+    <h1>It's not about saving blood &mdash; it's about saving lives</h1>
+    <p class="sub">Real families whose lives were changed by cord blood stem cells. Real physicians who trust StemCyte. Real outcomes.</p>
+  </div>
+</section>
+
+<!-- PATIENT STORIES -->
+<section class="section">
+  <div class="sh">
+    <div class="lbl">Patient Stories</div>
+    <h2>When cord blood made the difference</h2>
+  </div>
+
+  <div class="story anim">
+    <div class="story-img"><div class="placeholder">Photo of Bailey</div></div>
+    <div class="story-inner">
+      <div class="tag" style="background:#FBF5F9;color:#6C1A55">Used her own stem cells</div>
+      <h3>Bailey</h3>
+      <div class="diag">Diagnosis: Perinatal Stroke</div>
+      <p>Bailey was just 3 days old when she suffered a perinatal stroke. Fortunately, her mother Rebecca had banked her cord blood stem cells at birth with StemCyte. Bailey was able to use her own cord blood stem cells as part of her treatment.</p>
+      <p>Today, Bailey is 10 years old and living a healthy, normal life.</p>
+    </div>
+  </div>
+
+  <div class="story anim">
+    <div class="story-img"><div class="placeholder">Photo of Ryden</div></div>
+    <div class="story-inner">
+      <div class="tag" style="background:#F0F7F4;color:#3D8B6A">Used his brother's stem cells</div>
+      <h3>Ryden</h3>
+      <div class="diag">Diagnosis: Cerebral Palsy</div>
+      <p>Heather was in labor when her uterus ruptured, depriving her fourth child Ryden of oxygen. The MRI showed catastrophic brain damage and a diagnosis of extremely severe cerebral palsy.</p>
+      <p>The family banked their fifth child's cord blood with StemCyte and used it for Ryden six months later in a clinical trial for cerebral palsy.</p>
+    </div>
+  </div>
+
+  <div class="story anim">
+    <div class="story-img"><div class="placeholder">Photo of Itzel</div></div>
+    <div class="story-inner">
+      <div class="tag" style="background:#EDF5FF;color:#3B6DC4">Used donated stem cells</div>
+      <h3>Itzel</h3>
+      <div class="diag">Diagnosis: Acute Lymphoblastic Leukemia</div>
+      <p>Itzel Cervantes was 6 years old when she underwent a cord blood transplant for ALL. The leukemia kept relapsing after chemotherapy, and the only way to stop it was a stem cell transplant using donated cord blood.</p>
+      <p>Itzel remains in full remission from leukemia, 9 years after transplant.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- FEATURED QUOTE -->
+<div class="feat-quote anim">
+  <blockquote>&ldquo;After doing research, we chose StemCyte because of their dedication to continuous research, clinical trials, and their dedication to helping families by being the only private bank offering public bank access.&rdquo;</blockquote>
+  <cite>Gabrielle Stone</cite>
+  <div class="role">Author, Eat Pray FML</div>
+</div>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- PHYSICIAN & PARENT QUOTES -->
+<section class="section">
+  <div class="sh">
+    <div class="lbl">What families &amp; physicians say</div>
+    <h2>Trusted by the people who matter most</h2>
+  </div>
+  <div class="quotes">
+    <div class="quote-card anim">
+      <blockquote>&ldquo;StemCyte really shines. Their experience in delivering valuable and viable stem cells for transplants is amazing. If you're thinking about preserving your baby's cord blood, I highly recommend StemCyte.&rdquo;</blockquote>
+      <cite>Dr. Shahin Ghadir</cite>
+      <div class="role">Reproductive Endocrinologist</div>
+    </div>
+    <div class="quote-card anim">
+      <blockquote>&ldquo;After a lot of research, that is why we chose StemCyte. This was super important to us and we wanted to make sure we were with the best company to preserve her cord blood for her future.&rdquo;</blockquote>
+      <cite>Gretchen Rossi</cite>
+      <div class="role">Real Housewives of OC Alum</div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLIC BANK ACCESS QUOTES -->
+<section class="section-full" style="background:#EDE8F5">
+  <div class="inner">
+    <div class="sh">
+      <div class="lbl">Public bank access stories</div>
+      <h2>Why families chose StemCyte's unique protection</h2>
+    </div>
+    <div class="pba-quotes">
+      <div class="pba-card anim">
+        <blockquote>&ldquo;Our family is biracial so finding a match could be difficult in the future. Signing up with StemCyte to get public bank access was a no brainer.&rdquo;</blockquote>
+        <cite>Jennifer B.</cite>
+        <div class="when">Banked Molly in 2022</div>
+      </div>
+      <div class="pba-card anim">
+        <blockquote>&ldquo;As a cancer survivor, I know how important it is to have public bank access. This gives me peace of mind!&rdquo;</blockquote>
+        <cite>Nikki</cite>
+        <div class="when">Banked in 2021</div>
+      </div>
+      <div class="pba-card anim">
+        <blockquote>&ldquo;Getting another stem cell unit that could save your life is the best gift, not a teddy bear.&rdquo;</blockquote>
+        <cite>Sam M.</cite>
+        <div class="when">Banked Jake in 2022</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner anim">
+  <h2>Your baby's stem cells can only be collected at <em>birth</em></h2>
+  <p>Join the families who chose to protect their children's future.</p>
+  <div class="btns">
+    <a href="/pricing" class="btn-w" style="display:inline-block;text-decoration:none">View plans &amp; pricing</a>
+    <a href="tel:8663894659" class="btn-gd" style="display:inline-block;text-decoration:none">Call (866) 389-4659</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<script>
+// Nav scroll behavior
+var nav = document.getElementById('nav');
+var hero = document.getElementById('hero');
+function ckNav() {
+  if (hero.getBoundingClientRect().bottom < 80) {
+    nav.classList.remove('at-top');
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.add('at-top');
+    nav.classList.remove('scrolled');
+  }
+}
+window.addEventListener('scroll', ckNav);
+ckNav();
+
+// Scroll animations
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      setTimeout(function() { entry.target.classList.add('vis'); }, 150);
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });
+</script>`;
+
+const script = `// Scroll animations
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      setTimeout(function() { entry.target.classList.add('vis'); }, 150);
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });`;
+
+export default function Page() {
+  return <PageContent css={css} html={html} script={script} transparentNav={true} />;
+}
