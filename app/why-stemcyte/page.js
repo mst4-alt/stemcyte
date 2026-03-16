@@ -84,12 +84,13 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .thin-bar-track { height:6px; background:#EDEAE6; border-radius:100px; overflow:hidden; }
 .thin-bar-fill { height:100%; border-radius:100px; transition:width 1.4s cubic-bezier(0.23,1,0.32,1); }
 .thin-bar-fill.plum { background:#6C1A55; }
-.thin-bar-fill.warm-a { background:#AEB5BD; }
-.thin-bar-fill.warm-b { background:#DEE2E6; }
+.thin-bar-fill.warm-a { background:#8B6F9E; }
+.thin-bar-fill.warm-b { background:#C06AA5; }
 .pr-detail { display:flex; gap:24px; margin-top:10px; }
 .pr-detail .pd { font-size:11px; color:#8A857A; }
 .pr-detail .pd strong { color:#2C2A26; font-weight:700; }
 .pr-detail .pd strong.pv { color:#6C1A55; }
+.btn-regen:hover { background:#7D2066 !important; }
 .b-callout { margin-top:48px; background:#fff; border-radius:14px; padding:40px; box-shadow:0 1px 3px rgba(0,0,0,0.03); display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center; }
 .b-callout h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; line-height:1.25; margin-bottom:10px; }
 .b-callout p { font-size:15px; color:#6B665D; line-height:1.7; max-width:560px; }
@@ -173,7 +174,7 @@ const html = `<!-- HERO -->
 <!-- 1. PBA FEATURED SPLIT -->
 <section class="section">
   <div class="split anim">
-    <div class="photo"><img src="/images/Hero_3.jpeg" alt="Public Bank Access"></div>
+    <div class="photo"><img src="/images/pba.png" alt="Public Bank Access"></div>
     <div class="text">
       <div class="lbl">Only at StemCyte</div>
       <h2>The only private bank with public bank access</h2>
@@ -341,7 +342,7 @@ const html = `<!-- HERO -->
         <h3>REGENECYTE&reg; &mdash; from our lab to FDA approval</h3>
         <p>StemCyte developed REGENECYTE&reg;, an FDA-Licensed cord blood therapy now used to treat over 80 conditions. Your baby&rsquo;s cord blood is processed in the same Baldwin Park facility, held to the same standards required to produce a federally licensed biologic.</p>
         <div class="cr-link-row">
-          <a href="/regenecyte" style="display:inline-block;text-decoration:none;background:#6C1A55;color:#fff;padding:12px 28px;border-radius:100px;font-size:14px;font-weight:700;transition:all 0.25s;">Learn about REGENECYTE&reg;</a>
+          <a href="/regenecyte" class="btn-regen" style="display:inline-block;text-decoration:none;background:#6C1A55;color:#fff;padding:12px 28px;border-radius:100px;font-size:14px;font-weight:700;transition:all 0.25s;">Learn about REGENECYTE&reg;</a>
           <a href="/the-science" style="font-size:14px;font-weight:700;color:#6C1A55;text-decoration:none;">See what cord blood treats &rarr;</a>
         </div>
       </div>
@@ -353,7 +354,7 @@ const html = `<!-- HERO -->
     <div class="hiv-block anim">
       <div class="deco-circle"></div>
       <div class="hiv-badge">Published in Cell, 2023</div>
-      <h3>StemCyte cord blood transplant may have cured HIV</h3>
+      <a href="/hiv-1-remission" style="text-decoration:none;color:inherit"><h3>StemCyte cord blood transplant may have cured HIV</h3></a>
       <p>A woman achieved HIV remission after receiving a cord blood stem cell transplant &mdash; the first woman and only the third person in history to potentially be cured. StemCyte provided the cord blood unit.</p>
       <p class="hiv-coda">What you bank today may enable breakthroughs that don&rsquo;t yet exist.</p>
     </div>

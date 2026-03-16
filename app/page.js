@@ -73,11 +73,18 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 
 /* FAQ */
 .faq-list { max-width:100%; }
-.faq-item { border-bottom:1px solid #E8E2DC; padding:20px 0; cursor:pointer; }
-.faq-item summary { font-size:16px; font-weight:700; color:#2C2A26; list-style:none; display:flex; justify-content:space-between; align-items:center; }
-.faq-item summary::after { content:'+'; font-size:20px; color:#C06AA5; font-weight:300; transition:transform 0.2s; }
-.faq-item[open] summary::after { transform:rotate(45deg); }
-.faq-item p { font-size:15px; color:#8A857A; line-height:1.7; margin-top:12px; padding-right:32px; }
+.faq-smooth { border-bottom:1px solid #E8E2DC; overflow:hidden; }
+.faq-smooth:last-child { border-bottom:none; }
+.faq-smooth .faq-q { padding:20px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:16px; font-weight:700; color:#2C2A26; user-select:none; }
+.faq-smooth .faq-q .icon { width:24px; height:24px; position:relative; flex-shrink:0; margin-left:16px; }
+.faq-smooth .faq-q .icon::before,
+.faq-smooth .faq-q .icon::after { content:''; position:absolute; background:#C06AA5; border-radius:1px; transition:transform 0.3s ease; }
+.faq-smooth .faq-q .icon::before { width:14px; height:2px; top:11px; left:5px; }
+.faq-smooth .faq-q .icon::after { width:2px; height:14px; top:5px; left:11px; }
+.faq-smooth.open .faq-q .icon::after { transform:rotate(90deg); }
+.faq-smooth .faq-a { max-height:0; overflow:hidden; transition:max-height 0.35s ease, opacity 0.3s ease; opacity:0; }
+.faq-smooth.open .faq-a { opacity:1; }
+.faq-smooth .faq-a-inner { padding:0 0 20px; font-size:15px; color:#8A857A; line-height:1.7; max-width:720px; }
 .faq-more { margin-top:28px; }
 .faq-more a { font-size:15px; font-weight:700; color:#6C1A55; text-decoration:none; }
 .faq-more a:hover { text-decoration:underline; }
@@ -270,9 +277,18 @@ const html = `<!-- HERO -->
     <h2>What expecting parents ask most</h2>
   </div>
   <div class="faq-list anim">
-    <details class="faq-item"><summary>Can I still do delayed cord clamping?</summary><p>Yes. The American College of Obstetricians and Gynecologists recommends a 30&ndash;60 second delay, and cord blood can still be collected after that window. Most families do both. Talk to your OB about your birth plan &mdash; a short delay gives your baby the benefit of extra blood volume while still leaving plenty of cord blood for banking.</p></details>
-    <details class="faq-item"><summary>What if my child never needs it?</summary><p>Cord blood stem cells aren't limited to the child they came from. Siblings have a 25% chance of being a perfect match, and parents are always a half-match. Beyond family use, cord blood is being studied in over 500 clinical trials for conditions like cerebral palsy, autism, and stroke. What can be treated today is just the beginning.</p></details>
-    <details class="faq-item"><summary>Why StemCyte over other cord blood banks?</summary><p>StemCyte is the only private bank that also operates a public cord blood bank &mdash; so if your child ever needs more stem cells than were stored, we can source a matching unit. We've provided units for over 2,300 transplants worldwide (1 in every 26), and every plan includes the LifeSaver Guarantee: full refund + $50,000 + a replacement unit if engraftment fails.</p></details>
+    <div class="faq-smooth" onclick="toggleFaq(this)">
+      <div class="faq-q">Can I still do delayed cord clamping?<div class="icon"></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Yes. The American College of Obstetricians and Gynecologists recommends a 30&ndash;60 second delay, and cord blood can still be collected after that window. Most families do both. Talk to your OB about your birth plan &mdash; a short delay gives your baby the benefit of extra blood volume while still leaving plenty of cord blood for banking.</div></div>
+    </div>
+    <div class="faq-smooth" onclick="toggleFaq(this)">
+      <div class="faq-q">What if my child never needs it?<div class="icon"></div></div>
+      <div class="faq-a"><div class="faq-a-inner">Cord blood stem cells aren't limited to the child they came from. Siblings have a 25% chance of being a perfect match, and parents are always a half-match. Beyond family use, cord blood is being studied in over 500 clinical trials for conditions like cerebral palsy, autism, and stroke. What can be treated today is just the beginning.</div></div>
+    </div>
+    <div class="faq-smooth" onclick="toggleFaq(this)">
+      <div class="faq-q">Why StemCyte over other cord blood banks?<div class="icon"></div></div>
+      <div class="faq-a"><div class="faq-a-inner">StemCyte is the only private bank that also operates a public cord blood bank &mdash; so if your child ever needs more stem cells than were stored, we can source a matching unit. We've provided units for over 2,300 transplants worldwide (1 in every 26), and every plan includes the LifeSaver Guarantee: full refund + $50,000 + a replacement unit if engraftment fails.</div></div>
+    </div>
   </div>
   <div class="faq-more anim"><a href="/faq">View all frequently asked questions &rarr;</a></div>
 </section>
@@ -298,7 +314,22 @@ var obs = new IntersectionObserver(function(entries) {
     }
   });
 }, { threshold: 0.12 });
-document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });`;
+document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });
+
+// FAQ toggle
+function toggleFaq(el) {
+  var wasOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-smooth').forEach(function(f) {
+    f.classList.remove('open');
+    f.querySelector('.faq-a').style.maxHeight = '0';
+  });
+  if (!wasOpen) {
+    el.classList.add('open');
+    var a = el.querySelector('.faq-a');
+    var inner = el.querySelector('.faq-a-inner');
+    a.style.maxHeight = inner.scrollHeight + 'px';
+  }
+}`;
 
 export default function Page() {
   return <PageContent css={css} html={html} script={script} transparentNav={true} />;
