@@ -169,33 +169,7 @@ const html = `
   </div>
 </section>
 
-<div class="divider"><div class="divider-line"></div></div>
 
-<!-- DR. PETZ LEGACY -->
-<section class="section-full" style="background:#F3F0F8">
-  <div class="legacy">
-    <div class="inner">
-      <div class="photo-side anim">
-        <img class="portrait" src="/images/our%20story/press_release_distribution_0452818_127664.jpg" alt="Dr. Lawrence D. Petz">
-        <div class="name">Lawrence D. Petz, MD</div>
-        <div class="dates">Pioneer in cord blood medicine</div>
-        <div class="dedication">&ldquo;A pioneer in the field of cord blood cells&rdquo;<br>&mdash; <em>Cell</em>, 2023</div>
-      </div>
-      <div class="story-side anim">
-        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C1A55;margin-bottom:10px">A legacy that changed medicine</div>
-        <h3>The scientist who proved cord blood could achieve HIV-1 remission</h3>
-        <p>Dr. Lawrence Petz, a transfusion medicine specialist at StemCyte, conceived a bold hypothesis: that cord blood &mdash; which requires less stringent HLA matching than adult stem cells &mdash; could be used to achieve HIV remission by transplanting units carrying the CCR5&Delta;32 mutation, a rare genetic variant that makes cells resistant to the virus.</p>
-        <p>He screened over 18,000 cord blood units across StemCyte&rsquo;s inventory and collaborating banks worldwide, identifying more than 300 homozygous CCR5&Delta;32 units &mdash; a purpose-built registry that exists nowhere else in the world.</p>
-        <p>His work became the foundation of the NIH-backed IMPAACT P1107 study. In 2023, the journal <em>Cell</em> published a landmark case report: the first woman &mdash; and the first person of diverse ancestry &mdash; to achieve HIV-1 remission and possible cure, using a CCR5&Delta;32 cord blood unit from StemCyte&rsquo;s registry combined with haploidentical stem cells. She remained cancer-free at 55 months and showed no viral rebound 18 months after stopping antiretroviral therapy.</p>
-        <p>Previously, only two men had achieved HIV remission, both through adult stem cell transplants. Dr. Petz&rsquo;s approach using cord blood opened a fundamentally new pathway &mdash; one that could reach far more patients. The <em>Cell</em> paper was dedicated in his memory.</p>
-        <div class="pub">
-          <strong><em>Cell</em>, March 2023</strong>
-          <span>&mdash; &ldquo;HIV-1 remission and possible cure in a woman after haplo-cord blood transplant&rdquo;</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- GLOBAL IMPACT MAP -->
 <section class="gb-section">
@@ -617,14 +591,40 @@ const html = `
       </div>
     </div>
   </div>
+</section><div class="divider"><div class="divider-line"></div></div>
+
+<!-- DR. PETZ LEGACY -->
+<section class="section-full" style="background:#F3F0F8">
+  <div class="legacy">
+    <div class="inner">
+      <div class="photo-side anim">
+        <img class="portrait" src="/images/our%20story/press_release_distribution_0452818_127664.jpg" alt="Dr. Lawrence D. Petz">
+        <div class="name">Lawrence D. Petz, MD</div>
+        <div class="dates">Pioneer in cord blood medicine</div>
+        <div class="dedication">&ldquo;A pioneer in the field of cord blood cells&rdquo;<br>&mdash; <em>Cell</em>, 2023</div>
+      </div>
+      <div class="story-side anim">
+        <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6C1A55;margin-bottom:10px">A legacy that changed medicine</div>
+        <h3>The scientist who proved cord blood could achieve HIV-1 remission</h3>
+        <p>Dr. Lawrence Petz, a transfusion medicine specialist at StemCyte, conceived a bold hypothesis: that cord blood &mdash; which requires less stringent HLA matching than adult stem cells &mdash; could be used to achieve HIV remission by transplanting units carrying the CCR5&Delta;32 mutation, a rare genetic variant that makes cells resistant to the virus.</p>
+        <p>He screened over 18,000 cord blood units across StemCyte&rsquo;s inventory and collaborating banks worldwide, identifying more than 300 homozygous CCR5&Delta;32 units &mdash; a purpose-built registry that exists nowhere else in the world.</p>
+        <p>His work became the foundation of the NIH-backed IMPAACT P1107 study. In 2023, the journal <em>Cell</em> published a landmark case report: the first woman &mdash; and the first person of diverse ancestry &mdash; to achieve HIV-1 remission and possible cure, using a CCR5&Delta;32 cord blood unit from StemCyte&rsquo;s registry combined with haploidentical stem cells. She remained cancer-free at 55 months and showed no viral rebound 18 months after stopping antiretroviral therapy.</p>
+        <p>Previously, only two men had achieved HIV remission, both through adult stem cell transplants. Dr. Petz&rsquo;s approach using cord blood opened a fundamentally new pathway &mdash; one that could reach far more patients. The <em>Cell</em> paper was dedicated in his memory.</p>
+        <div class="pub">
+          <strong><em>Cell</em>, March 2023</strong>
+          <span>&mdash; &ldquo;HIV-1 remission and possible cure in a woman after haplo-cord blood transplant&rdquo;</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <div class="divider"><div class="divider-line"></div></div>
 
-<!-- MILESTONES -->
+<!-- MILESTONES & ACCREDITATIONS -->
 <section class="section">
   <div class="sh">
-    <div class="lbl">Milestones</div>
+    <div class="lbl">Milestones &amp; accreditations</div>
     <h2>The moments that shaped us</h2>
   </div>
   <div class="stat-row">
@@ -633,23 +633,13 @@ const html = `
     <div class="stat anim"><div class="num">2006</div><div class="desc">FACT accreditation achieved</div></div>
     <div class="stat anim"><div class="num">2024</div><div class="desc">FDA biologics license for RegeneCyte</div></div>
   </div>
-</section>
-
-<!-- ACCREDITATIONS -->
-<section class="section-full" style="background:#F3F0F8">
-  <div class="inner">
-    <div class="sh" style="text-align:center">
-      <div class="lbl">Accreditations</div>
-      <h2>Held to the highest standards</h2>
-      <p style="margin:0 auto">StemCyte maintains every major accreditation in cord blood banking &mdash; including FACT, which is voluntary for private banks and recognized globally as the highest quality benchmark.</p>
-    </div>
-    <div class="stat-row" style="margin-top:32px">
-      <div class="stat anim"><div class="num" style="font-size:28px">FACT</div><div class="desc">Since 2006</div></div>
-      <div class="stat anim"><div class="num" style="font-size:28px">AABB</div><div class="desc">Since 2002</div></div>
-      <div class="stat anim"><div class="num" style="font-size:28px">FDA</div><div class="desc">Licensed</div></div>
-      <div class="stat anim"><div class="num" style="font-size:28px">cGMP</div><div class="desc">Compliant</div></div>
-    </div>
+  <div class="stat-row" style="margin-top:16px">
+    <div class="stat anim"><div class="num" style="font-size:28px">FACT</div><div class="desc">Since 2006</div></div>
+    <div class="stat anim"><div class="num" style="font-size:28px">AABB</div><div class="desc">Since 2002</div></div>
+    <div class="stat anim"><div class="num" style="font-size:28px">FDA</div><div class="desc">Licensed</div></div>
+    <div class="stat anim"><div class="num" style="font-size:28px">cGMP</div><div class="desc">Compliant</div></div>
   </div>
+  <p style="font-size:14px;color:#8A857A;line-height:1.7;max-width:600px;margin:24px auto 0;text-align:center">StemCyte maintains every major accreditation in cord blood banking &mdash; including FACT, which is voluntary for private banks and recognized globally as the highest quality benchmark.</p>
 </section>
 
 <!-- CTA -->
