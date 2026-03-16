@@ -592,7 +592,7 @@ const html = `
     <div class="text">
       <p>StemCyte opened its doors in 1997 with a bold idea: build the world&rsquo;s most ethnically diverse cord blood bank, and make it accessible to everyone &mdash; not just those who could afford private banking.</p>
       <p>That dual mission &mdash; private banking for families and public donation for patients &mdash; became the foundation of everything we do. Today, we&rsquo;re among the few cord blood banks in the world that operate both.</p>
-      <p>From a single lab in California, StemCyte has shipped over 2,303 cord blood units for transplant across 35 countries &mdash; one of the highest clinical track records in the industry.</p>
+      <p>From a single lab in California, StemCyte has shipped over 2,300 cord blood units for transplant across 35 countries &mdash; one of the highest clinical track records in the industry.</p>
     </div>
   </div>
 </section>
@@ -650,7 +650,7 @@ const html = `
       <div class="val-text">
         <h3>Families first</h3>
         <p>Every decision we make &mdash; from processing methods to pricing &mdash; starts with the question: what&rsquo;s best for the family trusting us with their baby&rsquo;s stem cells? We don&rsquo;t upsell. We don&rsquo;t use fear. We give you the science and let you decide.</p>
-        <div class="val-pill">2,303+ families served across 35 countries</div>
+        <div class="val-pill">2,300+ families served across 35 countries</div>
       </div>
     </div>
 

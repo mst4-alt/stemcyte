@@ -150,7 +150,7 @@ const html = `<!-- HERO -->
     <div class="cat-label">About StemCyte</div>
     <div class="faq-smooth" onclick="toggleFaq(this)">
       <div class="faq-q">What makes StemCyte different from other banks?<div class="icon"></div></div>
-      <div class="faq-a"><div class="faq-a-inner">StemCyte is the only cord blood bank that operates both a private and public bank, offering families the option to add public bank access. We've shipped over 2,303 transplant units to 350+ hospitals in 35 countries &mdash; more than any other private bank. We're triple-accredited (FACT, AABB, FDA) and sponsor 3 active clinical trials.</div></div>
+      <div class="faq-a"><div class="faq-a-inner">StemCyte is the only cord blood bank that operates both a private and public bank, offering families the option to add public bank access. We've shipped over 2,300 transplant units to 350+ hospitals in 35 countries &mdash; more than any other private bank. We're triple-accredited (FACT, AABB, FDA) and sponsor 3 active clinical trials.</div></div>
     </div>
     <div class="faq-smooth" onclick="toggleFaq(this)">
       <div class="faq-q">What is public bank access?<div class="icon"></div></div>

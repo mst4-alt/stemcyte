@@ -34,19 +34,19 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .zone .lead { font-size:17px; color:#6B665D; line-height:1.7; max-width:600px; margin:0 auto; }
 .zone .circle-deco { position:absolute; border-radius:50%; opacity:0.3; z-index:0; }
 
-/* ── SECTION BANNERS ── */
-.section-banner { padding: 56px 48px 0; text-align: center; margin-bottom: 48px; }
-.section-banner .banner-label { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 400; letter-spacing: -1.5px; line-height: 1.1; }
-.section-banner .banner-rule { width: 64px; height: 2px; margin: 20px auto 0; border-radius: 2px; }
-.zone-blue .section-banner { border-bottom: 1px solid rgba(59,109,196,0.12); }
+/* ── SECTION BANNERS (editorial left-rule) ── */
+.section-banner { padding: 0 48px; margin-bottom: 56px; display: flex; align-items: center; gap: 28px; }
+.section-banner .banner-label { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 400; letter-spacing: -1.5px; line-height: 1; white-space: nowrap; flex-shrink: 0; }
+.section-banner .banner-rule { height: 1px; flex: 1; border-radius: 0; }
+.zone-blue .section-banner { }
 .zone-blue .banner-label { color: #3B6DC4; }
-.zone-blue .banner-rule { background: #3B6DC4; }
-.zone-plum .section-banner { border-bottom: 1px solid rgba(108,26,85,0.1); }
+.zone-blue .banner-rule { background: rgba(59,109,196,0.25); }
+.zone-plum .section-banner { }
 .zone-plum .banner-label { color: #6C1A55; }
-.zone-plum .banner-rule { background: #6C1A55; }
-.zone-sage .section-banner { border-bottom: 1px solid rgba(61,139,106,0.12); }
+.zone-plum .banner-rule { background: rgba(108,26,85,0.2); }
+.zone-sage .section-banner { }
 .zone-sage .banner-label { color: #3D8B6A; }
-.zone-sage .banner-rule { background: #3D8B6A; }
+.zone-sage .banner-rule { background: rgba(61,139,106,0.25); }
 
 /* ── BLUE ZONE — STEM CELLS ── */
 .zone-blue { background:#EDF5FF; }
@@ -89,8 +89,8 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .zone-plum-deep .circle-deco { position:absolute; width:400px; height:400px; border-radius:50%; background:#F0E0EB; opacity:0.25; right:-120px; bottom:-120px; z-index:0; }
 .zone-plum-deep .inner { max-width:1100px; margin:0 auto; position:relative; z-index:1; }
 .zone-plum-deep .tc { text-align:center; margin-bottom:40px; }
-.zone-plum-deep .zlbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:10px; }
-.zone-plum-deep h2 { font-family:'Playfair Display',serif; font-size:36px; font-weight:400; margin-bottom:10px; line-height:1.15; }
+.zone-plum-deep .zlbl { font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:10px; }
+.zone-plum-deep h2 { font-family:'Playfair Display',serif; font-size:40px; font-weight:400; margin-bottom:10px; line-height:1.15; }
 .zone-plum-deep .lead { font-size:16px; color:#6B665D; max-width:520px; margin:0 auto; line-height:1.7; }
 .dgrid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
 .db { border-radius:12px; padding:28px; position:relative; overflow:visible; }
@@ -142,8 +142,8 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .zone-sage-deep .circle-deco { position:absolute; width:400px; height:400px; border-radius:50%; background:#D4E8DC; opacity:0.3; left:-120px; top:-120px; z-index:0; }
 .zone-sage-deep .inner { max-width:1100px; margin:0 auto; position:relative; z-index:1; }
 .zone-sage-deep .tc { text-align:center; margin-bottom:40px; }
-.zone-sage-deep .zlbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#3D8B6A; margin-bottom:10px; }
-.zone-sage-deep h2 { font-family:'Playfair Display',serif; font-size:36px; font-weight:400; margin-bottom:10px; line-height:1.15; }
+.zone-sage-deep .zlbl { font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#3D8B6A; margin-bottom:10px; }
+.zone-sage-deep h2 { font-family:'Playfair Display',serif; font-size:40px; font-weight:400; margin-bottom:10px; line-height:1.15; }
 .zone-sage-deep .lead { font-size:16px; color:#6B665D; max-width:560px; margin:0 auto; line-height:1.7; }
 .trial-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
 .trial-card { background:#fff; border-radius:12px; padding:24px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
@@ -200,8 +200,8 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
   .cta-banner { margin:48px 20px; padding:48px 24px; }
   .db .dt .tag .tip { display:none; }
   .db .dt .tag.tip-open .tip { display:block; }
-  .section-banner .banner-label { font-size: 36px; }
-  .section-banner { padding: 40px 24px 0; margin-bottom: 36px; }
+  .section-banner .banner-label { font-size: 32px; }
+  .section-banner { padding: 0 24px; margin-bottom: 40px; gap: 20px; }
 }
 @media (max-width:600px) {
   .hero h1 { font-size:28px; }

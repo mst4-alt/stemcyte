@@ -172,7 +172,7 @@ const html = `<!-- HERO -->
 <!-- STATS (no divider after) -->
 <div class="stats-wrap">
   <div class="stats">
-    <div class="stat anim"><div class="num" data-target="2303" data-suffix="+">0</div><div class="desc">Transplant units shipped</div></div>
+    <div class="stat anim"><div class="num" data-target="2300" data-suffix="+">0</div><div class="desc">Transplant units shipped</div></div>
     <div class="stat anim"><div class="num" data-target="350" data-suffix="+">0</div><div class="desc">Transplant hospitals served</div></div>
     <div class="stat anim"><div class="num" data-target="35" data-suffix="">0</div><div class="desc">Countries worldwide</div></div>
     <div class="stat anim"><div class="num" data-target="80" data-suffix="+">0</div><div class="desc">Treatable diseases</div></div>
@@ -195,7 +195,7 @@ const html = `<!-- HERO -->
     <div class="uv-card anim">
       <div class="ic" style="background:#F0F7F4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D8B6A" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
       <h3>1 in every 26 transplants worldwide</h3>
-      <p>StemCyte has shipped over 2,303 units for transplant &mdash; more than any other private cord blood bank. Our closest competitor: fewer than 700.</p>
+      <p>StemCyte has shipped over 2,300 units for transplant &mdash; more than any other private cord blood bank. Our closest competitor: fewer than 700.</p>
     </div>
     <div class="uv-card anim">
       <div class="ic" style="background:#FDF5EB"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C4943E" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>

@@ -142,10 +142,10 @@ const html = `<!-- HERO -->
 <!-- STATS -->
 <div class="stats-wrap">
   <div class="stats">
-    <div class="stat anim"><div class="num" data-target="2303" data-suffix="+">0</div><div class="desc">Transplant units shipped worldwide</div></div>
+    <div class="stat anim"><div class="num" data-target="2300" data-suffix="+">0</div><div class="desc">Transplant units shipped worldwide</div></div>
     <div class="stat anim"><div class="num" data-text="1 in 26">0</div><div class="desc">Of all cord blood transplants use StemCyte</div></div>
     <div class="stat anim"><div class="num" data-target="350" data-suffix="+">0</div><div class="desc">Transplant hospitals in 35 countries</div></div>
-    <div class="stat anim"><div class="num" data-target="1997" data-from="1990" data-suffix="">0</div><div class="desc">Founded &mdash; 27+ years of experience</div></div>
+    <div class="stat anim"><div class="num" data-target="1997" data-from="1990" data-suffix="">0</div><div class="desc">Founded &mdash; 29+ years of experience</div></div>
   </div>
 </div>
 
@@ -172,7 +172,7 @@ const html = `<!-- HERO -->
     <div class="text">
       <div class="lbl">Transplant experience</div>
       <h2>More transplants than any other private cord blood bank</h2>
-      <p>StemCyte has delivered over 2,303 cord blood units to more than 350 transplant centers across 35 countries. Our closest competitor has shipped fewer than 700 units.</p>
+      <p>StemCyte has delivered over 2,300 cord blood units to more than 350 transplant centers across 35 countries. Our closest competitor has shipped fewer than 700 units.</p>
       <p>When it matters most, experience is everything.</p>
     </div>
   </div>
@@ -266,7 +266,7 @@ const html = `<!-- HERO -->
     <div class="tl-item anim"><div class="tl-year">2018</div><h4>FDA spinal cord trial approved</h4><p>First hybrid bank with FDA Phase II approval for spinal cord injury treatment.</p></div>
     <div class="tl-item anim"><div class="tl-year">2021</div><h4>Stroke treatment success</h4><p>Phase I success treating acute stroke with cord blood. Published in Cell Transplantation.</p></div>
     <div class="tl-item major anim"><div class="tl-year">2022</div><h4>Post-COVID trial approved</h4><p>FDA approves Phase II trial for Long COVID using cord blood stem cell therapy.</p></div>
-    <div class="tl-item anim"><div class="tl-year">Today</div><h4>2,303+ units, 35 countries</h4><p>Continuing to advance regenerative medicine while protecting families worldwide.</p></div>
+    <div class="tl-item anim"><div class="tl-year">Today</div><h4>2,300+ units, 35 countries</h4><p>Continuing to advance regenerative medicine while protecting families worldwide.</p></div>
   </div>
 </section>
 
