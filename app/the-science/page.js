@@ -98,11 +98,11 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .db h4 { font-size:16px; font-weight:700; }
 .db .dc { font-family:'Source Serif 4',serif; font-size:24px; font-weight:400; }
 .db .dt { display:flex; flex-wrap:wrap; gap:6px; }
-.db .dt .tag { background:rgba(255,255,255,0.75); padding:5px 12px; border-radius:100px; font-size:11px; font-weight:600; backdrop-filter:blur(4px); cursor:default; position:relative; }
+.db .dt .tag { background:rgba(255,255,255,0.75); padding:5px 12px; border-radius:100px; font-size:11px; font-weight:600; backdrop-filter:blur(4px); cursor:default; position:relative; will-change:transform; transition:transform 0.5s cubic-bezier(0.23,1,0.32,1); }
+.db .dt .tag:hover { transform:translate(0,0) !important; background:rgba(255,255,255,0.95); z-index:50; }
 .db .dt .tag .tip { display:none; position:absolute; bottom:calc(100% + 8px); left:50%; transform:translateX(-50%); background:#2C2A26; color:#fff; padding:10px 14px; border-radius:8px; font-size:11px; font-weight:400; line-height:1.5; width:220px; text-align:left; box-shadow:0 4px 16px rgba(0,0,0,0.15); z-index:100; pointer-events:none; }
 .db .dt .tag .tip::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:6px solid transparent; border-top-color:#2C2A26; }
 .db .dt .tag:hover .tip { display:block; }
-.db .dt .tag:hover { background:rgba(255,255,255,0.95); z-index:50; }
 .db-c { background:#FBF5F9; }
 .db-c h4, .db-c .dc { color:#6C1A55; }
 .db-c .dt .tag { color:#6C1A55; }
@@ -444,6 +444,47 @@ var obs = new IntersectionObserver(function(entries) {
   });
 }, { threshold: 0.12 });
 document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });
+
+// Scatter nudge effect on disease tags
+if (window.innerWidth > 900) {
+  document.querySelectorAll('.db').forEach(function(block) {
+    var tags = block.querySelectorAll('.dt .tag');
+    var rafId = null;
+    block.addEventListener('mousemove', function(e) {
+      if (rafId) return;
+      rafId = requestAnimationFrame(function() {
+        rafId = null;
+        var rect = block.getBoundingClientRect();
+        var mx = e.clientX;
+        var my = e.clientY;
+        tags.forEach(function(tag) {
+          if (tag.matches(':hover')) {
+            tag.style.transform = '';
+            return;
+          }
+          var tr = tag.getBoundingClientRect();
+          var cx = tr.left + tr.width / 2;
+          var cy = tr.top + tr.height / 2;
+          var dx = cx - mx;
+          var dy = cy - my;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 150 && dist > 0) {
+            var strength = (1 - dist / 150) * 3.5;
+            var nx = (dx / dist) * strength;
+            var ny = (dy / dist) * strength;
+            tag.style.transform = 'translate(' + nx.toFixed(1) + 'px,' + ny.toFixed(1) + 'px)';
+          } else {
+            tag.style.transform = '';
+          }
+        });
+      });
+    });
+    block.addEventListener('mouseleave', function() {
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+      tags.forEach(function(tag) { tag.style.transform = ''; });
+    });
+  });
+}
 
 // Tap-to-toggle tooltips on mobile
 if (window.innerWidth <= 900) {
