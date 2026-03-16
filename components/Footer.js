@@ -33,6 +33,7 @@ export default function Footer() {
           <a href="mailto:customerservice@stemcyte.com">customerservice@stemcyte.com</a>
           <a href="https://maps.google.com/?q=StemCyte+Inc+Baldwin+Park+CA" target="_blank" rel="noopener">Baldwin Park, CA 91706</a>
           <Link href="/privacy-policy">Privacy policy</Link>
+          <Link href="/expanded-access-policy">Expanded access policy</Link>
         </div>
       </div>
       <div className="footer-bot">
