@@ -200,7 +200,7 @@ const html = `<!-- HERO -->
   <div class="ct">
     <div class="lbl">Pricing</div>
     <h1>Their future, your <em>choice</em></h1>
-    <p class="sub">Choose your product, plan, and add-ons. See your total update in real time.</p>
+    <p class="sub">Choose your product, plan, and add-ons.</p>
   </div>
 </section>
 <div class="page">
