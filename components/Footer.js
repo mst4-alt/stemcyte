@@ -22,8 +22,8 @@ export default function Footer() {
           <h4>Get started</h4>
           <Link href="/pricing">Pricing</Link>
           <Link href="/pricing">Enroll now</Link>
-          <a href="#">Refer a friend</a>
-          <a href="#">Client payment</a>
+          <Link href="/refer-a-friend">Refer a friend</Link>
+          <Link href="/client-payment">Client payment</Link>
         </div>
         <div className="col">
           <h4>Contact</h4>

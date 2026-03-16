@@ -1,0 +1,228 @@
+import PageContent from '../../components/PageContent';
+
+export const metadata = {
+  title: 'Refer a Friend | StemCyte',
+};
+
+const css = `
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
+
+/* HERO */
+.hero { position:relative; min-height:420px; display:flex; align-items:flex-end; overflow:hidden; }
+.hero .bg { position:absolute; inset:0; background-image:url('/images/Hero_2.jpeg'); background-size:cover; background-position:center; }
+.hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%); }
+.hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:160px 48px 56px; width:100%; }
+.hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:44px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:680px; margin-bottom:12px; color:#fff; }
+.hero .sub { font-size:17px; color:rgba(255,255,255,0.55); max-width:540px; line-height:1.7; }
+
+/* SECTION */
+.section { padding:80px 48px; max-width:900px; margin:0 auto; }
+
+/* HOW IT WORKS */
+.how-header { text-align:center; margin-bottom:40px; }
+.how-header h2 { font-family:'Playfair Display',serif; font-size:28px; font-weight:400; letter-spacing:-0.5px; margin-bottom:8px; }
+.how-header p { font-size:15px; color:#8A857A; }
+
+.steps { display:flex; gap:24px; margin-bottom:56px; }
+.step { flex:1; text-align:center; padding:28px 20px; background:#fff; border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03); }
+.step-num { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:50%; background:#F3F0F8; color:#6C1A55; font-size:14px; font-weight:700; margin-bottom:12px; }
+.step h3 { font-size:16px; font-weight:700; margin-bottom:6px; }
+.step p { font-size:14px; color:#8A857A; line-height:1.6; }
+
+/* REWARD */
+.reward-banner { background:#F3F0F8; border-radius:12px; padding:24px 32px; margin-bottom:48px; display:flex; align-items:center; gap:16px; }
+.reward-icon { width:48px; height:48px; border-radius:50%; background:#6C1A55; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.reward-icon svg { width:24px; height:24px; }
+.reward-text h3 { font-size:16px; font-weight:700; margin-bottom:2px; }
+.reward-text p { font-size:14px; color:#8A857A; }
+
+/* FORM */
+.form-card { background:#fff; border-radius:16px; padding:40px; box-shadow:0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03); }
+.form-section-label { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:20px; padding-bottom:12px; border-bottom:1px solid #E8E2DC; }
+.form-section-label:not(:first-child) { margin-top:32px; }
+
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+.form-row.single { grid-template-columns:1fr; }
+
+.field label { display:block; font-size:13px; font-weight:700; color:#2C2A26; margin-bottom:6px; }
+.field input,
+.field select,
+.field textarea { width:100%; padding:12px 16px; border:1px solid #E8E2DC; border-radius:8px; font-size:15px; font-family:'Lato',sans-serif; color:#2C2A26; background:#FAF9F7; transition:border-color 0.2s, box-shadow 0.2s; outline:none; }
+.field input:focus,
+.field select:focus,
+.field textarea:focus { border-color:#C06AA5; box-shadow:0 0 0 3px rgba(192,106,165,0.12); }
+.field input::placeholder,
+.field textarea::placeholder { color:#B0AB9E; }
+.field textarea { resize:vertical; min-height:80px; }
+
+/* REWARD CHOICE */
+.reward-options { display:flex; gap:12px; margin-bottom:16px; }
+.reward-opt { flex:1; position:relative; }
+.reward-opt input { position:absolute; opacity:0; pointer-events:none; }
+.reward-opt label { display:flex; align-items:center; justify-content:center; gap:8px; padding:14px 20px; border:2px solid #E8E2DC; border-radius:10px; font-size:14px; font-weight:700; color:#8A857A; cursor:pointer; transition:all 0.2s; text-align:center; }
+.reward-opt input:checked + label { border-color:#6C1A55; color:#6C1A55; background:#FBF5F9; }
+.reward-opt label:hover { border-color:#C06AA5; }
+
+.disclaimer { font-size:12px; color:#B0AB9E; margin-top:8px; line-height:1.6; }
+
+/* SUBMIT */
+.submit-row { margin-top:32px; text-align:center; }
+.btn-submit { background:#6C1A55; color:#fff; padding:16px 48px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; transition:background 0.2s; }
+.btn-submit:hover { background:#5A1548; }
+
+/* RESPONSIVE */
+@media (max-width:900px) {
+  .hero .ct { padding:140px 24px 40px; }
+  .hero h1 { font-size:32px; }
+  .section { padding:64px 24px; }
+  .steps { flex-direction:column; }
+  .form-row { grid-template-columns:1fr; }
+  .reward-banner { flex-direction:column; text-align:center; }
+  .reward-options { flex-direction:column; }
+  .form-card { padding:28px 20px; }
+}
+`;
+
+const html = `
+<div id="hero" class="hero">
+  <div class="bg"></div>
+  <div class="vig"></div>
+  <div class="ct">
+    <div class="lbl">Referral Program</div>
+    <h1>Refer a Friend</h1>
+    <p class="sub">Share the gift of stem cell banking &mdash; and get rewarded for it.</p>
+  </div>
+</div>
+
+<div class="section">
+
+  <div class="how-header">
+    <h2>How it works</h2>
+    <p>Three simple steps to share and earn.</p>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Your info</h3>
+      <p>Tell us who you are so we can credit your reward.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Friend&rsquo;s info</h3>
+      <p>Share their name and contact so we can reach out.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Pick your reward</h3>
+      <p>Choose one year of free storage or $100.</p>
+    </div>
+  </div>
+
+  <div class="reward-banner">
+    <div class="reward-icon">
+      <svg fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>
+    </div>
+    <div class="reward-text">
+      <h3>Your reward, your choice</h3>
+      <p>For every successful referral, receive one year of complimentary storage or $100.</p>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <form id="referral-form">
+
+      <div class="form-section-label">Your information</div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="your-first">First name</label>
+          <input type="text" id="your-first" placeholder="Jane" required />
+        </div>
+        <div class="field">
+          <label for="your-last">Last name</label>
+          <input type="text" id="your-last" placeholder="Smith" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="your-email">Email</label>
+          <input type="email" id="your-email" placeholder="jane@email.com" required />
+        </div>
+        <div class="field">
+          <label for="your-phone">Phone</label>
+          <input type="tel" id="your-phone" placeholder="(555) 555-5555" />
+        </div>
+      </div>
+
+      <div class="form-section-label">Friend&rsquo;s information</div>
+
+      <div class="form-row">
+        <div class="field">
+          <label for="friend-first">First name</label>
+          <input type="text" id="friend-first" placeholder="Sarah" required />
+        </div>
+        <div class="field">
+          <label for="friend-last">Last name</label>
+          <input type="text" id="friend-last" placeholder="Johnson" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="friend-email">Email</label>
+          <input type="email" id="friend-email" placeholder="sarah@email.com" required />
+        </div>
+        <div class="field">
+          <label for="friend-phone">Phone</label>
+          <input type="tel" id="friend-phone" placeholder="(555) 555-5555" />
+        </div>
+      </div>
+      <div class="form-row single">
+        <div class="field">
+          <label for="friend-due">Expected due date (if known)</label>
+          <input type="date" id="friend-due" />
+        </div>
+      </div>
+
+      <div class="form-section-label">Choose your reward</div>
+
+      <div class="reward-options">
+        <div class="reward-opt">
+          <input type="radio" name="reward" id="reward-storage" value="storage" checked />
+          <label for="reward-storage">One year free storage</label>
+        </div>
+        <div class="reward-opt">
+          <input type="radio" name="reward" id="reward-cash" value="cash" />
+          <label for="reward-cash">$100</label>
+        </div>
+      </div>
+      <p class="disclaimer">Referral reward is issued after your friend enrolls and completes payment. Cannot be combined with other promotions.</p>
+
+      <div class="submit-row">
+        <button type="submit" class="btn-submit">Submit referral</button>
+      </div>
+    </form>
+  </div>
+
+</div>
+`;
+
+const script = `
+(function() {
+  var form = document.getElementById('referral-form');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you! Your referral has been submitted. We will reach out to your friend shortly.');
+      form.reset();
+    });
+  }
+})();
+`;
+
+export default function ReferAFriend() {
+  return <PageContent css={css} html={html} script={script} />;
+}
