@@ -7,7 +7,7 @@ export const metadata = {
 const css = `
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
+body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
 
 /* NAV */
 
@@ -160,9 +160,8 @@ const html = `<!-- HERO -->
   </video>
   <div class="vig"></div>
   <div class="ct">
-    <div class="badge fade-in">The most trusted cord blood bank by physicians</div>
     <h1 class="fade-in fd1">Your baby's stem cells could save a <em>life</em></h1>
-    <p class="sub fade-in fd2">Preserve your newborn's cord blood and cord tissue stem cells at birth. Used in over 2,300 transplants across 35 countries. The one decision you can't make later.</p>
+    <p class="sub fade-in fd2">The one decision you can't make later.</p>
     <div class="btns fade-in fd3">
       <a href="/pricing" class="btn-p" style="display:inline-block;text-decoration:none">View plans &amp; pricing</a>
       <a href="/the-science" class="btn-gl" style="display:inline-block;text-decoration:none">Why bank cord blood</a>
