@@ -64,27 +64,32 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .accred-badge .name { font-family:'Source Serif 4',serif; font-size:28px; color:#6C1A55; font-weight:400; margin-bottom:8px; }
 .accred-badge .desc { font-size:12px; color:#8A857A; line-height:1.5; }
 
-/* CLINICAL TRIALS */
-.trials-bg { background:#F3F0F8; }
-.trial-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
-.trial-tag { background:#fff; border-radius:12px; padding:16px 20px; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); font-size:14px; font-weight:700; color:#2C2A26; cursor:pointer; transition:all 0.25s; }
-.trial-tag:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.08); }
-
-/* TIMELINE */
-.timeline { display:grid; grid-template-columns:1fr 1fr; gap:16px 48px; position:relative; }
-.timeline::before { content:''; position:absolute; left:50%; top:0; bottom:0; width:2px; background:#E8E2DC; transform:translateX(-50%); }
-.tl-item { position:relative; padding-bottom:16px; }
-.tl-item:nth-child(odd) { text-align:right; padding-right:40px; }
-.tl-item:nth-child(even) { padding-left:40px; }
-.tl-item::after { content:''; position:absolute; width:12px; height:12px; border-radius:50%; background:#E8E2DC; top:4px; }
-.tl-item:nth-child(odd)::after { right:-6px; }
-.tl-item:nth-child(even)::after { left:-6px; }
-.tl-item.major::after { background:#6C1A55; width:16px; height:16px; }
-.tl-item:nth-child(odd).major::after { right:-8px; }
-.tl-item:nth-child(even).major::after { left:-8px; }
-.tl-year { font-family:'Source Serif 4',serif; font-size:24px; color:#6C1A55; font-weight:400; margin-bottom:4px; }
-.tl-item h4 { font-size:14px; font-weight:700; margin-bottom:4px; }
-.tl-item p { font-size:15px; color:#8A857A; line-height:1.6; }
+/* CLINICAL RESEARCH */
+.cr-grid { display:grid; grid-template-columns:1fr 300px; gap:40px; }
+.pipeline-row { padding:24px 0; border-bottom:1px solid #EDEAE6; }
+.pipeline-row:first-child { padding-top:0; }
+.pipeline-row:last-child { border-bottom:none; }
+.pipe-top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px; }
+.pipe-name { font-size:15px; font-weight:700; color:#2C2A26; }
+.pipe-phase { font-size:12px; color:#8A857A; }
+.pipe-bar { height:6px; background:#EDEAE6; border-radius:3px; overflow:hidden; margin-bottom:10px; }
+.pipe-bar-fill { height:100%; border-radius:3px; width:0; transition:width 1.4s cubic-bezier(0.23, 1, 0.32, 1); }
+.pipe-details { display:flex; flex-wrap:wrap; gap:6px 16px; }
+.pipe-details span { font-size:11px; color:#8A857A; }
+.pipe-details span b { font-weight:700; }
+.pipe-details span.plum-detail { color:#6C1A55; font-weight:700; }
+.cr-sidebar { display:flex; flex-direction:column; gap:16px; }
+.cr-card { background:#fff; border-radius:14px; padding:24px; box-shadow:0 1px 3px rgba(0,0,0,0.03); }
+.cr-card .cr-label { font-size:10px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; color:#8A857A; margin-bottom:12px; }
+.cr-card .cr-big { font-family:'Source Serif 4',serif; font-size:48px; color:#6C1A55; font-weight:400; line-height:1; margin-bottom:8px; }
+.cr-card .cr-text { font-size:13px; color:#6B665D; line-height:1.6; }
+.cr-card .cr-divider { height:1px; background:#EDEAE6; margin:16px 0; }
+.cr-card .cr-secondary { font-family:'Source Serif 4',serif; font-size:24px; color:#C4BDB4; font-weight:400; }
+.cr-card .cr-secondary-label { font-size:11px; color:#8A857A; margin-top:2px; }
+.cr-badges { display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+.cr-badge { font-size:9px; font-weight:700; letter-spacing:0.8px; text-transform:uppercase; padding:5px 10px; border-radius:100px; }
+.cr-badge.plum { background:#FBF5F9; color:#6C1A55; }
+.cr-badge.neutral { background:#F0EEEB; color:#6B665D; }
 
 /* CTA */
 .cta-banner { margin:80px 48px; border-radius:16px; background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:80px 64px; text-align:center; position:relative; overflow:hidden; }
@@ -113,17 +118,14 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
   .split .photo { height:260px; }
   .feat-grid { grid-template-columns:1fr; }
   .accred-row { grid-template-columns:1fr 1fr; }
-  .trial-grid { grid-template-columns:1fr 1fr; }
-  .timeline { grid-template-columns:1fr; }
-  .timeline::before { left:7px; }
-  .tl-item { text-align:left !important; padding:0 0 24px 32px !important; }
-  .tl-item::after { left:-1px !important; right:auto !important; }
+  .cr-grid { grid-template-columns:1fr; }
+  .pipe-details { flex-wrap:wrap; }
   .cta-banner { margin:48px 20px; padding:48px 24px; }
 }
 @media (max-width:600px) {
   .hero h1 { font-size:28px; }
   .stats { grid-template-columns:1fr; }
-  .accred-row, .trial-grid { grid-template-columns:1fr; }
+  .accred-row { grid-template-columns:1fr; }
   .cta-banner .btns { flex-direction:column; align-items:center; }
 }
 `;
@@ -227,46 +229,50 @@ const html = `<!-- HERO -->
   </div>
 </section>
 
-<!-- CLINICAL TRIALS -->
-<section class="section-full trials-bg">
-  <div class="inner">
-    <div class="sh">
-      <div class="lbl">Clinical research</div>
-      <h2>Advancing the science of stem cell therapy</h2>
-      <p>StemCyte sponsors 3 active clinical trials and contributes to a growing body of global research with over 500 MSC trials worldwide.</p>
-    </div>
-    <div class="trial-grid">
-      <div class="trial-tag anim">Post-COVID syndrome</div>
-      <div class="trial-tag anim">Acute stroke</div>
-      <div class="trial-tag anim">Spinal cord injury</div>
-      <div class="trial-tag anim">Cerebral palsy</div>
-      <div class="trial-tag anim">Autism</div>
-      <div class="trial-tag anim">Heart disease</div>
-      <div class="trial-tag anim">Alzheimer's</div>
-      <div class="trial-tag anim">500+ MSC trials globally</div>
-    </div>
-  </div>
-</section>
-
-<!-- TIMELINE -->
+<!-- CLINICAL RESEARCH -->
 <section class="section">
   <div class="sh">
-    <div class="lbl">Our milestones</div>
-    <h2>27 years of advancing stem cell science</h2>
+    <div class="lbl">Clinical research</div>
+    <h2>From the lab to the patient</h2>
+    <p>StemCyte sponsors 3 active clinical trials developing cord blood therapies for conditions beyond traditional transplantation.</p>
   </div>
-  <div class="timeline">
-    <div class="tl-item major anim"><div class="tl-year">1997</div><h4>StemCyte founded</h4><p>First laboratory opens in California with a mission to build the world's most ethnically diverse cord blood bank.</p></div>
-    <div class="tl-item anim"><div class="tl-year">2001</div><h4>First thalassemia transplant</h4><p>World's first successful cord blood transplant for Thalassemia Major using a StemCyte unit.</p></div>
-    <div class="tl-item anim"><div class="tl-year">2003</div><h4>AABB accredited</h4><p>Accredited in USA and Taiwan. Hosts world's first Cord Blood Transplantation Symposium at City of Hope.</p></div>
-    <div class="tl-item anim"><div class="tl-year">2005</div><h4>Private banking launches</h4><p>Private banking opens in USA and Taiwan. First non-US public bank grant received.</p></div>
-    <div class="tl-item major anim"><div class="tl-year">2006</div><h4>First FACT-accredited private bank</h4><p>First for both allogeneic and autologous banking. First privately owned HRSA partner.</p></div>
-    <div class="tl-item anim"><div class="tl-year">2008</div><h4>Expansion to India</h4><p>Partnered with Apollo Hospital Group. US patent for stem cell brain damage treatments.</p></div>
-    <div class="tl-item anim"><div class="tl-year">2010</div><h4>Breakthrough trials</h4><p>Chronic stroke trial: 85% success rate. Spinal cord injury trial launched.</p></div>
-    <div class="tl-item major anim"><div class="tl-year">2015</div><h4>2,000th transplant shipped</h4><p>Major milestone. New state-of-the-art facility opens in Baldwin Park, CA.</p></div>
-    <div class="tl-item anim"><div class="tl-year">2018</div><h4>FDA spinal cord trial approved</h4><p>First hybrid bank with FDA Phase II approval for spinal cord injury treatment.</p></div>
-    <div class="tl-item anim"><div class="tl-year">2021</div><h4>Stroke treatment success</h4><p>Phase I success treating acute stroke with cord blood. Published in Cell Transplantation.</p></div>
-    <div class="tl-item major anim"><div class="tl-year">2022</div><h4>Post-COVID trial approved</h4><p>FDA approves Phase II trial for Long COVID using cord blood stem cell therapy.</p></div>
-    <div class="tl-item anim"><div class="tl-year">Today</div><h4>2,300+ units, 35 countries</h4><p>Continuing to advance regenerative medicine while protecting families worldwide.</p></div>
+  <div class="cr-grid">
+    <div class="pipelines">
+      <div class="pipeline-row anim">
+        <div class="pipe-top"><span class="pipe-name">REGENECYTE&reg; &mdash; Long COVID</span><span class="pipe-phase">Phase III / Expanded Access</span></div>
+        <div class="pipe-bar"><div class="pipe-bar-fill" data-width="88" style="background:#6C1A55"></div></div>
+        <div class="pipe-details"><span class="plum-detail">FDA BLA approved 2024</span><span class="plum-detail">RMAT designated</span><span class="plum-detail">Expanded Access 2026</span></div>
+      </div>
+      <div class="pipeline-row anim">
+        <div class="pipe-top"><span class="pipe-name">Acute Ischemic Stroke</span><span class="pipe-phase">Phase II</span></div>
+        <div class="pipe-bar"><div class="pipe-bar-fill" data-width="55" style="background:#AEB5BD"></div></div>
+        <div class="pipe-details"><span>Phase I <b>published</b> in Cell Transplantation</span><span><b>Allogeneic</b> cord blood</span></div>
+      </div>
+      <div class="pipeline-row anim">
+        <div class="pipe-top"><span class="pipe-name">Spinal Cord Injury</span><span class="pipe-phase">Phase II</span></div>
+        <div class="pipe-bar"><div class="pipe-bar-fill" data-width="50" style="background:#DEE2E6"></div></div>
+        <div class="pipe-details"><span>First hybrid bank with <b>FDA Phase II</b></span><span><b>HLA-matched</b> cord blood</span></div>
+      </div>
+    </div>
+    <div class="cr-sidebar">
+      <div class="cr-card anim">
+        <div class="cr-label">Published result</div>
+        <div class="cr-big">85%</div>
+        <div class="cr-text">of Long COVID patients treated with REGENECYTE&reg; cord blood therapy saw fatigue resolve</div>
+        <div class="cr-divider"></div>
+        <div class="cr-secondary">20%</div>
+        <div class="cr-secondary-label">control group</div>
+      </div>
+      <div class="cr-card anim">
+        <div class="cr-label">REGENECYTE&reg;</div>
+        <div class="cr-text">StemCyte's FDA-licensed allogeneic HPC cord blood product &mdash; the first from a hybrid bank.</div>
+        <div class="cr-badges">
+          <span class="cr-badge plum">FDA BLA</span>
+          <span class="cr-badge plum">RMAT</span>
+          <span class="cr-badge neutral">Expanded Access</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -292,6 +298,17 @@ var obs = new IntersectionObserver(function(entries) {
   });
 }, { threshold: 0.12 });
 document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });
+
+// Pipeline bar animation
+var barObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.style.width = entry.target.dataset.width + '%';
+      barObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+document.querySelectorAll('.pipe-bar-fill').forEach(function(el) { barObs.observe(el); });
 
 // Number counters
 document.querySelectorAll('.stat .num').forEach(function(el, idx) {
