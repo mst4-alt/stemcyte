@@ -182,7 +182,7 @@ const html = `
     <h2>SMS Communications</h2>
     <p>We may send SMS (text) messages to individuals who opt in to receive them. SMS messages may include service reminders, event notifications, transactional updates, and marketing communications where you have provided consent.</p>
     <p>SMS opt-in data and consent will not be shared with any third parties, excluding aggregators and providers of text message services used to deliver messages on our behalf.</p>
-    <p>For full details on SMS message types, frequency, opt-out instructions, and carrier disclaimers, please see our SMS Terms of Service.</p>
+    <p>For full details on SMS message types, frequency, opt-out instructions, and carrier disclaimers, please see our <a href="/sms-terms">SMS Terms of Service</a>.</p>
   </div>
 
   <!-- 10. Contact Information -->
