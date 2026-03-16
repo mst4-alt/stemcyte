@@ -7,7 +7,7 @@ export const metadata = {
 const css = `
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
+body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
 
 /* NAV */
 
@@ -32,18 +32,15 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .sh p { font-size:16px; color:#8A857A; max-width:520px; line-height:1.7; }
 
 /* PATIENT STORIES */
-.story { display:grid; grid-template-columns:1fr 1fr; min-height:360px; max-height:400px; border-radius:16px; overflow:hidden; margin-bottom:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
-.story.flip { direction:rtl; }
-.story.flip > * { direction:ltr; }
-.story .story-img { overflow:hidden; }
-.story .story-img img { width:100%; height:100%; object-fit:cover; min-height:360px; }
-.story .story-inner { background:#fff; padding:36px 40px; display:flex; flex-direction:column; justify-content:center; }
-.story .tag { display:inline-block; padding:4px 12px; border-radius:100px; font-size:10px; font-weight:700; margin-bottom:14px; align-self:flex-start; }
-.story h3 { font-family:'Playfair Display',serif; font-size:28px; font-weight:400; margin-bottom:8px; line-height:1.3; }
-.story .diag { font-size:13px; color:#6C1A55; font-weight:700; margin-bottom:14px; }
-.story p { font-size:14px; color:#8A857A; line-height:1.65; margin-bottom:6px; }
-.story-video { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; margin-top:20px; }
-.story-video iframe { position:absolute; top:0; left:0; width:100%; height:100%; border-radius:12px; }
+.story { background:#fff; border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); overflow:hidden; margin-bottom:24px; display:grid; grid-template-columns:280px 1fr; }
+.story .story-img { background:#F3F0F8; display:flex; align-items:center; justify-content:center; min-height:240px; }
+.story .story-img img { width:100%; height:100%; object-fit:cover; }
+.story .story-img .placeholder { font-size:12px; color:#B0AB9E; text-align:center; padding:20px; }
+.story .story-inner { padding:40px; }
+.story .tag { display:inline-block; padding:4px 12px; border-radius:100px; font-size:10px; font-weight:700; margin-bottom:16px; }
+.story h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; margin-bottom:8px; line-height:1.3; }
+.story .diag { font-size:13px; color:#6C1A55; font-weight:700; margin-bottom:12px; }
+.story p { font-size:15px; color:#8A857A; line-height:1.7; margin-bottom:8px; }
 
 /* FEATURED QUOTE */
 .feat-quote { text-align:center; padding:80px 48px; max-width:720px; margin:0 auto; }
@@ -61,7 +58,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 /* PBA QUOTES */
 .pba-quotes { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; }
 .pba-card { background:#fff; border-radius:12px; padding:24px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
-.pba-card blockquote { font-size:15px; color:#6B665D; line-height:1.7; font-style:italic; margin-bottom:12px; }
+.pba-card blockquote { font-size:14px; color:#6B665D; line-height:1.7; font-style:italic; margin-bottom:12px; }
 .pba-card cite { font-style:normal; font-size:13px; font-weight:700; color:#2C2A26; display:block; }
 .pba-card .when { font-size:11px; color:#B0AB9E; }
 
@@ -89,8 +86,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
   .quotes { grid-template-columns:1fr; }
   .pba-quotes { grid-template-columns:1fr; }
   .story { grid-template-columns:1fr; }
-  .story.flip { direction:ltr; }
-  .story .story-img img { min-height:280px; max-height:320px; }
+  .story .story-img { min-height:200px; }
   .cta-banner { margin:48px 20px; padding:48px 24px; }
 }
 @media (max-width:600px) {
@@ -125,13 +121,10 @@ const html = `<!-- HERO -->
       <div class="diag">Diagnosis: Perinatal Stroke</div>
       <p>Bailey was just 3 days old when she suffered a perinatal stroke. Fortunately, her mother Rebecca had banked her cord blood stem cells at birth with StemCyte. Bailey was able to use her own cord blood stem cells as part of her treatment.</p>
       <p>Today, Bailey is 10 years old and living a healthy, normal life.</p>
-      <div class="story-video">
-        <iframe src="https://www.youtube.com/embed/qrbCvPtvtWk" title="Bailey's Story" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
     </div>
   </div>
 
-  <div class="story flip anim">
+  <div class="story anim">
     <div class="story-img"><img src="/images/ryden.jpg" alt="Ryden"></div>
     <div class="story-inner">
       <div class="tag" style="background:#F0F7F4;color:#3D8B6A">Used his brother's stem cells</div>
@@ -139,9 +132,6 @@ const html = `<!-- HERO -->
       <div class="diag">Diagnosis: Cerebral Palsy</div>
       <p>Heather was in labor when her uterus ruptured, depriving her fourth child Ryden of oxygen. The MRI showed catastrophic brain damage and a diagnosis of extremely severe cerebral palsy.</p>
       <p>The family banked their fifth child's cord blood with StemCyte and used it for Ryden six months later in a clinical trial for cerebral palsy.</p>
-      <div class="story-video">
-        <iframe src="https://www.youtube.com/embed/9TyVpe7Id-4" title="The Hoffman Family Story" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
     </div>
   </div>
 
@@ -155,7 +145,6 @@ const html = `<!-- HERO -->
       <p>Itzel remains in full remission from leukemia, 9 years after transplant.</p>
     </div>
   </div>
-
 </section>
 
 <div class="divider"><div class="divider-line"></div></div>
