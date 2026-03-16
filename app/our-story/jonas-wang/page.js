@@ -38,7 +38,7 @@ export default function JonasWangPage() {
   
   
 
-  // ── Gentle rising cell particles canvas ──
+  // ── Floating cell particles canvas ──
   useEffect(() => {
     const c = canvasRef.current;
     if (!c) return;
@@ -46,13 +46,11 @@ export default function JonasWangPage() {
     let animId;
     let cells = [];
     const COUNT = 50;
-
     function resize() {
       c.width = c.offsetWidth * window.devicePixelRatio;
       c.height = c.offsetHeight * window.devicePixelRatio;
       ctx.setTransform(window.devicePixelRatio, 0, 0, window.devicePixelRatio, 0, 0);
     }
-
     function init() {
       resize();
       const W = c.offsetWidth, H = c.offsetHeight;
@@ -70,7 +68,6 @@ export default function JonasWangPage() {
         };
       });
     }
-
     function draw() {
       const W = c.offsetWidth, H = c.offsetHeight;
       ctx.clearRect(0, 0, W, H);
@@ -79,14 +76,10 @@ export default function JonasWangPage() {
         cell.y += cell.vy;
         if (cell.x < -10 || cell.x > W + 10) cell.vx *= -1;
         if (cell.y < -10 || cell.y > H + 10) cell.vy *= -1;
-
-        // Outer glow
         ctx.beginPath();
         ctx.arc(cell.x, cell.y, cell.r * 2.5, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${cell.hue},${cell.opacity * 0.3})`;
         ctx.fill();
-
-        // Core
         ctx.beginPath();
         ctx.arc(cell.x, cell.y, cell.r, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${cell.hue},${cell.opacity})`;
@@ -94,7 +87,6 @@ export default function JonasWangPage() {
       }
       animId = requestAnimationFrame(draw);
     }
-
     init();
     draw();
     window.addEventListener('resize', () => { resize(); });
