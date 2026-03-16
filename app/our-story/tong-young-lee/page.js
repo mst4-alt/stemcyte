@@ -39,12 +39,14 @@ export default function TongYoungLeePage() {
   
   
 
-  // ── DNA helix particle canvas ──
+  // ── Gentle rising cell particles canvas ──
   useEffect(() => {
     const c = canvasRef.current;
     if (!c) return;
     const ctx = c.getContext('2d');
-    let animId, t = 0;
+    let animId;
+    let cells = [];
+    const COUNT = 50;
 
     function resize() {
       c.width = c.offsetWidth * window.devicePixelRatio;
@@ -52,48 +54,51 @@ export default function TongYoungLeePage() {
       ctx.setTransform(window.devicePixelRatio, 0, 0, window.devicePixelRatio, 0, 0);
     }
 
+    function init() {
+      resize();
+      const W = c.offsetWidth, H = c.offsetHeight;
+      cells = Array.from({ length: COUNT }, () => {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 0.3 + 0.1;
+        return {
+          x: Math.random() * W,
+          y: Math.random() * H,
+          r: Math.random() * 4 + 2,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          opacity: Math.random() * 0.12 + 0.04,
+          hue: Math.random() > 0.5 ? '232,160,208' : '192,106,165',
+        };
+      });
+    }
+
     function draw() {
       const W = c.offsetWidth, H = c.offsetHeight;
       ctx.clearRect(0, 0, W, H);
-      t += 0.008;
-      const strands = 28;
-      const amp = 60;
-      const spacing = H / strands;
+      for (const cell of cells) {
+        cell.x += cell.vx;
+        cell.y += cell.vy;
+        if (cell.x < -10 || cell.x > W + 10) cell.vx *= -1;
+        if (cell.y < -10 || cell.y > H + 10) cell.vy *= -1;
 
-      for (let i = 0; i < strands; i++) {
-        const y = i * spacing;
-        const x1 = W * 0.5 + Math.sin(t + i * 0.35) * amp;
-        const x2 = W * 0.5 + Math.sin(t + i * 0.35 + Math.PI) * amp;
-        const opacity = 0.06 + 0.04 * Math.sin(t + i * 0.2);
-
-        // Connection rungs
-        if (i % 2 === 0) {
-          ctx.beginPath();
-          ctx.moveTo(x1, y);
-          ctx.lineTo(x2, y);
-          ctx.strokeStyle = `rgba(192,106,165,${opacity * 0.6})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        }
-
-        // Strand 1
+        // Outer glow
         ctx.beginPath();
-        ctx.arc(x1, y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(232,160,208,${opacity + 0.06})`;
+        ctx.arc(cell.x, cell.y, cell.r * 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${cell.hue},${cell.opacity * 0.3})`;
         ctx.fill();
 
-        // Strand 2
+        // Core
         ctx.beginPath();
-        ctx.arc(x2, y, 2, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(108,26,85,${opacity + 0.04})`;
+        ctx.arc(cell.x, cell.y, cell.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${cell.hue},${cell.opacity})`;
         ctx.fill();
       }
       animId = requestAnimationFrame(draw);
     }
 
-    resize();
+    init();
     draw();
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', () => { resize(); });
     return () => { cancelAnimationFrame(animId); window.removeEventListener('resize', resize); };
   }, []);
 

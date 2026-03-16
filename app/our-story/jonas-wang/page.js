@@ -38,61 +38,58 @@ export default function JonasWangPage() {
   
   
 
-  // ── Particle canvas: floating molecular dots ──
+  // ── Gentle rising cell particles canvas ──
   useEffect(() => {
     const c = canvasRef.current;
     if (!c) return;
     const ctx = c.getContext('2d');
-    let particles = [];
-    let W, H, animId;
-    const COUNT = 80;
-    const CONN = 120;
+    let animId;
+    let cells = [];
+    const COUNT = 50;
 
     function resize() {
-      W = c.width = c.offsetWidth * window.devicePixelRatio;
-      H = c.height = c.offsetHeight * window.devicePixelRatio;
-      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      c.width = c.offsetWidth * window.devicePixelRatio;
+      c.height = c.offsetHeight * window.devicePixelRatio;
+      ctx.setTransform(window.devicePixelRatio, 0, 0, window.devicePixelRatio, 0, 0);
     }
 
     function init() {
       resize();
-      const rW = c.offsetWidth, rH = c.offsetHeight;
-      particles = Array.from({ length: COUNT }, () => ({
-        x: Math.random() * rW,
-        y: Math.random() * rH,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        r: Math.random() * 2 + 1,
-      }));
+      const W = c.offsetWidth, H = c.offsetHeight;
+      cells = Array.from({ length: COUNT }, () => {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 0.3 + 0.1;
+        return {
+          x: Math.random() * W,
+          y: Math.random() * H,
+          r: Math.random() * 4 + 2,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          opacity: Math.random() * 0.12 + 0.04,
+          hue: Math.random() > 0.5 ? '232,160,208' : '192,106,165',
+        };
+      });
     }
 
     function draw() {
-      ctx.clearRect(0, 0, c.offsetWidth, c.offsetHeight);
-      const rW = c.offsetWidth, rH = c.offsetHeight;
-      for (const p of particles) {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0 || p.x > rW) p.vx *= -1;
-        if (p.y < 0 || p.y > rH) p.vy *= -1;
-      }
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < CONN) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(192,106,165,${0.08 * (1 - dist / CONN)})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        }
-      }
-      for (const p of particles) {
+      const W = c.offsetWidth, H = c.offsetHeight;
+      ctx.clearRect(0, 0, W, H);
+      for (const cell of cells) {
+        cell.x += cell.vx;
+        cell.y += cell.vy;
+        if (cell.x < -10 || cell.x > W + 10) cell.vx *= -1;
+        if (cell.y < -10 || cell.y > H + 10) cell.vy *= -1;
+
+        // Outer glow
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(232,160,208,${0.15 + p.r * 0.05})`;
+        ctx.arc(cell.x, cell.y, cell.r * 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${cell.hue},${cell.opacity * 0.3})`;
+        ctx.fill();
+
+        // Core
+        ctx.beginPath();
+        ctx.arc(cell.x, cell.y, cell.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${cell.hue},${cell.opacity})`;
         ctx.fill();
       }
       animId = requestAnimationFrame(draw);
