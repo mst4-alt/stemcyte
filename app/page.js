@@ -12,7 +12,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 /* NAV */
 
 /* HERO */
-.hero { min-height:100vh; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; text-align:center; }
+.hero { min-height:100vh; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; text-align:center; background:#000; }
 .hero .bg { position:absolute; inset:0; object-fit:cover; width:100%; height:100%; filter:saturate(0.7); }
 .hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.55) 55%,rgba(0,0,0,0.78) 100%); }
 .hero .ct { position:relative; z-index:2; max-width:680px; padding:0 24px; margin-top:-60px; }
@@ -155,7 +155,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 
 const html = `<!-- HERO -->
 <section class="hero" id="hero">
-  <video class="bg" autoplay muted loop playsinline poster="/images/hero.jpg">
+  <video class="bg" autoplay muted loop playsinline>
     <source src="/images/videos/Hero_1.mp4" type="video/mp4">
   </video>
   <div class="vig"></div>
