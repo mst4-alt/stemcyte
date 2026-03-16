@@ -121,6 +121,7 @@ const html = `<!-- HERO -->
       <div class="diag">Diagnosis: Perinatal Stroke</div>
       <p>Bailey was just 3 days old when she suffered a perinatal stroke. Fortunately, her mother Rebecca had banked her cord blood stem cells at birth with StemCyte. Bailey was able to use her own cord blood stem cells as part of her treatment.</p>
       <p>Today, Bailey is 10 years old and living a healthy, normal life.</p>
+      <a href="https://www.youtube.com/watch?v=qrbCvPtvtWk" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:14px;font-weight:600;color:#6C1A55;text-decoration:none;">Watch Bailey's story &rarr;</a>
     </div>
   </div>
 
@@ -132,6 +133,7 @@ const html = `<!-- HERO -->
       <div class="diag">Diagnosis: Cerebral Palsy</div>
       <p>Heather was in labor when her uterus ruptured, depriving her fourth child Ryden of oxygen. The MRI showed catastrophic brain damage and a diagnosis of extremely severe cerebral palsy.</p>
       <p>The family banked their fifth child's cord blood with StemCyte and used it for Ryden six months later in a clinical trial for cerebral palsy.</p>
+      <a href="https://www.youtube.com/watch?v=9TyVpe7Id-4" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-size:14px;font-weight:600;color:#6C1A55;text-decoration:none;">Watch Ryden's story &rarr;</a>
     </div>
   </div>
 
