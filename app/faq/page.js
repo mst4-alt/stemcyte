@@ -40,7 +40,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .faq-smooth.open .faq-q .icon::after { transform:rotate(90deg); }
 .faq-smooth .faq-a { max-height:0; overflow:hidden; transition:max-height 0.35s ease, opacity 0.3s ease; opacity:0; }
 .faq-smooth.open .faq-a { opacity:1; }
-.faq-smooth .faq-a-inner { padding:0 0 20px; font-size:14px; color:#8A857A; line-height:1.7; max-width:720px; }
+.faq-smooth .faq-a-inner { padding:0 0 20px; font-size:15px; color:#8A857A; line-height:1.7; max-width:720px; }
 
 /* CONTACT BOX */
 .contact-box { background:#F3F0F8; border-radius:12px; padding:40px; text-align:center; margin-top:64px; }
@@ -87,7 +87,7 @@ const html = `<!-- HERO -->
     </div>
     <div class="faq-smooth" onclick="toggleFaq(this)">
       <div class="faq-q">Should I bank both cord blood and cord tissue?<div class="icon"></div></div>
-      <div class="faq-a"><div class="faq-a-inner">Yes &mdash; they contain different types of stem cells with different applications. Cord blood contains hematopoietic stem cells (HSCs) that regenerate blood and immune systems, used in over 60,000 transplants since 1988. Cord tissue contains mesenchymal stem cells (MSCs) being researched in over 500 clinical trials for regenerative medicine including heart disease, Alzheimer's, and osteoarthritis. Banking both provides the most comprehensive protection.</div></div>
+      <div class="faq-a"><div class="faq-a-inner">Yes! &mdash; they contain different types of stem cells with different applications. Cord blood contains hematopoietic stem cells (HSCs) that regenerate blood and immune systems, used in over 60,000 transplants since 1988. Cord tissue contains mesenchymal stem cells (MSCs) being researched in over 500 clinical trials for regenerative medicine including heart disease, Alzheimer's, and osteoarthritis. Banking both provides the most comprehensive protection.</div></div>
     </div>
     <div class="faq-smooth" onclick="toggleFaq(this)">
       <div class="faq-q">What diseases can cord blood stem cells treat?<div class="icon"></div></div>

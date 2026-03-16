@@ -48,7 +48,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .split .text h2 { font-family:'Playfair Display',serif; font-size:32px; font-weight:400; margin-bottom:16px; line-height:1.2; }
 .split .text p { font-size:15px; color:#8A857A; line-height:1.7; margin-bottom:12px; }
 .split .text ul { list-style:none; margin-top:12px; }
-.split .text ul li { font-size:14px; color:#6B665D; padding:8px 0 8px 20px; position:relative; border-bottom:1px solid #F5EDE6; }
+.split .text ul li { font-size:15px; color:#6B665D; padding:8px 0 8px 20px; position:relative; border-bottom:1px solid #F5EDE6; }
 .split .text ul li::before { content:''; position:absolute; left:0; top:14px; width:8px; height:8px; border-radius:50%; border:2px solid #C06AA5; }
 
 /* FEATURE CARDS */
@@ -56,7 +56,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .feat-card { background:#fff; border-radius:12px; padding:28px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
 .feat-card .ic { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
 .feat-card h3 { font-size:16px; font-weight:700; margin-bottom:8px; }
-.feat-card p { font-size:14px; color:#8A857A; line-height:1.7; }
+.feat-card p { font-size:15px; color:#8A857A; line-height:1.7; }
 
 /* ACCREDITATIONS */
 .accred-row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
@@ -84,7 +84,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .tl-item:nth-child(even).major::after { left:-8px; }
 .tl-year { font-family:'Source Serif 4',serif; font-size:24px; color:#6C1A55; font-weight:400; margin-bottom:4px; }
 .tl-item h4 { font-size:14px; font-weight:700; margin-bottom:4px; }
-.tl-item p { font-size:13px; color:#8A857A; line-height:1.6; }
+.tl-item p { font-size:15px; color:#8A857A; line-height:1.6; }
 
 /* CTA */
 .cta-banner { margin:80px 48px; border-radius:16px; background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:80px 64px; text-align:center; position:relative; overflow:hidden; }

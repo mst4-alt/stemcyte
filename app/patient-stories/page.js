@@ -58,7 +58,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 /* PBA QUOTES */
 .pba-quotes { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; }
 .pba-card { background:#fff; border-radius:12px; padding:24px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
-.pba-card blockquote { font-size:14px; color:#6B665D; line-height:1.7; font-style:italic; margin-bottom:12px; }
+.pba-card blockquote { font-size:15px; color:#6B665D; line-height:1.7; font-style:italic; margin-bottom:12px; }
 .pba-card cite { font-style:normal; font-size:13px; font-weight:700; color:#2C2A26; display:block; }
 .pba-card .when { font-size:11px; color:#B0AB9E; }
 

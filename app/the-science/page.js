@@ -17,7 +17,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%); }
 .hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
 .hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
-.hero h1 { font-family:'Playfair Display',serif; font-size:48px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:680px; margin-bottom:16px; color:#fff; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:48px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:560px; margin-bottom:16px; color:#fff; }
 .hero .sub { font-size:17px; color:rgba(255,255,255,0.55); max-width:540px; line-height:1.7; }
 
 /* ── SHARED ── */
@@ -58,16 +58,16 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .zone-plum .fact { background:#fff; border-radius:12px; padding:20px 24px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); display:flex; gap:18px; align-items:flex-start; flex:1; }
 .zone-plum .fact .ic { width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .zone-plum .fact h4 { font-size:15px; font-weight:700; margin-bottom:3px; }
-.zone-plum .fact span { font-size:13px; color:#8A857A; line-height:1.5; }
+.zone-plum .fact span { font-size:15px; color:#8A857A; line-height:1.5; }
 .zone-plum .stat-block { background:#fff; border-radius:12px; padding:36px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); display:flex; flex-direction:column; }
 .zone-plum .stat-block .big { font-family:'Source Serif 4',serif; font-size:72px; color:#6C1A55; font-weight:400; line-height:1; margin-bottom:6px; }
 .zone-plum .stat-block .bl { font-size:16px; font-weight:700; margin-bottom:14px; }
-.zone-plum .stat-block .sd { font-size:14px; color:#8A857A; line-height:1.7; margin-bottom:16px; }
+.zone-plum .stat-block .sd { font-size:15px; color:#8A857A; line-height:1.7; margin-bottom:16px; }
 .zone-plum .stat-block .mr { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding-top:16px; border-top:1px solid #F5EDE6; }
 .zone-plum .stat-block .mi { text-align:center; }
 .zone-plum .stat-block .mi .v { font-family:'Source Serif 4',serif; font-size:28px; color:#6C1A55; }
 .zone-plum .stat-block .mi .d { font-size:12px; color:#8A857A; }
-.zone-plum .stat-block .extra { margin-top:16px; padding-top:16px; border-top:1px solid #F5EDE6; font-size:13px; color:#8A857A; line-height:1.6; }
+.zone-plum .stat-block .extra { margin-top:16px; padding-top:16px; border-top:1px solid #F5EDE6; font-size:14px; color:#8A857A; line-height:1.6; }
 .zone-plum .stat-block .extra strong { color:#6C1A55; }
 
 /* ── PLUM DEEP — 80+ DISEASES ── */
@@ -240,6 +240,20 @@ const html = `<!-- HERO -->
       <p class="lead">Used in over 60,000 transplants worldwide since 1988. Cord blood stem cells are approved for treating a wide range of serious conditions.</p>
     </div>
     <div class="zsp">
+      <div class="stat-block anim">
+        <div class="big">80+</div>
+        <div class="bl">Treatable diseases and counting</div>
+        <div class="sd">Cord blood is used to treat leukemia, lymphoma, sickle cell disease, thalassemia, SCID, Krabbe disease, and dozens more across four major categories: cancers, blood disorders, immune deficiencies, and metabolic conditions.</div>
+        <div class="mr">
+          <div class="mi"><div class="v">60K+</div><div class="d">Transplants worldwide</div></div>
+          <div class="mi"><div class="v">1988</div><div class="d">First successful transplant</div></div>
+        </div>
+        <div class="mr" style="border-top:none;padding-top:0">
+          <div class="mi"><div class="v">100%</div><div class="d">Match for your baby</div></div>
+          <div class="mi"><div class="v">75%</div><div class="d">Sibling partial match</div></div>
+        </div>
+        <div class="extra">A baby's cord blood is a guaranteed perfect match for themselves. Siblings have a 75% chance of partial match, and biological parents roughly 20%. Each unit can be used in one transplant &mdash; which is why banking each child matters.</div>
+      </div>
       <div class="fact-list">
         <div class="fact anim">
           <div class="ic" style="background:#FBF5F9"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div>
@@ -257,20 +271,6 @@ const html = `<!-- HERO -->
           <div class="ic" style="background:#FDF5EB"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C4943E" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
           <div><h4>Growth factors &amp; cytokines</h4><span>Signaling proteins that promote cell growth, tissue repair, and anti-inflammatory responses.</span></div>
         </div>
-      </div>
-      <div class="stat-block anim">
-        <div class="big">80+</div>
-        <div class="bl">Treatable diseases and counting</div>
-        <div class="sd">Cord blood is used to treat leukemia, lymphoma, sickle cell disease, thalassemia, SCID, Krabbe disease, and dozens more across four major categories: cancers, blood disorders, immune deficiencies, and metabolic conditions.</div>
-        <div class="mr">
-          <div class="mi"><div class="v">60K+</div><div class="d">Transplants worldwide</div></div>
-          <div class="mi"><div class="v">1988</div><div class="d">First successful transplant</div></div>
-        </div>
-        <div class="mr" style="border-top:none;padding-top:0">
-          <div class="mi"><div class="v">100%</div><div class="d">Match for your baby</div></div>
-          <div class="mi"><div class="v">75%</div><div class="d">Sibling partial match</div></div>
-        </div>
-        <div class="extra">A baby's cord blood is a guaranteed perfect match for themselves. Siblings have a 75% chance of partial match, and biological parents roughly 20%. Each unit can be used in one transplant &mdash; which is why banking each child matters.</div>
       </div>
     </div>
   </div>

@@ -150,7 +150,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .s-top { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
 .s-chip { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:8px; background:#FBF5F9; color:#6C1A55; font-family:'Source Serif 4',serif; font-size:18px; flex-shrink:0; }
 .s-card h3 { font-size:20px; font-weight:700; }
-.s-card p { font-size:14px; color:#8A857A; line-height:1.7; }
+.s-card p { font-size:15px; color:#8A857A; line-height:1.7; }
 .s-conn { display:flex; align-items:center; padding:0 2px; flex-shrink:0; }
 .s-ln { width:24px; height:1px; background:#D8D0E0; }
 

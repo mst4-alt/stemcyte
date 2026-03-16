@@ -49,7 +49,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .uv-card { background:#fff; border-radius:12px; padding:28px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
 .uv-card .ic { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
 .uv-card h3 { font-size:16px; font-weight:700; margin-bottom:8px; }
-.uv-card p { font-size:14px; color:#8A857A; line-height:1.7; }
+.uv-card p { font-size:15px; color:#8A857A; line-height:1.7; }
 
 /* STEPS V2 */
 .steps-row { display:flex; align-items:stretch; gap:0; }
@@ -57,7 +57,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .s-top { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
 .s-chip { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:8px; background:#FBF5F9; color:#6C1A55; font-family:'Source Serif 4',serif; font-size:18px; flex-shrink:0; }
 .s-card h3 { font-size:20px; font-weight:700; }
-.s-card p { font-size:14px; color:#8A857A; line-height:1.7; }
+.s-card p { font-size:15px; color:#8A857A; line-height:1.7; }
 .s-conn { display:flex; align-items:center; padding:0 2px; flex-shrink:0; }
 .s-ln { width:24px; height:1px; background:#D8D0E0; }
 
@@ -72,11 +72,11 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .plan-card.feat { box-shadow:0 0 0 2px #6C1A55,0 1px 3px rgba(0,0,0,0.04); }
 .plan-card .tag { display:inline-block; background:#FBF5F9; color:#6C1A55; font-size:10px; font-weight:700; padding:4px 12px; border-radius:100px; margin-bottom:12px; }
 .plan-card h3 { font-size:18px; font-weight:700; margin-bottom:4px; }
-.plan-card .pd { font-size:13px; color:#8A857A; margin-bottom:16px; line-height:1.6; }
+.plan-card .pd { font-size:15px; color:#8A857A; margin-bottom:16px; line-height:1.6; }
 .plan-card .price { font-family:'Source Serif 4',serif; font-size:36px; color:#6C1A55; font-weight:400; }
 .plan-card .pdet { font-size:12px; color:#B0AB9E; margin-top:2px; margin-bottom:16px; }
 .plan-card .feats { list-style:none; margin-bottom:20px; flex:1; }
-.plan-card .feats li { font-size:13px; color:#6B665D; padding:6px 0 6px 20px; position:relative; }
+.plan-card .feats li { font-size:15px; color:#6B665D; padding:6px 0 6px 20px; position:relative; }
 .plan-card .feats li::before { content:''; position:absolute; left:0; top:12px; width:8px; height:8px; border-radius:50%; border:2px solid #C06AA5; }
 .plan-card .pbtn { display:block; width:100%; text-align:center; background:#6C1A55; color:#fff; padding:14px; border-radius:100px; font-size:14px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; }
 .plan-note { text-align:center; margin-top:24px; font-size:13px; color:#8A857A; }
@@ -96,7 +96,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .test-in { max-width:1100px; margin:0 auto; }
 .test-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:40px; }
 .test-card { background:#fff; border-radius:12px; padding:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
-.test-card blockquote { font-size:15px; color:#4A4540; line-height:1.7; font-style:italic; margin-bottom:16px; }
+.test-card blockquote { font-size:16px; color:#4A4540; line-height:1.7; font-style:italic; margin-bottom:16px; }
 .test-card cite { font-style:normal; font-size:14px; font-weight:700; color:#2C2A26; }
 .test-card .role { font-size:12px; color:#B0AB9E; }
 
@@ -106,7 +106,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .faq-item summary { font-size:16px; font-weight:700; color:#2C2A26; list-style:none; display:flex; justify-content:space-between; align-items:center; }
 .faq-item summary::after { content:'+'; font-size:20px; color:#C06AA5; font-weight:300; transition:transform 0.2s; }
 .faq-item[open] summary::after { transform:rotate(45deg); }
-.faq-item p { font-size:14px; color:#8A857A; line-height:1.7; margin-top:12px; padding-right:32px; }
+.faq-item p { font-size:15px; color:#8A857A; line-height:1.7; margin-top:12px; padding-right:32px; }
 
 /* CTA */
 .cta-banner { margin:80px 48px; border-radius:16px; background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:80px 64px; text-align:center; position:relative; overflow:hidden; }
@@ -288,7 +288,7 @@ const html = `<!-- HERO -->
   </div>
   <div class="faq-list">
     <details class="faq-item"><summary>What is cord blood banking?</summary><p>Cord blood banking preserves the stem cells found in your baby's umbilical cord blood after birth. These stem cells can treat over 80 diseases including cancers, blood disorders, and immune disorders. Your newborn's stem cells can only be collected immediately after birth.</p></details>
-    <details class="faq-item"><summary>Should I bank both cord blood and cord tissue?</summary><p>Yes &mdash; they contain different types of stem cells. Cord blood contains hematopoietic stem cells that regenerate blood and immune systems. Cord tissue contains mesenchymal stem cells being researched in over 500 clinical trials for regenerative medicine.</p></details>
+    <details class="faq-item"><summary>Should I bank both cord blood and cord tissue?</summary><p>Yes! &mdash; they contain different types of stem cells. Cord blood contains hematopoietic stem cells that regenerate blood and immune systems. Cord tissue contains mesenchymal stem cells being researched in over 500 clinical trials for regenerative medicine.</p></details>
     <details class="faq-item"><summary>Is the collection process safe?</summary><p>Completely safe. Cord blood is collected after the baby is born and the umbilical cord has been clamped and cut. It does not interfere with delivery, and no blood is taken from the baby or mother.</p></details>
     <details class="faq-item"><summary>What is public bank access?</summary><p>Unique to StemCyte &mdash; if your child ever needs more stem cells than were stored, we can provide a matching unit from our public cord blood bank, extend the search to all global public banks, or pay up to $80,000 toward uncovered medical expenses.</p></details>
   </div>
