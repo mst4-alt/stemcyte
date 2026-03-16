@@ -65,15 +65,19 @@ export default function JosephRosenthalPage() {
     function init() {
       resize();
       const W = c.offsetWidth, H = c.offsetHeight;
-      cells = Array.from({ length: COUNT }, () => ({
-        x: Math.random() * W,
-        y: Math.random() * H,
-        r: Math.random() * 4 + 2,
-        vy: -(Math.random() * 0.3 + 0.1),
-        vx: (Math.random() - 0.5) * 0.2,
-        opacity: Math.random() * 0.12 + 0.04,
-        hue: Math.random() > 0.5 ? '232,160,208' : '192,106,165',
-      }));
+      cells = Array.from({ length: COUNT }, () => {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 0.3 + 0.1;
+        return {
+          x: Math.random() * W,
+          y: Math.random() * H,
+          r: Math.random() * 4 + 2,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed,
+          opacity: Math.random() * 0.12 + 0.04,
+          hue: Math.random() > 0.5 ? '232,160,208' : '192,106,165',
+        };
+      });
     }
 
     function draw() {
@@ -82,8 +86,8 @@ export default function JosephRosenthalPage() {
       for (const cell of cells) {
         cell.x += cell.vx;
         cell.y += cell.vy;
-        if (cell.y < -10) { cell.y = H + 10; cell.x = Math.random() * W; }
-        if (cell.x < 0 || cell.x > W) cell.vx *= -1;
+        if (cell.x < -10 || cell.x > W + 10) cell.vx *= -1;
+        if (cell.y < -10 || cell.y > H + 10) cell.vy *= -1;
 
         // Outer glow
         ctx.beginPath();
