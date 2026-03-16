@@ -126,15 +126,16 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 }
 
 /* COMPACT HERO */
-.mini-hero { position:relative; padding:140px 48px 72px; overflow:hidden; background:#2E0B24; }
-.mini-hero .mesh { position:absolute; inset:-50%; width:200%; height:200%; background: radial-gradient(ellipse at 20% 50%, rgba(108,26,85,0.8) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(192,106,165,0.4) 0%, transparent 40%), radial-gradient(ellipse at 60% 80%, rgba(61,15,49,0.9) 0%, transparent 50%), radial-gradient(ellipse at 40% 30%, rgba(232,160,208,0.2) 0%, transparent 35%); animation:mesh-drift 15s ease-in-out infinite alternate; }
-@keyframes mesh-drift { 0% { transform:translate(0,0) scale(1); } 100% { transform:translate(-3%,2%) scale(1.05); } }
-.mini-hero .grain { position:absolute; inset:0; opacity:0.15; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size:128px 128px; }
-.mini-hero .inner { position:relative; z-index:2; max-width:1100px; margin:0 auto; text-align:center; }
-.mini-hero .lbl { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#E8A0D0; margin-bottom:20px; }
-.mini-hero h1 { font-family:'Playfair Display',serif; font-size:56px; font-weight:400; color:#fff; line-height:1.06; margin-bottom:18px; max-width:none; margin-left:auto; margin-right:auto; letter-spacing:-1.5px; white-space:nowrap; }
+.mini-hero { position:relative; min-height:500px; display:flex; align-items:center; overflow:hidden; }
+.mini-hero .bg { position:absolute; inset:0; }
+.mini-hero .bg img { width:100%; height:100%; object-fit:cover; filter:saturate(0.7) brightness(0.85); }
+.mini-hero .vig { position:absolute; inset:0; background:linear-gradient(135deg, rgba(44,10,36,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.5) 100%); }
+.mini-hero .inner { position:relative; z-index:1; max-width:1100px; margin:0 auto; padding:140px 48px 80px; width:100%; }
+.mini-hero .frost { background:rgba(255,255,255,0.08); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border:1px solid rgba(255,255,255,0.12); border-radius:20px; padding:48px 52px; max-width:540px; }
+.mini-hero .lbl { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#E8A0D0; margin-bottom:16px; }
+.mini-hero h1 { font-family:'Playfair Display',serif; font-size:44px; font-weight:400; color:#fff; line-height:1.1; margin-bottom:14px; letter-spacing:-1px; }
 .mini-hero h1 em { font-style:italic; color:#E8A0D0; }
-.mini-hero p { font-size:16px; color:rgba(255,255,255,0.4); max-width:480px; margin:0 auto 32px; line-height:1.7; }
+.mini-hero p { font-size:15px; color:rgba(255,255,255,0.5); max-width:420px; line-height:1.7; }
 
 /* HOW IT WORKS SECTION */
 .hiw-section { background:#F3F0F8; padding:80px 48px; }
@@ -179,8 +180,10 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 
 /* EXTRA RESPONSIVE */
 @media (max-width:900px) {
-  .mini-hero { padding:110px 24px 56px; }
-  .mini-hero h1 { font-size:36px; letter-spacing:-0.5px; }
+  .mini-hero { min-height:400px; }
+  .mini-hero .inner { padding:110px 24px 56px; }
+  .mini-hero .frost { padding:32px; max-width:100%; }
+  .mini-hero h1 { font-size:32px; }
   .hiw-section { padding:64px 24px; }
   .steps-row { flex-direction:column; gap:12px; }
   .s-conn { justify-content:center; padding:4px 0; transform:rotate(90deg); }
@@ -195,12 +198,13 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 
 const html = `<!-- COMPACT HERO -->
 <section class="mini-hero">
-  <div class="mesh"></div>
-  <div class="grain"></div>
+  <div class="bg"><img src="/images/Hero_1.jpeg" alt=""><div class="vig"></div></div>
   <div class="inner">
-    <div class="lbl">Pricing</div>
-    <h1>Build your plan, protect their <em>future</em></h1>
-    <p>Choose your product, plan, and add-ons.</p>
+    <div class="frost">
+      <div class="lbl">Pricing</div>
+      <h1>Their future, your <em>choice</em></h1>
+      <p>Choose your product, plan, and add-ons.</p>
+    </div>
   </div>
 </section>
 <div class="page">
