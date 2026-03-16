@@ -67,22 +67,34 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .accred-badge .name { font-family:'Source Serif 4',serif; font-size:28px; color:#6C1A55; font-weight:400; margin-bottom:8px; }
 .accred-badge .desc { font-size:12px; color:#8A857A; line-height:1.5; }
 
-/* CLINICAL RESEARCH */
-.trials-bg { background:#F3F0F8; }
-.regen-card { background:#fff; border-radius:14px; padding:40px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); display:grid; grid-template-columns:1fr 280px; gap:40px; align-items:start; }
-.regen-card h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; margin-bottom:12px; line-height:1.2; }
-.regen-card .fda-badge { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.8px; text-transform:uppercase; padding:5px 12px; border-radius:100px; background:#FBF5F9; color:#6C1A55; margin-bottom:16px; }
-.regen-card .regen-desc { font-size:15px; color:#6B665D; line-height:1.7; margin-bottom:20px; }
-.regen-card .btn-plum { display:inline-block; background:#6C1A55; color:#fff; padding:12px 28px; border-radius:100px; font-size:14px; font-weight:700; text-decoration:none; font-family:'Lato',sans-serif; transition:all 0.25s; }
-.regen-card .btn-plum:hover { background:#5A1548; transform:translateY(-2px); box-shadow:0 8px 24px rgba(108,26,85,0.15); }
-.regen-stats { display:flex; flex-direction:column; gap:16px; }
-.regen-stat { text-align:center; padding:16px 0; border-bottom:1px solid #F0ECE6; }
-.regen-stat:last-child { border-bottom:none; }
-.regen-stat .rs-num { font-family:'Source Serif 4',serif; font-size:36px; color:#6C1A55; font-weight:400; line-height:1; }
-.regen-stat .rs-label { font-size:12px; color:#8A857A; margin-top:4px; }
-.trial-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
-.trial-tag { background:#fff; border-radius:12px; padding:16px 20px; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); font-size:14px; font-weight:700; color:#2C2A26; cursor:pointer; transition:all 0.25s; }
-.trial-tag:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+/* CLINICAL RESEARCH — PIPELINE */
+.pipeline-layout { display:grid; grid-template-columns:1fr 300px; gap:40px; }
+.pipe-row { padding:24px 0; border-bottom:1px solid #EDEAE6; }
+.pipe-row:first-child { border-top:1px solid #EDEAE6; }
+.pr-top { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:10px; }
+.pr-name { font-size:15px; font-weight:700; }
+.pr-phase { font-size:12px; color:#8A857A; font-weight:600; }
+.thin-bar-track { height:6px; background:#EDEAE6; border-radius:100px; overflow:hidden; }
+.thin-bar-fill { height:100%; border-radius:100px; transition:width 1.4s cubic-bezier(0.23,1,0.32,1); }
+.thin-bar-fill.plum { background:#6C1A55; }
+.thin-bar-fill.warm-a { background:#AEB5BD; }
+.thin-bar-fill.warm-b { background:#DEE2E6; }
+.pr-detail { display:flex; gap:24px; margin-top:10px; }
+.pr-detail .pd { font-size:11px; color:#8A857A; }
+.pr-detail .pd strong { color:#2C2A26; font-weight:700; }
+.pr-detail .pd strong.plum-val { color:#6C1A55; }
+.pipe-sidebar { display:flex; flex-direction:column; gap:16px; }
+.sidebar-card { background:#fff; border-radius:14px; padding:24px; box-shadow:0 1px 3px rgba(0,0,0,0.03); }
+.sidebar-card .sc-lbl { font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#8A857A; margin-bottom:12px; }
+.sidebar-card .sc-big { font-family:'Source Serif 4',serif; font-size:48px; font-weight:400; line-height:1; margin-bottom:4px; color:#6C1A55; }
+.sidebar-card .sc-sub { font-size:13px; color:#6B665D; line-height:1.5; }
+.sidebar-card .sc-vs { margin-top:10px; padding-top:10px; border-top:1px solid #F0EEEB; display:flex; align-items:baseline; gap:8px; }
+.sidebar-card .sc-vs .vs-num { font-family:'Source Serif 4',serif; font-size:24px; color:#C4BDB4; }
+.sidebar-card .sc-vs .vs-label { font-size:11px; color:#B0AB9E; }
+.sidebar-card .sc-badges { display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+.sidebar-card .sc-badge { padding:3px 10px; border-radius:100px; font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; }
+.sc-badge-plum { background:#FBF5F9; color:#6C1A55; }
+.sc-badge-neutral { background:#F0EEEB; color:#6B665D; }
 
 /* CTA */
 .cta-banner { margin:80px 48px; border-radius:16px; background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:80px 64px; text-align:center; position:relative; overflow:hidden; }
@@ -112,15 +124,14 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
   .feat-grid { grid-template-columns:1fr; }
   .proof-grid { grid-template-columns:1fr; }
   .accred-row { grid-template-columns:1fr 1fr; }
-  .regen-card { grid-template-columns:1fr; }
-  .trial-grid { grid-template-columns:1fr 1fr; }
+  .pipeline-layout { grid-template-columns:1fr; }
+  .pr-detail { flex-wrap:wrap; gap:12px; }
   .cta-banner { margin:48px 20px; padding:48px 24px; }
 }
 @media (max-width:600px) {
   .hero h1 { font-size:28px; }
   .stats { grid-template-columns:1fr; }
   .accred-row { grid-template-columns:1fr; }
-  .trial-grid { grid-template-columns:1fr; }
   .cta-banner .btns { flex-direction:column; align-items:center; }
 }
 `;
@@ -225,40 +236,70 @@ const html = `<!-- HERO -->
 </section>
 
 <!-- CLINICAL RESEARCH -->
-<section class="section-full trials-bg">
+<section class="section-full" style="background:#FAF9F7">
   <div class="inner">
     <div class="sh">
       <div class="lbl">Clinical research</div>
-      <h2>From the lab to FDA-licensed therapy</h2>
-      <p>StemCyte's commitment to research produced REGENECYTE&reg; &mdash; one of only a handful of FDA-licensed cord blood therapies in the world.</p>
+      <h2>From the lab to the patient</h2>
+      <p>StemCyte sponsors 3 active clinical trials developing cord blood therapies for conditions beyond traditional transplantation.</p>
     </div>
-    <div class="regen-card anim">
-      <div>
-        <h3>REGENECYTE&reg; (HPC, Cord Blood)</h3>
-        <span class="fda-badge">FDA-Licensed &middot; BLA 125764/0</span>
-        <p class="regen-desc">An allogeneic cord blood hematopoietic progenitor cell therapy indicated for hematopoietic and immunologic reconstitution across 80+ disease conditions.</p>
-        <a href="/regenecyte" class="btn-plum">Learn more &rarr;</a>
+    <div class="pipeline-layout">
+      <div class="pipe-list">
+        <div class="pipe-row anim">
+          <div class="pr-top">
+            <div class="pr-name"><strong>REGENECYTE&reg;</strong> &mdash; Long COVID</div>
+            <div class="pr-phase">Phase III / Expanded Access</div>
+          </div>
+          <div class="thin-bar-track"><div class="thin-bar-fill plum" data-width="88"></div></div>
+          <div class="pr-detail">
+            <div class="pd"><strong class="plum-val">FDA BLA</strong> approved 2024</div>
+            <div class="pd"><strong class="plum-val">RMAT</strong> designated</div>
+            <div class="pd"><strong class="plum-val">Expanded Access</strong> 2026</div>
+          </div>
+        </div>
+        <div class="pipe-row anim">
+          <div class="pr-top">
+            <div class="pr-name">Acute Ischemic Stroke</div>
+            <div class="pr-phase">Phase II</div>
+          </div>
+          <div class="thin-bar-track"><div class="thin-bar-fill warm-a" data-width="55"></div></div>
+          <div class="pr-detail">
+            <div class="pd">Phase I <strong>published</strong> in Cell Transplantation</div>
+            <div class="pd"><strong>Allogeneic</strong> cord blood</div>
+          </div>
+        </div>
+        <div class="pipe-row anim">
+          <div class="pr-top">
+            <div class="pr-name">Spinal Cord Injury</div>
+            <div class="pr-phase">Phase II</div>
+          </div>
+          <div class="thin-bar-track"><div class="thin-bar-fill warm-b" data-width="50"></div></div>
+          <div class="pr-detail">
+            <div class="pd">First hybrid bank with <strong>FDA Phase II</strong></div>
+            <div class="pd"><strong>HLA-matched</strong> cord blood</div>
+          </div>
+        </div>
       </div>
-      <div class="regen-stats">
-        <div class="regen-stat"><div class="rs-num">91%</div><div class="rs-label">Neutrophil recovery (Day 42)</div></div>
-        <div class="regen-stat"><div class="rs-num">73%</div><div class="rs-label">Platelet recovery 50K (Day 100)</div></div>
-        <div class="regen-stat"><div class="rs-num">22 days</div><div class="rs-label">Median neutrophil recovery</div></div>
+      <div class="pipe-sidebar">
+        <div class="sidebar-card anim">
+          <div class="sc-lbl">Published result</div>
+          <div class="sc-big">85%</div>
+          <div class="sc-sub">of Long COVID patients treated with REGENECYTE&reg; cord blood therapy saw fatigue resolve</div>
+          <div class="sc-vs">
+            <div class="vs-num">20%</div>
+            <div class="vs-label">control group</div>
+          </div>
+        </div>
+        <div class="sidebar-card anim">
+          <div class="sc-lbl">REGENECYTE&reg;</div>
+          <div class="sc-sub">StemCyte&rsquo;s FDA-licensed allogeneic HPC cord blood product &mdash; the first from a hybrid bank.</div>
+          <div class="sc-badges">
+            <span class="sc-badge sc-badge-plum">FDA BLA</span>
+            <span class="sc-badge sc-badge-plum">RMAT</span>
+            <span class="sc-badge sc-badge-neutral">Expanded Access</span>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="sh" style="margin-top:64px;">
-      <h2>Expanding the frontier</h2>
-      <p>StemCyte sponsors 3 active clinical trials exploring cord blood therapy for neurological conditions and beyond.</p>
-    </div>
-    <div class="trial-grid">
-      <div class="trial-tag anim">Post-COVID syndrome</div>
-      <div class="trial-tag anim">Acute stroke</div>
-      <div class="trial-tag anim">Spinal cord injury</div>
-      <div class="trial-tag anim">Cerebral palsy</div>
-      <div class="trial-tag anim">Autism</div>
-      <div class="trial-tag anim">Heart disease</div>
-      <div class="trial-tag anim">Alzheimer's</div>
-      <div class="trial-tag anim">500+ MSC trials globally</div>
     </div>
   </div>
 </section>
@@ -275,7 +316,10 @@ const html = `<!-- HERO -->
 
 `;
 
-const script = `// Scroll animations
+const script = `// Init pipeline bars at 0
+document.querySelectorAll('[data-width]').forEach(function(bar) { bar.style.width = '0%'; });
+
+// Scroll animations
 var obs = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {
     if (entry.isIntersecting) {
@@ -285,6 +329,22 @@ var obs = new IntersectionObserver(function(entries) {
   });
 }, { threshold: 0.12 });
 document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });
+
+// Number counters
+// Animate pipeline bars on scroll
+var barObs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      var bars = entry.target.querySelectorAll('[data-width]');
+      bars.forEach(function(bar) {
+        bar.style.width = bar.getAttribute('data-width') + '%';
+      });
+      barObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+var pipelineEl = document.querySelector('.pipeline-layout');
+if (pipelineEl) barObs.observe(pipelineEl);
 
 // Number counters
 document.querySelectorAll('.stat .num').forEach(function(el, idx) {
