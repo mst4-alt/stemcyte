@@ -427,8 +427,8 @@ const html = `<!-- HERO -->
 </section>
 
 <section class="cta-banner anim">
-  <h2>Your baby&rsquo;s stem cells can only be collected at <em>birth</em></h2>
-  <p>If your baby's cord blood is not collected, it's discarded as medical waste. There is no way to go back. The decision to bank is the decision to keep that door open.</p>
+  <h2>What happens if you don&rsquo;t <em>bank?</em></h2>
+  <p>If your baby&rsquo;s cord blood is not collected at birth, it&rsquo;s discarded as medical waste. There is no way to go back.</p>
   <div class="btns"><a href="/pricing" class="btn-w" style="display:inline-block;text-decoration:none">View plans &amp; pricing</a><a href="tel:8663894659" class="btn-gd" style="display:inline-block;text-decoration:none">Call (866) 389-4659</a></div>
 </section>
 
