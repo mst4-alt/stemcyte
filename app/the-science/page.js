@@ -63,7 +63,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .journey-content p strong { color:#2C2A26; }
 
 /* ── PLUM ZONE — CORD BLOOD ── */
-.zone-plum { background:#EDE6EC; }
+.zone-plum { background:#FBF5F9; }
 .zone-plum .zlbl { color:#6C1A55; }
 .zone-plum .circle-deco { width:500px; height:500px; background:#F0E0EB; left:-200px; bottom:-200px; }
 
