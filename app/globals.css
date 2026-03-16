@@ -24,7 +24,7 @@ body {
 }
 .nav.at-top { background: transparent; }
 .nav.scrolled {
-  background: rgba(250,247,242,0.92);
+  background: rgba(250,249,247,0.92);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(0,0,0,0.05);
 }
