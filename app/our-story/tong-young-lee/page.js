@@ -17,18 +17,27 @@ const timeline = [
   { year: 'Today', title: 'Leading StemCyte\u2019s next chapter', desc: 'Driving StemCyte\u2019s clinical pipeline forward\u2014including REGENECYTE\u00AE for Long COVID, acute stroke, cerebral palsy, and spinal cord injury. Secured FDA Expanded Access clearance for REGENECYTE\u00AE in Long COVID. Vision: to make StemCyte a leading biotech company in the Asia-Pacific region and globally.', highlight: true },
 ];
 
+const HighlightIcon = ({ type }) => {
+  const icons = {
+    dna: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M2 15c6.667-6 13.333 0 20-6"/><path d="M9 22c1.798-1.998 2.518-3.995 2.807-5.993"/><path d="M15 2c-1.798 1.998-2.518 3.995-2.807 5.993"/><path d="M17 6l-2.5 2.5"/><path d="M14 8l-1 1"/><path d="M7 18l2.5-2.5"/><path d="M3.5 14.5l.5-.5"/><path d="M20 9l.5-.5"/><path d="M6.5 12.5l1-1"/><path d="M16.5 10.5l1-1"/></svg>,
+    deal: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4943E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>,
+    rocket: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2A6B4F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>,
+  };
+  return icons[type] || null;
+};
+
 const highlights = [
-  { icon: '\uD83E\uDDEC', label: 'Avastin, Lucentis & Eylea', desc: 'Contributed to research behind the first three FDA-approved angiogenesis inhibitors at Harvard under Dr. Judah Folkman', bg: 'highlightIconPlum' },
-  { icon: '\uD83D\uDCB0', label: '$530M Licensing Deal', desc: 'Contributed to the development of FB825, licensed to LEO Pharma in one of Taiwan\u2019s largest biotech deals', bg: 'highlightIconGold' },
-  { icon: '\uD83C\uDFED', label: '4 Biotech Startups', desc: 'Led product development and governance through spin-offs, IPOs, listings, and acquisitions across 15 years', bg: 'highlightIconSage' },
+  { icon: 'dna', label: 'Avastin, Lucentis & Eylea', desc: 'Contributed to research behind the first three FDA-approved angiogenesis inhibitors at Harvard under Dr. Judah Folkman', bg: 'highlightIconPlum' },
+  { icon: 'deal', label: '$530M Licensing Deal', desc: 'Contributed to the development of FB825, licensed to LEO Pharma in one of Taiwan\u2019s largest biotech deals', bg: 'highlightIconGold' },
+  { icon: 'rocket', label: '4 Biotech Startups', desc: 'Led product development and governance through spin-offs, IPOs, listings, and acquisitions across 15 years', bg: 'highlightIconSage' },
 ];
 
 const tags = ['Angiogenesis', 'Cancer Immunotherapy', 'Antibody Drug Development', 'Cellular Therapy', 'Drug Discovery', 'Cord Blood Banking', 'Regenerative Medicine', 'Clinical Trials', 'Biotech Leadership'];
 
 export default function TongYoungLeePage() {
   const canvasRef = useRef(null);
-  const animRefs = useRef([]);
-  const tlItemRefs = useRef([]);
+  
+  
 
   // ── DNA helix particle canvas ──
   useEffect(() => {
@@ -90,17 +99,15 @@ export default function TongYoungLeePage() {
 
   // ── Scroll animations ──
   useEffect(() => {
+    const els = document.querySelectorAll("[data-anim]");
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add(s.animVisible); obs.unobserve(e.target); } });
-    }, { threshold: 0.15 });
-    animRefs.current.forEach(el => el && obs.observe(el));
-    tlItemRefs.current.forEach(el => el && obs.observe(el));
+    }, { threshold: 0.1 });
+    els.forEach(el => obs.observe(el));
     return () => obs.disconnect();
   }, []);
 
-  const addAnim = (el) => { if (el && !animRefs.current.includes(el)) animRefs.current.push(el); };
-  const addTl = (el) => { if (el && !tlItemRefs.current.includes(el)) tlItemRefs.current.push(el); };
-
+    
   return (
     <>
       <Nav transparentHero={true} />
@@ -127,22 +134,22 @@ export default function TongYoungLeePage() {
       {/* ── BIO ── */}
       <section className={s.section}>
         <div className={s.inner}>
-          <div className={s.secLabel + " " + s.anim} ref={addAnim}>Background</div>
-          <h2 className={s.secH2 + " " + s.anim} ref={addAnim}>From Harvard&rsquo;s angiogenesis lab to the future of cell therapy</h2>
-          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
+          <div className={s.secLabel + " " + s.anim} data-anim="" >Background</div>
+          <h2 className={s.secH2 + " " + s.anim} >From Harvard&rsquo;s angiogenesis lab to the future of cell therapy</h2>
+          <p className={s.bodyP + " " + s.anim} data-anim="" >
             Dr. Tong-Young Lee earned his PhD in pathology from National Taiwan University, Taiwan&rsquo;s most prestigious academic institution. He applied to over 100 post-doctoral programs in the United States and was selected to join the legendary laboratory of Dr. Judah Folkman at Harvard Medical School&mdash;widely recognized as the father of angiogenesis research.
           </p>
-          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
+          <p className={s.bodyP + " " + s.anim} data-anim="" >
             During his six years at Harvard (2004&ndash;2010), Dr. Lee contributed to the research and development of cancer treatments that would become the first three FDA-approved angiogenesis inhibitors: bevacizumab (Avastin), ranibizumab (Lucentis), and aflibercept (Eylea). Combined, these drugs generate over $15 billion in annual sales worldwide. He is also credited as the inventor of Fc-endostatin, a next-generation long-acting angiogenesis inhibitor.
           </p>
-          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
+          <p className={s.bodyP + " " + s.anim} data-anim="" >
             In 2010, Dr. Lee returned to Taiwan and joined the Chintek Group, where he contributed to the development of several antibody-based drugs, including the monoclonal antibody FB825, which was subsequently licensed to LEO Pharma of Denmark in a deal valued at up to $530 million. Over the next decade, he founded and led multiple biotech startups across immunotherapy, antibody discovery, and cellular therapy, guiding companies through spin-offs, IPOs, and international partnerships.
           </p>
-          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
+          <p className={s.bodyP + " " + s.anim} data-anim="" >
             Appointed CEO of StemCyte in 2021, Dr. Lee is now steering the company&rsquo;s evolution from a world-class cord blood bank into a regenerative medicine company with an active clinical pipeline targeting Long COVID, stroke, cerebral palsy, and spinal cord injury.
           </p>
 
-          <div className={s.insightCard + " " + s.anim} ref={addAnim}>
+          <div className={s.insightCard + " " + s.anim} data-anim="" >
             <div className={s.quoteText}>&ldquo;The vision is for StemCyte to be a leading biotech company in the Asia-Pacific region and eventually globally. We are not just a bank. We are a regenerative medicine company.&rdquo;</div>
             <div className={s.quoteAttr}>Tong-Young Lee, PhD &mdash; CEO, StemCyte</div>
           </div>
@@ -158,8 +165,8 @@ export default function TongYoungLeePage() {
           <h2 className={s.secH2}>Defining achievements</h2>
           <div className={s.highlightGrid}>
             {highlights.map((h, i) => (
-              <div className={s.highlightCard + ' ' + s.anim} key={i} ref={addAnim}>
-                <div className={s.highlightIcon + ' ' + s[h.bg]}>{h.icon}</div>
+              <div className={s.highlightCard + ' ' + s.anim} data-anim="" key={i} >
+                <div className={s.highlightIcon + ' ' + s[h.bg]}><HighlightIcon type={h.icon} /></div>
                 <h4>{h.label}</h4>
                 <p>{h.desc}</p>
               </div>
@@ -191,7 +198,7 @@ export default function TongYoungLeePage() {
           <div className={s.timeline}>
             <div className={s.tlTrack}></div>
             {timeline.map((item, i) => (
-              <div className={s.tlItem + ' ' + s.anim} key={i} ref={addTl}>
+              <div className={s.tlItem + ' ' + s.anim} data-anim="" key={i} >
                 <div className={s.tlDot + (item.highlight ? ' ' + s.tlDotHighlight : ' ' + s.tlDotActive)}></div>
                 <div className={s.tlYear}>{item.year}</div>
                 <div className={s.tlTitle}>{item.title}</div>
@@ -210,15 +217,15 @@ export default function TongYoungLeePage() {
           <div className={s.secLabel}>Education</div>
           <h2 className={s.secH2}>Academic credentials</h2>
           <div className={s.statRow}>
-            <div className={s.statCard + " " + s.anim} ref={addAnim}>
+            <div className={s.statCard + " " + s.anim} data-anim="" >
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>PhD</div>
               <div className={s.statLabel}>Pathology, National Taiwan University</div>
             </div>
-            <div className={s.statCard + " " + s.anim} ref={addAnim}>
+            <div className={s.statCard + " " + s.anim} data-anim="" >
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>Post-Doc</div>
               <div className={s.statLabel}>Harvard Medical School, Folkman Lab</div>
             </div>
-            <div className={s.statCard + " " + s.anim} ref={addAnim}>
+            <div className={s.statCard + " " + s.anim} data-anim="" >
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>15+ yrs</div>
               <div className={s.statLabel}>Biotech startup leadership across Asia-Pacific</div>
             </div>
@@ -233,7 +240,7 @@ export default function TongYoungLeePage() {
           <h2 className={s.secH2}>Meet our team</h2>
           <div className={s.otherLeaders}>
             <Link href="/our-story/jonas-wang" className={s.otherCard}>
-              <img className={s.otherAvatar} src="/images/our%20story/jonas.jpg" alt="Jonas Wang, PhD" />
+              <img className={s.otherAvatar} src="/images/our%20story/jonas-sm.jpg" alt="Jonas Wang, PhD" />
               <div className={s.otherInfo}>
                 <h4>Jonas Wang, PhD</h4>
                 <span>Chairman</span>
@@ -241,7 +248,7 @@ export default function TongYoungLeePage() {
               <svg className={s.otherArrow} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
             </Link>
             <Link href="/our-story/joseph-rosenthal" className={s.otherCard}>
-              <img className={s.otherAvatar} src="/images/our%20story/rosenthal.jpg" alt="Joseph Rosenthal, MD" />
+              <img className={s.otherAvatar} src="/images/our%20story/rosenthal-sm.jpg" alt="Joseph Rosenthal, MD" />
               <div className={s.otherInfo}>
                 <h4>Joseph Rosenthal, MD</h4>
                 <span>Chief Medical Officer</span>

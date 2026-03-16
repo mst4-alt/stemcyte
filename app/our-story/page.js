@@ -80,7 +80,7 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 .team-card a { text-decoration:none; color:inherit; display:block; }
 .team-card .view-link { font-size:13px; font-weight:700; color:#6C1A55; margin-top:12px; display:inline-flex; align-items:center; gap:4px; }
 .team-card .view-link svg { width:14px; height:14px; }
-.team-card .avatar { width:100%; aspect-ratio:1/1; object-fit:cover; object-position:center 35%; display:block; }
+.team-card .avatar { width:100%; aspect-ratio:1/1; object-fit:cover; object-position:center; display:block; }
 .team-card .info { padding:24px 28px 28px; }
 .team-card h3 { font-size:18px; font-weight:700; margin-bottom:4px; }
 .team-card .role { font-size:13px; color:#6C1A55; font-weight:600; margin-bottom:12px; }

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Nav from '../../../components/Nav';
 import s from './page.module.css';
@@ -16,18 +16,27 @@ const timeline = [
   { year: 'Today', title: 'Chairman, StemCyte International', desc: 'Leads StemCyte International (TPEX: 4178) as Chairman, overseeing operations across the United States and Taiwan. Under his leadership, StemCyte has shipped 2,300+ transplant units to 350+ hospitals in 35 countries and secured FDA BLA approval for REGENECYTE\u00AE.', highlight: true },
 ];
 
+const HighlightIcon = ({ type }) => {
+  const icons = {
+    medal: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4943E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>,
+    patent: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>,
+    globe: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2A6B4F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>,
+  };
+  return icons[type] || null;
+};
+
 const highlights = [
-  { icon: '\uD83C\uDFC6', label: 'Johnson Medal', desc: 'Highest technical achievement award at Johnson & Johnson, for breakthrough anti-wrinkle technology', bg: 'highlightIconGold' },
-  { icon: '\uD83D\uDCDC', label: '30+ Patents', desc: 'Filed over 30 business-related patents across drug delivery and pharmaceutical technologies', bg: 'highlightIconPlum' },
-  { icon: '\uD83C\uDF0D', label: 'Global Impact', desc: '2,300+ cord blood units shipped under his leadership to 350+ transplant centers in 35 countries', bg: 'highlightIconSage' },
+  { icon: 'medal', label: 'Johnson Medal', desc: 'Highest technical achievement award at Johnson & Johnson, for breakthrough anti-wrinkle technology', bg: 'highlightIconGold' },
+  { icon: 'patent', label: '30+ Patents', desc: 'Filed over 30 business-related patents across drug delivery and pharmaceutical technologies', bg: 'highlightIconPlum' },
+  { icon: 'globe', label: 'Global Impact', desc: '2,300+ cord blood units shipped under his leadership to 350+ transplant centers in 35 countries', bg: 'highlightIconSage' },
 ];
 
 const tags = ['Pharmaceutical R&D', 'Drug Delivery', 'Patent Strategy', 'Life Science Investment', 'Cord Blood Banking', 'Regenerative Medicine', 'Business Development', 'GMP Manufacturing'];
 
 export default function JonasWangPage() {
   const canvasRef = useRef(null);
-  const animRefs = useRef([]);
-  const tlItemRefs = useRef([]);
+  
+  
 
   // ── Particle canvas: floating molecular dots ──
   useEffect(() => {
@@ -97,18 +106,15 @@ export default function JonasWangPage() {
 
   // ── Scroll animations ──
   useEffect(() => {
+    const els = document.querySelectorAll("[data-anim]");
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add(s.animVisible); obs.unobserve(e.target); } });
-    }, { threshold: 0.15 });
-
-    animRefs.current.forEach(el => el && obs.observe(el));
-    tlItemRefs.current.forEach(el => el && obs.observe(el));
+    }, { threshold: 0.1 });
+    els.forEach(el => obs.observe(el));
     return () => obs.disconnect();
   }, []);
 
-  const addAnim = (el) => { if (el && !animRefs.current.includes(el)) animRefs.current.push(el); };
-  const addTl = (el) => { if (el && !tlItemRefs.current.includes(el)) tlItemRefs.current.push(el); };
-
+    
   return (
     <>
       <Nav transparentHero={true} />
@@ -135,19 +141,19 @@ export default function JonasWangPage() {
       {/* ── BIO ── */}
       <section className={s.section}>
         <div className={s.inner}>
-          <div className={s.secLabel + " " + s.anim} ref={addAnim}>Background</div>
-          <h2 className={s.secH2 + " " + s.anim} ref={addAnim}>From pharmaceutical R&amp;D to saving lives</h2>
-          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
+          <div className={s.secLabel + " " + s.anim} data-anim="" >Background</div>
+          <h2 className={s.secH2 + " " + s.anim} >From pharmaceutical R&amp;D to saving lives</h2>
+          <p className={s.bodyP + " " + s.anim} data-anim="" >
             Dr. Jonas Wang began his career in pharmaceutical science, earning a PhD in Physical Pharmacy from the University of Iowa after completing his pharmacy degree at the National Defense Medical Center in Taiwan. His early career took him to Bristol-Myers Squibb, where he served as Associate Director of Basic Pharmaceutics, before joining Johnson &amp; Johnson.
           </p>
-          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
+          <p className={s.bodyP + " " + s.anim} data-anim="" >
             At J&amp;J, Dr. Wang rose to Vice President of Research and Technology for Consumer Products and Corporate Director of the Drug Delivery Technology Resource Center. He was responsible for new product technology, patent strategy, and competitive intelligence across J&amp;J&rsquo;s skin and hair care franchise. During his tenure, he developed more than 10 core technologies and filed over 30 patents. His invention of a breakthrough anti-wrinkle cream technology earned him the Johnson Medal&mdash;the highest technical achievement award at Johnson &amp; Johnson.
           </p>
-          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
+          <p className={s.bodyP + " " + s.anim} data-anim="" >
             After J&amp;J, Dr. Wang joined Sycamore Management Corporation as a partner specializing in life sciences and biotechnology investments. In 2009, he brought his deep scientific expertise and business acumen to StemCyte, where he has served as Chairman and CEO, guiding the company&rsquo;s transformation into a global leader in cord blood banking and regenerative cell therapy.
           </p>
 
-          <div className={s.insightCard + " " + s.anim} ref={addAnim}>
+          <div className={s.insightCard + " " + s.anim} data-anim="" >
             <div className={s.quoteText}>&ldquo;At J&amp;J, I strove to invent the best anti-wrinkle technologies, which contributed to making millions of women feel more beautiful and confident. But as the holder of a PhD in pharmacy, my personal goal has always been to save lives.&rdquo;</div>
             <div className={s.quoteAttr}>Jonas Wang, PhD &mdash; Chairman, StemCyte</div>
           </div>
@@ -163,8 +169,8 @@ export default function JonasWangPage() {
           <h2 className={s.secH2}>Career achievements</h2>
           <div className={s.highlightGrid}>
             {highlights.map((h, i) => (
-              <div className={s.highlightCard + ' ' + s.anim} key={i} ref={addAnim}>
-                <div className={s.highlightIcon + ' ' + s[h.bg]}>{h.icon}</div>
+              <div className={s.highlightCard + ' ' + s.anim} data-anim="" key={i} >
+                <div className={s.highlightIcon + ' ' + s[h.bg]}><HighlightIcon type={h.icon} /></div>
                 <h4>{h.label}</h4>
                 <p>{h.desc}</p>
               </div>
@@ -196,7 +202,7 @@ export default function JonasWangPage() {
           <div className={s.timeline}>
             <div className={s.tlTrack}></div>
             {timeline.map((item, i) => (
-              <div className={s.tlItem + ' ' + s.anim} key={i} ref={addTl}>
+              <div className={s.tlItem + ' ' + s.anim} data-anim="" key={i} >
                 <div className={s.tlDot + (item.highlight ? ' ' + s.tlDotHighlight : ' ' + s.tlDotActive)}></div>
                 <div className={s.tlYear}>{item.year}</div>
                 <div className={s.tlTitle}>{item.title}</div>
@@ -215,15 +221,15 @@ export default function JonasWangPage() {
           <div className={s.secLabel}>Education</div>
           <h2 className={s.secH2}>Academic credentials</h2>
           <div className={s.statRow}>
-            <div className={s.statCard + " " + s.anim} ref={addAnim}>
+            <div className={s.statCard + " " + s.anim} data-anim="" >
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>PhD</div>
               <div className={s.statLabel}>Physical Pharmacy, University of Iowa</div>
             </div>
-            <div className={s.statCard + " " + s.anim} ref={addAnim}>
+            <div className={s.statCard + " " + s.anim} data-anim="" >
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>PharmD</div>
               <div className={s.statLabel}>National Defense Medical Center, Taiwan</div>
             </div>
-            <div className={s.statCard + " " + s.anim} ref={addAnim}>
+            <div className={s.statCard + " " + s.anim} data-anim="" >
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>Alumni</div>
               <div className={s.statLabel}>Distinguished Alumni, University of Iowa &amp; National Defense Medical Center</div>
             </div>
@@ -238,7 +244,7 @@ export default function JonasWangPage() {
           <h2 className={s.secH2}>Meet our team</h2>
           <div className={s.otherLeaders}>
             <Link href="/our-story/tong-young-lee" className={s.otherCard}>
-              <img className={s.otherAvatar} src="/images/our%20story/lee.jpg" alt="Tong-Young Lee, PhD" />
+              <img className={s.otherAvatar} src="/images/our%20story/lee-sm.jpg" alt="Tong-Young Lee, PhD" />
               <div className={s.otherInfo}>
                 <h4>Tong-Young Lee, PhD</h4>
                 <span>CEO</span>
@@ -246,7 +252,7 @@ export default function JonasWangPage() {
               <svg className={s.otherArrow} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
             </Link>
             <Link href="/our-story/joseph-rosenthal" className={s.otherCard}>
-              <img className={s.otherAvatar} src="/images/our%20story/rosenthal.jpg" alt="Joseph Rosenthal, MD" />
+              <img className={s.otherAvatar} src="/images/our%20story/rosenthal-sm.jpg" alt="Joseph Rosenthal, MD" />
               <div className={s.otherInfo}>
                 <h4>Joseph Rosenthal, MD</h4>
                 <span>Chief Medical Officer</span>

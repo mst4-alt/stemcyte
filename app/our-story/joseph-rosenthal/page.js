@@ -17,10 +17,19 @@ const timeline = [
   { year: 'Today', title: 'Chief Medical Officer, StemCyte', desc: 'Serves as CMO of StemCyte, bringing decades of clinical transplantation expertise to guide the company\u2019s cord blood product quality, clinical trial design, and medical strategy. Professor Emeritus at City of Hope.', highlight: true },
 ];
 
+const HighlightIcon = ({ type }) => {
+  const icons = {
+    hospital: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9h1"/><path d="M9 13h1"/><path d="M9 17h1"/></svg>,
+    publication: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2A6B4F" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>,
+    grant: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C4943E" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>,
+  };
+  return icons[type] || null;
+};
+
 const highlights = [
-  { icon: '\uD83C\uDFE5', label: '25+ Years at City of Hope', desc: 'Led the Pediatric Hematology/Oncology program and served as Barron Hilton Chair in Pediatrics at one of America\u2019s top NCI-designated cancer centers', bg: 'highlightIconPlum' },
-  { icon: '\uD83D\uDCDD', label: '100+ Publications', desc: 'Authored over 100 scientific publications across hematology, oncology, stem cell transplantation, and regenerative medicine', bg: 'highlightIconSage' },
-  { icon: '\uD83D\uDCB5', label: '$5.7M CIRM Grant', desc: 'Awarded California\u2019s largest stem cell research grant for a novel curative approach to sickle cell disease', bg: 'highlightIconGold' },
+  { icon: 'hospital', label: '25+ Years at City of Hope', desc: 'Led the Pediatric Hematology/Oncology program and served as Barron Hilton Chair in Pediatrics at one of America\u2019s top NCI-designated cancer centers', bg: 'highlightIconPlum' },
+  { icon: 'publication', label: '100+ Publications', desc: 'Authored over 100 scientific publications across hematology, oncology, stem cell transplantation, and regenerative medicine', bg: 'highlightIconSage' },
+  { icon: 'grant', label: '$5.7M CIRM Grant', desc: 'Awarded California\u2019s largest stem cell research grant for a novel curative approach to sickle cell disease', bg: 'highlightIconGold' },
 ];
 
 const tags = ['Bone Marrow Transplantation', 'Cord Blood Transplants', 'Pediatric Oncology', 'Sickle Cell Disease', 'CAR T-Cell Therapy', 'Graft-vs-Host Disease', 'Alternative Donor Transplants', 'Gene Therapy', 'Clinical Trials'];
@@ -35,8 +44,8 @@ const pubs = [
 
 export default function JosephRosenthalPage() {
   const canvasRef = useRef(null);
-  const animRefs = useRef([]);
-  const tlItemRefs = useRef([]);
+  
+  
 
   // ── Gentle rising cell particles canvas ──
   useEffect(() => {
@@ -99,17 +108,15 @@ export default function JosephRosenthalPage() {
 
   // ── Scroll animations ──
   useEffect(() => {
+    const els = document.querySelectorAll("[data-anim]");
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add(s.animVisible); obs.unobserve(e.target); } });
-    }, { threshold: 0.15 });
-    animRefs.current.forEach(el => el && obs.observe(el));
-    tlItemRefs.current.forEach(el => el && obs.observe(el));
+    }, { threshold: 0.1 });
+    els.forEach(el => obs.observe(el));
     return () => obs.disconnect();
   }, []);
 
-  const addAnim = (el) => { if (el && !animRefs.current.includes(el)) animRefs.current.push(el); };
-  const addTl = (el) => { if (el && !tlItemRefs.current.includes(el)) tlItemRefs.current.push(el); };
-
+    
   return (
     <>
       <Nav transparentHero={true} />
@@ -136,22 +143,22 @@ export default function JosephRosenthalPage() {
       {/* ── BIO ── */}
       <section className={s.section}>
         <div className={s.inner}>
-          <div className={s.secLabel + " " + s.anim} ref={addAnim}>Background</div>
-          <h2 className={s.secH2 + " " + s.anim} ref={addAnim}>A career spent fighting for the youngest patients</h2>
-          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
+          <div className={s.secLabel + " " + s.anim} data-anim="" >Background</div>
+          <h2 className={s.secH2 + " " + s.anim} >A career spent fighting for the youngest patients</h2>
+          <p className={s.bodyP + " " + s.anim} data-anim="" >
             Dr. Joseph Rosenthal is one of the most experienced pediatric stem cell transplantation specialists in the United States. He earned his medical degree from the Sackler School of Medicine at Tel Aviv University, completed fellowship training at the University of Colorado and Children&rsquo;s Hospital of Orange County, and later obtained a Master&rsquo;s in Health Care Management from Harvard School of Public Health and a JD from Purdue University.
           </p>
-          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
+          <p className={s.bodyP + " " + s.anim} data-anim="" >
             Beginning his career in Israel at Soroka Medical Center and Rambam Medical Center, Dr. Rosenthal joined City of Hope in 1996 and spent over 25 years transforming its pediatric hematology-oncology and bone marrow transplant programs. He rose to Chair of the Department of Pediatrics, Director of Pediatric Hematology/Oncology, and the Barron Hilton Professor and Chair in Pediatrics&mdash;one of the institution&rsquo;s most distinguished endowed positions.
           </p>
-          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
+          <p className={s.bodyP + " " + s.anim} data-anim="" >
             At City of Hope, he built a nationally recognized team specializing in transplantation for hematological malignancies, solid tumors, genetic inborn errors of metabolism, and non-malignant marrow failure syndromes. He became an authority on cord blood transplants, haplo-identical donor transplants, and supportive care for transplant patients, and led City of Hope&rsquo;s certification to provide CAR T-cell therapy for pediatric patients.
           </p>
-          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
+          <p className={s.bodyP + " " + s.anim} data-anim="" >
             In 2018, Dr. Rosenthal secured a $5.74 million grant from CIRM to advance a novel curative approach for sickle cell disease using mixed chimerism and T-cell depleted donor grafts. He has authored over 100 scientific publications and serves as a reviewer for <em>Blood and Bone Marrow Transplantation</em> and on the editorial board of the <em>Journal of Transplantation Technologies &amp; Research</em>.
           </p>
 
-          <div className={s.insightCard + " " + s.anim} ref={addAnim}>
+          <div className={s.insightCard + " " + s.anim} data-anim="" >
             <div className={s.quoteText}>&ldquo;City of Hope believes this treatment will improve the quality of life for patients while also reducing the risk for graft-versus-host disease and transplant-related complications. Our hope is that this treatment can eventually be offered to sickle cell disease patients as a curative therapy.&rdquo;</div>
             <div className={s.quoteAttr}>Joseph Rosenthal, MD &mdash; on CIRM-funded sickle cell research</div>
           </div>
@@ -167,8 +174,8 @@ export default function JosephRosenthalPage() {
           <h2 className={s.secH2}>Career milestones</h2>
           <div className={s.highlightGrid}>
             {highlights.map((h, i) => (
-              <div className={s.highlightCard + ' ' + s.anim} key={i} ref={addAnim}>
-                <div className={s.highlightIcon + ' ' + s[h.bg]}>{h.icon}</div>
+              <div className={s.highlightCard + ' ' + s.anim} data-anim="" key={i} >
+                <div className={s.highlightIcon + ' ' + s[h.bg]}><HighlightIcon type={h.icon} /></div>
                 <h4>{h.label}</h4>
                 <p>{h.desc}</p>
               </div>
@@ -200,7 +207,7 @@ export default function JosephRosenthalPage() {
           <div className={s.timeline}>
             <div className={s.tlTrack}></div>
             {timeline.map((item, i) => (
-              <div className={s.tlItem + ' ' + s.anim} key={i} ref={addTl}>
+              <div className={s.tlItem + ' ' + s.anim} data-anim="" key={i} >
                 <div className={s.tlDot + (item.highlight ? ' ' + s.tlDotHighlight : ' ' + s.tlDotActive)}></div>
                 <div className={s.tlYear}>{item.year}</div>
                 <div className={s.tlTitle}>{item.title}</div>
@@ -220,7 +227,7 @@ export default function JosephRosenthalPage() {
           <h2 className={s.secH2}>Selected publications &amp; research</h2>
           <div className={s.pubList}>
             {pubs.map((p, i) => (
-              <div className={s.pubItem + " " + s.anim} key={i} ref={addAnim}>
+              <div className={s.pubItem + " " + s.anim} data-anim="" key={i} >
                 <div className={s.pubDot}></div>
                 <div className={s.pubText}>{p.text}</div>
               </div>
@@ -235,15 +242,15 @@ export default function JosephRosenthalPage() {
           <div className={s.secLabel}>Education</div>
           <h2 className={s.secH2}>Academic credentials</h2>
           <div className={s.statRow}>
-            <div className={s.statCard + " " + s.anim} ref={addAnim}>
+            <div className={s.statCard + " " + s.anim} data-anim="" >
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>MD</div>
               <div className={s.statLabel}>Sackler School of Medicine, Tel Aviv University</div>
             </div>
-            <div className={s.statCard + " " + s.anim} ref={addAnim}>
+            <div className={s.statCard + " " + s.anim} data-anim="" >
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>MS</div>
               <div className={s.statLabel}>Health Care Management, Harvard School of Public Health</div>
             </div>
-            <div className={s.statCard + " " + s.anim} ref={addAnim}>
+            <div className={s.statCard + " " + s.anim} data-anim="" >
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>JD</div>
               <div className={s.statLabel}>Purdue University</div>
             </div>
@@ -258,7 +265,7 @@ export default function JosephRosenthalPage() {
           <h2 className={s.secH2}>Meet our team</h2>
           <div className={s.otherLeaders}>
             <Link href="/our-story/jonas-wang" className={s.otherCard}>
-              <img className={s.otherAvatar} src="/images/our%20story/jonas.jpg" alt="Jonas Wang, PhD" />
+              <img className={s.otherAvatar} src="/images/our%20story/jonas-sm.jpg" alt="Jonas Wang, PhD" />
               <div className={s.otherInfo}>
                 <h4>Jonas Wang, PhD</h4>
                 <span>Chairman</span>
@@ -266,7 +273,7 @@ export default function JosephRosenthalPage() {
               <svg className={s.otherArrow} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
             </Link>
             <Link href="/our-story/tong-young-lee" className={s.otherCard}>
-              <img className={s.otherAvatar} src="/images/our%20story/lee.jpg" alt="Tong-Young Lee, PhD" />
+              <img className={s.otherAvatar} src="/images/our%20story/lee-sm.jpg" alt="Tong-Young Lee, PhD" />
               <div className={s.otherInfo}>
                 <h4>Tong-Young Lee, PhD</h4>
                 <span>CEO</span>
