@@ -204,17 +204,54 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
   .footer-top { flex-direction:column; gap:24px; }
   .footer-bottom { flex-direction:column; gap:12px; text-align:center; }
   .partner-cols { grid-template-columns:1fr; }
+  .modal-overlay { padding:16px; }
+  .modal-box { max-height:90vh; }
+  .modal-header { padding:20px 20px 16px; }
+  .modal-search { padding:12px 20px; }
+  .modal-filters { padding:10px 20px; }
+  .modal-body { padding:8px 20px 24px; }
+  .modal-grid { grid-template-columns:1fr; }
 }
 
 /* PARTNERS */
-.partner-cols { display:grid; grid-template-columns:1fr 1fr; gap:0 48px; }
-.partner-row { padding:20px 0; border-bottom:1px solid #E8E2DC; display:flex; align-items:baseline; justify-content:space-between; }
-.partner-row .name { font-size:17px; font-weight:700; color:#2C2A26; transition:color 0.25s; }
+.partner-cols { display:grid; grid-template-columns:1fr 1fr; gap:0 64px; }
+.partner-row { padding:24px 0; border-bottom:1px solid #E8E2DC; display:flex; align-items:baseline; justify-content:space-between; transition:border-color 0.3s ease; }
+.partner-row .name { font-size:17px; font-weight:400; color:#2C2A26; transition:color 0.3s ease; }
 .partner-row .loc { font-size:13px; color:#8A857A; }
+.partner-row:hover { border-bottom-color:#C06AA5; }
 .partner-row:hover .name { color:#6C1A55; }
-.partner-div { display:flex; align-items:center; gap:16px; margin:36px 0 16px; }
+.partner-div { display:flex; align-items:center; gap:16px; margin:44px 0 20px; }
 .partner-div span { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#C06AA5; white-space:nowrap; }
 .partner-div::before, .partner-div::after { content:''; flex:1; height:1px; background:#E8E2DC; }
+.view-all-btn { display:flex; align-items:center; justify-content:center; gap:8px; margin:44px auto 0; padding:14px 32px; border-radius:100px; border:1.5px solid #E8E2DC; background:transparent; font-family:'Lato',sans-serif; font-size:15px; font-weight:700; color:#6C1A55; cursor:pointer; transition:all 0.25s; }
+.view-all-btn:hover { border-color:#6C1A55; background:#FBF5F9; }
+.modal-overlay { display:none; position:fixed; inset:0; z-index:200; background:rgba(44,42,38,0.5); backdrop-filter:blur(4px); justify-content:center; align-items:center; padding:32px; }
+.modal-overlay.open { display:flex; }
+.modal-box { background:#FAF7F2; border-radius:20px; width:100%; max-width:900px; max-height:80vh; display:flex; flex-direction:column; box-shadow:0 24px 80px rgba(0,0,0,0.2); overflow:hidden; }
+.modal-header { padding:28px 32px 20px; border-bottom:1px solid #E8E2DC; display:flex; align-items:flex-start; justify-content:space-between; flex-shrink:0; }
+.modal-header h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; color:#2C2A26; }
+.modal-header p { font-size:14px; color:#8A857A; margin-top:4px; }
+.modal-close { width:36px; height:36px; border-radius:50%; border:none; background:#F3F0F8; color:#6C1A55; font-size:20px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:background 0.2s; line-height:1; }
+.modal-close:hover { background:#EDE8F5; }
+.modal-search { padding:16px 32px; border-bottom:1px solid #E8E2DC; flex-shrink:0; }
+.modal-search input { width:100%; padding:12px 16px 12px 44px; border-radius:12px; border:1.5px solid #E8E2DC; background-color:#fff; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%238A857A' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='M21 21l-4.35-4.35'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:14px center; font-family:'Lato',sans-serif; font-size:15px; color:#2C2A26; outline:none; transition:border-color 0.2s; }
+.modal-search input:focus { border-color:#C06AA5; }
+.modal-search input::placeholder { color:#8A857A; }
+.modal-filters { padding:12px 32px; display:flex; gap:8px; flex-wrap:wrap; flex-shrink:0; border-bottom:1px solid #F3F0F8; }
+.filter-pill { padding:6px 16px; border-radius:100px; border:1px solid #E8E2DC; background:transparent; font-family:'Lato',sans-serif; font-size:13px; font-weight:600; color:#8A857A; cursor:pointer; transition:all 0.2s; }
+.filter-pill:hover { border-color:#C06AA5; color:#6C1A55; }
+.filter-pill.active { background:#6C1A55; color:#fff; border-color:#6C1A55; }
+.modal-body { overflow-y:auto; padding:8px 32px 32px; flex:1; }
+.modal-body::-webkit-scrollbar { width:6px; }
+.modal-body::-webkit-scrollbar-track { background:transparent; }
+.modal-body::-webkit-scrollbar-thumb { background:#E8E2DC; border-radius:3px; }
+.modal-region { margin-top:28px; }
+.modal-region:first-child { margin-top:16px; }
+.modal-region-header { display:flex; align-items:baseline; gap:10px; padding-bottom:10px; border-bottom:1px solid #E8E2DC; margin-bottom:4px; }
+.modal-region-title { font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#C06AA5; }
+.modal-region-count { font-size:11px; color:#8A857A; }
+.modal-grid { display:grid; grid-template-columns:1fr 1fr; gap:0 32px; }
+.modal-item { font-size:14px; color:#2C2A26; padding:10px 0; border-bottom:1px solid #F3F0F8; }
 
 `;
 
@@ -1002,44 +1039,75 @@ const html = `
   <p style="font-size:14px;color:#8A857A;line-height:1.7;max-width:600px;margin:24px auto 0;text-align:center;">StemCyte maintains every major accreditation in cord blood banking.</p>
 </section>
 
-<!-- GLOBAL PARTNERS -->
 <section class="partners-section">
   <div class="partners-inner">
   <div class="sh">
     <div class="lbl">Our global partners</div>
     <h2>Trusted by leading transplant centers worldwide</h2>
-    <p>Cord blood products utilized at leading transplant centers worldwide.</p>
+    <p>StemCyte cord blood units have been used at leading institutions across 35+ countries.</p>
   </div>
   <div class="partner-div"><span>United States</span></div>
   <div class="partner-cols">
     <div>
+      <div class="partner-row"><span class="name">Fred Hutchinson Cancer Center</span><span class="loc">Seattle, WA</span></div>
       <div class="partner-row"><span class="name">City of Hope</span><span class="loc">Duarte, CA</span></div>
-      <div class="partner-row"><span class="name">Mayo Clinic</span><span class="loc">Rochester, MN</span></div>
-      <div class="partner-row"><span class="name">UCLA Health</span><span class="loc">Los Angeles, CA</span></div>
+      <div class="partner-row"><span class="name">Dana-Farber Cancer Institute</span><span class="loc">Boston, MA</span></div>
+      <div class="partner-row"><span class="name">Duke University Medical Center</span><span class="loc">Durham, NC</span></div>
       <div class="partner-row"><span class="name">Stanford Health Care</span><span class="loc">Stanford, CA</span></div>
-      <div class="partner-row"><span class="name">Duke University</span><span class="loc">Durham, NC</span></div>
+      <div class="partner-row"><span class="name">UCLA Medical Center</span><span class="loc">Los Angeles, CA</span></div>
+      <div class="partner-row"><span class="name">Mount Sinai</span><span class="loc">New York, NY</span></div>
+      <div class="partner-row"><span class="name">Northwestern Memorial Hospital</span><span class="loc">Chicago, IL</span></div>
     </div>
     <div>
-      <div class="partner-row"><span class="name">Children&rsquo;s Hospital LA</span><span class="loc">Los Angeles, CA</span></div>
-      <div class="partner-row"><span class="name">Mount Sinai</span><span class="loc">New York, NY</span></div>
-      <div class="partner-row"><span class="name">Keck Medicine USC</span><span class="loc">Los Angeles, CA</span></div>
       <div class="partner-row"><span class="name">Texas Transplant Institute</span><span class="loc">San Antonio, TX</span></div>
+      <div class="partner-row"><span class="name">Vanderbilt University Medical Center</span><span class="loc">Nashville, TN</span></div>
+      <div class="partner-row"><span class="name">Cleveland Clinic</span><span class="loc">Cleveland, OH</span></div>
+      <div class="partner-row"><span class="name">Johns Hopkins</span><span class="loc">Baltimore, MD</span></div>
+      <div class="partner-row"><span class="name">Children&rsquo;s Hospital Los Angeles</span><span class="loc">Los Angeles, CA</span></div>
+      <div class="partner-row"><span class="name">MD Anderson Cancer Center</span><span class="loc">Houston, TX</span></div>
+      <div class="partner-row"><span class="name">Children&rsquo;s Hospital of Philadelphia</span><span class="loc">Philadelphia, PA</span></div>
     </div>
   </div>
   <div class="partner-div"><span>Global</span></div>
   <div class="partner-cols">
     <div>
-      <div class="partner-row"><span class="name">NUH Singapore</span><span class="loc">Singapore</span></div>
-      <div class="partner-row"><span class="name">H&ocirc;pital Saint Louis</span><span class="loc">Paris, France</span></div>
+      <div class="partner-row"><span class="name">Chang Gung Children&rsquo;s Hospital</span><span class="loc">Taiwan</span></div>
+      <div class="partner-row"><span class="name">Hospital Universitario de Monterrey</span><span class="loc">Mexico</span></div>
+      <div class="partner-row"><span class="name">The Hospital for Sick Children</span><span class="loc">Toronto, Canada</span></div>
+      <div class="partner-row"><span class="name">UMC Utrecht</span><span class="loc">Netherlands</span></div>
+      <div class="partner-row"><span class="name">National University Hospital</span><span class="loc">Singapore</span></div>
     </div>
     <div>
       <div class="partner-row"><span class="name">Apollo Specialty Hospital</span><span class="loc">Chennai, India</span></div>
-      <div class="partner-row"><span class="name">Foothills Medical Centre</span><span class="loc">Calgary, Canada</span></div>
+      <div class="partner-row"><span class="name">Foothills Medical Center</span><span class="loc">Calgary, Canada</span></div>
+      <div class="partner-row"><span class="name">H&ocirc;pital Saint Louis</span><span class="loc">Paris, France</span></div>
+      <div class="partner-row"><span class="name">Prince of Wales Hospital</span><span class="loc">Sydney, Australia</span></div>
+      <div class="partner-row"><span class="name">Rigshospitalet</span><span class="loc">Copenhagen, Denmark</span></div>
     </div>
   </div>
-  <p style="font-size:13px;color:#8A857A;text-align:center;margin-top:32px;">Partial list &mdash; StemCyte has shipped to 350+ hospitals across 35 countries.</p>
+  <button class="view-all-btn" onclick="document.getElementById('partner-modal').classList.add('open');document.body.style.overflow='hidden';renderPartnerModal();">View all partner institutions <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M7 7h10v10"/></svg></button>
   </div>
 </section>
+<div class="modal-overlay" id="partner-modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div><h3>Partner institutions</h3><p>340+ transplant centers across 35+ countries</p></div>
+      <button class="modal-close" onclick="document.getElementById('partner-modal').classList.remove('open');document.body.style.overflow='';">&times;</button>
+    </div>
+    <div class="modal-search"><input type="text" placeholder="Search institutions..." id="modal-search-input" oninput="renderPartnerModal()"></div>
+    <div class="modal-filters" id="modal-filters">
+      <button class="filter-pill active" onclick="setPartnerFilter('all',this)">All</button>
+      <button class="filter-pill" onclick="setPartnerFilter('United States',this)">United States</button>
+      <button class="filter-pill" onclick="setPartnerFilter('France',this)">France</button>
+      <button class="filter-pill" onclick="setPartnerFilter('United Kingdom',this)">UK</button>
+      <button class="filter-pill" onclick="setPartnerFilter('Spain',this)">Spain</button>
+      <button class="filter-pill" onclick="setPartnerFilter('Italy',this)">Italy</button>
+      <button class="filter-pill" onclick="setPartnerFilter('Canada',this)">Canada</button>
+      <button class="filter-pill" onclick="setPartnerFilter('India',this)">India</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
 
 <section class="cta-banner anim">
   <h2>Your baby&rsquo;s stem cells can only be collected at <em>birth</em></h2>
@@ -1106,6 +1174,12 @@ function updateTimeline() {
 }
 window.addEventListener('scroll', updateTimeline, {passive:true});
 updateTimeline();
+var partnerModalData={"United States":["Fred Hutchinson Cancer Center","University Medical Center Tucson","City of Hope","Dana-Farber Cancer Institute","Duke University Medical Center","Texas Transplant Institute","Stanford Health Care","UCLA Medical Center","Mount Sinai Medical Center","Northwestern Memorial Hospital","Vanderbilt University Medical Center","Oklahoma University Medical Center","Columbia / NYP Hospital","Weill Cornell Medical Center","Children's Hospital Colorado","Cleveland Clinic","Hackensack University Medical Center","University of Colorado Hospital","Indiana University Medical Center","University of Michigan Medical Center","University of Kansas Hospital","University of Chicago Medical Center","Cook Children's Medical Center","UCSD Thornton Hospital","University of Utah","Children's Hospital Los Angeles","CHOC Children's","Johns Hopkins University","Cedars-Sinai","MD Anderson Cancer Center","Children's Healthcare of Atlanta","Arthur G. James Cancer Hospital","Children's Hospital of Philadelphia","UCSF Medical Center","Beth Israel Deaconess Medical Center","Children's National Medical Center","Mayo Clinic","Massachusetts General Hospital","Oregon Health & Science University","Memorial Sloan Kettering Cancer Center","Texas Children's Hospital","St. Jude Children's Research Hospital","NIH Clinical Center","Emory University Hospital","Roswell Park Cancer Institute","Barnes Jewish Hospital / Washington University","Cincinnati Children's Medical Center","H. Lee Moffitt Cancer Center","UNC Hospitals","Medical University of South Carolina","Loyola University Medical Center","Karmanos Cancer Institute","Penn State Hershey Medical Center","University of Alabama at Birmingham","Robert Wood Johnson University Hospital","University of Louisville Hospital","Strong Memorial Hospital / University of Rochester","Medical College of Virginia","Shands Hospital / University of Florida","West Virginia University Hospitals","University of Mississippi Medical Center","University of Iowa Hospitals","Westchester Medical Center","University of Arkansas Medical Sciences","University of Wisconsin Hospital","Henry Ford Hospital","Stony Brook University Hospital","Nebraska Medical Center","Tufts Medical Center","UMass Memorial Medical Center","Children's Hospital of Pittsburgh","University of Illinois Medical Center","Avera McKennan Transplant Institute","Michigan Blood Grand Rapids","University Hospitals Cleveland","Seidman Cancer Center Cleveland","Roger Williams Medical Center","Inova Fairfax Hospital","Florida Hospital","All Children's Hospital St. Petersburg","University of Miami","University of Tennessee BMT Center"],"France":["H\u00f4pital Saint Louis, Paris","Institut Paoli Calmettes, Marseille","CHU Saint Eloi, Montpellier","H\u00f4pital Edouard Herriot, Lyon","H\u00f4pital de La Piti\u00e9 Salp\u00eatri\u00e8re, Paris","H\u00f4pital Henri Mondor, Cr\u00e9teil","EFS Bordeaux","EFS Toulouse","Centre de Transfusion Sanguine, Clamart","EFS Besan\u00e7on","EFS Nantes","EFS Rennes","CHU Nancy Brabois","Institut Gustave Roussy, Villejuif","CHU Estaing, Clermont-Ferrand","EFS Poitiers","H\u00f4pital Necker, Paris","EFS Lille","EFS Normandie","EFS Strasbourg"],"United Kingdom":["Royal Marsden Hospital, Surrey","Sheffield Teaching Hospitals","Great Ormond Street Hospital, London","John Radcliffe Hospital, Oxford","National Blood Service, Bristol","Royal Victoria Infirmary, Newcastle","Sheffield Children's Hospital","Christie Hospital, Manchester","NHSBT Birmingham","Hammersmith Hospital, London","UCLH, London","Bristol Royal Hospital for Children","Royal Liverpool Hospital","NHSBT Leeds","Royal Manchester Children's Hospital"],"Spain":["Banc de Sang, Barcelona","Centro de Transfusi\u00f3n, Valencia","Hospital Puerta de Hierro, Madrid","Hospital La Paz, Madrid","Banco de Cord\u00f3n de Andaluc\u00eda, M\u00e1laga","Hospital Virgen del Roc\u00edo, Sevilla","Centro de Transfusi\u00f3n, Madrid","Hospital Cl\u00ednico, Valencia","Centro de Transfusi\u00f3n, Galicia","Hospital Gregorio Mara\u00f1\u00f3n, Madrid","Hospital Reina Sof\u00eda, C\u00f3rdoba","Hospital de Salamanca","Hospital Virgen de la Arrixaca, Murcia"],"Italy":["Ospedale Regina Margherita, Turin","Ospedale San Martino, Genoa","Ospedale San Gerardo, Monza","Policlinico S. Orsola, Bologna","AOU Meyer, Florence","IRCCS Policlinico San Matteo, Pavia","Ospedale Bambino Ges\u00f9, Rome","Ospedale Molinette, Turin","Ospedale Camillo-Forlanini, Rome"],"Brazil":["Hospital Amaral Carvalho, S\u00e3o Paulo","Hospital de Cl\u00ednicas, Curitiba","Hospital Albert Einstein, S\u00e3o Paulo","Hospital S\u00edrio-Liban\u00eas, S\u00e3o Paulo","Instituto Nacional de Cancer, Rio de Janeiro","Hospital de Cl\u00ednicas Porto Alegre"],"Canada":["The Hospital for Sick Children, Toronto","Foothills Medical Center, Calgary","Royal Victoria Hospital, Montreal","CHU Sainte-Justine, Montreal","H\u00f4pital Maisonneuve-Rosemont, Montreal","Alberta Children's Hospital","BC Children's Hospital, Vancouver","BC Cancer Research Centre, Vancouver","CancerCare Manitoba, Winnipeg","H\u00f4tel-Dieu de Qu\u00e9bec"],"India":["AIIMS, New Delhi","Apollo Specialty Hospital, Chennai","Gujarat Cancer & Research Institute, Ahmedabad","Apollo Hospitals, Hyderabad","Deenanath Mangeshkar Hospital, Pune","Apollo Gleneagles Hospital, Kolkata","BLK Super Speciality Hospital, New Delhi","Tata Memorial Hospital, Mumbai"],"Australia":["Prince of Wales Hospital, Sydney","Royal Perth Hospital","Westmead Hospital, Sydney","Royal Prince Alfred Hospital, Sydney","Royal Brisbane & Women's Hospital","Royal Melbourne Hospital","Royal Children's Hospital, Melbourne"],"Argentina":["Hospital de Pediatr\u00eda, Buenos Aires","Instituto Alexander Fleming, Buenos Aires","Fundaci\u00f3n Favaloro, Buenos Aires","Hospital Universitario Austral, Buenos Aires"],"Israel":["Schneider Children's Medical Center","Rambam Medical Center, Haifa","Chaim Sheba Medical Center","Hadassah University Hospital"],"Netherlands":["UMC Utrecht","Erasmus Medical Center, Rotterdam","Leiden University Medical Center","Maastricht UMC"],"Singapore":["National University Hospital","Mount Elizabeth Hospital","Singapore General Hospital"],"Germany":["University Hospital Hamburg","University Hospital D\u00fcsseldorf","University Children's Hospital T\u00fcbingen","University Hospital Ulm"],"Mexico":["Hospital Universitario de Monterrey","Centro M\u00e9dico Nacional La Raza, Mexico City"],"Taiwan":["Chang Gung Children's Hospital","Veterans General Hospital, Taipei"],"Austria":["Vienna General Hospital","Krankenhaus Elisabethinen, Linz","Medical University of Graz"],"Turkey":["Ankara University Hospital","Antalya Medical Park Hospital","Akdeniz University Hospital"],"Sweden":["Karolinska University Hospital, Stockholm","Sahlgrenska University Hospital, Gothenburg","Uppsala University Hospital"],"Malaysia":["Hospital Ampang","Subang Jaya Medical Center","University Malaya Medical Center"],"Belgium":["CHU Li\u00e8ge","UZ Brussel","ZNA Stuivenberg, Antwerp"],"Chile":["Pontificia Universidad Cat\u00f3lica, Santiago","Cl\u00ednica Santa Mar\u00eda, Santiago"],"Greece":["Papanicolaou Hospital, Thessaloniki","Agia Sophia Children's Hospital, Athens"],"Switzerland":["University Hospital Geneva","University Children's Hospital Basel"],"Portugal":["Instituto Portugu\u00eas de Oncologia, Lisbon","Instituto Portugu\u00eas de Oncologia, Porto"],"Japan":["Kanagawa Cancer Center, Yokohama","Nippon Medical School Hospital, Tokyo"],"Denmark":["Rigshospitalet, Copenhagen"],"New Zealand":["New Zealand Blood Service, Auckland"],"Saudi Arabia":["King Faisal Specialist Hospital, Riyadh"],"Ireland":["Our Lady's Children's Hospital, Dublin"],"Colombia":["Cl\u00ednica de Marly, Bogot\u00e1"],"Finland":["Helsinki University Central Hospital"],"Poland":["Pozna\u0144 University Hospital"],"Egypt":["Nasser Institute, Cairo"],"Norway":["Oslo University Hospital"],"Hong Kong":["Prince of Wales Hospital"],"Oman":["Sultan Qaboos University Hospital, Muscat"],"South Africa":["University of Cape Town"]};
+var partnerFilter='all';
+function renderPartnerModal(){var b=document.getElementById('modal-body');var s=(document.getElementById('modal-search-input').value||'').toLowerCase();var h='';Object.keys(partnerModalData).forEach(function(r){if(partnerFilter!=='all'&&r!==partnerFilter)return;var items=partnerModalData[r].filter(function(i){return!s||i.toLowerCase().indexOf(s)!==-1;});if(items.length===0)return;h+='<div class="modal-region"><div class="modal-region-header"><span class="modal-region-title">'+r+'</span><span class="modal-region-count">'+items.length+'</span></div><div class="modal-grid">';items.forEach(function(i){h+='<div class="modal-item">'+i+'</div>';});h+='</div></div>';});if(!h)h='<p style="text-align:center;color:#8A857A;padding:48px 0;">No institutions found.</p>';b.innerHTML=h;}
+function setPartnerFilter(r,el){partnerFilter=r;document.querySelectorAll('.filter-pill').forEach(function(p){p.classList.remove('active');});el.classList.add('active');renderPartnerModal();}
+document.getElementById('partner-modal').addEventListener('click',function(e){if(e.target===this){this.classList.remove('open');document.body.style.overflow='';}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){var m=document.getElementById('partner-modal');if(m)m.classList.remove('open');document.body.style.overflow='';}});
 `;
 
 export default function OurStory() {
