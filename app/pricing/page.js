@@ -132,11 +132,9 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .mini-hero .grain { position:absolute; inset:0; opacity:0.15; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size:128px 128px; }
 .mini-hero .inner { position:relative; z-index:2; max-width:1100px; margin:0 auto; text-align:center; }
 .mini-hero .lbl { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#E8A0D0; margin-bottom:20px; }
-.mini-hero h1 { font-family:'Playfair Display',serif; font-size:56px; font-weight:400; color:#fff; line-height:1.06; margin-bottom:18px; max-width:700px; margin-left:auto; margin-right:auto; letter-spacing:-1.5px; }
+.mini-hero h1 { font-family:'Playfair Display',serif; font-size:56px; font-weight:400; color:#fff; line-height:1.06; margin-bottom:18px; max-width:none; margin-left:auto; margin-right:auto; letter-spacing:-1.5px; white-space:nowrap; }
 .mini-hero h1 em { font-style:italic; color:#E8A0D0; }
 .mini-hero p { font-size:16px; color:rgba(255,255,255,0.4); max-width:480px; margin:0 auto 32px; line-height:1.7; }
-.mini-hero .trust-row { display:flex; gap:12px; justify-content:center; }
-.mini-hero .trust-row span { font-size:11px; font-weight:700; color:rgba(255,255,255,0.5); padding:8px 20px; border-radius:100px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(4px); letter-spacing:0.3px; }
 
 /* HOW IT WORKS SECTION */
 .hiw-section { background:#F3F0F8; padding:80px 48px; }
@@ -183,7 +181,6 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 @media (max-width:900px) {
   .mini-hero { padding:110px 24px 56px; }
   .mini-hero h1 { font-size:36px; letter-spacing:-0.5px; }
-  .mini-hero .trust-row { flex-wrap:wrap; justify-content:center; }
   .hiw-section { padding:64px 24px; }
   .steps-row { flex-direction:column; gap:12px; }
   .s-conn { justify-content:center; padding:4px 0; transform:rotate(90deg); }
@@ -203,13 +200,7 @@ const html = `<!-- COMPACT HERO -->
   <div class="inner">
     <div class="lbl">Pricing</div>
     <h1>Build your plan, protect their <em>future</em></h1>
-    <p>Choose your product, plan, and add-ons. Your total updates in real time. No hidden fees.</p>
-    <div class="trust-row">
-      <span>FDA registered</span>
-      <span>FACT accredited</span>
-      <span>AABB accredited</span>
-      <span>LifeSaver Guarantee</span>
-    </div>
+    <p>Choose your product, plan, and add-ons.</p>
   </div>
 </section>
 <div class="page">
