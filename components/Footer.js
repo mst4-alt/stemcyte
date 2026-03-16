@@ -16,7 +16,7 @@ export default function Footer() {
           <Link href="/the-science">The Science</Link>
           <Link href="/why-stemcyte">Why StemCyte</Link>
           <Link href="/regenecyte">REGENECYTE&reg;</Link>
-          <Link href="/hiv-remission">HIV-1 Remission</Link>
+          <Link href="/our-story/hiv-remission">HIV-1 Remission</Link>
           <Link href="/patient-stories">Patient Stories</Link>
           <Link href="/faq">FAQ</Link>
         </div>

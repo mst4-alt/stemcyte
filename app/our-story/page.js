@@ -847,7 +847,7 @@ const html = `
           <strong><em>Cell</em>, March 2023</strong>
           <span>&mdash; &ldquo;HIV-1 remission and possible cure in a woman after haplo-cord blood transplant&rdquo;</span>
         </div>
-        <a href="/hiv-remission" style="display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:14px;font-weight:600;color:#6C1A55;text-decoration:none;">Read the full story &rarr;</a>
+        <a href="/our-story/hiv-remission" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:12px 28px;background:#6C1A55;color:#fff;border-radius:100px;font-size:14px;font-weight:700;text-decoration:none;transition:background 0.2s,transform 0.2s;box-shadow:0 2px 8px rgba(108,26,85,0.18);" onmouseover="this.style.background='#5A1548';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#6C1A55';this.style.transform='translateY(0)'">Read the full story &rarr;</a>
       </div>
     </div>
   </div>
