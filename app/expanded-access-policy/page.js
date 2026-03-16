@@ -1,0 +1,271 @@
+import PageContent from '../../components/PageContent';
+
+export const metadata = {
+  title: 'Expanded Access Policy | StemCyte',
+  description: 'StemCyte\u2019s Expanded Access (compassionate use) policy for REGENECYTE\u00AE (HPC, Cord Blood), including patient eligibility, physician requirements, and how to request access for Long COVID.',
+};
+
+const css = `
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; overflow-x:hidden; }
+
+/* HERO */
+.eap-hero { background:linear-gradient(180deg,#1a0820 0%,#2d1038 40%,#3D0F31 100%); padding:160px 48px 72px; position:relative; overflow:hidden; }
+.eap-hero::after { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 80%, rgba(108,26,85,0.25) 0%, transparent 60%); pointer-events:none; }
+.eap-hero-inner { max-width:860px; margin:0 auto; position:relative; z-index:2; }
+.eap-hero .overline { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#E8A0D0; margin-bottom:16px; display:inline-flex; align-items:center; gap:8px; }
+.eap-hero .overline .dot { width:6px; height:6px; border-radius:50%; background:#E8A0D0; }
+.eap-hero h1 { font-family:'Playfair Display',serif; font-size:44px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; color:#fff; margin-bottom:16px; }
+.eap-hero .subtitle { font-size:17px; color:rgba(255,255,255,0.5); line-height:1.7; max-width:640px; }
+
+/* NOTICE BAR */
+.eap-notice { background:#F3F0F8; border-bottom:1px solid #E8E2DC; }
+.eap-notice-inner { max-width:860px; margin:0 auto; padding:20px 48px; display:flex; align-items:flex-start; gap:14px; }
+.eap-notice .notice-icon { flex-shrink:0; width:20px; height:20px; margin-top:2px; }
+.eap-notice .notice-text { font-size:14px; color:#5A564E; line-height:1.7; }
+.eap-notice .notice-text a { color:#6C1A55; text-decoration:underline; text-underline-offset:2px; font-weight:600; }
+.eap-notice .notice-text a:hover { color:#8B2E72; }
+
+/* BODY LAYOUT */
+.eap-body { max-width:860px; margin:0 auto; padding:56px 48px 80px; }
+
+/* SECTION */
+.eap-section { margin-top:48px; }
+.eap-section:first-child { margin-top:0; }
+.eap-section-label { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:8px; }
+.eap-section h2 { font-family:'Playfair Display',serif; font-size:26px; font-weight:400; letter-spacing:-0.3px; color:#2C2A26; margin-bottom:16px; line-height:1.25; }
+.eap-section p { font-size:15px; line-height:1.8; color:#5A564E; margin-bottom:14px; }
+.eap-section p:last-child { margin-bottom:0; }
+
+/* CRITERIA CARDS */
+.criteria-grid { display:grid; gap:20px; margin-top:24px; }
+.criteria-card { background:#fff; border-radius:12px; padding:28px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
+.criteria-card .card-header { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+.criteria-card .card-icon { width:40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.criteria-card .card-icon svg { width:20px; height:20px; }
+.criteria-card h3 { font-size:17px; font-weight:700; color:#2C2A26; }
+.criteria-card ul { list-style:none; }
+.criteria-card ul li { font-size:14px; line-height:1.75; color:#5A564E; padding:6px 0 6px 24px; position:relative; border-bottom:1px solid #F5F2ED; }
+.criteria-card ul li:last-child { border-bottom:none; }
+.criteria-card ul li::before { content:''; position:absolute; left:0; top:14px; width:8px; height:8px; border-radius:50%; border:2px solid #C06AA5; }
+
+/* INDICATION HIGHLIGHT */
+.indication-box { background:linear-gradient(135deg, #FBF5F9 0%, #F3F0F8 100%); border-radius:12px; padding:32px; margin-top:24px; border:1px solid #E8A0D0; position:relative; overflow:hidden; }
+.indication-box::before { content:''; position:absolute; top:0; left:0; width:4px; height:100%; background:#6C1A55; border-radius:4px 0 0 4px; }
+.indication-box .ind-label { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:8px; }
+.indication-box h3 { font-family:'Playfair Display',serif; font-size:22px; font-weight:400; color:#2C2A26; margin-bottom:8px; }
+.indication-box p { font-size:15px; color:#5A564E; line-height:1.7; margin-bottom:0; }
+.indication-box .trial-link { display:inline-flex; align-items:center; gap:6px; margin-top:14px; font-size:13px; font-weight:700; color:#6C1A55; text-decoration:none; transition:color 0.2s; }
+.indication-box .trial-link:hover { color:#8B2E72; }
+.indication-box .trial-link svg { width:14px; height:14px; }
+
+/* PRODUCT CARD */
+.product-card { background:#fff; border-radius:12px; padding:28px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); margin-top:24px; display:flex; gap:24px; align-items:flex-start; }
+.product-badge { flex-shrink:0; width:56px; height:56px; border-radius:14px; background:linear-gradient(135deg, #6C1A55 0%, #3D0F31 100%); display:flex; align-items:center; justify-content:center; }
+.product-badge svg { width:28px; height:28px; }
+.product-info h3 { font-size:17px; font-weight:700; color:#2C2A26; margin-bottom:4px; }
+.product-info .prod-detail { font-size:13px; color:#8A857A; line-height:1.6; margin-bottom:0; }
+
+/* CONTACT BOX */
+.eap-contact { background:#fff; border-radius:12px; padding:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); margin-top:32px; text-align:center; }
+.eap-contact h3 { font-family:'Playfair Display',serif; font-size:22px; font-weight:400; color:#2C2A26; margin-bottom:8px; }
+.eap-contact p { font-size:15px; color:#5A564E; line-height:1.7; margin-bottom:20px; }
+.eap-contact .contact-email { display:inline-flex; align-items:center; gap:8px; background:#6C1A55; color:#fff; padding:14px 32px; border-radius:100px; font-size:15px; font-weight:700; text-decoration:none; transition:background 0.2s, transform 0.15s; }
+.eap-contact .contact-email:hover { background:#5A1548; transform:translateY(-1px); }
+.eap-contact .contact-email svg { width:18px; height:18px; }
+.eap-contact .response-note { font-size:13px; color:#B0AB9E; margin-top:14px; margin-bottom:0; }
+
+/* DIVIDER */
+.eap-divider { height:1px; background:#E8E2DC; margin:48px 0 0; }
+
+/* LEGAL */
+.eap-legal { margin-top:48px; padding:24px 28px; background:#F5F2ED; border-radius:12px; }
+.eap-legal p { font-size:13px; color:#8A857A; line-height:1.7; margin-bottom:0; }
+
+/* CTA BANNER */
+.eap-cta-banner { background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:64px 48px; text-align:center; }
+.eap-cta-banner h2 { font-family:'Playfair Display',serif; font-size:32px; font-weight:400; color:#fff; margin-bottom:12px; letter-spacing:-0.5px; }
+.eap-cta-banner p { font-size:16px; color:rgba(255,255,255,0.5); margin-bottom:28px; max-width:480px; margin-left:auto; margin-right:auto; line-height:1.7; }
+.eap-cta-banner .btn { display:inline-block; background:#fff; color:#6C1A55; padding:14px 36px; border-radius:100px; font-size:15px; font-weight:700; text-decoration:none; transition:transform 0.15s, box-shadow 0.2s; }
+.eap-cta-banner .btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.25); }
+
+/* RESPONSIVE */
+@media (max-width:900px) {
+  .eap-hero { padding:130px 24px 56px; }
+  .eap-hero h1 { font-size:36px; }
+  .eap-notice-inner { padding:16px 24px; }
+  .eap-body { padding:40px 24px 64px; }
+  .product-card { flex-direction:column; gap:16px; }
+  .eap-cta-banner { padding:48px 24px; }
+  .eap-cta-banner h2 { font-size:28px; }
+}
+@media (max-width:600px) {
+  .eap-hero { padding:110px 20px 40px; }
+  .eap-hero h1 { font-size:28px; }
+  .eap-hero .subtitle { font-size:15px; }
+  .eap-notice-inner { padding:14px 20px; flex-direction:column; gap:8px; }
+  .eap-body { padding:32px 20px 48px; }
+  .eap-section h2 { font-size:22px; }
+  .criteria-card { padding:20px; }
+  .indication-box { padding:24px; }
+  .eap-contact { padding:24px; }
+  .eap-cta-banner { padding:40px 20px; }
+  .eap-cta-banner h2 { font-size:24px; }
+}
+`;
+
+const html = `
+<div id="hero">
+<div class="eap-hero">
+  <div class="eap-hero-inner">
+    <div class="overline"><span class="dot"></span> Regulatory &amp; Access</div>
+    <h1>Expanded Access Policy</h1>
+    <p class="subtitle">StemCyte&rsquo;s compassionate use framework for investigational therapies &mdash; providing access to REGENECYTE&reg; (HPC, Cord Blood) for patients with serious unmet medical needs.</p>
+  </div>
+</div>
+</div>
+
+<!-- Notice bar -->
+<div class="eap-notice">
+  <div class="eap-notice-inner">
+    <svg class="notice-icon" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#6C1A55" stroke-width="1.5"/><path d="M10 6v5M10 13.5v.5" stroke="#6C1A55" stroke-width="1.5" stroke-linecap="round"/></svg>
+    <p class="notice-text">As authorized by the <strong>21st Century Cures Act</strong>, StemCyte makes this policy publicly available to describe how we evaluate and respond to expanded access requests under Section 561(b) of the Federal Food, Drug, and Cosmetic Act.</p>
+  </div>
+</div>
+
+<div class="eap-body">
+
+  <!-- Background -->
+  <div class="eap-section">
+    <div class="eap-section-label">Background</div>
+    <h2>What is expanded access?</h2>
+    <p>Expanded access, also known as compassionate use, is a pathway that allows patients with serious or life-threatening conditions to receive an investigational therapy outside of a clinical trial when no comparable or satisfactory alternative treatment is available.</p>
+    <p>StemCyte&rsquo;s expanded access policy encompasses three pathways: an Expanded Access Program (EAP), single patient emergency IND (eIND), and single patient expanded access. Each pathway is evaluated on a case-by-case basis in accordance with FDA regulations.</p>
+  </div>
+
+  <div class="eap-divider"></div>
+
+  <!-- Current indication -->
+  <div class="eap-section">
+    <div class="eap-section-label">Current Program</div>
+    <h2>Therapeutic indication</h2>
+    <p>The FDA has cleared an Expanded Access Program for REGENECYTE&reg; to address unmet medical need in patients suffering from severe Post-Acute Sequelae of SARS-CoV-2 (Long COVID).</p>
+
+    <div class="indication-box">
+      <div class="ind-label">Active Expanded Access Indication</div>
+      <h3>Post-COVID Condition (Long COVID)</h3>
+      <p>In StemCyte&rsquo;s Phase IIa clinical trials, 85% of Long COVID patients treated with REGENECYTE&reg; experienced statistically significant resolution of chronic fatigue, compared to 20% in the placebo group. The EAP provides a pathway for eligible patients who cannot participate in ongoing Phase III multi-center trials.</p>
+      <a class="trial-link" href="https://clinicaltrials.gov/study/NCT07332338" target="_blank" rel="noopener">
+        View clinical trial on ClinicalTrials.gov
+        <svg viewBox="0 0 14 14" fill="none"><path d="M5 2h7v7M12 2L2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="product-card">
+      <div class="product-badge">
+        <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="8" stroke="#fff" stroke-width="1.5"/><circle cx="14" cy="14" r="3" fill="#E8A0D0"/><path d="M14 6v3M14 19v3M6 14h3M19 14h3" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div class="product-info">
+        <h3>REGENECYTE&reg; (HPC, Cord Blood)</h3>
+        <p class="prod-detail">FDA-licensed hematopoietic progenitor cell product &bull; BLA 125764/0 &bull; RMAT Designated</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="eap-divider"></div>
+
+  <!-- Eligibility criteria -->
+  <div class="eap-section">
+    <div class="eap-section-label">Eligibility</div>
+    <h2>Who qualifies for expanded access?</h2>
+    <p>To be considered for expanded access, patients, the investigational product, and treating physicians must each meet specific criteria.</p>
+
+    <div class="criteria-grid">
+      <!-- Patient criteria -->
+      <div class="criteria-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:rgba(108,26,85,0.08);">
+            <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="4" stroke="#6C1A55" stroke-width="1.5"/><path d="M3 18c0-3.87 3.13-7 7-7s7 3.13 7 7" stroke="#6C1A55" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Patient Eligibility</h3>
+        </div>
+        <ul>
+          <li>The patient has a serious or life-threatening condition with no satisfactory alternative treatment available</li>
+          <li>The patient is ineligible for participation in any ongoing clinical study of the investigational product, including due to geographic limitations</li>
+          <li>The patient has not received any cell-based therapy within the past 12 months</li>
+          <li>A clinical assessment determines that the potential benefits outweigh the risks</li>
+          <li>The patient agrees to comply with all study requirements and complete all scheduled visits</li>
+        </ul>
+      </div>
+
+      <!-- Product criteria -->
+      <div class="criteria-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:rgba(61,139,106,0.08);">
+            <svg viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="3" stroke="#3D8B6A" stroke-width="1.5"/><path d="M10 7v6M7 10h6" stroke="#3D8B6A" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Investigational Product Criteria</h3>
+        </div>
+        <ul>
+          <li>The product is under clinical investigation in one or more clinical trials with high safety profiles</li>
+          <li>StemCyte has adequate supply of the investigational product to support access</li>
+          <li>Providing expanded access will not interfere with StemCyte&rsquo;s ability to complete clinical trials in a timely manner or delay marketing approval</li>
+        </ul>
+      </div>
+
+      <!-- Physician criteria -->
+      <div class="criteria-card">
+        <div class="card-header">
+          <div class="card-icon" style="background:rgba(59,109,196,0.08);">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 2l2 4 4.5.7-3.3 3.2.8 4.5L10 12.3 5.9 14.4l.8-4.5L3.5 6.7 8 6z" stroke="#3B6DC4" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Treating Physician Requirements</h3>
+        </div>
+        <ul>
+          <li>The physician must be properly licensed in their jurisdiction</li>
+          <li>The physician must meet all applicable country-specific legal and regulatory requirements for providing investigational products under expanded access</li>
+          <li>The physician must be qualified and experienced in cord blood or stem cell infusion</li>
+          <li>The physician must agree in writing to comply with StemCyte&rsquo;s requirements for safety reporting and protection of intellectual property</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="eap-divider"></div>
+
+  <!-- How to request -->
+  <div class="eap-section">
+    <div class="eap-section-label">Request Process</div>
+    <h2>How to request access</h2>
+    <p>Expanded access requests are initiated by the treating physician. StemCyte evaluates each request individually and will make best efforts to acknowledge receipt within 10 business days.</p>
+
+    <div class="eap-contact">
+      <h3>Physician Inquiry</h3>
+      <p>Treating physicians may submit questions and requests regarding expanded access directly to StemCyte&rsquo;s clinical team.</p>
+      <a class="contact-email" href="mailto:expandedaccess@stemcyte.com">
+        <svg viewBox="0 0 18 18" fill="none"><rect x="2" y="4" width="14" height="10" rx="2" stroke="#fff" stroke-width="1.5"/><path d="M2 6l7 4.5L16 6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        expandedaccess@stemcyte.com
+      </a>
+      <p class="response-note">Requests are typically acknowledged within 10 business days.</p>
+    </div>
+  </div>
+
+  <!-- Legal -->
+  <div class="eap-legal">
+    <p>As authorized by the 21st Century Cures Act, StemCyte may revise this expanded access policy at any time. The posting of this policy shall not serve as a guarantee of access to any specific investigational drug by any individual patient. Expanded access is subject to FDA regulations and is evaluated on a case-by-case basis. Clinical outcomes are not guaranteed.</p>
+  </div>
+
+</div>
+
+<!-- CTA Banner -->
+<section class="eap-cta-banner">
+  <h2>Learn about REGENECYTE&reg;</h2>
+  <p>FDA-licensed cord blood therapy advancing regenerative medicine through clinical research.</p>
+  <a class="btn" href="/regenecyte">View REGENECYTE&reg; &rarr;</a>
+</section>
+`;
+
+export default function ExpandedAccessPolicyPage() {
+  return <PageContent css={css} html={html} transparentNav={true} />;
+}
