@@ -69,6 +69,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 
 /* Impact hero */
 .impact-hero { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; max-width:1100px; margin:0 auto 48px; }
+.impact-left { text-align:center; }
 .impact-big { font-family:'Source Serif 4',serif; font-size:120px; color:#6C1A55; font-weight:400; line-height:1; }
 .impact-label { font-size:20px; font-weight:700; color:#2C2A26; margin-top:4px; }
 .impact-sublabel { font-size:15px; color:#8A857A; margin-top:4px; }
@@ -310,7 +311,7 @@ const html = `<!-- HERO -->
 
     <!-- Impact hero -->
     <div class="impact-hero anim">
-      <div>
+      <div class="impact-left">
         <div class="impact-big">80+</div>
         <div class="impact-label">diseases treatable today</div>
         <div class="impact-sublabel">with cord blood stem cell transplants</div>
