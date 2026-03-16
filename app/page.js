@@ -9,15 +9,11 @@ const css = `
 html { scroll-behavior:smooth; }
 body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
 
-/* NAV */
-
 /* HERO */
 .hero { min-height:100vh; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; text-align:center; background:#000; }
 .hero .bg { position:absolute; inset:0; object-fit:cover; width:100%; height:100%; filter:saturate(0.7); }
 .hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.55) 55%,rgba(0,0,0,0.78) 100%); }
 .hero .ct { position:relative; z-index:2; max-width:680px; padding:0 24px; margin-top:-60px; }
-.hero .badge { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.1); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.15); padding:8px 20px; border-radius:100px; font-size:12px; color:rgba(255,255,255,0.7); margin-bottom:28px; }
-.hero .badge::before { content:''; width:6px; height:6px; background:#E8A0D0; border-radius:50%; }
 .hero h1 { font-family:'Playfair Display',serif; font-size:58px; font-weight:400; line-height:1.08; letter-spacing:-2px; color:#fff; margin-bottom:16px; }
 .hero h1 em { font-style:italic; color:#E8A0D0; }
 .hero .sub { font-size:17px; color:rgba(255,255,255,0.55); line-height:1.7; max-width:520px; margin:0 auto 36px; }
@@ -38,12 +34,23 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .sh h2 { font-family:'Playfair Display',serif; font-size:36px; font-weight:400; letter-spacing:-0.5px; margin-bottom:10px; line-height:1.15; }
 .sh p { font-size:16px; color:#8A857A; max-width:520px; line-height:1.7; }
 
-/* VALUE CARDS */
+/* TRUST BAR */
+.trust-bar { padding:28px 48px; background:#FAF7F2; }
+.trust-bar-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:center; }
+.trust-item { text-align:center; padding:0 32px; }
+.trust-item .t-val { font-family:'Source Serif 4',serif; font-size:26px; color:#6C1A55; font-weight:400; line-height:1.3; }
+.trust-item .t-lbl { font-size:11px; color:#8A857A; margin-top:2px; letter-spacing:0.5px; }
+.trust-sep { width:1px; height:40px; background:#E8E2DC; flex-shrink:0; }
+
+/* VALUE CARDS (WHY STEMCYTE) */
 .uv-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-.uv-card { background:#fff; border-radius:12px; padding:28px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
+.uv-card { background:#fff; border-radius:12px; padding:28px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); text-decoration:none; color:inherit; display:block; transition:all 0.25s; position:relative; }
+.uv-card:hover { transform:translateY(-4px); box-shadow:0 8px 24px rgba(0,0,0,0.08),0 1px 3px rgba(0,0,0,0.04); }
 .uv-card .ic { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
-.uv-card h3 { font-size:16px; font-weight:700; margin-bottom:8px; }
+.uv-card h3 { font-size:16px; font-weight:700; margin-bottom:8px; color:#2C2A26; }
 .uv-card p { font-size:15px; color:#8A857A; line-height:1.7; }
+.uv-card .card-arrow { position:absolute; bottom:20px; right:20px; font-size:18px; color:#C06AA5; opacity:0; transition:opacity 0.25s; }
+.uv-card:hover .card-arrow { opacity:1; }
 
 /* STEPS V2 */
 .steps-row { display:flex; align-items:stretch; gap:0; }
@@ -54,36 +61,6 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .s-card p { font-size:15px; color:#8A857A; line-height:1.7; }
 .s-conn { display:flex; align-items:center; padding:0 2px; flex-shrink:0; }
 .s-ln { width:24px; height:1px; background:#D8D0E0; }
-
-/* PLANS */
-.plans-toggle-wrap { text-align:center; margin-bottom:32px; }
-.plans-toggle { display:inline-flex; background:#F5EDE6; border-radius:100px; padding:4px; }
-.plans-toggle button { padding:10px 24px; border-radius:100px; border:none; font-family:'Lato',sans-serif; font-size:13px; font-weight:700; cursor:pointer; transition:all 0.2s; background:transparent; color:#8A857A; }
-.plans-toggle button.active { background:#fff; color:#6C1A55; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
-.plan-cards { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-.plan-card { background:#fff; border-radius:12px; padding:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); transition:all 0.25s; cursor:pointer; display:flex; flex-direction:column; }
-.plan-card:hover { box-shadow:0 0 0 3px rgba(108,26,85,0.12),0 4px 16px rgba(0,0,0,0.06); }
-.plan-card.feat { box-shadow:0 0 0 2px #6C1A55,0 1px 3px rgba(0,0,0,0.04); }
-.plan-card .tag { display:inline-block; background:#FBF5F9; color:#6C1A55; font-size:10px; font-weight:700; padding:4px 12px; border-radius:100px; margin-bottom:12px; }
-.plan-card h3 { font-size:18px; font-weight:700; margin-bottom:4px; }
-.plan-card .pd { font-size:15px; color:#8A857A; margin-bottom:16px; line-height:1.6; }
-.plan-card .price { font-family:'Source Serif 4',serif; font-size:36px; color:#6C1A55; font-weight:400; }
-.plan-card .pdet { font-size:12px; color:#B0AB9E; margin-top:2px; margin-bottom:16px; }
-.plan-card .feats { list-style:none; margin-bottom:20px; flex:1; }
-.plan-card .feats li { font-size:15px; color:#6B665D; padding:6px 0 6px 20px; position:relative; }
-.plan-card .feats li::before { content:''; position:absolute; left:0; top:12px; width:8px; height:8px; border-radius:50%; border:2px solid #C06AA5; }
-.plan-card .pbtn { display:block; width:100%; text-align:center; background:#6C1A55; color:#fff; padding:14px; border-radius:100px; font-size:14px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; }
-.plan-note { text-align:center; margin-top:24px; font-size:13px; color:#8A857A; }
-.plan-note a { color:#6C1A55; text-decoration:none; font-weight:700; }
-
-/* SPLIT */
-.split { max-width:1100px; margin:0 auto; padding:80px 48px; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
-.split .photo { border-radius:12px; overflow:hidden; height:420px; transition:all 0.3s; }
-.split .photo:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.08); }
-.split .photo img { width:100%; height:100%; object-fit:cover; }
-.split .text .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:10px; }
-.split .text h2 { font-family:'Playfair Display',serif; font-size:34px; font-weight:400; margin-bottom:16px; line-height:1.2; }
-.split .text p { font-size:15px; color:#8A857A; line-height:1.7; margin-bottom:12px; }
 
 /* TESTIMONIALS */
 .test-wrap { background:#EDE8F5; padding:80px 48px; }
@@ -101,6 +78,9 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .faq-item summary::after { content:'+'; font-size:20px; color:#C06AA5; font-weight:300; transition:transform 0.2s; }
 .faq-item[open] summary::after { transform:rotate(45deg); }
 .faq-item p { font-size:15px; color:#8A857A; line-height:1.7; margin-top:12px; padding-right:32px; }
+.faq-more { margin-top:28px; }
+.faq-more a { font-size:15px; font-weight:700; color:#6C1A55; text-decoration:none; }
+.faq-more a:hover { text-decoration:underline; }
 
 /* CTA */
 .cta-banner { margin:80px 48px; border-radius:16px; background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:80px 64px; text-align:center; position:relative; overflow:hidden; }
@@ -113,8 +93,6 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .btn-w:hover { background:rgba(255,255,255,0.85); }
 .btn-gd { background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
 .btn-gd:hover { background:rgba(255,255,255,0.20); border-color:rgba(255,255,255,0.35); }
-
-/* FOOTER */
 
 /* ANIMATIONS */
 .anim { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease, transform 0.7s ease; }
@@ -129,12 +107,13 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 @media (max-width:900px) {
   .hero h1 { font-size:40px; }
   .section, .section-full { padding:64px 24px; }
+  .trust-bar { padding:24px 24px; }
+  .trust-bar-inner { flex-wrap:wrap; gap:20px; }
+  .trust-sep { display:none; }
+  .trust-item { padding:0 16px; }
   .uv-grid { grid-template-columns:1fr; }
   .steps-row { flex-direction:column; gap:12px; }
   .s-conn { justify-content:center; padding:4px 0; transform:rotate(90deg); }
-  .plan-cards { grid-template-columns:1fr; }
-  .split { grid-template-columns:1fr; gap:32px; padding:48px 24px; }
-  .split .photo { height:280px; }
   .test-wrap { padding:64px 24px; }
   .test-grid { grid-template-columns:1fr; }
   .cta-banner { margin:48px 20px; padding:48px 24px; }
@@ -162,7 +141,37 @@ const html = `<!-- HERO -->
   </div>
 </section>
 
-<!-- ADVANTAGE -->
+<!-- TRUST BAR -->
+<div class="trust-bar anim">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <div class="t-val">2,300+</div>
+      <div class="t-lbl">Transplants worldwide</div>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <div class="t-val">FDA</div>
+      <div class="t-lbl">Licensed</div>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <div class="t-val">FACT</div>
+      <div class="t-lbl">Accredited</div>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <div class="t-val">AABB</div>
+      <div class="t-lbl">Accredited</div>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <div class="t-val">1997</div>
+      <div class="t-lbl">Founded</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY STEMCYTE -->
 <section class="section">
   <div class="sh">
     <div class="lbl">The StemCyte advantage</div>
@@ -170,21 +179,24 @@ const html = `<!-- HERO -->
     <p>StemCyte is both a private and public cord blood bank &mdash; the only one that gives your family access to both.</p>
   </div>
   <div class="uv-grid">
-    <div class="uv-card anim">
+    <a href="/public-bank-access" class="uv-card anim">
       <div class="ic" style="background:#FBF5F9"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
       <h3>Public bank access</h3>
       <p>If your child needs more stem cells, StemCyte can provide a matching unit from our public bank &mdash; or search all global public banks. A benefit only StemCyte can offer.</p>
-    </div>
-    <div class="uv-card anim">
+      <span class="card-arrow">&rarr;</span>
+    </a>
+    <a href="/why-stemcyte" class="uv-card anim">
       <div class="ic" style="background:#F0F7F4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D8B6A" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-      <h3>1 in every 26 transplants worldwide</h3>
-      <p>StemCyte has shipped over 2,300 units for transplant &mdash; more than any other private cord blood bank. Our closest competitor: fewer than 700.</p>
-    </div>
-    <div class="uv-card anim">
-      <div class="ic" style="background:#FDF5EB"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C4943E" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-      <h3>FACT + AABB + FDA accredited</h3>
-      <p>Triple-accredited with the gold standard FACT accreditation &mdash; voluntary for private banks and globally recognized as the highest quality benchmark.</p>
-    </div>
+      <h3>FACT accredited</h3>
+      <p>The gold standard in cell therapy quality &mdash; voluntary for private banks, and globally recognized as the highest benchmark. Most private banks don't have it.</p>
+      <span class="card-arrow">&rarr;</span>
+    </a>
+    <a href="/lifesaver-guarantee" class="uv-card anim">
+      <div class="ic" style="background:#FDF5EB"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C4943E" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <h3>LifeSaver Guarantee</h3>
+      <p>If your cord blood unit ever fails to engraft, StemCyte will refund all fees, pay $50,000, and provide a replacement unit from our donor bank &mdash; free of charge.</p>
+      <span class="card-arrow">&rarr;</span>
+    </a>
   </div>
 </section>
 
@@ -194,7 +206,7 @@ const html = `<!-- HERO -->
 <section class="section-full" style="background:#F3F0F8">
   <div class="inner">
     <div class="sh">
-      <div class="lbl">The Science</div>
+      <div class="lbl">How it works</div>
       <h2>3 simple steps</h2>
       <p>From enrollment to preservation &mdash; the entire process is designed to be effortless for you.</p>
     </div>
@@ -214,30 +226,6 @@ const html = `<!-- HERO -->
         <p>Our 24/7 courier picks up. Processing at our FDA-licensed lab. Cryopreserved for life.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- PRICING CTA -->
-<section class="section-full" style="background:#F3F0F8">
-  <div style="max-width:1100px;margin:0 auto;text-align:center;padding:20px 0">
-    <div class="sh" style="text-align:center;max-width:100%">
-      <div class="lbl">Pricing</div>
-      <h2>Cord blood banking starts at $725</h2>
-      <p style="max-width:520px;margin:0 auto 28px">Build your plan in minutes. Choose your product, storage term, and add-ons &mdash; see your total in real time.</p>
-    </div>
-    <a href="/pricing" class="btn-p" style="display:inline-block;text-decoration:none">Build your plan &rarr;</a>
-  </div>
-</section>
-<div class="divider"><div class="divider-line"></div></div>
-
-<!-- LIFESAVER -->
-<section class="split">
-  <div class="photo anim"><img src="/images/Hero_6.jpeg" alt="" style="object-position:center 60%"></div>
-  <div class="text anim">
-    <div class="lbl">LifeSaver Guarantee</div>
-    <h2>The safety net no other bank provides</h2>
-    <p>If your newborn's cord blood unit ever fails to engraft, StemCyte will refund all service fees, pay your family an additional $50,000, and provide a replacement unit from our donor bank free of charge.</p>
-    <p>Included at no additional cost with every plan.</p>
   </div>
 </section>
 
@@ -263,18 +251,30 @@ const html = `<!-- HERO -->
   </div>
 </section>
 
+<!-- PRICING TEASER -->
+<section class="section-full" style="background:#F3F0F8">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;padding:20px 0">
+    <div class="sh anim" style="text-align:center;max-width:100%">
+      <div class="lbl">Pricing</div>
+      <h2>Starts at less than $2 a day</h2>
+      <p style="max-width:520px;margin:0 auto 28px">Build your plan in minutes.</p>
+    </div>
+    <a href="/pricing" class="btn-p anim" style="display:inline-block;text-decoration:none">Build your plan &rarr;</a>
+  </div>
+</section>
+
 <!-- FAQ PREVIEW -->
 <section class="section">
-  <div class="sh">
-    <div class="lbl">Frequently asked questions</div>
-    <h2>Common questions from expecting parents</h2>
+  <div class="sh anim">
+    <div class="lbl">Common questions</div>
+    <h2>What expecting parents ask most</h2>
   </div>
-  <div class="faq-list">
-    <details class="faq-item"><summary>What is cord blood banking?</summary><p>Cord blood banking preserves the stem cells found in your baby's umbilical cord blood after birth. These stem cells can treat over 80 diseases including cancers, blood disorders, and immune disorders. Your newborn's stem cells can only be collected immediately after birth.</p></details>
-    <details class="faq-item"><summary>Should I bank both cord blood and cord tissue?</summary><p>Yes! &mdash; they contain different types of stem cells. Cord blood contains hematopoietic stem cells that regenerate blood and immune systems. Cord tissue contains mesenchymal stem cells being researched in over 500 clinical trials for regenerative medicine.</p></details>
-    <details class="faq-item"><summary>Is the collection process safe?</summary><p>Completely safe. Cord blood is collected after the baby is born and the umbilical cord has been clamped and cut. It does not interfere with delivery, and no blood is taken from the baby or mother.</p></details>
-    <details class="faq-item"><summary>What is public bank access?</summary><p>Unique to StemCyte &mdash; if your child ever needs more stem cells than were stored, we can provide a matching unit from our public cord blood bank, extend the search to all global public banks, or pay up to $80,000 toward uncovered medical expenses.</p></details>
+  <div class="faq-list anim">
+    <details class="faq-item"><summary>Can I still do delayed cord clamping?</summary><p>Yes. The American College of Obstetricians and Gynecologists recommends a 30&ndash;60 second delay, and cord blood can still be collected after that window. Most families do both. Talk to your OB about your birth plan &mdash; a short delay gives your baby the benefit of extra blood volume while still leaving plenty of cord blood for banking.</p></details>
+    <details class="faq-item"><summary>What if my child never needs it?</summary><p>Cord blood stem cells aren't limited to the child they came from. Siblings have a 25% chance of being a perfect match, and parents are always a half-match. Beyond family use, cord blood is being studied in over 500 clinical trials for conditions like cerebral palsy, autism, and stroke. What can be treated today is just the beginning.</p></details>
+    <details class="faq-item"><summary>Why StemCyte over other cord blood banks?</summary><p>StemCyte is the only private bank that also operates a public cord blood bank &mdash; so if your child ever needs more stem cells than were stored, we can source a matching unit. We've provided units for over 2,300 transplants worldwide (1 in every 26), and every plan includes the LifeSaver Guarantee: full refund + $50,000 + a replacement unit if engraftment fails.</p></details>
   </div>
+  <div class="faq-more anim"><a href="/faq">View all frequently asked questions &rarr;</a></div>
 </section>
 
 <!-- CTA -->
@@ -298,17 +298,7 @@ var obs = new IntersectionObserver(function(entries) {
     }
   });
 }, { threshold: 0.12 });
-document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });
-
-// Plans toggle
-function togglePlans(t, b) {
-  document.getElementById('plans-cb').style.display = t === 'cb' ? 'block' : 'none';
-  document.getElementById('plans-cbt').style.display = t === 'cbt' ? 'block' : 'none';
-  document.querySelectorAll('.plans-toggle button').forEach(function(x) {
-    x.classList.remove('active');
-  });
-  b.classList.add('active');
-}`;
+document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });`;
 
 export default function Page() {
   return <PageContent css={css} html={html} script={script} transparentNav={true} />;
