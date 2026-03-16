@@ -13,7 +13,7 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 
 /* HERO */
 .hero { position:relative; min-height:540px; display:flex; align-items:flex-end; overflow:hidden; }
-.hero .bg { position:absolute; inset:0; background-image:url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=1600&q=80'); background-size:cover; background-position:center; }
+.hero .bg { position:absolute; inset:0; background-image:url('/images/Hero_1.jpeg'); background-size:cover; background-position:center; }
 .hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%); }
 .hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
 .hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
@@ -128,22 +128,7 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 }
 `;
 
-const html = `<!-- NAV -->
-<nav class="nav at-top" id="nav">
-  <a href="/" class="logo">Stem<b>Cyte</b></a>
-  <div class="links">
-    <a href="/the-science">The Science</a>
-    <a href="/why-stemcyte" class="active">Why StemCyte</a>
-    <a href="/pricing">Pricing</a>
-    <a href="/patient-stories">Patient Stories</a>
-    <a href="/faq">FAQ</a>
-  </div>
-  <div class="rg">
-    <a href="/pricing" class="cta">Enroll now</a>
-  </div>
-</nav>
-
-<!-- HERO -->
+const html = `<!-- HERO -->
 <section class="hero" id="hero">
   <div class="bg"></div>
   <div class="vig"></div>
@@ -169,7 +154,7 @@ const html = `<!-- NAV -->
 <!-- PUBLIC BANK ACCESS -->
 <section class="section">
   <div class="split anim">
-    <div class="photo"><img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=800&q=80" alt=""></div>
+    <div class="photo"><img src="/images/Hero_3.jpeg" alt=""></div>
     <div class="text">
       <div class="lbl">Only at StemCyte</div>
       <h2>Public bank access &mdash; protection no one else offers</h2>
@@ -183,7 +168,7 @@ const html = `<!-- NAV -->
     </div>
   </div>
   <div class="split rev anim">
-    <div class="photo"><img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&q=80" alt="" style="object-position:center 60%;"></div>
+    <div class="photo"><img src="/images/Hero_5.jpeg" alt="" style="object-position:center 60%;"></div>
     <div class="text">
       <div class="lbl">Transplant experience</div>
       <h2>More transplants than any other private cord blood bank</h2>
@@ -297,21 +282,6 @@ const html = `<!-- NAV -->
 
 <!-- FOOTER -->
 <script>
-// Nav scroll behavior
-var nav = document.getElementById('nav');
-var hero = document.getElementById('hero');
-function ckNav() {
-  if (hero.getBoundingClientRect().bottom < 80) {
-    nav.classList.remove('at-top');
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.add('at-top');
-    nav.classList.remove('scrolled');
-  }
-}
-window.addEventListener('scroll', ckNav);
-ckNav();
-
 // Scroll animations
 var obs = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {

@@ -13,7 +13,7 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 
 /* HERO */
 .hero { position:relative; min-height:540px; display:flex; align-items:flex-end; overflow:hidden; }
-.hero .bg { position:absolute; inset:0; background-image:url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=1600&q=80'); background-size:cover; background-position:center; }
+.hero .bg { position:absolute; inset:0; background-image:url('/images/Hero_2.jpeg'); background-size:cover; background-position:center; }
 .hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%); }
 .hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
 .hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
@@ -64,23 +64,7 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 }
 `;
 
-const html = `<!-- NAV -->
-<nav class="nav at-top" id="nav">
-  <a href="/" class="logo">Stem<b>Cyte</b></a>
-  <div class="links">
-    <a href="/the-science">The Science</a>
-    <a href="/why-stemcyte">Why StemCyte</a>
-    <a href="/pricing">Pricing</a>
-    <a href="/patient-stories">Patient Stories</a>
-    <a href="/faq" class="active">FAQ</a>
-  </div>
-  <div class="rg">
-    
-    <a href="/pricing" class="cta">Enroll now</a>
-  </div>
-</nav>
-
-<!-- HERO -->
+const html = `<!-- HERO -->
 <section class="hero" id="hero">
   <div class="bg"></div>
   <div class="vig"></div>
@@ -196,21 +180,6 @@ const html = `<!-- NAV -->
 
 <!-- FOOTER -->
 <script>
-// Nav scroll behavior
-var nav = document.getElementById('nav');
-var hero = document.getElementById('hero');
-function ckNav() {
-  if (hero.getBoundingClientRect().bottom < 80) {
-    nav.classList.remove('at-top');
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.add('at-top');
-    nav.classList.remove('scrolled');
-  }
-}
-window.addEventListener('scroll', ckNav);
-ckNav();
-
 // FAQ toggle
 function toggleFaq(el) {
   var wasOpen = el.classList.contains('open');

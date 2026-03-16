@@ -118,7 +118,7 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 
 @media (max-width:900px) {
   .page { grid-template-columns:1fr; padding:90px 24px 48px; }
-  .summary { position:relative; top:0; order:-1; margin-bottom:32px; }
+  .summary { position:relative; top:0; order:1; margin-bottom:32px; }
   .opt-grid, .addon-grid, .plan-grid, .pay-grid { grid-template-columns:1fr; }
   .plan-grid-2 { grid-template-columns:1fr; }
   .form-row { grid-template-columns:1fr; }
@@ -193,23 +193,7 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 }
 `;
 
-const html = `<!-- NAV -->
-<nav class="nav">
-  <a href="/" class="logo">Stem<b>Cyte</b></a>
-  <div class="links">
-    <a href="/the-science">The Science</a>
-    <a href="/why-stemcyte">Why StemCyte</a>
-    <a href="/pricing" class="active">Pricing</a>
-    <a href="/patient-stories">Patient Stories</a>
-    <a href="/faq">FAQ</a>
-  </div>
-  <div class="rg">
-    
-    <a href="/pricing" class="cta">Enroll now</a>
-  </div>
-</nav>
-
-<!-- COMPACT HERO -->
+const html = `<!-- COMPACT HERO -->
 <section class="mini-hero">
   <div class="inner">
     <div class="lbl">Pricing</div>

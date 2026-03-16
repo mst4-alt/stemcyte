@@ -141,10 +141,110 @@ body {
   justify-content: space-between;
 }
 
+/* === HAMBURGER === */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 1px;
+  transition: all 0.3s;
+}
+.nav.at-top .hamburger span {
+  background: rgba(255,255,255,0.8);
+}
+.nav.scrolled .hamburger span {
+  background: #6C1A55;
+}
+
+/* === BOTTOM SHEET === */
+.sheet-scrim {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.sheet-scrim.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  z-index: 1200;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.08);
+  transform: translateY(100%);
+  transition: transform 0.35s ease;
+  pointer-events: none;
+}
+.sheet.open {
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.sheet-handle {
+  width: 36px;
+  height: 4px;
+  background: #E8E2DC;
+  border-radius: 2px;
+  margin: 12px auto 8px;
+}
+.sheet-links a {
+  display: block;
+  font-size: 17px;
+  text-decoration: none;
+  padding: 16px 28px;
+  text-align: center;
+  color: #2C2A26;
+  font-weight: 400;
+  border-bottom: 1px solid #F3F0F8;
+}
+.sheet-links a:last-child {
+  border-bottom: none;
+}
+.sheet-links a.active {
+  color: #6C1A55;
+  font-weight: 700;
+}
+.sheet-cta {
+  padding: 16px 24px 32px;
+}
+.sheet-cta a {
+  display: block;
+  text-align: center;
+  background: #6C1A55;
+  color: #fff;
+  padding: 16px;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+}
+
 /* === RESPONSIVE (shared nav/footer) === */
 @media (max-width: 900px) {
   .nav { padding: 16px 24px; }
-  .nav .links, .nav .phone { display: none; }
+  .nav .links, .nav .rg { display: none; }
+  .hamburger { display: flex; }
   .footer { padding: 48px 24px 24px; }
   .footer-in { grid-template-columns: 1fr 1fr; gap: 32px; }
 }

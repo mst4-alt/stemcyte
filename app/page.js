@@ -13,8 +13,8 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 
 /* HERO */
 .hero { min-height:100vh; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; text-align:center; }
-.hero .bg { position:absolute; inset:0; background-image:url('https://images.unsplash.com/photo-1555252333-9f8e92e65df9?w=1600&q=80'); background-size:cover; background-position:center; }
-.hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%); }
+.hero .bg { position:absolute; inset:0; background-image:url('/images/hero.jpg'); background-size:cover; background-position:center; filter:saturate(0.7); }
+.hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.55) 55%,rgba(0,0,0,0.78) 100%); }
 .hero .ct { position:relative; z-index:2; max-width:680px; padding:0 24px; margin-top:-60px; }
 .hero .badge { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.1); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.15); padding:8px 20px; border-radius:100px; font-size:12px; color:rgba(255,255,255,0.7); margin-bottom:28px; }
 .hero .badge::before { content:''; width:6px; height:6px; background:#E8A0D0; border-radius:50%; }
@@ -153,23 +153,7 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 }
 `;
 
-const html = `<!-- NAV -->
-<nav class="nav at-top" id="nav">
-  <a href="/" class="logo">Stem<b>Cyte</b></a>
-  <div class="links">
-    <a href="/the-science">The Science</a>
-    <a href="/why-stemcyte">Why StemCyte</a>
-    <a href="/pricing">Pricing</a>
-    <a href="/patient-stories">Patient Stories</a>
-    <a href="/faq">FAQ</a>
-  </div>
-  <div class="rg">
-    
-    <a href="/pricing" class="cta">Enroll now</a>
-  </div>
-</nav>
-
-<!-- HERO -->
+const html = `<!-- HERO -->
 <section class="hero" id="hero">
   <div class="bg"></div>
   <div class="vig"></div>
@@ -264,7 +248,7 @@ const html = `<!-- NAV -->
 
 <!-- LIFESAVER -->
 <section class="split">
-  <div class="photo anim"><img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=800&q=80" alt="" style="object-position:center 60%"></div>
+  <div class="photo anim"><img src="/images/Hero_6.jpeg" alt="" style="object-position:center 60%"></div>
   <div class="text anim">
     <div class="lbl">LifeSaver Guarantee</div>
     <h2>The safety net no other bank provides</h2>
@@ -321,21 +305,6 @@ const html = `<!-- NAV -->
 
 <!-- FOOTER -->
 <script>
-// Nav scroll behavior
-var nav = document.getElementById('nav');
-var hero = document.getElementById('hero');
-function ckNav() {
-  if (hero.getBoundingClientRect().bottom < 80) {
-    nav.classList.remove('at-top');
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.add('at-top');
-    nav.classList.remove('scrolled');
-  }
-}
-window.addEventListener('scroll', ckNav);
-ckNav();
-
 // Scroll animations
 var obs = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {
