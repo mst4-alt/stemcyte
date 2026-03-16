@@ -17,7 +17,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%); }
 .hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
 .hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
-.hero h1 { font-family:'Playfair Display',serif; font-size:48px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:560px; margin-bottom:16px; color:#fff; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:48px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:720px; margin-bottom:16px; color:#fff; }
 .hero .sub { font-size:17px; color:rgba(255,255,255,0.55); max-width:540px; line-height:1.7; }
 
 /* ── SHARED ── */
@@ -35,7 +35,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .zone .circle-deco { position:absolute; border-radius:50%; opacity:0.3; z-index:0; }
 
 /* ── SECTION BANNERS (editorial left-rule) ── */
-.section-banner { padding: 0 48px; margin-bottom: 56px; display: flex; align-items: center; gap: 28px; }
+.section-banner { padding: 0 48px; margin-bottom: 96px; display: flex; align-items: center; gap: 28px; }
 .section-banner .banner-label { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 400; letter-spacing: -1.5px; line-height: 1; white-space: nowrap; flex-shrink: 0; }
 .section-banner .banner-rule { height: 1px; flex: 1; border-radius: 0; }
 .zone-blue .section-banner { }

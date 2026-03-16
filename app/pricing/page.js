@@ -459,7 +459,7 @@ const html = `<!-- COMPACT HERO -->
 <section class="hiw-section">
   <div class="inner">
     <div class="sh">
-      <div class="lbl">The Science</div>
+      <div class="lbl">How it works</div>
       <h2>3 simple steps</h2>
       <p>From enrollment to preservation &mdash; the entire process is designed to be effortless.</p>
     </div>

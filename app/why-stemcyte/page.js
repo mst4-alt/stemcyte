@@ -17,8 +17,8 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%); }
 .hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
 .hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
-.hero h1 { font-family:'Playfair Display',serif; font-size:48px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:680px; margin-bottom:16px; color:#fff; }
-.hero p { font-size:17px; color:rgba(255,255,255,0.55); max-width:540px; line-height:1.7; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:48px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:780px; margin-bottom:16px; color:#fff; }
+.hero p { font-size:17px; color:rgba(255,255,255,0.55); max-width:680px; line-height:1.7; }
 
 /* STATS */
 .stats-wrap { padding:80px 48px 0; max-width:1100px; margin:0 auto; }
@@ -145,7 +145,7 @@ const html = `<!-- HERO -->
     <div class="stat anim"><div class="num" data-target="2300" data-suffix="+">0</div><div class="desc">Transplant units shipped worldwide</div></div>
     <div class="stat anim"><div class="num" data-text="1 in 26">0</div><div class="desc">Of all cord blood transplants use StemCyte</div></div>
     <div class="stat anim"><div class="num" data-target="350" data-suffix="+">0</div><div class="desc">Transplant hospitals in 35 countries</div></div>
-    <div class="stat anim"><div class="num" data-target="1997" data-from="1990" data-suffix="">0</div><div class="desc">Founded &mdash; 29+ years of experience</div></div>
+    <div class="stat anim"><div class="num" data-target="1997" data-from="1990" data-suffix="" data-noformat="true">0</div><div class="desc">Founded &mdash; 29+ years of experience</div></div>
   </div>
 </div>
 
@@ -300,7 +300,8 @@ document.querySelectorAll('.stat .num').forEach(function(el, idx) {
   var t = parseInt(el.dataset.target) || 0;
   var s = el.dataset.suffix || '';
   var from = parseInt(el.dataset.from) || Math.max(0, t - 10);
-  el.textContent = t.toLocaleString() + s;
+  var nf = el.dataset.noformat === 'true';
+  el.textContent = (nf ? t : t.toLocaleString()) + s;
   var profiles = [
     { ticks:10, interval:80, startPause:100 },
     { ticks:6, interval:120, startPause:300 },
@@ -311,9 +312,9 @@ document.querySelectorAll('.stat .num').forEach(function(el, idx) {
   var cobs = new IntersectionObserver(function(ent) {
     if (ent[0].isIntersecting) {
       var current = from;
-      el.textContent = current.toLocaleString() + s;
+      el.textContent = (nf ? current : current.toLocaleString()) + s;
       function tick() {
-        if (current < t) { current++; el.textContent = current.toLocaleString() + s; setTimeout(tick, p.interval); }
+        if (current < t) { current++; el.textContent = (nf ? current : current.toLocaleString()) + s; setTimeout(tick, p.interval); }
       }
       setTimeout(tick, p.startPause);
       cobs.unobserve(el);
