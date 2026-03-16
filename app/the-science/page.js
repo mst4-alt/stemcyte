@@ -426,30 +426,9 @@ const html = `<!-- HERO -->
   </div>
 </section>
 
-<div class="divider"><div class="divider-line"></div></div>
-
-<!-- BANKING OPTIONS -->
-<section class="section">
-  <div class="split anim">
-    <div class="photo"><img src="/images/Hero_5.jpeg" alt="" style="object-position:center 60%"></div>
-    <div class="text">
-      <div class="slbl">Your options</div>
-      <h2>Private banking vs. public donation</h2>
-      <p><strong>Private banking</strong> preserves your baby's stem cells exclusively for your family.</p>
-      <p><strong>Public donation</strong> makes them available to anyone in need &mdash; free, but you don't retain ownership.</p>
-      <p><strong>With StemCyte, you don't have to choose.</strong> As the only hybrid bank, we give you both.</p>
-    </div>
-  </div>
-  <div class="stakes anim">
-    <h3>What happens if you don't bank?</h3>
-    <p>If your baby's cord blood is not collected at birth, it's discarded as medical waste. There is no way to go back.</p>
-    <p class="hl">Your baby's stem cells can only be collected at birth. The decision to bank is the decision to keep that door open.</p>
-  </div>
-</section>
-
 <section class="cta-banner anim">
-  <h2>Ready to protect your baby's <em>future?</em></h2>
-  <p>View plans, speak with a specialist, or enroll today.</p>
+  <h2>Your baby&rsquo;s stem cells can only be collected at <em>birth</em></h2>
+  <p>If your baby's cord blood is not collected, it's discarded as medical waste. There is no way to go back. The decision to bank is the decision to keep that door open.</p>
   <div class="btns"><a href="/pricing" class="btn-w" style="display:inline-block;text-decoration:none">View plans &amp; pricing</a><a href="tel:8663894659" class="btn-gd" style="display:inline-block;text-decoration:none">Call (866) 389-4659</a></div>
 </section>
 
