@@ -13,7 +13,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 
 /* HERO */
 .hero { position:relative; min-height:540px; display:flex; align-items:flex-end; overflow:hidden; }
-.hero .bg { position:absolute; inset:0; background-image:url('/images/Hero_1.jpeg'); background-size:cover; background-position:center; }
+.hero .bg { position:absolute; inset:0; background-image:url('/images/tanks_new.png'); background-size:cover; background-position:center; }
 .hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%); }
 .hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
 .hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
