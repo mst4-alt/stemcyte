@@ -126,15 +126,17 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 }
 
 /* COMPACT HERO */
-.mini-hero { background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:120px 48px 60px; position:relative; overflow:hidden; }
-.mini-hero::before { content:''; position:absolute; width:600px; height:600px; border-radius:50%; background:rgba(192,106,165,0.08); top:-300px; right:-100px; }
-.mini-hero .inner { max-width:1100px; margin:0 auto; position:relative; z-index:1; }
-.mini-hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:10px; }
-.mini-hero h1 { font-family:'Playfair Display',serif; font-size:42px; font-weight:400; color:#fff; line-height:1.15; margin-bottom:12px; max-width:600px; }
+.mini-hero { position:relative; padding:140px 48px 72px; overflow:hidden; background:#2E0B24; }
+.mini-hero .mesh { position:absolute; inset:-50%; width:200%; height:200%; background: radial-gradient(ellipse at 20% 50%, rgba(108,26,85,0.8) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(192,106,165,0.4) 0%, transparent 40%), radial-gradient(ellipse at 60% 80%, rgba(61,15,49,0.9) 0%, transparent 50%), radial-gradient(ellipse at 40% 30%, rgba(232,160,208,0.2) 0%, transparent 35%); animation:mesh-drift 15s ease-in-out infinite alternate; }
+@keyframes mesh-drift { 0% { transform:translate(0,0) scale(1); } 100% { transform:translate(-3%,2%) scale(1.05); } }
+.mini-hero .grain { position:absolute; inset:0; opacity:0.15; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size:128px 128px; }
+.mini-hero .inner { position:relative; z-index:2; max-width:1100px; margin:0 auto; text-align:center; }
+.mini-hero .lbl { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#E8A0D0; margin-bottom:20px; }
+.mini-hero h1 { font-family:'Playfair Display',serif; font-size:56px; font-weight:400; color:#fff; line-height:1.06; margin-bottom:18px; max-width:700px; margin-left:auto; margin-right:auto; letter-spacing:-1.5px; }
 .mini-hero h1 em { font-style:italic; color:#E8A0D0; }
-.mini-hero p { font-size:16px; color:rgba(255,255,255,0.5); max-width:480px; line-height:1.7; }
-.mini-hero .trust-row { display:flex; gap:16px; margin-top:20px; }
-.mini-hero .trust-row span { font-size:11px; font-weight:700; color:rgba(255,255,255,0.25); border:1px solid rgba(255,255,255,0.12); padding:4px 12px; border-radius:4px; }
+.mini-hero p { font-size:16px; color:rgba(255,255,255,0.4); max-width:480px; margin:0 auto 32px; line-height:1.7; }
+.mini-hero .trust-row { display:flex; gap:12px; justify-content:center; }
+.mini-hero .trust-row span { font-size:11px; font-weight:700; color:rgba(255,255,255,0.5); padding:8px 20px; border-radius:100px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.08); backdrop-filter:blur(4px); letter-spacing:0.3px; }
 
 /* HOW IT WORKS SECTION */
 .hiw-section { background:#F3F0F8; padding:80px 48px; }
@@ -179,8 +181,9 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 
 /* EXTRA RESPONSIVE */
 @media (max-width:900px) {
-  .mini-hero { padding:100px 24px 48px; }
-  .mini-hero h1 { font-size:32px; }
+  .mini-hero { padding:110px 24px 56px; }
+  .mini-hero h1 { font-size:36px; letter-spacing:-0.5px; }
+  .mini-hero .trust-row { flex-wrap:wrap; justify-content:center; }
   .hiw-section { padding:64px 24px; }
   .steps-row { flex-direction:column; gap:12px; }
   .s-conn { justify-content:center; padding:4px 0; transform:rotate(90deg); }
@@ -195,14 +198,16 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 
 const html = `<!-- COMPACT HERO -->
 <section class="mini-hero">
+  <div class="mesh"></div>
+  <div class="grain"></div>
   <div class="inner">
     <div class="lbl">Pricing</div>
     <h1>Build your plan, protect their <em>future</em></h1>
-    <p>Choose your product, storage plan, and add-ons. See your total update in real time. No hidden fees.</p>
+    <p>Choose your product, plan, and add-ons. Your total updates in real time. No hidden fees.</p>
     <div class="trust-row">
-      <span>FDA</span>
-      <span>FACT</span>
-      <span>AABB</span>
+      <span>FDA registered</span>
+      <span>FACT accredited</span>
+      <span>AABB accredited</span>
       <span>LifeSaver Guarantee</span>
     </div>
   </div>

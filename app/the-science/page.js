@@ -28,7 +28,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 /* ── ZONE BASE ── */
 .zone { padding:80px 48px; position:relative; overflow:hidden; }
 .zone .inner { max-width:900px; margin:0 auto; position:relative; z-index:1; }
-.zone .tc { text-align:center; margin-bottom:48px; }
+.zone .tc { text-align:center; margin-bottom:64px; }
 .zone .zlbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:10px; }
 .zone h2 { font-family:'Playfair Display',serif; font-size:40px; font-weight:400; margin-bottom:16px; line-height:1.15; }
 .zone .lead { font-size:17px; color:#6B665D; line-height:1.7; max-width:600px; margin:0 auto; }
