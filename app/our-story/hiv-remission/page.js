@@ -321,7 +321,7 @@ export default function HivRemissionPage() {
 
           <div className={s.portraitSection}>
             <div className={s.portraitCol} ref={animRef}>
-              <img src="https://placehold.co/200x200/E8E2DC/8A857A?text=Dr.+Petz" alt="Dr. Lawrence D. Petz" />
+              <img src="/images/our%20story/press_release_distribution_0452818_127664.jpg" alt="Dr. Lawrence D. Petz" />
               <div className={s.name}>Lawrence D. Petz, MD</div>
               <div className={s.titleText}>Chief Medical Officer, StemCyte<br />Emeritus Professor, UCLA</div>
             </div>
@@ -489,7 +489,7 @@ export default function HivRemissionPage() {
           <div className={s.compareGrid} ref={animRef}>
             <div className={`${s.compareCard} ${s.compareOld}`}>
               <h4>Previous approach: adult donor cells</h4>
-              <p>Required a very close HLA match. CCR5-delta32 donors almost exclusively white. Significant risk of graft-versus-host disease. Only three men cured in over a decade.</p>
+              <p>Required a very close HLA match. CCR5-delta32 donors almost exclusively white. Significant risk of graft-versus-host disease. Only two men cured in over a decade.</p>
             </div>
             <div className={`${s.compareCard} ${s.compareNew}`}>
               <h4>Dr. Petz&rsquo;s approach: cord blood</h4>
