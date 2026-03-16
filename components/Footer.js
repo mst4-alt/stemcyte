@@ -15,6 +15,7 @@ export default function Footer() {
           <h4>Learn</h4>
           <Link href="/the-science">The Science</Link>
           <Link href="/why-stemcyte">Why StemCyte</Link>
+          <Link href="/regenecyte">REGENECYTE&reg;</Link>
           <Link href="/patient-stories">Patient Stories</Link>
           <Link href="/faq">FAQ</Link>
         </div>
