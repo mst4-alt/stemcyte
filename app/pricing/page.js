@@ -125,17 +125,15 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
   .pay-methods { flex-direction:column; }
 }
 
-/* COMPACT HERO */
-.mini-hero { position:relative; min-height:500px; display:flex; align-items:center; overflow:hidden; }
-.mini-hero .bg { position:absolute; inset:0; }
-.mini-hero .bg img { width:100%; height:100%; object-fit:cover; filter:saturate(0.7) brightness(0.85); }
-.mini-hero .vig { position:absolute; inset:0; background:linear-gradient(135deg, rgba(44,10,36,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.5) 100%); }
-.mini-hero .inner { position:relative; z-index:1; max-width:1100px; margin:0 auto; padding:140px 48px 80px; width:100%; }
-.mini-hero .frost { background:rgba(255,255,255,0.08); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); border:1px solid rgba(255,255,255,0.12); border-radius:20px; padding:48px 52px; max-width:540px; }
-.mini-hero .lbl { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#E8A0D0; margin-bottom:16px; }
-.mini-hero h1 { font-family:'Playfair Display',serif; font-size:44px; font-weight:400; color:#fff; line-height:1.1; margin-bottom:14px; letter-spacing:-1px; }
-.mini-hero h1 em { font-style:italic; color:#E8A0D0; }
-.mini-hero p { font-size:15px; color:rgba(255,255,255,0.5); max-width:420px; line-height:1.7; }
+/* HERO */
+.hero { position:relative; min-height:540px; display:flex; align-items:flex-end; overflow:hidden; }
+.hero .bg { position:absolute; inset:0; background:url('/images/Hero_1.jpeg') center/cover; }
+.hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.5) 65%, rgba(0,0,0,0.72) 100%); }
+.hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
+.hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:48px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:600px; margin-bottom:16px; color:#fff; }
+.hero h1 em { font-style:italic; color:#E8A0D0; }
+.hero .sub { font-size:17px; color:rgba(255,255,255,0.55); max-width:540px; line-height:1.7; }
 
 /* HOW IT WORKS SECTION */
 .hiw-section { background:#F3F0F8; padding:80px 48px; }
@@ -180,10 +178,8 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 
 /* EXTRA RESPONSIVE */
 @media (max-width:900px) {
-  .mini-hero { min-height:400px; }
-  .mini-hero .inner { padding:110px 24px 56px; }
-  .mini-hero .frost { padding:32px; max-width:100%; }
-  .mini-hero h1 { font-size:32px; }
+  .hero .ct { padding:140px 24px 48px; }
+  .hero h1 { font-size:34px; }
   .hiw-section { padding:64px 24px; }
   .steps-row { flex-direction:column; gap:12px; }
   .s-conn { justify-content:center; padding:4px 0; transform:rotate(90deg); }
@@ -192,19 +188,19 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
   .cta-banner { margin:48px 20px; padding:48px 24px; }
 }
 @media (max-width:600px) {
+  .hero h1 { font-size:28px; }
   .cta-banner .btns { flex-direction:column; align-items:center; }
 }
 `;
 
-const html = `<!-- COMPACT HERO -->
-<section class="mini-hero">
-  <div class="bg"><img src="/images/Hero_1.jpeg" alt=""><div class="vig"></div></div>
-  <div class="inner">
-    <div class="frost">
-      <div class="lbl">Pricing</div>
-      <h1>Their future, your <em>choice</em></h1>
-      <p>Choose your product, plan, and add-ons.</p>
-    </div>
+const html = `<!-- HERO -->
+<section class="hero">
+  <div class="bg"></div>
+  <div class="vig"></div>
+  <div class="ct">
+    <div class="lbl">Pricing</div>
+    <h1>Their future, your <em>choice</em></h1>
+    <p class="sub">Choose your product, plan, and add-ons. See your total update in real time.</p>
   </div>
 </section>
 <div class="page">
