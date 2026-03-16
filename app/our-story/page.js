@@ -340,7 +340,7 @@ body {
   width:100%;
   aspect-ratio:1/1;
   object-fit:cover;
-  object-position:center 20%;
+  object-position:center 35%;
   display:block;
 }
 .team-card .info {
