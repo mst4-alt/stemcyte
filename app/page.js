@@ -13,7 +13,7 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 
 /* HERO */
 .hero { min-height:100vh; position:relative; overflow:hidden; display:flex; align-items:center; justify-content:center; text-align:center; }
-.hero .bg { position:absolute; inset:0; background-image:url('/images/hero.jpg'); background-size:cover; background-position:center; filter:saturate(0.7); }
+.hero .bg { position:absolute; inset:0; object-fit:cover; width:100%; height:100%; filter:saturate(0.7); }
 .hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.55) 55%,rgba(0,0,0,0.78) 100%); }
 .hero .ct { position:relative; z-index:2; max-width:680px; padding:0 24px; margin-top:-60px; }
 .hero .badge { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.1); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.15); padding:8px 20px; border-radius:100px; font-size:12px; color:rgba(255,255,255,0.7); margin-bottom:28px; }
@@ -155,7 +155,9 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 
 const html = `<!-- HERO -->
 <section class="hero" id="hero">
-  <div class="bg"></div>
+  <video class="bg" autoplay muted loop playsinline poster="/images/hero.jpg">
+    <source src="/images/videos/Hero_1.mp4" type="video/mp4">
+  </video>
   <div class="vig"></div>
   <div class="ct">
     <div class="badge fade-in">The most trusted cord blood bank by physicians</div>
