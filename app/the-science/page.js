@@ -428,18 +428,7 @@ const html = `<!-- HERO -->
   <div class="btns"><a href="/pricing" class="btn-w" style="display:inline-block;text-decoration:none">View plans &amp; pricing</a><a href="tel:8663894659" class="btn-gd" style="display:inline-block;text-decoration:none">Call (866) 389-4659</a></div>
 </section>
 
-<script>
-// Scroll animations
-var obs = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      setTimeout(function() { entry.target.classList.add('vis'); }, 150);
-      obs.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });
-</script>`;
+`;
 
 const script = `// Scroll animations
 var obs = new IntersectionObserver(function(entries) {

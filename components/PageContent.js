@@ -7,18 +7,26 @@ export default function PageContent({ css, html, script, transparentNav = true }
   const scriptRan = useRef(false);
 
   useEffect(() => {
-    if (scriptRan.current || !script) return;
-    scriptRan.current = true;
+    if (!script) return;
+    if (scriptRan.current && scriptRan.current !== false) {
+      scriptRan.current.parentNode?.removeChild(scriptRan.current);
+    }
 
-    // Execute the page-specific script
+    // Execute the page-specific script in global scope
     try {
-      const fn = new Function(script);
-      fn();
+      const scriptEl = document.createElement('script');
+      scriptEl.textContent = script;
+      document.body.appendChild(scriptEl);
+      // Store reference for cleanup
+      scriptRan.current = scriptEl;
     } catch (e) {
       console.error('Page script error:', e);
     }
 
     return () => {
+      if (scriptRan.current && scriptRan.current.parentNode) {
+        scriptRan.current.parentNode.removeChild(scriptRan.current);
+      }
       scriptRan.current = false;
     };
   }, [script]);

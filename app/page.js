@@ -304,60 +304,7 @@ const html = `<!-- HERO -->
   </div>
 </section>
 
-<!-- FOOTER -->
-<script>
-// Scroll animations
-var obs = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      setTimeout(function() { entry.target.classList.add('vis'); }, 150);
-      obs.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });
-
-// Number counters
-document.querySelectorAll('.stat .num').forEach(function(el, idx) {
-  var t = parseInt(el.dataset.target) || 0;
-  var s = el.dataset.suffix || '';
-  el.textContent = t.toLocaleString() + s;
-  var profiles = [
-    { ticks:10, interval:80,  startPause:100 },
-    { ticks:6,  interval:120, startPause:300 },
-    { ticks:4,  interval:160, startPause:600 },
-    { ticks:8,  interval:130, startPause:700 }
-  ];
-  var p = profiles[idx % profiles.length];
-  var startVal = Math.max(0, t - p.ticks);
-  var cobs = new IntersectionObserver(function(ent) {
-    if (ent[0].isIntersecting) {
-      var current = startVal;
-      el.textContent = current.toLocaleString() + s;
-      function tick() {
-        if (current < t) {
-          current++;
-          el.textContent = current.toLocaleString() + s;
-          setTimeout(tick, p.interval);
-        }
-      }
-      setTimeout(tick, p.startPause);
-      cobs.unobserve(el);
-    }
-  }, { threshold: 0.5 });
-  cobs.observe(el);
-});
-
-// Plans toggle
-function togglePlans(t, b) {
-  document.getElementById('plans-cb').style.display = t === 'cb' ? 'block' : 'none';
-  document.getElementById('plans-cbt').style.display = t === 'cbt' ? 'block' : 'none';
-  document.querySelectorAll('.plans-toggle button').forEach(function(x) {
-    x.classList.remove('active');
-  });
-  b.classList.add('active');
-}
-</script>`;
+`;
 
 const script = `// Scroll animations
 var obs = new IntersectionObserver(function(entries) {

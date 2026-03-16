@@ -178,23 +178,7 @@ const html = `<!-- HERO -->
 
 </section>
 
-<!-- FOOTER -->
-<script>
-// FAQ toggle
-function toggleFaq(el) {
-  var wasOpen = el.classList.contains('open');
-  document.querySelectorAll('.faq-smooth').forEach(function(f) {
-    f.classList.remove('open');
-    f.querySelector('.faq-a').style.maxHeight = '0';
-  });
-  if (!wasOpen) {
-    el.classList.add('open');
-    var a = el.querySelector('.faq-a');
-    var inner = el.querySelector('.faq-a-inner');
-    a.style.maxHeight = inner.scrollHeight + 'px';
-  }
-}
-</script>`;
+`;
 
 const script = `// FAQ toggle
 function toggleFaq(el) {

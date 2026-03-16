@@ -41,6 +41,8 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .story h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; margin-bottom:8px; line-height:1.3; }
 .story .diag { font-size:13px; color:#6C1A55; font-weight:700; margin-bottom:12px; }
 .story p { font-size:15px; color:#8A857A; line-height:1.7; margin-bottom:8px; }
+.story-video { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; margin-top:20px; }
+.story-video iframe { position:absolute; top:0; left:0; width:100%; height:100%; border-radius:12px; }
 
 /* FEATURED QUOTE */
 .feat-quote { text-align:center; padding:80px 48px; max-width:720px; margin:0 auto; }
@@ -121,6 +123,9 @@ const html = `<!-- HERO -->
       <div class="diag">Diagnosis: Perinatal Stroke</div>
       <p>Bailey was just 3 days old when she suffered a perinatal stroke. Fortunately, her mother Rebecca had banked her cord blood stem cells at birth with StemCyte. Bailey was able to use her own cord blood stem cells as part of her treatment.</p>
       <p>Today, Bailey is 10 years old and living a healthy, normal life.</p>
+      <div class="story-video">
+        <iframe src="https://www.youtube.com/embed/qrbCvPtvtWk" title="Bailey's Story" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 
@@ -143,6 +148,19 @@ const html = `<!-- HERO -->
       <div class="diag">Diagnosis: Acute Lymphoblastic Leukemia</div>
       <p>Itzel Cervantes was 6 years old when she underwent a cord blood transplant for ALL. The leukemia kept relapsing after chemotherapy, and the only way to stop it was a stem cell transplant using donated cord blood.</p>
       <p>Itzel remains in full remission from leukemia, 9 years after transplant.</p>
+    </div>
+  </div>
+
+  <div class="story anim">
+    <div class="story-img" style="background:#F3F0F8;display:flex;align-items:center;justify-content:center"><div class="placeholder">Photo coming soon</div></div>
+    <div class="story-inner">
+      <div class="tag" style="background:#FBF5F9;color:#6C1A55">Family story</div>
+      <h3>The Hoffman Family</h3>
+      <div class="diag">Why they chose StemCyte</div>
+      <p>The Hoffman family chose to bank their baby's cord blood with StemCyte to protect their growing family's future. Their story captures why parents choose cord blood banking &mdash; and why they trust StemCyte.</p>
+      <div class="story-video">
+        <iframe src="https://www.youtube.com/embed/9TyVpe7Id-4" title="The Hoffman Family Story" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 </section>
@@ -215,19 +233,7 @@ const html = `<!-- HERO -->
   </div>
 </section>
 
-<!-- FOOTER -->
-<script>
-// Scroll animations
-var obs = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      setTimeout(function() { entry.target.classList.add('vis'); }, 150);
-      obs.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });
-</script>`;
+`;
 
 const script = `// Scroll animations
 var obs = new IntersectionObserver(function(entries) {

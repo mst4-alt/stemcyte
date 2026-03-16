@@ -280,48 +280,7 @@ const html = `<!-- HERO -->
   </div>
 </section>
 
-<!-- FOOTER -->
-<script>
-// Scroll animations
-var obs = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      setTimeout(function() { entry.target.classList.add('vis'); }, 150);
-      obs.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });
-
-// Number counters
-document.querySelectorAll('.stat .num').forEach(function(el, idx) {
-  var textVal = el.dataset.text;
-  if (textVal) { el.textContent = textVal; return; }
-  var t = parseInt(el.dataset.target) || 0;
-  var s = el.dataset.suffix || '';
-  var from = parseInt(el.dataset.from) || Math.max(0, t - 10);
-  el.textContent = t.toLocaleString() + s;
-  var profiles = [
-    { ticks:10, interval:80, startPause:100 },
-    { ticks:6, interval:120, startPause:300 },
-    { ticks:4, interval:160, startPause:600 },
-    { ticks:8, interval:130, startPause:700 }
-  ];
-  var p = profiles[idx % profiles.length];
-  var cobs = new IntersectionObserver(function(ent) {
-    if (ent[0].isIntersecting) {
-      var current = from;
-      el.textContent = current.toLocaleString() + s;
-      function tick() {
-        if (current < t) { current++; el.textContent = current.toLocaleString() + s; setTimeout(tick, p.interval); }
-      }
-      setTimeout(tick, p.startPause);
-      cobs.unobserve(el);
-    }
-  }, { threshold: 0.5 });
-  cobs.observe(el);
-});
-</script>`;
+`;
 
 const script = `// Scroll animations
 var obs = new IntersectionObserver(function(entries) {
