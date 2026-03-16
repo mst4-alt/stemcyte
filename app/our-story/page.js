@@ -164,7 +164,7 @@ const html = `
     <div class="text">
       <p>StemCyte opened its doors in 1997 with a bold idea: build the world&rsquo;s most ethnically diverse cord blood bank, and make it accessible to everyone &mdash; not just those who could afford private banking.</p>
       <p>That dual mission &mdash; private banking for families and public donation for patients &mdash; became the foundation of everything we do. Today, we&rsquo;re among the few cord blood banks in the world that operate both.</p>
-      <p>From a single lab in California, StemCyte has shipped over 2,303 cord blood units for transplant across 35 countries &mdash; one of the highest clinical track records in the industry.</p>
+      <p>From a single lab in California, StemCyte has shipped over 2,300 cord blood units for transplant across 35 countries &mdash; one of the highest clinical track records in the industry.</p>
     </div>
   </div>
 </section>
@@ -575,19 +575,9 @@ const html = `
       </svg>
     </div>
     <div class="gb-stats">
-      <div class="gb-stat"><div class="num">2,303+</div><div class="desc">Units shipped</div></div>
+      <div class="gb-stat"><div class="num">2,300+</div><div class="desc">Units shipped</div></div>
       <div class="gb-stat"><div class="num">350+</div><div class="desc">Hospitals</div></div>
       <div class="gb-stat"><div class="num">35</div><div class="desc">Countries</div></div>
-    </div>
-    <div class="gb-callouts">
-      <div class="gb-callout">City of Hope</div>
-      <div class="gb-callout">Mayo Clinic</div>
-      <div class="gb-callout">Stanford</div>
-      <div class="gb-callout">Duke University</div>
-      <div class="gb-callout">UCLA Medical Center</div>
-      <div class="gb-callout">H&ocirc;pital Saint Louis</div>
-      <div class="gb-callout">Apollo Specialty Hospital</div>
-      <div class="gb-callout">National University Hospital</div>
     </div>
   </div>
 </section>
