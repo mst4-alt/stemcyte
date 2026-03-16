@@ -32,14 +32,15 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .sh p { font-size:16px; color:#8A857A; max-width:520px; line-height:1.7; }
 
 /* PATIENT STORIES */
-.story { background:#fff; border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); overflow:hidden; margin-bottom:24px; display:grid; grid-template-columns:280px 1fr; }
-.story .story-img { background:#F3F0F8; display:flex; align-items:center; justify-content:center; min-height:240px; overflow:hidden; }
-.story .story-img img { width:100%; height:100%; object-fit:cover; max-height:400px; }
-.story .story-img .placeholder { font-size:12px; color:#B0AB9E; text-align:center; padding:20px; }
-.story .story-inner { padding:40px; }
-.story .tag { display:inline-block; padding:4px 12px; border-radius:100px; font-size:10px; font-weight:700; margin-bottom:16px; }
-.story h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; margin-bottom:8px; line-height:1.3; }
-.story .diag { font-size:13px; color:#6C1A55; font-weight:700; margin-bottom:12px; }
+.story { display:grid; grid-template-columns:1fr 1fr; min-height:420px; border-radius:16px; overflow:hidden; margin-bottom:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
+.story.flip { direction:rtl; }
+.story.flip > * { direction:ltr; }
+.story .story-img { overflow:hidden; }
+.story .story-img img { width:100%; height:100%; object-fit:cover; min-height:420px; }
+.story .story-inner { background:#fff; padding:48px; display:flex; flex-direction:column; justify-content:center; }
+.story .tag { display:inline-block; padding:4px 12px; border-radius:100px; font-size:10px; font-weight:700; margin-bottom:14px; align-self:flex-start; }
+.story h3 { font-family:'Playfair Display',serif; font-size:28px; font-weight:400; margin-bottom:8px; line-height:1.3; }
+.story .diag { font-size:13px; color:#6C1A55; font-weight:700; margin-bottom:14px; }
 .story p { font-size:15px; color:#8A857A; line-height:1.7; margin-bottom:8px; }
 .story-video { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; margin-top:20px; }
 .story-video iframe { position:absolute; top:0; left:0; width:100%; height:100%; border-radius:12px; }
@@ -88,7 +89,8 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
   .quotes { grid-template-columns:1fr; }
   .pba-quotes { grid-template-columns:1fr; }
   .story { grid-template-columns:1fr; }
-  .story .story-img { min-height:200px; }
+  .story.flip { direction:ltr; }
+  .story .story-img img { min-height:280px; max-height:320px; }
   .cta-banner { margin:48px 20px; padding:48px 24px; }
 }
 @media (max-width:600px) {
@@ -129,7 +131,7 @@ const html = `<!-- HERO -->
     </div>
   </div>
 
-  <div class="story anim">
+  <div class="story flip anim">
     <div class="story-img"><img src="/images/ryden.jpg" alt="Ryden"></div>
     <div class="story-inner">
       <div class="tag" style="background:#F0F7F4;color:#3D8B6A">Used his brother's stem cells</div>
