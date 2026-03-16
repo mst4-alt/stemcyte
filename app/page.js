@@ -63,7 +63,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .s-ln { width:24px; height:1px; background:#D8D0E0; }
 
 /* TESTIMONIALS */
-.test-wrap { background:#EDE8F5; padding:80px 48px; }
+.test-wrap { background:#FAF7F2; padding:80px 48px; }
 .test-in { max-width:1100px; margin:0 auto; }
 .test-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:40px; }
 .test-card { background:#fff; border-radius:12px; padding:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
@@ -206,8 +206,6 @@ const html = `<!-- HERO -->
     </a>
   </div>
 </section>
-
-<div class="divider"><div class="divider-line"></div></div>
 
 <!-- HOW IT WORKS -->
 <section class="section-full" style="background:#F3F0F8">
