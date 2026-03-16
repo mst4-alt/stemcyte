@@ -16,6 +16,7 @@ export default function Footer() {
           <Link href="/the-science">The Science</Link>
           <Link href="/why-stemcyte">Why StemCyte</Link>
           <Link href="/regenecyte">REGENECYTE&reg;</Link>
+          <Link href="/hiv-remission">HIV-1 Remission</Link>
           <Link href="/patient-stories">Patient Stories</Link>
           <Link href="/faq">FAQ</Link>
         </div>
@@ -31,7 +32,7 @@ export default function Footer() {
           <a href="tel:8663894659">(866) 389-4659</a>
           <a href="mailto:customerservice@stemcyte.com">customerservice@stemcyte.com</a>
           <a href="https://maps.google.com/?q=StemCyte+Inc+Baldwin+Park+CA" target="_blank" rel="noopener">Baldwin Park, CA 91706</a>
-          <a href="#">Privacy policy</a>
+          <Link href="/privacy-policy">Privacy policy</Link>
         </div>
       </div>
       <div className="footer-bot">
