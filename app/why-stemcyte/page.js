@@ -97,8 +97,10 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .cta-banner h2 em { font-style:italic; color:#E8A0D0; }
 .cta-banner p { font-size:16px; color:rgba(255,255,255,0.5); margin-bottom:32px; position:relative; }
 .cta-banner .btns { display:flex; gap:12px; justify-content:center; position:relative; }
-.btn-w { background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; }
-.btn-gd { background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:'Lato',sans-serif; }
+.btn-w { background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-w:hover { background:rgba(255,255,255,0.85); }
+.btn-gd { background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-gd:hover { background:rgba(255,255,255,0.20); border-color:rgba(255,255,255,0.35); }
 
 /* FOOTER */
 

@@ -90,10 +90,10 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 
 /* NAVIGATION BUTTONS */
 .step-nav { display:flex; gap:12px; margin-top:32px; }
-.btn-next { background:#6C1A55; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; flex:1; text-align:center; transition:all 0.2s; }
-.btn-next:hover { background:#5A1548; }
-.btn-back { background:transparent; color:#6C1A55; padding:16px 24px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid #E8E2DC; cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.2s; }
-.btn-back:hover { background:#FBF5F9; }
+.btn-next { background:#6C1A55; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; flex:1; text-align:center; transition:all 0.25s; }
+.btn-next:hover { background:#8B3572; }
+.btn-back { background:transparent; color:#6C1A55; padding:16px 24px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid #E8E2DC; cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-back:hover { background:rgba(108,26,85,0.12); border-color:rgba(108,26,85,0.25); }
 
 /* ── STICKY SUMMARY ── */
 .summary { position:sticky; top:90px; background:#fff; border-radius:16px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); overflow:hidden; }
@@ -173,8 +173,10 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .cta-banner h2 em { font-style:italic; color:#E8A0D0; }
 .cta-banner p { font-size:16px; color:rgba(255,255,255,0.5); margin-bottom:32px; position:relative; }
 .cta-banner .btns { display:flex; gap:12px; justify-content:center; position:relative; }
-.btn-w { background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; }
-.btn-gd { background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:'Lato',sans-serif; }
+.btn-w { background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-w:hover { background:rgba(255,255,255,0.85); }
+.btn-gd { background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-gd:hover { background:rgba(255,255,255,0.20); border-color:rgba(255,255,255,0.35); }
 
 /* EXTRA RESPONSIVE */
 @media (max-width:900px) {

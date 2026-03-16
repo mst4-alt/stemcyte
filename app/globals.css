@@ -75,7 +75,7 @@ body {
   font-size: 13px;
   font-weight: 700;
   text-decoration: none;
-  transition: all 0.2s;
+  transition: all 0.25s;
   cursor: pointer;
 }
 .nav.at-top .cta {
@@ -83,10 +83,18 @@ body {
   color: #fff;
   border: 1px solid rgba(255,255,255,0.18);
 }
+.nav.at-top .cta:hover {
+  background: rgba(255,255,255,0.20);
+  border-color: rgba(255,255,255,0.35);
+}
 .nav.scrolled .cta {
   background: #6C1A55;
   color: #fff;
   border: 1px solid #6C1A55;
+}
+.nav.scrolled .cta:hover {
+  background: #8B3572;
+  border-color: #8B3572;
 }
 
 /* === FOOTER === */
@@ -96,10 +104,10 @@ body {
   padding: 64px 48px 32px;
 }
 .footer-in {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
   gap: 48px;
 }
 .footer .brand {

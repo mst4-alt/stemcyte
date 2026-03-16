@@ -23,8 +23,9 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .hero .sub { font-size:17px; color:rgba(255,255,255,0.55); line-height:1.7; max-width:520px; margin:0 auto 36px; }
 .hero .btns { display:flex; gap:12px; justify-content:center; }
 .btn-p { background:#6C1A55; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
-.btn-p:hover { background:#5A1548; transform:translateY(-2px); box-shadow:0 8px 24px rgba(108,26,85,0.25); }
-.btn-gl { background:rgba(255,255,255,0.12); color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.2); cursor:pointer; font-family:'Lato',sans-serif; }
+.btn-p:hover { background:#8B3572; }
+.btn-gl { background:rgba(255,255,255,0.12); color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.2); cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-gl:hover { background:rgba(255,255,255,0.20); border-color:rgba(255,255,255,0.35); }
 
 /* COMMON */
 .divider { max-width:1100px; margin:0 auto; padding:0 48px; }
@@ -108,8 +109,10 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .cta-banner h2 em { font-style:italic; color:#E8A0D0; }
 .cta-banner p { font-size:16px; color:rgba(255,255,255,0.5); margin-bottom:32px; position:relative; }
 .cta-banner .btns { display:flex; gap:12px; justify-content:center; position:relative; }
-.btn-w { background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; }
-.btn-gd { background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:'Lato',sans-serif; }
+.btn-w { background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-w:hover { background:rgba(255,255,255,0.85); }
+.btn-gd { background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-gd:hover { background:rgba(255,255,255,0.20); border-color:rgba(255,255,255,0.35); }
 
 /* FOOTER */
 

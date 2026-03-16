@@ -165,10 +165,10 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 .cta-banner h2 em { font-style:italic; color:#E8A0D0; }
 .cta-banner p { font-size:16px; color:rgba(255,255,255,0.5); margin-bottom:32px; position:relative; }
 .cta-banner .btns { display:flex; gap:12px; justify-content:center; position:relative; }
-.btn-w { background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; text-decoration:none; display:inline-block; transition:transform 0.2s,box-shadow 0.2s; }
-.btn-w:hover { transform:translateY(-1px); box-shadow:0 4px 12px rgba(0,0,0,0.15); }
-.btn-gd { color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); text-decoration:none; display:inline-block; transition:background 0.2s; }
-.btn-gd:hover { background:rgba(255,255,255,0.08); }
+.btn-w { background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; text-decoration:none; display:inline-block; transition:all 0.25s; }
+.btn-w:hover { background:rgba(255,255,255,0.85); }
+.btn-gd { color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); text-decoration:none; display:inline-block; transition:all 0.25s; }
+.btn-gd:hover { background:rgba(255,255,255,0.20); border-color:rgba(255,255,255,0.35); }
 .footer { background:#3D0F31; padding:56px 48px 32px; color:rgba(255,255,255,0.4); font-size:13px; }
 .footer-inner { max-width:1100px; margin:0 auto; }
 .footer-top { display:flex; justify-content:space-between; margin-bottom:40px; flex-wrap:wrap; gap:40px; }

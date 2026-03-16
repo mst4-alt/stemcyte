@@ -64,8 +64,8 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 .ct-cta-banner { background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:64px 48px; text-align:center; }
 .ct-cta-banner h2 { font-family:'Playfair Display',serif; font-size:32px; font-weight:400; color:#fff; margin-bottom:12px; letter-spacing:-0.5px; }
 .ct-cta-banner p { font-size:16px; color:rgba(255,255,255,0.5); margin-bottom:28px; max-width:480px; margin-left:auto; margin-right:auto; line-height:1.7; }
-.ct-cta-banner .btn { display:inline-block; background:#fff; color:#6C1A55; padding:14px 36px; border-radius:100px; font-size:15px; font-weight:700; text-decoration:none; transition:transform 0.15s, box-shadow 0.2s; }
-.ct-cta-banner .btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.25); }
+.ct-cta-banner .btn { display:inline-block; background:#fff; color:#6C1A55; padding:14px 36px; border-radius:100px; font-size:15px; font-weight:700; text-decoration:none; transition:all 0.25s; }
+.ct-cta-banner .btn:hover { background:rgba(255,255,255,0.85); }
 
 /* RESPONSIVE */
 @media (max-width:900px) {

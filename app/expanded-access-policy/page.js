@@ -71,8 +71,8 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 .eap-contact { background:#fff; border-radius:12px; padding:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); margin-top:32px; text-align:center; }
 .eap-contact h3 { font-family:'Playfair Display',serif; font-size:22px; font-weight:400; color:#2C2A26; margin-bottom:8px; }
 .eap-contact p { font-size:15px; color:#5A564E; line-height:1.7; margin-bottom:20px; }
-.eap-contact .contact-email { display:inline-flex; align-items:center; gap:8px; background:#6C1A55; color:#fff; padding:14px 32px; border-radius:100px; font-size:15px; font-weight:700; text-decoration:none; transition:background 0.2s, transform 0.15s; }
-.eap-contact .contact-email:hover { background:#5A1548; transform:translateY(-1px); }
+.eap-contact .contact-email { display:inline-flex; align-items:center; gap:8px; background:#6C1A55; color:#fff; padding:14px 32px; border-radius:100px; font-size:15px; font-weight:700; text-decoration:none; transition:all 0.25s; }
+.eap-contact .contact-email:hover { background:#8B3572; }
 .eap-contact .contact-email svg { width:18px; height:18px; }
 .eap-contact .response-note { font-size:13px; color:#B0AB9E; margin-top:14px; margin-bottom:0; }
 
@@ -87,8 +87,8 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 .eap-cta-banner { background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:64px 48px; text-align:center; }
 .eap-cta-banner h2 { font-family:'Playfair Display',serif; font-size:32px; font-weight:400; color:#fff; margin-bottom:12px; letter-spacing:-0.5px; }
 .eap-cta-banner p { font-size:16px; color:rgba(255,255,255,0.5); margin-bottom:28px; max-width:480px; margin-left:auto; margin-right:auto; line-height:1.7; }
-.eap-cta-banner .btn { display:inline-block; background:#fff; color:#6C1A55; padding:14px 36px; border-radius:100px; font-size:15px; font-weight:700; text-decoration:none; transition:transform 0.15s, box-shadow 0.2s; }
-.eap-cta-banner .btn:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.25); }
+.eap-cta-banner .btn { display:inline-block; background:#fff; color:#6C1A55; padding:14px 36px; border-radius:100px; font-size:15px; font-weight:700; text-decoration:none; transition:all 0.25s; }
+.eap-cta-banner .btn:hover { background:rgba(255,255,255,0.85); }
 
 /* RESPONSIVE */
 @media (max-width:900px) {

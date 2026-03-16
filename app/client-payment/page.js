@@ -63,8 +63,8 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 
 /* SUBMIT */
 .submit-row { margin-top:32px; text-align:center; }
-.btn-submit { background:#6C1A55; color:#fff; padding:16px 48px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; transition:background 0.2s; }
-.btn-submit:hover { background:#5A1548; }
+.btn-submit { background:#6C1A55; color:#fff; padding:16px 48px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-submit:hover { background:#8B3572; }
 
 /* RESPONSIVE */
 @media (max-width:900px) {

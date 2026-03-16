@@ -114,7 +114,7 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 .cta-banner h2 { font-family:'Playfair Display',serif; font-size:36px; font-weight:400; color:#fff; margin-bottom:12px; }
 .cta-banner p { font-size:16px; color:rgba(255,255,255,0.5); margin-bottom:32px; }
 .cta-banner .btn { display:inline-block; background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; text-decoration:none; font-family:'Lato',sans-serif; transition:all 0.25s; }
-.cta-banner .btn:hover { background:#F5F0F4; transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.15); }
+.cta-banner .btn:hover { background:rgba(255,255,255,0.85); }
 
 /* FOOTER */
 

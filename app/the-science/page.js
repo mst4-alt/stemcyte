@@ -60,8 +60,8 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .zone-blue .kp { display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-bottom:1px solid #F5EDE6; }
 .zone-blue .kp:last-child { border:none; padding-bottom:0; }
 .zone-blue .kp .dot { width:10px; height:10px; border-radius:50%; margin-top:5px; flex-shrink:0; }
-.zone-blue .kp h5 { font-size:14px; font-weight:700; margin-bottom:2px; }
-.zone-blue .kp span { font-size:12px; color:#8A857A; line-height:1.5; }
+.zone-blue .kp h5 { font-size:15px; font-weight:700; margin-bottom:3px; }
+.zone-blue .kp span { font-size:14px; color:#8A857A; line-height:1.6; }
 
 /* ── PLUM ZONE — CORD BLOOD ── */
 .zone-plum { background:#FBF5F9; }
@@ -98,7 +98,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .db h4 { font-size:16px; font-weight:700; }
 .db .dc { font-family:'Source Serif 4',serif; font-size:24px; font-weight:400; }
 .db .dt { display:flex; flex-wrap:wrap; gap:6px; }
-.db .dt .tag { background:rgba(255,255,255,0.75); padding:5px 12px; border-radius:100px; font-size:11px; font-weight:600; backdrop-filter:blur(4px); cursor:default; position:relative; will-change:transform; transition:transform 0.5s cubic-bezier(0.23,1,0.32,1); }
+.db .dt .tag { background:rgba(255,255,255,0.75); padding:6px 14px; border-radius:100px; font-size:13px; font-weight:600; backdrop-filter:blur(4px); cursor:default; position:relative; will-change:transform; transition:transform 0.5s cubic-bezier(0.23,1,0.32,1); }
 .db .dt .tag:hover { transform:translate(0,0) !important; background:rgba(255,255,255,0.95); z-index:50; }
 .db .dt .tag .tip { display:none; position:absolute; bottom:calc(100% + 8px); left:50%; transform:translateX(-50%); background:#2C2A26; color:#fff; padding:10px 14px; border-radius:8px; font-size:11px; font-weight:400; line-height:1.5; width:220px; text-align:left; box-shadow:0 4px 16px rgba(0,0,0,0.15); z-index:100; pointer-events:none; }
 .db .dt .tag .tip::after { content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%); border:6px solid transparent; border-top-color:#2C2A26; }
@@ -175,8 +175,10 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .cta-banner h2 em { font-style:italic; color:#E8A0D0; }
 .cta-banner p { font-size:16px; color:rgba(255,255,255,0.5); margin-bottom:32px; position:relative; }
 .cta-banner .btns { display:flex; gap:12px; justify-content:center; position:relative; }
-.btn-w { background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; }
-.btn-gd { background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:'Lato',sans-serif; }
+.btn-w { background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-w:hover { background:rgba(255,255,255,0.85); }
+.btn-gd { background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-gd:hover { background:rgba(255,255,255,0.20); border-color:rgba(255,255,255,0.35); }
 
 /* ── FOOTER ── */
 
