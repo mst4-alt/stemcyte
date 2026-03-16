@@ -52,14 +52,22 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .split .text ul li { font-size:15px; color:#6B665D; padding:8px 0 8px 20px; position:relative; border-bottom:1px solid #F5EDE6; }
 .split .text ul li::before { content:''; position:absolute; left:0; top:14px; width:8px; height:8px; border-radius:50%; border:2px solid #C06AA5; }
 
+/* LEARN LINK */
+.learn-link { display:inline-flex; align-items:center; gap:8px; margin-top:8px; font-size:14px; font-weight:700; color:#6C1A55; text-decoration:none; transition:gap 0.3s ease; }
+.learn-link:hover { gap:12px; }
+
 /* FEATURE CARDS */
 .feat-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
-.proof-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+.feat-grid.col3 { grid-template-columns:repeat(3,1fr); }
 .trust-bg { background:#F3F0F8; }
-.feat-card { background:#fff; border-radius:12px; padding:28px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
+.feat-card { position:relative; background:#fff; border-radius:12px; padding:28px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); transition:all 0.3s ease; }
+.feat-card.linked { cursor:pointer; text-decoration:none; display:block; color:inherit; }
+.feat-card.linked:hover { transform:translateY(-4px); box-shadow:0 8px 24px rgba(0,0,0,0.08); }
 .feat-card .ic { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
 .feat-card h3 { font-size:16px; font-weight:700; margin-bottom:8px; }
 .feat-card p { font-size:15px; color:#8A857A; line-height:1.7; }
+.feat-card .card-arrow { position:absolute; right:28px; top:50%; transform:translateY(-50%) translateX(-8px); opacity:0; transition:all 0.3s ease; }
+.feat-card.linked:hover .card-arrow { opacity:1; transform:translateY(-50%) translateX(0); }
 
 /* ACCREDITATIONS */
 .accred-row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
@@ -81,14 +89,20 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .pr-detail { display:flex; gap:24px; margin-top:10px; }
 .pr-detail .pd { font-size:11px; color:#8A857A; }
 .pr-detail .pd strong { color:#2C2A26; font-weight:700; }
-.pr-detail .pd strong.plum-val { color:#6C1A55; }
-.cr-callout { margin-top:48px; background:#fff; border-radius:14px; padding:40px; box-shadow:0 1px 3px rgba(0,0,0,0.03); display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center; }
-.cr-callout-text h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; line-height:1.25; margin-bottom:10px; }
-.cr-callout-text p { font-size:15px; color:#6B665D; line-height:1.7; max-width:560px; }
-.cr-link-row { margin-top:24px; display:flex; gap:24px; align-items:center; }
-.cr-callout-stat { text-align:center; min-width:140px; }
-.cr-callout-stat .cr-big { font-family:'Source Serif 4',serif; font-size:56px; color:#6C1A55; font-weight:400; line-height:1; }
-.cr-callout-stat .cr-note { font-size:12px; color:#8A857A; margin-top:4px; }
+.pr-detail .pd strong.pv { color:#6C1A55; }
+.b-callout { margin-top:48px; background:#fff; border-radius:14px; padding:40px; box-shadow:0 1px 3px rgba(0,0,0,0.03); display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center; }
+.b-callout h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; line-height:1.25; margin-bottom:10px; }
+.b-callout p { font-size:15px; color:#6B665D; line-height:1.7; max-width:560px; }
+.b-callout .cr-link-row { margin-top:24px; display:flex; gap:24px; align-items:center; }
+.b-callout .cr-stat { text-align:center; min-width:140px; }
+.b-callout .cr-stat .cr-big { font-family:'Source Serif 4',serif; font-size:56px; color:#6C1A55; font-weight:400; line-height:1; }
+.b-callout .cr-stat .cr-note { font-size:12px; color:#8A857A; margin-top:4px; }
+.hiv-block { background:linear-gradient(135deg,#3D0F31,#6C1A55); border-radius:14px; padding:40px; margin-top:32px; position:relative; overflow:hidden; }
+.hiv-block .deco-circle { position:absolute; width:300px; height:300px; border-radius:50%; background:rgba(192,106,165,0.08); top:-100px; right:-60px; }
+.hiv-block .hiv-badge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; background:rgba(255,255,255,0.1); color:#E8A0D0; padding:6px 14px; border-radius:100px; margin-bottom:16px; }
+.hiv-block h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; color:#fff; line-height:1.25; margin-bottom:12px; }
+.hiv-block p { font-size:15px; color:rgba(255,255,255,0.55); line-height:1.7; max-width:640px; }
+.hiv-block .hiv-coda { font-size:14px; color:rgba(255,255,255,0.35); margin-top:12px; }
 
 /* CTA */
 .cta-banner { margin:80px 48px; border-radius:16px; background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:80px 64px; text-align:center; position:relative; overflow:hidden; }
@@ -117,12 +131,11 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
   .section, .section-full, .divider { padding-left:24px; padding-right:24px; }
   .split, .split.rev { grid-template-columns:1fr; gap:32px; direction:ltr; }
   .split .photo { height:260px; }
-  .feat-grid { grid-template-columns:1fr; }
-  .proof-grid { grid-template-columns:1fr; }
+  .feat-grid, .feat-grid.col3 { grid-template-columns:1fr; }
   .accred-row { grid-template-columns:1fr 1fr; }
   .pr-detail { flex-wrap:wrap; gap:12px; }
-  .cr-callout { grid-template-columns:1fr; }
-  .cr-link-row { flex-direction:column; align-items:flex-start; }
+  .b-callout { grid-template-columns:1fr; }
+  .b-callout .cr-link-row { flex-direction:column; align-items:flex-start; }
   .cta-banner { margin:48px 20px; padding:48px 24px; }
 }
 @media (max-width:600px) {
@@ -157,42 +170,101 @@ const html = `<!-- HERO -->
 
 <div class="divider"><div class="divider-line"></div></div>
 
-<!-- DUAL BANK MODEL -->
+<!-- 1. PBA FEATURED SPLIT -->
 <section class="section">
   <div class="split anim">
-    <div class="photo"><img src="/images/Hero_4.jpeg" alt=""></div>
+    <div class="photo"><img src="/images/Hero_3.jpeg" alt="Public Bank Access"></div>
     <div class="text">
-      <div class="lbl">Structural advantage</div>
-      <h2>The only private bank built on a public bank foundation</h2>
-      <p>Most private cord blood banks only store cells. StemCyte operates both a private and public bank &mdash; a dual model that creates advantages no storage-only bank can match.</p>
-      <p>Our public bank is what produced REGENECYTE&reg;, powered 2,300+ transplants worldwide, and enabled landmark research like the IMPAACT P1107 HIV cure collaboration. Private banks without a public side have no pathway into transplant medicine, clinical trials, or regenerative therapy development &mdash; they&rsquo;re closing the door on the future of cord blood science.</p>
+      <div class="lbl">Only at StemCyte</div>
+      <h2>The only private bank with public bank access</h2>
+      <p>StemCyte operates both a private and public cord blood bank. When you add Public Bank Access, your family gets access to donor stem cells if your child ever needs more than their stored unit.</p>
+      <a href="/public-bank-access" class="learn-link">Learn more about PBA <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
 </section>
 
 <div class="divider"><div class="divider-line"></div></div>
 
-<!-- WHAT YOU GET -->
+<!-- 2. TRANSPLANT EXPERIENCE SPLIT (reversed) -->
+<section class="section">
+  <div class="split rev anim">
+    <div class="photo"><img src="/images/Hero_5.jpeg" alt="Transplant experience"></div>
+    <div class="text">
+      <div class="lbl">Transplant experience</div>
+      <h2>More transplants shipped than any other private bank</h2>
+      <p>StemCyte has shipped over 2,300 transplant units to 350+ hospitals in 35 countries &mdash; accounting for 1 in every 26 cord blood transplants worldwide.</p>
+      <p>That experience means our processing, storage, and release protocols have been validated in real clinical outcomes, not just lab tests.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- 3. PROTECTION & GUARANTEES -->
 <section class="section">
   <div class="sh">
-    <div class="lbl">What you get</div>
-    <h2>Protections and access no other bank offers</h2>
+    <div class="lbl">Protection &amp; guarantees</div>
+    <h2>Safety nets no other bank provides</h2>
+  </div>
+  <div class="feat-grid">
+    <a href="/lifesaver-guarantee" class="feat-card linked anim">
+      <div class="ic" style="background:#FBF5F9"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h3>LifeSaver Guarantee</h3>
+      <p>Full refund, $50,000, and a replacement donor unit if engraftment fails. Included free with every plan.</p>
+      <div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+    <a href="/expanded-access-policy" class="feat-card linked anim">
+      <div class="ic" style="background:#FDF5EB"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C4943E" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <h3>Expanded Access Policy</h3>
+      <p>Investigational cord blood therapies for patients with serious conditions who have no other treatment options.</p>
+      <div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C4943E" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- 4. PROGRAMS & DISCOUNTS -->
+<section class="section">
+  <div class="sh">
+    <div class="lbl">Programs &amp; discounts</div>
+    <h2>Making stem cell banking accessible</h2>
+  </div>
+  <div class="feat-grid col3">
+    <a href="/special-programs" class="feat-card linked anim">
+      <div class="ic" style="background:#FBF5F9"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <h3>Sibling Donor Program</h3>
+      <p>Free banking for families where a sibling needs a transplant.</p>
+      <div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+    <a href="/special-programs" class="feat-card linked anim">
+      <div class="ic" style="background:#EDF5FF"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B6DC4" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+      <h3>Military &amp; Public Servant</h3>
+      <p>Special pricing for active and retired military, police, fire, and EMT.</p>
+      <div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B6DC4" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+    <a href="/special-programs" class="feat-card linked anim">
+      <div class="ic" style="background:#F0F7F4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D8B6A" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <h3>Medical Professional</h3>
+      <p>Special pricing for physicians, nurses, and allied health professionals.</p>
+      <div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D8B6A" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+    </a>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<!-- 5. OPERATIONS -->
+<section class="section">
+  <div class="sh">
+    <div class="lbl">How we operate</div>
+    <h2>Built for quality at every step</h2>
   </div>
   <div class="feat-grid">
     <div class="feat-card anim">
-      <div class="ic" style="background:#FBF5F9"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-      <h3>Public Bank Access</h3>
-      <p>Add access to StemCyte&rsquo;s entire public cord blood inventory &mdash; plus a global search across all public banks and up to $100,000 toward sourcing if no match is found. No other private bank offers this.</p>
-    </div>
-    <div class="feat-card anim">
-      <div class="ic" style="background:#FBF5F9"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <h3>LifeSaver Guarantee</h3>
-      <p>If your newborn&rsquo;s cord blood fails to engraft, StemCyte will refund all fees, pay an additional $50,000, and provide a replacement unit from our donor bank free of charge.</p>
-    </div>
-    <div class="feat-card anim">
-      <div class="ic" style="background:#FDF5EB"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C4943E" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-      <h3>Expanded access policy</h3>
-      <p>StemCyte provides access to investigational cord blood therapies for patients with serious conditions who have no other treatment options.</p>
+      <div class="ic" style="background:#F0F7F4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D8B6A" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <h3>Proprietary processing</h3>
+      <p>StemCyte&rsquo;s processing protocols are developed in-house and optimized over 29 years of operation. Every unit is processed in our Baldwin Park, CA facility under cGMP conditions.</p>
     </div>
     <div class="feat-card anim">
       <div class="ic" style="background:#EDF5FF"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B6DC4" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
@@ -204,40 +276,28 @@ const html = `<!-- HERO -->
 
 <div class="divider"><div class="divider-line"></div></div>
 
-<!-- WHY YOU CAN TRUST IT -->
+<!-- 6. ACCREDITATIONS -->
 <section class="section-full trust-bg">
   <div class="inner">
     <div class="sh">
       <div class="lbl">Quality &amp; credentials</div>
       <h2>Why you can trust it</h2>
     </div>
-    <div class="proof-grid">
-      <div class="feat-card anim">
-        <div class="ic" style="background:#F0F7F4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D8B6A" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-        <h3>100% viability on every unit thawed</h3>
-        <p>Every cord blood unit requested and thawed for therapy has been accepted by transplant centers as clinically viable. StemCyte is the only cord blood bank to have disclosed a perfect viability record.</p>
-      </div>
-      <div class="feat-card anim">
-        <div class="ic" style="background:#EDF5FF"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B6DC4" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <h3>Zero contamination, ever</h3>
-        <p>100% contamination-free record on all released units. StemCyte&rsquo;s GMP-compliant facility and rigorous quality protocols ensure every unit meets the highest purity and safety standards.</p>
-      </div>
-    </div>
-    <div class="accred-row" style="margin-top:40px;">
+    <div class="accred-row">
+      <div class="accred-badge anim"><div class="name">FDA</div><div class="desc">U.S. Food and Drug Administration Licensed</div></div>
       <div class="accred-badge anim"><div class="name">FACT</div><div class="desc">Foundation for the Accreditation of Cellular Therapy</div></div>
       <div class="accred-badge anim"><div class="name">AABB</div><div class="desc">American Association of Blood Banks</div></div>
-      <div class="accred-badge anim"><div class="name">FDA</div><div class="desc">U.S. Food and Drug Administration registered</div></div>
       <div class="accred-badge anim"><div class="name">cGMP</div><div class="desc">Current Good Manufacturing Practices</div></div>
     </div>
   </div>
 </section>
 
-<!-- CLINICAL RESEARCH -->
-<section class="section-full" style="background:#FAF9F7">
+<!-- 7. CLINICAL RESEARCH -->
+<section class="section-full" style="background:#F3F0F8">
   <div class="inner">
     <div class="sh">
       <div class="lbl">Clinical research</div>
-      <h2>Cord blood is being used to treat <em>real patients</em> today</h2>
+      <h2>Cord blood is being used to treat <em style="font-style:italic;color:#6C1A55">real patients</em> today</h2>
       <p>StemCyte sponsors 3 active clinical trials developing cord blood therapies for conditions beyond traditional transplantation.</p>
     </div>
     <div style="margin-top:40px">
@@ -248,9 +308,9 @@ const html = `<!-- HERO -->
         </div>
         <div class="thin-bar-track"><div class="thin-bar-fill plum" data-width="88"></div></div>
         <div class="pr-detail">
-          <div class="pd"><strong class="plum-val">FDA BLA</strong> approved 2024</div>
-          <div class="pd"><strong class="plum-val">RMAT</strong> designated</div>
-          <div class="pd"><strong class="plum-val">Expanded Access</strong> 2026</div>
+          <div class="pd"><strong class="pv">FDA BLA approved 2024</strong></div>
+          <div class="pd"><strong class="pv">RMAT designated</strong></div>
+          <div class="pd"><strong class="pv">Expanded Access 2026</strong></div>
         </div>
       </div>
       <div class="pipe-row anim">
@@ -276,19 +336,26 @@ const html = `<!-- HERO -->
         </div>
       </div>
     </div>
-    <div class="cr-callout anim">
-      <div class="cr-callout-text">
+    <div class="b-callout anim">
+      <div>
         <h3>REGENECYTE&reg; &mdash; from our lab to FDA approval</h3>
-        <p>StemCyte developed REGENECYTE&reg;, an FDA-licensed cord blood therapy now used to treat over 80 conditions &mdash; from blood cancers to immune deficiencies. Most cord blood banks have never produced a licensed therapy. We have.</p>
+        <p>StemCyte developed REGENECYTE&reg;, an FDA-Licensed cord blood therapy now used to treat over 80 conditions. Your baby&rsquo;s cord blood is processed in the same Baldwin Park facility, held to the same standards required to produce a federally licensed biologic.</p>
         <div class="cr-link-row">
-          <a href="/regenecyte" class="btn-w" style="display:inline-block;text-decoration:none;background:#6C1A55;color:#fff;padding:12px 28px;border-radius:100px;font-size:14px;font-weight:700;transition:all 0.25s;">Learn about REGENECYTE&reg;</a>
+          <a href="/regenecyte" style="display:inline-block;text-decoration:none;background:#6C1A55;color:#fff;padding:12px 28px;border-radius:100px;font-size:14px;font-weight:700;transition:all 0.25s;">Learn about REGENECYTE&reg;</a>
           <a href="/the-science" style="font-size:14px;font-weight:700;color:#6C1A55;text-decoration:none;">See what cord blood treats &rarr;</a>
         </div>
       </div>
-      <div class="cr-callout-stat">
+      <div class="cr-stat">
         <div class="cr-big">85%</div>
         <div class="cr-note">Long COVID fatigue<br>resolution (Phase II)</div>
       </div>
+    </div>
+    <div class="hiv-block anim">
+      <div class="deco-circle"></div>
+      <div class="hiv-badge">Published in Cell, 2023</div>
+      <h3>StemCyte cord blood transplant may have cured HIV</h3>
+      <p>A woman achieved HIV remission after receiving a cord blood stem cell transplant &mdash; the first woman and only the third person in history to potentially be cured. StemCyte provided the cord blood unit.</p>
+      <p class="hiv-coda">What you bank today may enable breakthroughs that don&rsquo;t yet exist.</p>
     </div>
   </div>
 </section>
