@@ -53,7 +53,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .split .text ul li::before { content:''; position:absolute; left:0; top:14px; width:8px; height:8px; border-radius:50%; border:2px solid #C06AA5; }
 
 /* FEATURE CARDS */
-.feat-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+.feat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
 .feat-card { background:#fff; border-radius:12px; padding:28px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
 .feat-card .ic { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
 .feat-card h3 { font-size:16px; font-weight:700; margin-bottom:8px; }
@@ -107,7 +107,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
   .section, .section-full, .divider { padding-left:24px; padding-right:24px; }
   .split, .split.rev { grid-template-columns:1fr; gap:32px; direction:ltr; }
   .split .photo { height:260px; }
-  .feat-grid { grid-template-columns:1fr; }
+  .feat-grid { grid-template-columns:repeat(2,1fr); }
   .accred-row { grid-template-columns:1fr 1fr; }
   .regen-card { grid-template-columns:1fr; }
   .trial-grid { grid-template-columns:1fr 1fr; }
@@ -116,6 +116,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 @media (max-width:600px) {
   .hero h1 { font-size:28px; }
   .stats { grid-template-columns:1fr; }
+  .feat-grid { grid-template-columns:1fr; }
   .accred-row { grid-template-columns:1fr; }
   .trial-grid { grid-template-columns:1fr; }
   .cta-banner .btns { flex-direction:column; align-items:center; }
@@ -171,6 +172,15 @@ const html = `<!-- HERO -->
       <p>When it matters most, experience is everything.</p>
     </div>
   </div>
+  <div class="split rev anim">
+    <div class="photo"><img src="/images/Hero_4.jpeg" alt=""></div>
+    <div class="text">
+      <div class="lbl">Structural advantage</div>
+      <h2>The only private bank built on a public bank foundation</h2>
+      <p>Most private cord blood banks only store cells. StemCyte operates both a private and public bank &mdash; a dual model that creates advantages no storage-only bank can match.</p>
+      <p>Our public bank is what produced REGENECYTE&reg;, powered 2,300+ transplants worldwide, and enabled landmark research like the IMPAACT P1107 HIV cure collaboration. Private banks without a public side have no pathway into transplant medicine, clinical trials, or regenerative therapy development &mdash; they're closing the door on the future of cord blood science.</p>
+    </div>
+  </div>
 </section>
 
 <div class="divider"><div class="divider-line"></div></div>
@@ -182,6 +192,16 @@ const html = `<!-- HERO -->
     <h2>The safety nets no other bank provides</h2>
   </div>
   <div class="feat-grid">
+    <div class="feat-card anim">
+      <div class="ic" style="background:#F0F7F4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D8B6A" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <h3>100% viability record</h3>
+      <p>Every cord blood unit requested and thawed for therapy has been accepted by transplant centers as clinically viable. StemCyte is the only cord blood bank to have disclosed a perfect viability record.</p>
+    </div>
+    <div class="feat-card anim">
+      <div class="ic" style="background:#EDF5FF"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B6DC4" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <h3>100% contamination-free</h3>
+      <p>Zero contamination incidents across all released units. Our GMP-compliant facility and rigorous quality protocols ensure every unit meets the highest safety standards.</p>
+    </div>
     <div class="feat-card anim">
       <div class="ic" style="background:#FBF5F9"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
       <h3>LifeSaver Guarantee</h3>

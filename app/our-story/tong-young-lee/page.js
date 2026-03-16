@@ -127,22 +127,22 @@ export default function TongYoungLeePage() {
       {/* ── BIO ── */}
       <section className={s.section}>
         <div className={s.inner}>
-          <div className={s.secLabel} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>Background</div>
-          <h2 className={s.secH2} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s' }}>From Harvard&rsquo;s angiogenesis lab to the future of cell therapy</h2>
-          <p className={s.bodyP} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
+          <div className={s.secLabel + " " + s.anim} ref={addAnim}>Background</div>
+          <h2 className={s.secH2 + " " + s.anim} ref={addAnim}>From Harvard&rsquo;s angiogenesis lab to the future of cell therapy</h2>
+          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
             Dr. Tong-Young Lee earned his PhD in pathology from National Taiwan University, Taiwan&rsquo;s most prestigious academic institution. He applied to over 100 post-doctoral programs in the United States and was selected to join the legendary laboratory of Dr. Judah Folkman at Harvard Medical School&mdash;widely recognized as the father of angiogenesis research.
           </p>
-          <p className={s.bodyP} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
+          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
             During his six years at Harvard (2004&ndash;2010), Dr. Lee contributed to the research and development of cancer treatments that would become the first three FDA-approved angiogenesis inhibitors: bevacizumab (Avastin), ranibizumab (Lucentis), and aflibercept (Eylea). Combined, these drugs generate over $15 billion in annual sales worldwide. He is also credited as the inventor of Fc-endostatin, a next-generation long-acting angiogenesis inhibitor.
           </p>
-          <p className={s.bodyP} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
+          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
             In 2010, Dr. Lee returned to Taiwan and joined the Chintek Group, where he contributed to the development of several antibody-based drugs, including the monoclonal antibody FB825, which was subsequently licensed to LEO Pharma of Denmark in a deal valued at up to $530 million. Over the next decade, he founded and led multiple biotech startups across immunotherapy, antibody discovery, and cellular therapy, guiding companies through spin-offs, IPOs, and international partnerships.
           </p>
-          <p className={s.bodyP} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
+          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
             Appointed CEO of StemCyte in 2021, Dr. Lee is now steering the company&rsquo;s evolution from a world-class cord blood bank into a regenerative medicine company with an active clinical pipeline targeting Long COVID, stroke, cerebral palsy, and spinal cord injury.
           </p>
 
-          <div className={s.insightCard} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
+          <div className={s.insightCard + " " + s.anim} ref={addAnim}>
             <div className={s.quoteText}>&ldquo;The vision is for StemCyte to be a leading biotech company in the Asia-Pacific region and eventually globally. We are not just a bank. We are a regenerative medicine company.&rdquo;</div>
             <div className={s.quoteAttr}>Tong-Young Lee, PhD &mdash; CEO, StemCyte</div>
           </div>
@@ -158,7 +158,7 @@ export default function TongYoungLeePage() {
           <h2 className={s.secH2}>Defining achievements</h2>
           <div className={s.highlightGrid}>
             {highlights.map((h, i) => (
-              <div className={s.highlightCard + ' ' + s.anim} key={i} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s` }}>
+              <div className={s.highlightCard + ' ' + s.anim} key={i} ref={addAnim}>
                 <div className={s.highlightIcon + ' ' + s[h.bg]}>{h.icon}</div>
                 <h4>{h.label}</h4>
                 <p>{h.desc}</p>
@@ -191,7 +191,7 @@ export default function TongYoungLeePage() {
           <div className={s.timeline}>
             <div className={s.tlTrack}></div>
             {timeline.map((item, i) => (
-              <div className={s.tlItem + ' ' + s.anim} key={i} ref={addTl} style={{ opacity: 0, transform: 'translateY(16px)', transition: `opacity 0.5s ease ${i * 0.08}s, transform 0.5s ease ${i * 0.08}s` }}>
+              <div className={s.tlItem + ' ' + s.anim} key={i} ref={addTl}>
                 <div className={s.tlDot + (item.highlight ? ' ' + s.tlDotHighlight : ' ' + s.tlDotActive)}></div>
                 <div className={s.tlYear}>{item.year}</div>
                 <div className={s.tlTitle}>{item.title}</div>
@@ -210,15 +210,15 @@ export default function TongYoungLeePage() {
           <div className={s.secLabel}>Education</div>
           <h2 className={s.secH2}>Academic credentials</h2>
           <div className={s.statRow}>
-            <div className={s.statCard} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
+            <div className={s.statCard + " " + s.anim} ref={addAnim}>
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>PhD</div>
               <div className={s.statLabel}>Pathology, National Taiwan University</div>
             </div>
-            <div className={s.statCard} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s' }}>
+            <div className={s.statCard + " " + s.anim} ref={addAnim}>
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>Post-Doc</div>
               <div className={s.statLabel}>Harvard Medical School, Folkman Lab</div>
             </div>
-            <div className={s.statCard} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s' }}>
+            <div className={s.statCard + " " + s.anim} ref={addAnim}>
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>15+ yrs</div>
               <div className={s.statLabel}>Biotech startup leadership across Asia-Pacific</div>
             </div>

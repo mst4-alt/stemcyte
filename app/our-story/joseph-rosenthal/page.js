@@ -136,22 +136,22 @@ export default function JosephRosenthalPage() {
       {/* ── BIO ── */}
       <section className={s.section}>
         <div className={s.inner}>
-          <div className={s.secLabel} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>Background</div>
-          <h2 className={s.secH2} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s' }}>A career spent fighting for the youngest patients</h2>
-          <p className={s.bodyP} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
+          <div className={s.secLabel + " " + s.anim} ref={addAnim}>Background</div>
+          <h2 className={s.secH2 + " " + s.anim} ref={addAnim}>A career spent fighting for the youngest patients</h2>
+          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
             Dr. Joseph Rosenthal is one of the most experienced pediatric stem cell transplantation specialists in the United States. He earned his medical degree from the Sackler School of Medicine at Tel Aviv University, completed fellowship training at the University of Colorado and Children&rsquo;s Hospital of Orange County, and later obtained a Master&rsquo;s in Health Care Management from Harvard School of Public Health and a JD from Purdue University.
           </p>
-          <p className={s.bodyP} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
+          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
             Beginning his career in Israel at Soroka Medical Center and Rambam Medical Center, Dr. Rosenthal joined City of Hope in 1996 and spent over 25 years transforming its pediatric hematology-oncology and bone marrow transplant programs. He rose to Chair of the Department of Pediatrics, Director of Pediatric Hematology/Oncology, and the Barron Hilton Professor and Chair in Pediatrics&mdash;one of the institution&rsquo;s most distinguished endowed positions.
           </p>
-          <p className={s.bodyP} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
+          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
             At City of Hope, he built a nationally recognized team specializing in transplantation for hematological malignancies, solid tumors, genetic inborn errors of metabolism, and non-malignant marrow failure syndromes. He became an authority on cord blood transplants, haplo-identical donor transplants, and supportive care for transplant patients, and led City of Hope&rsquo;s certification to provide CAR T-cell therapy for pediatric patients.
           </p>
-          <p className={s.bodyP} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
+          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
             In 2018, Dr. Rosenthal secured a $5.74 million grant from CIRM to advance a novel curative approach for sickle cell disease using mixed chimerism and T-cell depleted donor grafts. He has authored over 100 scientific publications and serves as a reviewer for <em>Blood and Bone Marrow Transplantation</em> and on the editorial board of the <em>Journal of Transplantation Technologies &amp; Research</em>.
           </p>
 
-          <div className={s.insightCard} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
+          <div className={s.insightCard + " " + s.anim} ref={addAnim}>
             <div className={s.quoteText}>&ldquo;City of Hope believes this treatment will improve the quality of life for patients while also reducing the risk for graft-versus-host disease and transplant-related complications. Our hope is that this treatment can eventually be offered to sickle cell disease patients as a curative therapy.&rdquo;</div>
             <div className={s.quoteAttr}>Joseph Rosenthal, MD &mdash; on CIRM-funded sickle cell research</div>
           </div>
@@ -167,7 +167,7 @@ export default function JosephRosenthalPage() {
           <h2 className={s.secH2}>Career milestones</h2>
           <div className={s.highlightGrid}>
             {highlights.map((h, i) => (
-              <div className={s.highlightCard + ' ' + s.anim} key={i} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s` }}>
+              <div className={s.highlightCard + ' ' + s.anim} key={i} ref={addAnim}>
                 <div className={s.highlightIcon + ' ' + s[h.bg]}>{h.icon}</div>
                 <h4>{h.label}</h4>
                 <p>{h.desc}</p>
@@ -200,7 +200,7 @@ export default function JosephRosenthalPage() {
           <div className={s.timeline}>
             <div className={s.tlTrack}></div>
             {timeline.map((item, i) => (
-              <div className={s.tlItem + ' ' + s.anim} key={i} ref={addTl} style={{ opacity: 0, transform: 'translateY(16px)', transition: `opacity 0.5s ease ${i * 0.08}s, transform 0.5s ease ${i * 0.08}s` }}>
+              <div className={s.tlItem + ' ' + s.anim} key={i} ref={addTl}>
                 <div className={s.tlDot + (item.highlight ? ' ' + s.tlDotHighlight : ' ' + s.tlDotActive)}></div>
                 <div className={s.tlYear}>{item.year}</div>
                 <div className={s.tlTitle}>{item.title}</div>
@@ -220,7 +220,7 @@ export default function JosephRosenthalPage() {
           <h2 className={s.secH2}>Selected publications &amp; research</h2>
           <div className={s.pubList}>
             {pubs.map((p, i) => (
-              <div className={s.pubItem} key={i} ref={addAnim} style={{ opacity: 0, transform: 'translateY(16px)', transition: `opacity 0.5s ease ${i * 0.08}s, transform 0.5s ease ${i * 0.08}s` }}>
+              <div className={s.pubItem + " " + s.anim} key={i} ref={addAnim}>
                 <div className={s.pubDot}></div>
                 <div className={s.pubText}>{p.text}</div>
               </div>
@@ -235,15 +235,15 @@ export default function JosephRosenthalPage() {
           <div className={s.secLabel}>Education</div>
           <h2 className={s.secH2}>Academic credentials</h2>
           <div className={s.statRow}>
-            <div className={s.statCard} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
+            <div className={s.statCard + " " + s.anim} ref={addAnim}>
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>MD</div>
               <div className={s.statLabel}>Sackler School of Medicine, Tel Aviv University</div>
             </div>
-            <div className={s.statCard} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s' }}>
+            <div className={s.statCard + " " + s.anim} ref={addAnim}>
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>MS</div>
               <div className={s.statLabel}>Health Care Management, Harvard School of Public Health</div>
             </div>
-            <div className={s.statCard} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s' }}>
+            <div className={s.statCard + " " + s.anim} ref={addAnim}>
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>JD</div>
               <div className={s.statLabel}>Purdue University</div>
             </div>

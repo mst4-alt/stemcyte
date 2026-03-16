@@ -135,19 +135,19 @@ export default function JonasWangPage() {
       {/* ── BIO ── */}
       <section className={s.section}>
         <div className={s.inner}>
-          <div className={s.secLabel} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>Background</div>
-          <h2 className={s.secH2} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease, transition-delay: 0.1s' }}>From pharmaceutical R&amp;D to saving lives</h2>
-          <p className={s.bodyP} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
+          <div className={s.secLabel + " " + s.anim} ref={addAnim}>Background</div>
+          <h2 className={s.secH2 + " " + s.anim} ref={addAnim}>From pharmaceutical R&amp;D to saving lives</h2>
+          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
             Dr. Jonas Wang began his career in pharmaceutical science, earning a PhD in Physical Pharmacy from the University of Iowa after completing his pharmacy degree at the National Defense Medical Center in Taiwan. His early career took him to Bristol-Myers Squibb, where he served as Associate Director of Basic Pharmaceutics, before joining Johnson &amp; Johnson.
           </p>
-          <p className={s.bodyP} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
+          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
             At J&amp;J, Dr. Wang rose to Vice President of Research and Technology for Consumer Products and Corporate Director of the Drug Delivery Technology Resource Center. He was responsible for new product technology, patent strategy, and competitive intelligence across J&amp;J&rsquo;s skin and hair care franchise. During his tenure, he developed more than 10 core technologies and filed over 30 patents. His invention of a breakthrough anti-wrinkle cream technology earned him the Johnson Medal&mdash;the highest technical achievement award at Johnson &amp; Johnson.
           </p>
-          <p className={s.bodyP} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
+          <p className={s.bodyP + " " + s.anim} ref={addAnim}>
             After J&amp;J, Dr. Wang joined Sycamore Management Corporation as a partner specializing in life sciences and biotechnology investments. In 2009, he brought his deep scientific expertise and business acumen to StemCyte, where he has served as Chairman and CEO, guiding the company&rsquo;s transformation into a global leader in cord blood banking and regenerative cell therapy.
           </p>
 
-          <div className={s.insightCard} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
+          <div className={s.insightCard + " " + s.anim} ref={addAnim}>
             <div className={s.quoteText}>&ldquo;At J&amp;J, I strove to invent the best anti-wrinkle technologies, which contributed to making millions of women feel more beautiful and confident. But as the holder of a PhD in pharmacy, my personal goal has always been to save lives.&rdquo;</div>
             <div className={s.quoteAttr}>Jonas Wang, PhD &mdash; Chairman, StemCyte</div>
           </div>
@@ -163,7 +163,7 @@ export default function JonasWangPage() {
           <h2 className={s.secH2}>Career achievements</h2>
           <div className={s.highlightGrid}>
             {highlights.map((h, i) => (
-              <div className={s.highlightCard + ' ' + s.anim} key={i} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: `opacity 0.6s ease ${i * 0.1}s, transform 0.6s ease ${i * 0.1}s` }}>
+              <div className={s.highlightCard + ' ' + s.anim} key={i} ref={addAnim}>
                 <div className={s.highlightIcon + ' ' + s[h.bg]}>{h.icon}</div>
                 <h4>{h.label}</h4>
                 <p>{h.desc}</p>
@@ -196,7 +196,7 @@ export default function JonasWangPage() {
           <div className={s.timeline}>
             <div className={s.tlTrack}></div>
             {timeline.map((item, i) => (
-              <div className={s.tlItem + ' ' + s.anim} key={i} ref={addTl} style={{ opacity: 0, transform: 'translateY(16px)', transition: `opacity 0.5s ease ${i * 0.08}s, transform 0.5s ease ${i * 0.08}s` }}>
+              <div className={s.tlItem + ' ' + s.anim} key={i} ref={addTl}>
                 <div className={s.tlDot + (item.highlight ? ' ' + s.tlDotHighlight : ' ' + s.tlDotActive)}></div>
                 <div className={s.tlYear}>{item.year}</div>
                 <div className={s.tlTitle}>{item.title}</div>
@@ -215,15 +215,15 @@ export default function JonasWangPage() {
           <div className={s.secLabel}>Education</div>
           <h2 className={s.secH2}>Academic credentials</h2>
           <div className={s.statRow}>
-            <div className={s.statCard} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease, transform 0.6s ease' }}>
+            <div className={s.statCard + " " + s.anim} ref={addAnim}>
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>PhD</div>
               <div className={s.statLabel}>Physical Pharmacy, University of Iowa</div>
             </div>
-            <div className={s.statCard} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s' }}>
+            <div className={s.statCard + " " + s.anim} ref={addAnim}>
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>PharmD</div>
               <div className={s.statLabel}>National Defense Medical Center, Taiwan</div>
             </div>
-            <div className={s.statCard} ref={addAnim} style={{ opacity: 0, transform: 'translateY(24px)', transition: 'opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s' }}>
+            <div className={s.statCard + " " + s.anim} ref={addAnim}>
               <div className={s.statNum} style={{ fontSize: '20px', fontFamily: "'Lato', sans-serif", fontWeight: 700 }}>Alumni</div>
               <div className={s.statLabel}>Distinguished Alumni, University of Iowa &amp; National Defense Medical Center</div>
             </div>
