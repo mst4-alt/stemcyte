@@ -9,7 +9,7 @@ const navLinks = [
   { label: 'Why StemCyte', href: '/why-stemcyte' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Patient Stories', href: '/patient-stories' },
-  { label: 'FAQ', href: '/faq' },
+  { label: 'Our Story', href: '/our-story' },
 ];
 
 export default function Nav({ transparentHero = true }) {
