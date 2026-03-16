@@ -174,7 +174,7 @@ const html = `<!-- HERO -->
 <!-- 1. PBA FEATURED SPLIT -->
 <section class="section">
   <div class="split anim">
-    <div class="photo"><img src="/images/pba.png" alt="Public Bank Access"></div>
+    <div class="photo"><img src="/images/pba_hero_2.png" alt="Public Bank Access"></div>
     <div class="text">
       <div class="lbl">Only at StemCyte</div>
       <h2>The only private bank with public bank access</h2>
