@@ -26,13 +26,6 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .btn-p:hover { background:#5A1548; transform:translateY(-2px); box-shadow:0 8px 24px rgba(108,26,85,0.25); }
 .btn-gl { background:rgba(255,255,255,0.12); color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.2); cursor:pointer; font-family:'Lato',sans-serif; }
 
-/* STATS */
-.stats-wrap { padding:0 48px; max-width:1100px; margin:-40px auto 0; position:relative; z-index:3; }
-.stats { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
-.stat { background:#fff; border-radius:12px; padding:28px 20px; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
-.stat .num { font-family:'Source Serif 4',serif; font-size:36px; color:#6C1A55; font-weight:400; }
-.stat .desc { font-size:12px; color:#8A857A; margin-top:4px; }
-
 /* COMMON */
 .divider { max-width:1100px; margin:0 auto; padding:0 48px; }
 .divider-line { height:1px; background:#E8E2DC; }
@@ -132,8 +125,6 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 /* RESPONSIVE */
 @media (max-width:900px) {
   .hero h1 { font-size:40px; }
-  .stats-wrap { padding:0 24px; }
-  .stats { grid-template-columns:1fr 1fr; }
   .section, .section-full { padding:64px 24px; }
   .uv-grid { grid-template-columns:1fr; }
   .steps-row { flex-direction:column; gap:12px; }
@@ -148,7 +139,6 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 }
 @media (max-width:600px) {
   .hero h1 { font-size:32px; }
-  .stats { grid-template-columns:1fr; }
   .hero .btns, .cta-banner .btns { flex-direction:column; align-items:center; }
 }
 `;
@@ -168,16 +158,6 @@ const html = `<!-- HERO -->
     </div>
   </div>
 </section>
-
-<!-- STATS (no divider after) -->
-<div class="stats-wrap">
-  <div class="stats">
-    <div class="stat anim"><div class="num" data-target="2300" data-suffix="+">0</div><div class="desc">Transplant units shipped</div></div>
-    <div class="stat anim"><div class="num" data-target="350" data-suffix="+">0</div><div class="desc">Transplant hospitals served</div></div>
-    <div class="stat anim"><div class="num" data-target="35" data-suffix="">0</div><div class="desc">Countries worldwide</div></div>
-    <div class="stat anim"><div class="num" data-target="80" data-suffix="+">0</div><div class="desc">Treatable diseases</div></div>
-  </div>
-</div>
 
 <!-- ADVANTAGE -->
 <section class="section">
@@ -316,37 +296,6 @@ var obs = new IntersectionObserver(function(entries) {
   });
 }, { threshold: 0.12 });
 document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });
-
-// Number counters
-document.querySelectorAll('.stat .num').forEach(function(el, idx) {
-  var t = parseInt(el.dataset.target) || 0;
-  var s = el.dataset.suffix || '';
-  el.textContent = t.toLocaleString() + s;
-  var profiles = [
-    { ticks:10, interval:80,  startPause:100 },
-    { ticks:6,  interval:120, startPause:300 },
-    { ticks:4,  interval:160, startPause:600 },
-    { ticks:8,  interval:130, startPause:700 }
-  ];
-  var p = profiles[idx % profiles.length];
-  var startVal = Math.max(0, t - p.ticks);
-  var cobs = new IntersectionObserver(function(ent) {
-    if (ent[0].isIntersecting) {
-      var current = startVal;
-      el.textContent = current.toLocaleString() + s;
-      function tick() {
-        if (current < t) {
-          current++;
-          el.textContent = current.toLocaleString() + s;
-          setTimeout(tick, p.interval);
-        }
-      }
-      setTimeout(tick, p.startPause);
-      cobs.unobserve(el);
-    }
-  }, { threshold: 0.5 });
-  cobs.observe(el);
-});
 
 // Plans toggle
 function togglePlans(t, b) {
