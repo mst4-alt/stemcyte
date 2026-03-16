@@ -29,9 +29,8 @@ export default function Footer() {
         </div>
         <div className="col">
           <h4>Contact</h4>
-          <a href="tel:8663894659">(866) 389-4659</a>
+          <Link href="/contact">Contact us</Link>
           <a href="mailto:customerservice@stemcyte.com">customerservice@stemcyte.com</a>
-          <a href="https://maps.google.com/?q=StemCyte+Inc+Baldwin+Park+CA" target="_blank" rel="noopener">Baldwin Park, CA 91706</a>
           <Link href="/privacy-policy">Privacy policy</Link>
           <Link href="/expanded-access-policy">Expanded access policy</Link>
         </div>
