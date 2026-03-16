@@ -338,7 +338,7 @@ body {
 }
 .team-card .avatar {
   width:100%;
-  aspect-ratio:1/1;
+  aspect-ratio:3/4;
   object-fit:cover;
   object-position:center 35%;
   display:block;
