@@ -194,7 +194,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 `;
 
 const html = `<!-- HERO -->
-<section class="hero">
+<section class="hero" id="hero">
   <div class="bg"></div>
   <div class="vig"></div>
   <div class="ct">
@@ -769,5 +769,5 @@ function selectPayMethod(el) {
 updateSummary();`;
 
 export default function Page() {
-  return <PageContent css={css} html={html} script={script} transparentNav={false} />;
+  return <PageContent css={css} html={html} script={script} transparentNav={true} />;
 }
