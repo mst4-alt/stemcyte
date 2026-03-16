@@ -33,8 +33,8 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 
 /* PATIENT STORIES */
 .story { background:#fff; border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); overflow:hidden; margin-bottom:24px; display:grid; grid-template-columns:280px 1fr; }
-.story .story-img { background:#F3F0F8; display:flex; align-items:center; justify-content:center; min-height:240px; }
-.story .story-img img { width:100%; height:100%; object-fit:cover; }
+.story .story-img { background:#F3F0F8; display:flex; align-items:center; justify-content:center; min-height:240px; overflow:hidden; }
+.story .story-img img { width:100%; height:100%; object-fit:cover; max-height:400px; }
 .story .story-img .placeholder { font-size:12px; color:#B0AB9E; text-align:center; padding:20px; }
 .story .story-inner { padding:40px; }
 .story .tag { display:inline-block; padding:4px 12px; border-radius:100px; font-size:10px; font-weight:700; margin-bottom:16px; }
@@ -137,6 +137,9 @@ const html = `<!-- HERO -->
       <div class="diag">Diagnosis: Cerebral Palsy</div>
       <p>Heather was in labor when her uterus ruptured, depriving her fourth child Ryden of oxygen. The MRI showed catastrophic brain damage and a diagnosis of extremely severe cerebral palsy.</p>
       <p>The family banked their fifth child's cord blood with StemCyte and used it for Ryden six months later in a clinical trial for cerebral palsy.</p>
+      <div class="story-video">
+        <iframe src="https://www.youtube.com/embed/9TyVpe7Id-4" title="The Hoffman Family Story" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 
@@ -151,18 +154,6 @@ const html = `<!-- HERO -->
     </div>
   </div>
 
-  <div class="story anim">
-    <div class="story-img" style="background:#F3F0F8;display:flex;align-items:center;justify-content:center"><div class="placeholder">Photo coming soon</div></div>
-    <div class="story-inner">
-      <div class="tag" style="background:#FBF5F9;color:#6C1A55">Family story</div>
-      <h3>The Hoffman Family</h3>
-      <div class="diag">Why they chose StemCyte</div>
-      <p>The Hoffman family chose to bank their baby's cord blood with StemCyte to protect their growing family's future. Their story captures why parents choose cord blood banking &mdash; and why they trust StemCyte.</p>
-      <div class="story-video">
-        <iframe src="https://www.youtube.com/embed/9TyVpe7Id-4" title="The Hoffman Family Story" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
 </section>
 
 <div class="divider"><div class="divider-line"></div></div>
