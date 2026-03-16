@@ -5,7 +5,9 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-in">
         <div>
-          <div className="brand">Stem<b>Cyte</b></div>
+          <div className="brand">
+            <img src="/images/logos/white_stemcyte.png" alt="StemCyte" style={{ height: '20px', width: 'auto', opacity: 0.3 }} />
+          </div>
           <p className="bd">A global regenerative therapeutics company since 1997.</p>
           <div className="tags"><span>FDA</span><span>FACT</span><span>AABB</span><span>cGMP</span></div>
         </div>

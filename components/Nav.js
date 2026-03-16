@@ -62,7 +62,10 @@ export default function Nav({ transparentHero = true }) {
   return (
     <>
       <nav className={navClass} id="nav" ref={navRef}>
-        <Link href="/" className="logo">Stem<b>Cyte</b></Link>
+        <Link href="/" className="logo">
+          <img src="/images/logos/white_stemcyte.png" alt="StemCyte" className="logo-white" />
+          <img src="/images/logos/fullcolor_stemcyte.png" alt="StemCyte" className="logo-color" />
+        </Link>
         <div className="links">
           {navLinks.map(({ label, href }) => {
             const isActive = pathname === href;

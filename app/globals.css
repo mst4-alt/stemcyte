@@ -29,15 +29,18 @@ body {
   border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 .nav .logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 24px;
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: opacity 0.3s;
 }
-.nav.at-top .logo { color: #fff; }
-.nav.at-top .logo b { color: #E8A0D0; }
-.nav.scrolled .logo { color: #2C2A26; }
-.nav.scrolled .logo b { color: #6C1A55; }
+.nav .logo img { height: 24px; width: auto; }
+.nav .logo-white { display: none; }
+.nav .logo-color { display: none; }
+.nav.at-top .logo-white { display: block; }
+.nav.at-top .logo-color { display: none; }
+.nav.scrolled .logo-white { display: none; }
+.nav.scrolled .logo-color { display: block; }
 .nav .links {
   display: flex;
   gap: 24px;
@@ -99,12 +102,8 @@ body {
   gap: 48px;
 }
 .footer .brand {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  color: #F0E0EB;
   margin-bottom: 8px;
 }
-.footer .brand b { color: #E8A0D0; }
 .footer .bd { font-size: 13px; line-height: 1.7; }
 .footer .col h4 {
   font-size: 11px;
