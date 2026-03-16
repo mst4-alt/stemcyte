@@ -34,6 +34,20 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .zone .lead { font-size:17px; color:#6B665D; line-height:1.7; max-width:600px; margin:0 auto; }
 .zone .circle-deco { position:absolute; border-radius:50%; opacity:0.3; z-index:0; }
 
+/* ── SECTION BANNERS ── */
+.section-banner { padding: 56px 48px 0; text-align: center; margin-bottom: 48px; }
+.section-banner .banner-label { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 400; letter-spacing: -1.5px; line-height: 1.1; }
+.section-banner .banner-rule { width: 64px; height: 2px; margin: 20px auto 0; border-radius: 2px; }
+.zone-blue .section-banner { border-bottom: 1px solid rgba(59,109,196,0.12); }
+.zone-blue .banner-label { color: #3B6DC4; }
+.zone-blue .banner-rule { background: #3B6DC4; }
+.zone-plum .section-banner { border-bottom: 1px solid rgba(108,26,85,0.1); }
+.zone-plum .banner-label { color: #6C1A55; }
+.zone-plum .banner-rule { background: #6C1A55; }
+.zone-sage .section-banner { border-bottom: 1px solid rgba(61,139,106,0.12); }
+.zone-sage .banner-label { color: #3D8B6A; }
+.zone-sage .banner-rule { background: #3D8B6A; }
+
 /* ── BLUE ZONE — STEM CELLS ── */
 .zone-blue { background:#EDF5FF; }
 .zone-blue .zlbl { color:#3B6DC4; }
@@ -186,6 +200,8 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
   .cta-banner { margin:48px 20px; padding:48px 24px; }
   .db .dt .tag .tip { display:none; }
   .db .dt .tag.tip-open .tip { display:block; }
+  .section-banner .banner-label { font-size: 36px; }
+  .section-banner { padding: 40px 24px 0; margin-bottom: 36px; }
 }
 @media (max-width:600px) {
   .hero h1 { font-size:28px; }
@@ -207,9 +223,12 @@ const html = `<!-- HERO -->
 <!-- ════ BLUE ZONE — STEM CELLS ════ -->
 <section class="zone zone-blue">
   <div class="circle-deco"></div>
+  <div class="section-banner">
+    <div class="banner-label">The Science</div>
+    <div class="banner-rule"></div>
+  </div>
   <div class="inner" style="max-width:1100px">
     <div class="tc">
-      <div class="zlbl">The Science</div>
       <h2>What are cord blood stem cells?</h2>
     </div>
     <div class="explain">
@@ -233,9 +252,12 @@ const html = `<!-- HERO -->
 <!-- ════ PLUM ZONE — CORD BLOOD ════ -->
 <section class="zone zone-plum">
   <div class="circle-deco"></div>
+  <div class="section-banner">
+    <div class="banner-label">Cord Blood</div>
+    <div class="banner-rule"></div>
+  </div>
   <div class="inner" style="max-width:1100px">
     <div class="tc">
-      <div class="zlbl">Cord blood</div>
       <h2>Proven today &mdash; treating 80+ diseases</h2>
       <p class="lead">Used in over 60,000 transplants worldwide since 1988. Cord blood stem cells are approved for treating a wide range of serious conditions.</p>
     </div>
@@ -348,9 +370,12 @@ const html = `<!-- HERO -->
 <!-- ════ SAGE ZONE — CORD TISSUE ════ -->
 <section class="zone zone-sage">
   <div class="circle-deco"></div>
+  <div class="section-banner">
+    <div class="banner-label">Cord Tissue</div>
+    <div class="banner-rule"></div>
+  </div>
   <div class="inner">
     <div class="tc">
-      <div class="zlbl">Cord tissue</div>
       <h2>The future of regenerative medicine</h2>
       <p class="lead">Cord tissue contains mesenchymal stem cells (MSCs) that repair muscle, bone, cartilage, skin, and organs. No HLA matching required &mdash; any family member can use them.</p>
     </div>
