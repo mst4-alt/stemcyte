@@ -9,8 +9,6 @@ const css = `
 html { scroll-behavior:smooth; }
 body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
 
-/* ── NAV ── */
-
 /* ── HERO ── */
 .hero { position:relative; min-height:540px; display:flex; align-items:flex-end; overflow:hidden; }
 .hero .bg { position:absolute; inset:0; background-image:url('/images/Hero_4.jpeg'); background-size:cover; background-position:center; }
@@ -34,55 +32,64 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .zone .lead { font-size:17px; color:#6B665D; line-height:1.7; max-width:600px; margin:0 auto; }
 .zone .circle-deco { position:absolute; border-radius:50%; opacity:0.3; z-index:0; }
 
-/* ── SECTION BANNERS (editorial left-rule) ── */
-.section-banner { padding: 0 48px; margin-bottom: 96px; display: flex; align-items: center; gap: 28px; }
-.section-banner .banner-label { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 400; letter-spacing: -1.5px; line-height: 1; white-space: nowrap; flex-shrink: 0; }
-.section-banner .banner-rule { height: 1px; flex: 1; border-radius: 0; }
-.zone-blue .section-banner { }
-.zone-blue .banner-label { color: #3B6DC4; }
-.zone-blue .banner-rule { background: rgba(59,109,196,0.25); }
-.zone-plum .section-banner { }
-.zone-plum .banner-label { color: #6C1A55; }
-.zone-plum .banner-rule { background: rgba(108,26,85,0.2); }
-.zone-sage .section-banner { }
-.zone-sage .banner-label { color: #3D8B6A; }
-.zone-sage .banner-rule { background: rgba(61,139,106,0.25); }
+/* ── SECTION BANNERS ── */
+.section-banner { padding:0 48px; margin-bottom:96px; display:flex; align-items:center; gap:28px; }
+.section-banner .banner-label { font-family:'Playfair Display',serif; font-size:48px; font-weight:400; letter-spacing:-1.5px; line-height:1; white-space:nowrap; flex-shrink:0; }
+.section-banner .banner-rule { height:1px; flex:1; border-radius:0; }
+.zone-blue .banner-label { color:#3B6DC4; }
+.zone-blue .banner-rule { background:rgba(59,109,196,0.25); }
+.zone-plum .banner-label { color:#6C1A55; }
+.zone-plum .banner-rule { background:rgba(108,26,85,0.2); }
+.zone-sage .banner-label { color:#3D8B6A; }
+.zone-sage .banner-rule { background:rgba(61,139,106,0.25); }
 
 /* ── BLUE ZONE — STEM CELLS ── */
 .zone-blue { background:#EDF5FF; }
 .zone-blue .zlbl { color:#3B6DC4; }
 .zone-blue .circle-deco { width:500px; height:500px; background:#D4E4FF; right:-150px; top:-150px; }
-.zone-blue .explain { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; max-width:1100px; margin:0 auto; }
-.zone-blue .narrative p { font-size:15px; color:#6B665D; line-height:1.8; margin-bottom:16px; }
-.zone-blue .narrative p strong { color:#2C2A26; }
-.zone-blue .keypoints { background:#fff; border-radius:12px; padding:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
-.zone-blue .keypoints h4 { font-size:14px; font-weight:700; color:#3B6DC4; margin-bottom:16px; }
-.zone-blue .kp { display:flex; gap:14px; align-items:flex-start; padding:14px 0; border-bottom:1px solid #F5EDE6; }
-.zone-blue .kp:last-child { border:none; padding-bottom:0; }
-.zone-blue .kp .dot { width:10px; height:10px; border-radius:50%; margin-top:5px; flex-shrink:0; }
-.zone-blue .kp h5 { font-size:15px; font-weight:700; margin-bottom:3px; }
-.zone-blue .kp span { font-size:14px; color:#8A857A; line-height:1.6; }
+
+/* Journey steps */
+.journey-intro { text-align:center; font-size:17px; color:#6B665D; line-height:1.7; max-width:600px; margin:0 auto 48px; }
+.journey { max-width:800px; margin:0 auto; position:relative; }
+.journey-step { display:flex; gap:32px; align-items:flex-start; position:relative; padding-bottom:48px; }
+.journey-step:last-child { padding-bottom:0; }
+.journey-step:last-child .journey-line { display:none; }
+.journey-circle { width:80px; height:80px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; position:relative; z-index:2; }
+.journey-circle span { font-family:'Source Serif 4',serif; font-size:28px; font-weight:400; }
+.journey-line { position:absolute; left:40px; top:80px; bottom:0; width:2px; background:#D4E4FF; z-index:1; }
+.journey-content { padding-top:16px; flex:1; }
+.journey-content h4 { font-size:18px; font-weight:700; margin-bottom:8px; }
+.journey-content p { font-size:15px; color:#6B665D; line-height:1.8; }
+.journey-content p strong { color:#2C2A26; }
 
 /* ── PLUM ZONE — CORD BLOOD ── */
 .zone-plum { background:#FBF5F9; }
 .zone-plum .zlbl { color:#6C1A55; }
 .zone-plum .circle-deco { width:500px; height:500px; background:#F0E0EB; left:-200px; bottom:-200px; }
-.zone-plum .zsp { display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:stretch; max-width:1100px; margin:0 auto; }
-.zone-plum .fact-list { display:flex; flex-direction:column; gap:12px; }
-.zone-plum .fact { background:#fff; border-radius:12px; padding:20px 24px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); display:flex; gap:18px; align-items:flex-start; flex:1; }
-.zone-plum .fact .ic { width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-.zone-plum .fact h4 { font-size:15px; font-weight:700; margin-bottom:3px; }
-.zone-plum .fact span { font-size:15px; color:#8A857A; line-height:1.5; }
-.zone-plum .stat-block { background:#fff; border-radius:12px; padding:36px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); display:flex; flex-direction:column; }
-.zone-plum .stat-block .big { font-family:'Source Serif 4',serif; font-size:72px; color:#6C1A55; font-weight:400; line-height:1; margin-bottom:6px; }
-.zone-plum .stat-block .bl { font-size:16px; font-weight:700; margin-bottom:14px; }
-.zone-plum .stat-block .sd { font-size:15px; color:#8A857A; line-height:1.7; margin-bottom:16px; }
-.zone-plum .stat-block .mr { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding-top:16px; border-top:1px solid #F5EDE6; }
-.zone-plum .stat-block .mi { text-align:center; }
-.zone-plum .stat-block .mi .v { font-family:'Source Serif 4',serif; font-size:28px; color:#6C1A55; }
-.zone-plum .stat-block .mi .d { font-size:12px; color:#8A857A; }
-.zone-plum .stat-block .extra { margin-top:16px; padding-top:16px; border-top:1px solid #F5EDE6; font-size:14px; color:#8A857A; line-height:1.6; }
-.zone-plum .stat-block .extra strong { color:#6C1A55; }
+
+/* Impact hero */
+.impact-hero { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; max-width:1100px; margin:0 auto 48px; }
+.impact-big { font-family:'Source Serif 4',serif; font-size:120px; color:#6C1A55; font-weight:400; line-height:1; }
+.impact-label { font-size:20px; font-weight:700; color:#2C2A26; margin-top:4px; }
+.impact-sublabel { font-size:15px; color:#8A857A; margin-top:4px; }
+.impact-narrative p { font-size:15px; color:#6B665D; line-height:1.8; margin-bottom:14px; }
+.impact-narrative p strong { color:#2C2A26; }
+
+/* Category summary cards */
+.cat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; max-width:1100px; margin:0 auto 32px; }
+.cat-card { border-radius:12px; padding:24px; text-align:center; border:1px solid transparent; transition:transform 0.3s ease; }
+.cat-card:hover { transform:translateY(-4px); }
+.cat-icon { width:48px; height:48px; border-radius:50%; margin:0 auto 12px; display:flex; align-items:center; justify-content:center; }
+.cat-count { font-family:'Source Serif 4',serif; font-size:28px; font-weight:400; line-height:1; margin-bottom:4px; }
+.cat-card h4 { font-size:14px; font-weight:700; margin-bottom:6px; }
+.cat-desc { font-size:12px; color:#8A857A; line-height:1.5; }
+
+/* Match stat cards */
+.match-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:1100px; margin:0 auto; }
+.match-card { background:#fff; border-radius:12px; padding:24px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); text-align:center; }
+.match-card .mv { font-family:'Source Serif 4',serif; font-size:36px; color:#6C1A55; font-weight:400; line-height:1; }
+.match-card .ml { font-size:14px; font-weight:700; color:#2C2A26; margin-top:6px; }
+.match-card .md { font-size:12px; color:#8A857A; margin-top:4px; }
 
 /* ── PLUM DEEP — 80+ DISEASES ── */
 .zone-plum-deep { background:#F3E8EE; padding:80px 48px; position:relative; overflow:visible; }
@@ -137,7 +144,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .zone-sage .ccard-sage .ctype { color:#3D8B6A; }
 .zone-sage .ccard-sage .cv { color:#3D8B6A; }
 
-/* ── SAGE DEEP — CLINICAL TRIALS ── */
+/* ── SAGE DEEP — CLINICAL TRIALS (split layout) ── */
 .zone-sage-deep { background:#DFF0E6; padding:80px 48px; position:relative; overflow:hidden; }
 .zone-sage-deep .circle-deco { position:absolute; width:400px; height:400px; border-radius:50%; background:#D4E8DC; opacity:0.3; left:-120px; top:-120px; z-index:0; }
 .zone-sage-deep .inner { max-width:1100px; margin:0 auto; position:relative; z-index:1; }
@@ -145,28 +152,38 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .zone-sage-deep .zlbl { font-size:13px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#3D8B6A; margin-bottom:10px; }
 .zone-sage-deep h2 { font-family:'Playfair Display',serif; font-size:40px; font-weight:400; margin-bottom:10px; line-height:1.15; }
 .zone-sage-deep .lead { font-size:16px; color:#6B665D; max-width:560px; margin:0 auto; line-height:1.7; }
-.trial-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-.trial-card { background:#fff; border-radius:12px; padding:24px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
-.trial-card .phase { display:inline-block; padding:3px 10px; border-radius:100px; font-size:10px; font-weight:700; margin-bottom:12px; background:#F0F7F4; color:#2A6B4F; }
-.trial-card h4 { font-size:15px; font-weight:700; margin-bottom:6px; }
-.trial-card p { font-size:13px; color:#8A857A; line-height:1.6; }
-.trial-card .cell-type { font-size:11px; color:#3D8B6A; font-weight:700; margin-top:10px; }
+
+.trials-split { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+.trials-col-header { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+.trials-col-header h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; }
+.trials-badge { display:inline-block; padding:4px 12px; border-radius:100px; font-size:10px; font-weight:700; }
+.trials-badge-plum { background:#FBF5F9; color:#6C1A55; }
+.trials-badge-sage { background:#D4E8DC; color:#2A6B4F; }
+
+/* StemCyte trial cards */
+.sc-trial-card { background:#fff; border-radius:12px; padding:24px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); margin-bottom:16px; }
+.sc-trial-card:last-child { margin-bottom:0; }
+.sc-trial-card .phase { display:inline-block; padding:3px 10px; border-radius:100px; font-size:10px; font-weight:700; margin-bottom:12px; background:#FBF5F9; color:#6C1A55; }
+.sc-trial-card h4 { font-size:15px; font-weight:700; margin-bottom:6px; }
+.sc-trial-card p { font-size:13px; color:#8A857A; line-height:1.6; margin-bottom:8px; }
+.sc-trial-card .source { font-size:11px; color:#6C1A55; font-weight:700; }
+
+/* Global research list */
+.global-item { display:flex; gap:12px; align-items:flex-start; margin-bottom:20px; }
+.global-item:last-child { margin-bottom:0; }
+.global-dot { width:10px; height:10px; border-radius:50%; margin-top:5px; flex-shrink:0; }
+.global-dot-inv { background:#3D8B6A; }
+.global-dot-pre { background:#B8D8C7; }
+.global-content h4 { font-size:14px; font-weight:700; margin-bottom:2px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.global-content .tier { display:inline-block; padding:2px 8px; border-radius:100px; font-size:9px; font-weight:700; }
+.tier-inv { background:#F0F7F4; color:#2A6B4F; }
+.tier-pre { background:#F5F3F0; color:#8A857A; }
+.global-content p { font-size:13px; color:#8A857A; line-height:1.6; }
+
 .trial-stat-row { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; }
 .trial-stat { background:#fff; border-radius:12px; padding:24px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); text-align:center; }
 .trial-stat .tv { font-family:'Source Serif 4',serif; font-size:36px; color:#3D8B6A; font-weight:400; line-height:1; }
 .trial-stat .td { font-size:12px; color:#8A857A; margin-top:4px; }
-
-/* ── SPLIT + STAKES ── */
-.split { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; margin-bottom:48px; }
-.split .photo { border-radius:12px; overflow:hidden; height:360px; }
-.split .photo img { width:100%; height:100%; object-fit:cover; }
-.split .text .slbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:10px; }
-.split .text h2 { font-family:'Playfair Display',serif; font-size:32px; font-weight:400; margin-bottom:16px; line-height:1.2; }
-.split .text p { font-size:15px; color:#8A857A; line-height:1.7; margin-bottom:12px; }
-.stakes { background:#FBF5F9; border-radius:12px; padding:40px; margin-top:48px; }
-.stakes h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; margin-bottom:12px; }
-.stakes p { font-size:15px; color:#6B665D; line-height:1.7; margin-bottom:12px; }
-.stakes .hl { font-size:15px; color:#6C1A55; font-weight:700; }
 
 /* ── CTA ── */
 .cta-banner { margin:80px 48px; border-radius:16px; background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:80px 64px; text-align:center; position:relative; overflow:hidden; }
@@ -180,8 +197,6 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .btn-gd { background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
 .btn-gd:hover { background:rgba(255,255,255,0.20); border-color:rgba(255,255,255,0.35); }
 
-/* ── FOOTER ── */
-
 /* ── ANIMATIONS ── */
 .anim { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease, transform 0.7s ease; }
 .anim.vis { opacity:1; transform:translateY(0); }
@@ -191,22 +206,25 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
   .hero .ct { padding:140px 24px 48px; }
   .hero h1 { font-size:34px; }
   .zone, .zone-plum-deep, .zone-sage-deep { padding:64px 24px; }
-  .zone-blue .explain { grid-template-columns:1fr; }
-  .zone-plum .zsp { grid-template-columns:1fr; }
-  .zone-sage .compare-grid { grid-template-columns:1fr; }
   .section, .divider { padding-left:24px; padding-right:24px; }
   .dgrid { grid-template-columns:1fr; }
-  .trial-cards, .trial-stat-row { grid-template-columns:1fr; }
-  .split { grid-template-columns:1fr; gap:32px; }
-  .split .photo { height:240px; }
+  .zone-sage .compare-grid { grid-template-columns:1fr; }
+  .impact-hero { grid-template-columns:1fr; text-align:center; }
+  .impact-big { font-size:80px; }
+  .cat-grid { grid-template-columns:1fr 1fr; }
+  .match-grid { grid-template-columns:1fr; }
+  .trials-split { grid-template-columns:1fr; }
+  .trial-stat-row { grid-template-columns:1fr; }
   .cta-banner { margin:48px 20px; padding:48px 24px; }
   .db .dt .tag .tip { display:none; }
   .db .dt .tag.tip-open .tip { display:block; }
-  .section-banner .banner-label { font-size: 32px; }
-  .section-banner { padding: 0 24px; margin-bottom: 40px; gap: 20px; }
+  .section-banner .banner-label { font-size:32px; }
+  .section-banner { padding:0 24px; margin-bottom:40px; gap:20px; }
 }
 @media (max-width:600px) {
   .hero h1 { font-size:28px; }
+  .cat-grid { grid-template-columns:1fr; }
+  .impact-big { font-size:64px; }
   .cta-banner .btns { flex-direction:column; align-items:center; }
 }
 `;
@@ -233,19 +251,46 @@ const html = `<!-- HERO -->
     <div class="tc">
       <h2>What are cord blood stem cells?</h2>
     </div>
-    <div class="explain">
-      <div class="narrative anim">
-        <p><strong>Stem cells are the body's master cells.</strong> They are unique because they can both renew themselves and transform into specialized cells &mdash; a capability no other cell has.</p>
-        <p>The blood remaining in your baby's umbilical cord after birth is rich with <strong>hematopoietic stem cells (HSCs)</strong> &mdash; the same type used in bone marrow transplants for decades. These cells build and regenerate our entire blood and immune system.</p>
-        <p>Every red blood cell that carries oxygen, every white blood cell that fights infection, every platelet that helps blood clot &mdash; all originate from these stem cells.</p>
-        <p>Your baby's cord blood is a <strong>100% perfect match</strong> for themselves, has a <strong>75% chance</strong> of partial match for siblings, and roughly <strong>20% for parents</strong>. It can only be collected in the minutes after birth.</p>
+    <p class="journey-intro anim">Think of stem cells as your body&rsquo;s starter kit. They&rsquo;re the original cells that every other cell in your body comes from.</p>
+    <div class="journey">
+      <div class="journey-step anim">
+        <div class="journey-circle" style="background:#D4E4FF">
+          <span style="color:#3B6DC4">1</span>
+        </div>
+        <div class="journey-line"></div>
+        <div class="journey-content">
+          <h4 style="color:#3B6DC4">Your baby is born with them</h4>
+          <p>The blood left in your baby&rsquo;s umbilical cord after birth is rich with <strong>stem cells</strong> &mdash; the same type used in bone marrow transplants for decades. They build your baby&rsquo;s entire blood and immune system.</p>
+        </div>
       </div>
-      <div class="keypoints anim">
-        <h4>Key facts about cord blood stem cells</h4>
-        <div class="kp"><div class="dot" style="background:#6C1A55"></div><div><h5>They rebuild entire systems</h5><span>A single transplant can regenerate a patient's complete blood and immune system from scratch</span></div></div>
-        <div class="kp"><div class="dot" style="background:#3B6DC4"></div><div><h5>They're younger and more adaptable</h5><span>Cord blood stem cells are immunologically immature &mdash; less graft-vs-host disease than adult donor cells</span></div></div>
-        <div class="kp"><div class="dot" style="background:#3D8B6A"></div><div><h5>They're immediately available</h5><span>Unlike bone marrow donors requiring months of searching, banked cord blood is ready when you need it</span></div></div>
-        <div class="kp"><div class="dot" style="background:#C4943E"></div><div><h5>Collection is completely safe</h5><span>Collected after birth, after the cord is clamped and cut. Zero risk to mother or baby.</span></div></div>
+      <div class="journey-step anim">
+        <div class="journey-circle" style="background:#F0E0EB">
+          <span style="color:#6C1A55">2</span>
+        </div>
+        <div class="journey-line"></div>
+        <div class="journey-content">
+          <h4 style="color:#6C1A55">They can rebuild what&rsquo;s broken</h4>
+          <p>Every red blood cell, white blood cell, and platelet traces back to these stem cells. When someone fights leukemia, sickle cell disease, or an immune deficiency, <strong>a transplant can regenerate their entire blood and immune system</strong>.</p>
+        </div>
+      </div>
+      <div class="journey-step anim">
+        <div class="journey-circle" style="background:#D4E8DC">
+          <span style="color:#2A6B4F">3</span>
+        </div>
+        <div class="journey-line"></div>
+        <div class="journey-content">
+          <h4 style="color:#2A6B4F">They&rsquo;re younger and stronger</h4>
+          <p>Cord blood stem cells are <strong>more adaptable</strong> than adult bone marrow, cause fewer complications in transplant, and don&rsquo;t require a perfect donor match.</p>
+        </div>
+      </div>
+      <div class="journey-step anim">
+        <div class="journey-circle" style="background:#FDF5EB">
+          <span style="color:#C4943E">4</span>
+        </div>
+        <div class="journey-content">
+          <h4 style="color:#C4943E">You have one chance to collect them</h4>
+          <p>Collection happens in the minutes after birth, after the cord is clamped and cut. <strong>Zero risk to mother or baby.</strong> If they&rsquo;re not collected, they&rsquo;re discarded forever.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -261,40 +306,73 @@ const html = `<!-- HERO -->
   <div class="inner" style="max-width:1100px">
     <div class="tc">
       <h2>Proven today &mdash; treating 80+ diseases</h2>
-      <p class="lead">Used in over 60,000 transplants worldwide since 1988. Cord blood stem cells are approved for treating a wide range of serious conditions.</p>
     </div>
-    <div class="zsp">
-      <div class="stat-block anim">
-        <div class="big">80+</div>
-        <div class="bl">Treatable diseases and counting</div>
-        <div class="sd">Cord blood is used to treat leukemia, lymphoma, sickle cell disease, thalassemia, SCID, Krabbe disease, and dozens more across four major categories: cancers, blood disorders, immune deficiencies, and metabolic conditions.</div>
-        <div class="mr">
-          <div class="mi"><div class="v">60K+</div><div class="d">Transplants worldwide</div></div>
-          <div class="mi"><div class="v">1988</div><div class="d">First successful transplant</div></div>
-        </div>
-        <div class="mr" style="border-top:none;padding-top:0">
-          <div class="mi"><div class="v">100%</div><div class="d">Match for your baby</div></div>
-          <div class="mi"><div class="v">75%</div><div class="d">Sibling partial match</div></div>
-        </div>
-        <div class="extra">A baby's cord blood is a guaranteed perfect match for themselves. Siblings have a 75% chance of partial match, and biological parents roughly 20%. Each unit can be used in one transplant &mdash; which is why banking each child matters.</div>
+
+    <!-- Impact hero -->
+    <div class="impact-hero anim">
+      <div>
+        <div class="impact-big">80+</div>
+        <div class="impact-label">diseases treatable today</div>
+        <div class="impact-sublabel">with cord blood stem cell transplants</div>
       </div>
-      <div class="fact-list">
-        <div class="fact anim">
-          <div class="ic" style="background:#FBF5F9"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div>
-          <div><h4>Hematopoietic stem cells (HSCs)</h4><span>The core therapeutic cell &mdash; rebuilds blood and immune systems. Used in every cord blood transplant.</span></div>
+      <div class="impact-narrative">
+        <p>Cord blood has been used in over <strong>60,000 transplants worldwide since 1988</strong>. It treats cancers like leukemia and lymphoma, blood disorders like sickle cell disease, inherited immune deficiencies, and metabolic conditions.</p>
+        <p>These aren&rsquo;t future possibilities &mdash; they&rsquo;re treatments happening in hospitals right now, every day.</p>
+      </div>
+    </div>
+
+    <!-- 4 category summary cards -->
+    <div class="cat-grid anim">
+      <div class="cat-card" style="background:#FBF5F9; border-color:#F0E0EB">
+        <div class="cat-icon" style="background:#F0E0EB">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
         </div>
-        <div class="fact anim">
-          <div class="ic" style="background:#EDF5FF"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B6DC4" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></div>
-          <div><h4>Progenitor cells</h4><span>Intermediate cells that become specific blood cell types &mdash; red cells, white cells, platelets.</span></div>
+        <div class="cat-count" style="color:#6C1A55">22+</div>
+        <h4 style="color:#6C1A55">Cancers</h4>
+        <div class="cat-desc">Leukemias, lymphomas, myeloma, and more</div>
+      </div>
+      <div class="cat-card" style="background:#EDF5FF; border-color:#D4E4FF">
+        <div class="cat-icon" style="background:#D4E4FF">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B6DC4" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
         </div>
-        <div class="fact anim">
-          <div class="ic" style="background:#F0F7F4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D8B6A" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <div><h4>Natural killer cells &amp; T-cells</h4><span>Immune cells that fight infection and recognize cancerous cells. Critical for recovery.</span></div>
+        <div class="cat-count" style="color:#3B6DC4">17+</div>
+        <h4 style="color:#3B6DC4">Blood disorders</h4>
+        <div class="cat-desc">Sickle cell, thalassemia, aplastic anemia</div>
+      </div>
+      <div class="cat-card" style="background:#F0F7F4; border-color:#D4E8DC">
+        <div class="cat-icon" style="background:#D4E8DC">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A6B4F" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
-        <div class="fact anim">
-          <div class="ic" style="background:#FDF5EB"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C4943E" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-          <div><h4>Growth factors &amp; cytokines</h4><span>Signaling proteins that promote cell growth, tissue repair, and anti-inflammatory responses.</span></div>
+        <div class="cat-count" style="color:#2A6B4F">30+</div>
+        <h4 style="color:#2A6B4F">Immune deficiencies</h4>
+        <div class="cat-desc">SCID, Wiskott-Aldrich, CGD, and many more</div>
+      </div>
+      <div class="cat-card" style="background:#FDF5EB; border-color:#F5E6CC">
+        <div class="cat-icon" style="background:#F5E6CC">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C4943E" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
+        <div class="cat-count" style="color:#C4943E">16+</div>
+        <h4 style="color:#C4943E">Metabolic disorders</h4>
+        <div class="cat-desc">Hurler, Krabbe, ALD, Gaucher, and more</div>
+      </div>
+    </div>
+
+    <!-- 3 match/stat cards -->
+    <div class="match-grid anim">
+      <div class="match-card">
+        <div class="mv">100%</div>
+        <div class="ml">Match for your baby</div>
+        <div class="md">Guaranteed perfect match</div>
+      </div>
+      <div class="match-card">
+        <div class="mv">75%</div>
+        <div class="ml">Sibling partial match</div>
+        <div class="md">High likelihood of compatibility</div>
+      </div>
+      <div class="match-card">
+        <div class="mv">60K+</div>
+        <div class="ml">Transplants worldwide</div>
+        <div class="md">Since 1988</div>
       </div>
     </div>
   </div>
@@ -311,58 +389,65 @@ const html = `<!-- HERO -->
     </div>
     <div class="dgrid">
       <div class="db db-c anim">
-        <div class="dh"><h4>Cancers</h4><div class="dc">14+</div></div>
+        <div class="dh"><h4>Cancers &amp; malignancies</h4><div class="dc">22+</div></div>
         <div class="dt">
-          <div class="tag">Acute lymphoblastic leukemia<div class="tip">The most common childhood cancer. Transplant replaces cancerous bone marrow with healthy stem cells.</div></div>
-          <div class="tag">Acute myeloid leukemia<div class="tip">Fast-growing cancer of blood-forming cells. Cord blood transplant often the best option when chemo fails.</div></div>
-          <div class="tag">Chronic myeloid leukemia<div class="tip">Slower-growing blood cancer. Transplant can cure when targeted therapies stop working.</div></div>
-          <div class="tag">Hodgkin's lymphoma<div class="tip">Cancer of the lymphatic system. Used for relapsed or resistant cases.</div></div>
-          <div class="tag">Non-Hodgkin's lymphoma<div class="tip">Blood cancers in the lymphatic system. Transplant rebuilds the immune system after treatment.</div></div>
-          <div class="tag">Myelodysplastic syndromes<div class="tip">Bone marrow fails to produce enough healthy blood cells. Transplant replaces faulty marrow.</div></div>
-          <div class="tag">Multiple myeloma<div class="tip">Cancer of plasma cells in bone marrow. Transplant follows high-dose chemo.</div></div>
-          <div class="tag">Neuroblastoma<div class="tip">Develops from immature nerve cells, most common in children under 5.</div></div>
-          <div class="tag">Retinoblastoma<div class="tip">A rare eye cancer in young children. Stem cells support recovery.</div></div>
-          <div class="tag">Juvenile myelomonocytic leukemia<div class="tip">Rare childhood leukemia. Transplant is currently the only known cure.</div></div>
+          <div class="tag">B-cell ALL<div class="tip">The most common childhood leukemia. Cord blood transplant replaces cancerous bone marrow with healthy stem cells that rebuild the immune system.</div></div>
+          <div class="tag">T-cell ALL<div class="tip">An aggressive form of acute lymphoblastic leukemia affecting T-cells. Transplant offers a curative option when chemotherapy alone is insufficient.</div></div>
+          <div class="tag">Acute myeloid leukemia<div class="tip">Fast-growing cancer of blood-forming cells in the bone marrow. Cord blood transplant is often the best option when chemotherapy fails or disease relapses.</div></div>
+          <div class="tag">Chronic myeloid leukemia<div class="tip">Slower-growing blood cancer caused by an abnormal chromosome. Transplant can cure when targeted therapies like imatinib stop working.</div></div>
+          <div class="tag">JMML<div class="tip">Juvenile myelomonocytic leukemia &mdash; a rare childhood leukemia. Stem cell transplant is currently the only known cure for this disease.</div></div>
+          <div class="tag">Hodgkin lymphoma<div class="tip">Cancer of the lymphatic system characterized by Reed-Sternberg cells. Transplant used for relapsed or treatment-resistant cases.</div></div>
+          <div class="tag">DLBCL<div class="tip">Diffuse large B-cell lymphoma &mdash; the most common type of non-Hodgkin lymphoma. Transplant rebuilds the immune system after intensive treatment.</div></div>
+          <div class="tag">Burkitt lymphoma<div class="tip">A very fast-growing form of non-Hodgkin lymphoma, most common in children. Transplant provides a curative pathway for aggressive cases.</div></div>
+          <div class="tag">Multiple myeloma<div class="tip">Cancer of plasma cells in the bone marrow. Transplant follows high-dose chemotherapy to restore healthy blood cell production.</div></div>
+          <div class="tag">Mantle cell lymphoma<div class="tip">A rare B-cell lymphoma that tends to recur. Transplant can extend remission and improve long-term outcomes.</div></div>
+          <div class="tag">Follicular lymphoma<div class="tip">A slow-growing but often recurring non-Hodgkin lymphoma. Transplant considered for cases that transform or stop responding to treatment.</div></div>
+          <div class="tag">Waldenstr&ouml;m&rsquo;s<div class="tip">Waldenstr&ouml;m&rsquo;s macroglobulinemia &mdash; a rare lymphoma producing excess antibody protein. Transplant for aggressive or treatment-resistant disease.</div></div>
         </div>
       </div>
       <div class="db db-b anim">
-        <div class="dh"><h4>Blood disorders</h4><div class="dc">15+</div></div>
+        <div class="dh"><h4>Blood &amp; marrow disorders</h4><div class="dc">17+</div></div>
         <div class="dt">
-          <div class="tag">Sickle cell disease<div class="tip">Red blood cells become rigid and sickle-shaped. Transplant can cure the disease.</div></div>
-          <div class="tag">Thalassemia major<div class="tip">Abnormal hemoglobin. Transplant is the only potential cure for severe forms.</div></div>
-          <div class="tag">Aplastic anemia<div class="tip">Bone marrow stops making enough blood cells. Transplant replaces damaged marrow.</div></div>
-          <div class="tag">Fanconi anemia<div class="tip">Rare inherited condition causing bone marrow failure. Transplant is primary treatment.</div></div>
-          <div class="tag">Diamond-Blackfan anemia<div class="tip">Can't make enough red blood cells. Transplant can cure the underlying defect.</div></div>
-          <div class="tag">Dyskeratosis congenita<div class="tip">Rare genetic disorder causing bone marrow failure.</div></div>
-          <div class="tag">Shwachman-Diamond syndrome<div class="tip">Inherited condition affecting marrow, pancreas, and bones.</div></div>
-          <div class="tag">Pure red cell aplasia<div class="tip">Bone marrow stops producing red blood cells.</div></div>
-          <div class="tag">Paroxysmal nocturnal hemoglobinuria<div class="tip">Red blood cells break down prematurely. Transplant is the only curative treatment.</div></div>
+          <div class="tag">Sickle cell disease<div class="tip">Red blood cells become rigid and sickle-shaped, blocking blood flow and causing pain crises. Transplant can cure the disease by replacing faulty marrow.</div></div>
+          <div class="tag">Beta-thalassemia major<div class="tip">Severely abnormal hemoglobin production requiring lifelong transfusions. Transplant is the only potential cure for the most severe form.</div></div>
+          <div class="tag">Severe aplastic anemia<div class="tip">Bone marrow stops making enough blood cells, causing dangerous drops in all blood counts. Transplant replaces the damaged marrow entirely.</div></div>
+          <div class="tag">Fanconi anemia<div class="tip">Rare inherited condition causing progressive bone marrow failure and cancer predisposition. Transplant is the primary life-saving treatment.</div></div>
+          <div class="tag">Diamond-Blackfan anemia<div class="tip">The body cannot make enough red blood cells from birth. Transplant can cure the underlying genetic defect in the bone marrow.</div></div>
+          <div class="tag">MDS<div class="tip">Myelodysplastic syndromes &mdash; bone marrow fails to produce healthy blood cells properly. Transplant replaces faulty marrow with healthy stem cells.</div></div>
+          <div class="tag">Myelofibrosis<div class="tip">Scar tissue replaces healthy bone marrow, disrupting normal blood cell production. Transplant is the only curative treatment available.</div></div>
+          <div class="tag">Dyskeratosis congenita<div class="tip">Rare genetic disorder causing bone marrow failure, abnormal skin, and nail changes. Transplant addresses the life-threatening marrow failure.</div></div>
+          <div class="tag">Shwachman-Diamond<div class="tip">Inherited condition affecting bone marrow, the pancreas, and skeletal development. Transplant treats the marrow failure component.</div></div>
+          <div class="tag">PNH<div class="tip">Paroxysmal nocturnal hemoglobinuria &mdash; red blood cells break down prematurely due to a missing surface protein. Transplant is the only curative treatment.</div></div>
         </div>
       </div>
       <div class="db db-i anim">
-        <div class="dh"><h4>Immune deficiencies</h4><div class="dc">14+</div></div>
+        <div class="dh"><h4>Immune deficiencies</h4><div class="dc">30+</div></div>
         <div class="dt">
-          <div class="tag">Severe combined immunodeficiency<div class="tip">"Bubble boy disease." Without transplant, infants cannot survive normal infections.</div></div>
-          <div class="tag">Wiskott-Aldrich syndrome<div class="tip">Causes eczema, low platelets, and immune deficiency. Transplant is the only cure.</div></div>
-          <div class="tag">Chronic granulomatous disease<div class="tip">White blood cells can't kill certain bacteria and fungi.</div></div>
-          <div class="tag">DiGeorge syndrome<div class="tip">Genetic condition causing poor immune function.</div></div>
-          <div class="tag">Kostmann syndrome<div class="tip">Severe congenital neutropenia &mdash; dangerously low white blood cells from birth.</div></div>
-          <div class="tag">Omenn syndrome<div class="tip">Severe form of SCID with skin inflammation. Transplant is life-saving.</div></div>
-          <div class="tag">Bare lymphocyte syndrome<div class="tip">Immune cells lack critical surface molecules.</div></div>
-          <div class="tag">Leukocyte adhesion deficiency<div class="tip">White blood cells can't reach infection sites.</div></div>
+          <div class="tag">SCID<div class="tip">Severe combined immunodeficiency &mdash; &ldquo;bubble boy disease.&rdquo; Without transplant, infants cannot survive normal infections. Early transplant is life-saving.</div></div>
+          <div class="tag">Wiskott-Aldrich<div class="tip">Causes eczema, dangerously low platelets, and progressive immune deficiency. Transplant is the only known cure for this X-linked condition.</div></div>
+          <div class="tag">CGD<div class="tip">Chronic granulomatous disease &mdash; white blood cells cannot kill certain bacteria and fungi, leading to severe recurrent infections. Transplant restores immune function.</div></div>
+          <div class="tag">Complete DiGeorge<div class="tip">The most severe form of DiGeorge syndrome with absent thymus function and no T-cells. Transplant can reconstitute the immune system.</div></div>
+          <div class="tag">Omenn syndrome<div class="tip">A severe form of SCID with widespread skin inflammation, enlarged organs, and elevated IgE. Transplant is urgently life-saving.</div></div>
+          <div class="tag">Bare lymphocyte syndrome<div class="tip">Immune cells lack critical MHC surface molecules needed to coordinate immune responses. Transplant provides cells with normal surface proteins.</div></div>
+          <div class="tag">Leukocyte adhesion deficiency<div class="tip">White blood cells cannot migrate to infection sites in the body. Even minor infections become life-threatening without transplant.</div></div>
+          <div class="tag">IPEX syndrome<div class="tip">Immune dysregulation, polyendocrinopathy, enteropathy, X-linked &mdash; the immune system attacks the body&rsquo;s own organs. Transplant can reset the immune system.</div></div>
+          <div class="tag">HLH<div class="tip">Hemophagocytic lymphohistiocytosis &mdash; immune cells become overactivated and attack the body&rsquo;s own tissues. Transplant is curative for the familial form.</div></div>
+          <div class="tag">Hyper IgM syndromes<div class="tip">B-cells cannot switch from making IgM to other antibody types, leaving patients vulnerable to infections. Transplant restores normal antibody production.</div></div>
+          <div class="tag">+ 20 more SCIDs<div class="tip">Over 20 molecularly defined forms of SCID &mdash; including CD45, CD3, ZAP70, Artemis, PNP, and DOCK2 deficiencies &mdash; are treatable with cord blood transplant.</div></div>
         </div>
       </div>
       <div class="db db-m anim">
         <div class="dh"><h4>Metabolic disorders</h4><div class="dc">16+</div></div>
         <div class="dt">
-          <div class="tag">Hurler syndrome<div class="tip">Can't break down sugar molecules, causing progressive organ damage. Early transplant prevents decline.</div></div>
-          <div class="tag">Krabbe disease<div class="tip">Destroys protective myelin coating of nerves. Early transplant can slow progression.</div></div>
-          <div class="tag">Adrenoleukodystrophy<div class="tip">Damages brain myelin sheath. Transplant halts progression.</div></div>
-          <div class="tag">Gaucher disease<div class="tip">Fat deposits accumulate in organs. Transplant addresses severe forms.</div></div>
-          <div class="tag">Niemann-Pick disease<div class="tip">Can't metabolize cholesterol and lipids. Transplant for most severe forms.</div></div>
-          <div class="tag">Tay-Sachs disease<div class="tip">Progressive destruction of nerve cells. Research into early intervention ongoing.</div></div>
-          <div class="tag">Metachromatic leukodystrophy<div class="tip">Progressive loss of myelin. Early transplant can stabilize the disease.</div></div>
-          <div class="tag">Osteopetrosis<div class="tip">Bones become abnormally dense and brittle. Transplant provides cells for proper remodeling.</div></div>
+          <div class="tag">Hurler syndrome<div class="tip">Cannot break down complex sugar molecules, causing progressive damage to the brain, heart, and organs. Early transplant prevents irreversible decline.</div></div>
+          <div class="tag">Krabbe disease<div class="tip">Destroys the protective myelin coating of nerves in the brain and body. Early transplant before symptom onset can slow or halt progression.</div></div>
+          <div class="tag">ALD<div class="tip">Adrenoleukodystrophy &mdash; damages the myelin sheath protecting brain nerves. Transplant in early stages can halt disease progression and preserve function.</div></div>
+          <div class="tag">MLD<div class="tip">Metachromatic leukodystrophy &mdash; progressive loss of myelin in the nervous system. Early transplant can stabilize the disease before major symptoms appear.</div></div>
+          <div class="tag">Gaucher disease<div class="tip">Fat deposits accumulate in the spleen, liver, and bone marrow. Transplant addresses severe forms that don&rsquo;t respond to enzyme replacement therapy.</div></div>
+          <div class="tag">Wolman disease<div class="tip">A severe lipid storage disorder causing organ damage in infancy. Transplant can provide the missing enzyme and prevent fatal organ failure.</div></div>
+          <div class="tag">Alpha-mannosidosis<div class="tip">A rare lysosomal storage disorder causing progressive intellectual disability and skeletal abnormalities. Transplant can slow disease progression.</div></div>
+          <div class="tag">Maroteaux-Lamy<div class="tip">MPS VI &mdash; the body cannot break down certain complex sugars, leading to skeletal deformities and organ damage. Transplant provides the missing enzyme.</div></div>
+          <div class="tag">Osteopetrosis<div class="tip">Bones become abnormally dense and brittle due to faulty osteoclasts. Transplant provides healthy cells capable of proper bone remodeling.</div></div>
         </div>
       </div>
     </div>
@@ -400,26 +485,108 @@ const html = `<!-- HERO -->
   </div>
 </section>
 
-<!-- ════ SAGE DEEP — CLINICAL TRIALS ════ -->
+<!-- ════ SAGE DEEP — CLINICAL TRIALS (split layout) ════ -->
 <section class="zone-sage-deep">
   <div class="circle-deco"></div>
   <div class="inner">
     <div class="tc">
       <div class="zlbl">Active clinical research</div>
-      <h2>What cord tissue MSCs are being tested for</h2>
-      <p class="lead">Over 500 active clinical trials are investigating mesenchymal stem cells worldwide. Here are the conditions where the most promising research is happening.</p>
+      <h2>What&rsquo;s being researched right now</h2>
+      <p class="lead">StemCyte sponsors 3 clinical trials directly, and over 500 active trials worldwide are investigating cord blood and cord tissue stem cells.</p>
     </div>
-    <div class="trial-cards">
-      <div class="trial-card anim"><div class="phase">Phase II</div><h4>Post-COVID syndrome</h4><p>Cord blood stem cells being tested for Long COVID symptoms that persist months or years after infection.</p><div class="cell-type">StemCyte-sponsored</div></div>
-      <div class="trial-card anim"><div class="phase">Phase I complete</div><h4>Acute stroke</h4><p>Allogeneic cord blood used to treat acute cerebral stroke. Phase I showed successful outcomes, published in Cell Transplantation.</p><div class="cell-type">StemCyte-sponsored</div></div>
-      <div class="trial-card anim"><div class="phase">Phase II</div><h4>Spinal cord injury</h4><p>Using HLA-matched cord blood units for spinal cord injury treatment. First hybrid bank with FDA Phase II approval.</p><div class="cell-type">StemCyte-sponsored</div></div>
-      <div class="trial-card anim"><div class="phase">Active trials</div><h4>Cerebral palsy</h4><p>Multiple trials using cord blood to improve motor function and reduce inflammation in children with cerebral palsy.</p><div class="cell-type">Cord blood (HSCs)</div></div>
-      <div class="trial-card anim"><div class="phase">Active trials</div><h4>Autism spectrum</h4><p>Investigating whether cord blood stem cells can modulate immune function and improve outcomes in autism.</p><div class="cell-type">Cord blood (HSCs)</div></div>
-      <div class="trial-card anim"><div class="phase">MSC trials</div><h4>Heart disease</h4><p>Mesenchymal stem cells researched for heart muscle repair after cardiac events and chronic heart failure.</p><div class="cell-type">Cord tissue (MSCs)</div></div>
-      <div class="trial-card anim"><div class="phase">MSC trials</div><h4>Alzheimer's disease</h4><p>Early research into whether MSCs can reduce neuroinflammation and slow cognitive decline.</p><div class="cell-type">Cord tissue (MSCs)</div></div>
-      <div class="trial-card anim"><div class="phase">MSC trials</div><h4>Osteoarthritis</h4><p>MSCs being tested for cartilage repair and regeneration, potentially eliminating the need for joint replacement.</p><div class="cell-type">Cord tissue (MSCs)</div></div>
-      <div class="trial-card anim"><div class="phase">MSC trials</div><h4>Type 1 diabetes</h4><p>Research into whether MSCs can modulate the immune system to protect insulin-producing cells from autoimmune attack.</p><div class="cell-type">Cord tissue (MSCs)</div></div>
+
+    <div class="trials-split">
+      <!-- Left: StemCyte trials -->
+      <div class="anim">
+        <div class="trials-col-header">
+          <h3>StemCyte trials</h3>
+          <span class="trials-badge trials-badge-plum">Our research</span>
+        </div>
+        <div class="sc-trial-card">
+          <div class="phase">Phase II &middot; Expanded Access</div>
+          <h4>Long COVID / Post-COVID syndrome</h4>
+          <p>Cord blood stem cells for symptoms that persist months or years after COVID-19 infection. Phase II complete; Expanded Access program cleared by FDA in 2026.</p>
+          <div class="source">REGENECYTE&reg; &middot; NCT05682560</div>
+        </div>
+        <div class="sc-trial-card">
+          <div class="phase">Phase I complete</div>
+          <h4>Acute ischemic stroke</h4>
+          <p>Allogeneic cord blood for acute cerebral stroke within 10 days of onset. Phase I showed safety and encouraging neurological outcomes.</p>
+          <div class="source">Published in Cell Transplantation</div>
+        </div>
+        <div class="sc-trial-card">
+          <div class="phase">Phase II</div>
+          <h4>Spinal cord injury</h4>
+          <p>HLA-matched cord blood units for spinal cord injury treatment. StemCyte is the first hybrid bank with FDA Phase II approval for this indication.</p>
+          <div class="source">Program MC001</div>
+        </div>
+      </div>
+
+      <!-- Right: Global research -->
+      <div class="anim">
+        <div class="trials-col-header">
+          <h3>Global research</h3>
+          <span class="trials-badge trials-badge-sage">Cord blood &amp; tissue</span>
+        </div>
+        <div class="global-item">
+          <div class="global-dot global-dot-inv"></div>
+          <div class="global-content">
+            <h4>Cerebral palsy <span class="tier tier-inv">Investigational</span></h4>
+            <p>Both autologous cord blood and allogeneic cord tissue MSCs in active trials for motor function improvement</p>
+          </div>
+        </div>
+        <div class="global-item">
+          <div class="global-dot global-dot-inv"></div>
+          <div class="global-content">
+            <h4>Hypoxic-ischemic encephalopathy <span class="tier tier-inv">Investigational</span></h4>
+            <p>Cord blood for birth-related brain injury (HIE) &mdash; time-critical neonatal intervention</p>
+          </div>
+        </div>
+        <div class="global-item">
+          <div class="global-dot global-dot-inv"></div>
+          <div class="global-content">
+            <h4>Type 1 diabetes <span class="tier tier-inv">Investigational</span></h4>
+            <p>Cord tissue MSCs may protect insulin-producing cells from autoimmune attack</p>
+          </div>
+        </div>
+        <div class="global-item">
+          <div class="global-dot global-dot-inv"></div>
+          <div class="global-content">
+            <h4>Knee osteoarthritis <span class="tier tier-inv">Investigational</span></h4>
+            <p>Cord tissue MSCs for cartilage repair &mdash; approved in South Korea (Cartistem)</p>
+          </div>
+        </div>
+        <div class="global-item">
+          <div class="global-dot global-dot-inv"></div>
+          <div class="global-content">
+            <h4>Hypoplastic left heart <span class="tier tier-inv">Investigational</span></h4>
+            <p>Autologous cord blood MNCs in pilot studies for congenital heart defects</p>
+          </div>
+        </div>
+        <div class="global-item">
+          <div class="global-dot global-dot-pre"></div>
+          <div class="global-content">
+            <h4>Alzheimer&rsquo;s &amp; Parkinson&rsquo;s <span class="tier tier-pre">Preclinical</span></h4>
+            <p>Both cord blood and cord tissue MSCs showing promise in reducing neuroinflammation</p>
+          </div>
+        </div>
+        <div class="global-item">
+          <div class="global-dot global-dot-pre"></div>
+          <div class="global-content">
+            <h4>ALS <span class="tier tier-pre">Preclinical</span></h4>
+            <p>Early research into MSCs for motor neuron protection and disease progression</p>
+          </div>
+        </div>
+        <div class="global-item">
+          <div class="global-dot global-dot-pre"></div>
+          <div class="global-content">
+            <h4>Neonatal conditions <span class="tier tier-pre">Preclinical</span></h4>
+            <p>BPD, NEC, retinopathy of prematurity &mdash; cord-derived cells in neonatal repair research</p>
+          </div>
+        </div>
+      </div>
     </div>
+
     <div class="trial-stat-row">
       <div class="trial-stat anim"><div class="tv">35+</div><div class="td">Countries with active cord blood research</div></div>
       <div class="trial-stat anim"><div class="tv">500+</div><div class="td">Active MSC clinical trials worldwide</div></div>
