@@ -32,16 +32,16 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .sh p { font-size:16px; color:#8A857A; max-width:520px; line-height:1.7; }
 
 /* PATIENT STORIES */
-.story { display:grid; grid-template-columns:1fr 1fr; min-height:420px; border-radius:16px; overflow:hidden; margin-bottom:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
+.story { display:grid; grid-template-columns:1fr 1fr; min-height:360px; border-radius:16px; overflow:hidden; margin-bottom:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
 .story.flip { direction:rtl; }
 .story.flip > * { direction:ltr; }
 .story .story-img { overflow:hidden; }
-.story .story-img img { width:100%; height:100%; object-fit:cover; min-height:420px; }
-.story .story-inner { background:#fff; padding:48px; display:flex; flex-direction:column; justify-content:center; }
+.story .story-img img { width:100%; height:100%; object-fit:cover; min-height:360px; }
+.story .story-inner { background:#fff; padding:36px 40px; display:flex; flex-direction:column; justify-content:center; }
 .story .tag { display:inline-block; padding:4px 12px; border-radius:100px; font-size:10px; font-weight:700; margin-bottom:14px; align-self:flex-start; }
 .story h3 { font-family:'Playfair Display',serif; font-size:28px; font-weight:400; margin-bottom:8px; line-height:1.3; }
 .story .diag { font-size:13px; color:#6C1A55; font-weight:700; margin-bottom:14px; }
-.story p { font-size:15px; color:#8A857A; line-height:1.7; margin-bottom:8px; }
+.story p { font-size:14px; color:#8A857A; line-height:1.65; margin-bottom:6px; }
 .story-video { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:12px; margin-top:20px; }
 .story-video iframe { position:absolute; top:0; left:0; width:100%; height:100%; border-radius:12px; }
 
