@@ -32,7 +32,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .sh p { font-size:16px; color:#8A857A; max-width:520px; line-height:1.7; }
 
 /* PATIENT STORIES */
-.story { display:grid; grid-template-columns:1fr 1fr; min-height:360px; border-radius:16px; overflow:hidden; margin-bottom:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
+.story { display:grid; grid-template-columns:1fr 1fr; min-height:360px; max-height:400px; border-radius:16px; overflow:hidden; margin-bottom:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
 .story.flip { direction:rtl; }
 .story.flip > * { direction:ltr; }
 .story .story-img { overflow:hidden; }
