@@ -12,7 +12,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 /* HERO */
 .hero { position:relative; min-height:540px; display:flex; align-items:flex-end; overflow:hidden; }
 .hero .bg { position:absolute; inset:0; background:url('/images/our%20story/hero_ourstory.jpg') center/cover; }
-.hero .vig { position:absolute; inset:0; background:linear-gradient(180deg,rgba(61,15,49,0.4) 0%,rgba(61,15,49,0.75) 100%); }
+.hero .vig { position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.6) 100%); }
 .hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
 .hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
 .hero h1 { font-family:'Playfair Display',serif; font-size:48px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:600px; margin-bottom:16px; color:#fff; }
