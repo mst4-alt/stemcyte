@@ -1,0 +1,204 @@
+import PageContent from '../../components/PageContent';
+
+export const metadata = {
+  title: 'Special Programs | StemCyte',
+};
+
+const css = `
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
+
+/* HERO */
+.hero { position:relative; overflow:hidden; text-align:center; padding:140px 48px 72px; background:linear-gradient(180deg,#F3F0F8 0%,#FAF9F7 100%); }
+.hero .circle-1 { position:absolute; width:400px; height:400px; border-radius:50%; background:rgba(192,106,165,0.06); top:-120px; left:-80px; }
+.hero .circle-2 { position:absolute; width:300px; height:300px; border-radius:50%; background:rgba(108,26,85,0.04); bottom:-100px; right:-60px; }
+.hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:12px; position:relative; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:46px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; margin-bottom:16px; color:#2C2A26; position:relative; }
+.hero .sub { font-size:17px; color:#8A857A; max-width:600px; margin:0 auto; line-height:1.7; position:relative; }
+
+/* SECTION */
+.section { padding:80px 48px; max-width:1100px; margin:0 auto; }
+
+/* PROGRAM CARDS */
+.cards-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.prog-card { background:#fff; border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03); padding:32px 28px; display:flex; flex-direction:column; }
+.prog-card .badge { font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 14px; border-radius:100px; align-self:flex-start; margin-bottom:16px; }
+.prog-card .badge-free { color:#3D8B6A; background:#F0F7F4; }
+.prog-card .badge-disc { color:#6C1A55; background:#FBF5F9; }
+.prog-card h3 { font-family:'Playfair Display',serif; font-size:22px; font-weight:400; margin-bottom:10px; }
+.prog-card .desc { font-size:14px; color:#8A857A; line-height:1.7; flex:1; }
+.prog-card .btn-p { display:inline-block; text-decoration:none; background:#6C1A55; color:#fff; padding:14px 28px; border-radius:100px; font-size:14px; font-weight:700; font-family:'Lato',sans-serif; text-align:center; margin-top:20px; transition:all 0.25s; }
+.prog-card .btn-p:hover { background:#8B3572; }
+
+/* CARD TOP BORDERS */
+.prog-card.sibling { border-top:4px solid #6C1A55; }
+.prog-card.military { border-top:4px solid #3B6DC4; }
+.prog-card.medical { border-top:4px solid #3D8B6A; }
+
+/* HOW TO APPLY */
+.apply-section { background:#F3F0F8; padding:80px 48px; text-align:center; }
+.apply-section .inner { max-width:560px; margin:0 auto; }
+.apply-section h2 { font-family:'Playfair Display',serif; font-size:32px; font-weight:400; margin-bottom:16px; }
+.apply-section p { font-size:15px; color:#8A857A; line-height:1.7; margin-bottom:28px; }
+.apply-section .btn-p { display:inline-block; text-decoration:none; background:#6C1A55; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.apply-section .btn-p:hover { background:#8B3572; }
+
+/* FAQ */
+.faq-section { padding:80px 48px; max-width:800px; margin:0 auto; }
+.faq-section h2 { font-family:'Playfair Display',serif; font-size:32px; font-weight:400; text-align:center; margin-bottom:40px; }
+.faq-smooth { border-bottom:1px solid #E8E2DC; overflow:hidden; }
+.faq-smooth:last-child { border-bottom:none; }
+.faq-smooth .faq-q { padding:20px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:16px; font-weight:700; color:#2C2A26; user-select:none; }
+.faq-smooth .faq-q .icon { width:24px; height:24px; position:relative; flex-shrink:0; margin-left:16px; }
+.faq-smooth .faq-q .icon::before,
+.faq-smooth .faq-q .icon::after { content:''; position:absolute; background:#C06AA5; border-radius:1px; transition:transform 0.3s ease; }
+.faq-smooth .faq-q .icon::before { width:14px; height:2px; top:11px; left:5px; }
+.faq-smooth .faq-q .icon::after { width:2px; height:14px; top:5px; left:11px; }
+.faq-smooth.open .faq-q .icon::after { transform:rotate(90deg); }
+.faq-smooth .faq-a { max-height:0; overflow:hidden; transition:max-height 0.35s ease, opacity 0.3s ease; opacity:0; }
+.faq-smooth.open .faq-a { opacity:1; }
+.faq-smooth .faq-a-inner { padding:0 0 20px; font-size:15px; color:#8A857A; line-height:1.7; max-width:720px; }
+
+/* CTA BANNER */
+.cta-banner { margin:80px 48px; border-radius:16px; background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:80px 64px; text-align:center; position:relative; overflow:hidden; }
+.cta-banner::before { content:''; position:absolute; width:500px; height:500px; border-radius:50%; background:rgba(192,106,165,0.08); top:-200px; right:-100px; }
+.cta-banner h2 { font-family:'Playfair Display',serif; font-size:36px; color:#fff; margin-bottom:12px; position:relative; }
+.cta-banner h2 em { font-style:italic; color:#E8A0D0; }
+.cta-banner p { font-size:16px; color:rgba(255,255,255,0.5); margin-bottom:32px; position:relative; }
+.cta-banner .btns { display:flex; gap:12px; justify-content:center; position:relative; }
+.btn-w { display:inline-block; text-decoration:none; background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-w:hover { background:rgba(255,255,255,0.85); }
+.btn-gd { display:inline-block; text-decoration:none; background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-gd:hover { background:rgba(255,255,255,0.20); border-color:rgba(255,255,255,0.35); }
+
+/* FOOTER */
+
+/* ANIMATIONS */
+.anim { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.anim.vis { opacity:1; transform:translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width:900px) {
+  .hero { padding:120px 24px 48px; }
+  .hero h1 { font-size:34px; }
+  .section { padding:64px 24px; }
+  .cards-grid { grid-template-columns:1fr; }
+  .apply-section { padding:64px 24px; }
+  .faq-section { padding:64px 24px; }
+  .cta-banner { margin:48px 20px; padding:48px 24px; }
+}
+@media (max-width:600px) {
+  .hero h1 { font-size:28px; }
+  .cta-banner .btns { flex-direction:column; align-items:center; }
+}
+`;
+
+const html = `<!-- HERO -->
+<section class="hero">
+  <div class="circle-1"></div>
+  <div class="circle-2"></div>
+  <div class="lbl">SPECIAL PROGRAMS</div>
+  <h1>Discounts for families who qualify</h1>
+  <p class="sub">Special pricing for military families, medical professionals, and families with a child who needs a transplant.</p>
+</section>
+
+<!-- PROGRAM CARDS -->
+<section class="section anim">
+  <div class="cards-grid">
+
+    <div class="prog-card sibling">
+      <div class="badge badge-free">FREE BANKING</div>
+      <h3>Sibling Donor Program</h3>
+      <p class="desc">Free processing and storage for families where a sibling has a diagnosis requiring stem cell transplantation.</p>
+      <a href="tel:8663894659" class="btn-p">Contact us to apply</a>
+    </div>
+
+    <div class="prog-card military">
+      <div class="badge badge-disc">DISCOUNT</div>
+      <h3>Military &amp; Public Servant</h3>
+      <p class="desc">Special pricing for active and retired military, police, fire, and EMT professionals.</p>
+      <a href="tel:8663894659" class="btn-p">Call for pricing</a>
+    </div>
+
+    <div class="prog-card medical">
+      <div class="badge badge-disc">DISCOUNT</div>
+      <h3>Medical Professional</h3>
+      <p class="desc">Special pricing for physicians, nurses, and allied health professionals.</p>
+      <a href="tel:8663894659" class="btn-p">Call for pricing</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW TO APPLY -->
+<section class="apply-section anim">
+  <div class="inner">
+    <h2>How to apply</h2>
+    <p>Call (866) 389-4659 or email customerservice@stemcyte.com. Provide any required documentation (military ID, medical license, or sibling diagnosis). Once verified, your discount is applied automatically &mdash; no promo codes needed.</p>
+    <a href="tel:8663894659" class="btn-p">Call (866) 389-4659</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section anim">
+  <h2>Frequently asked questions</h2>
+
+  <div class="faq-smooth" onclick="toggleFaq(this)">
+    <div class="faq-q">Can I combine multiple discounts?<div class="icon"></div></div>
+    <div class="faq-a"><div class="faq-a-inner">Discount programs cannot be combined with each other. However, all discount programs can be combined with add-on services like Public Bank Access and HLA typing.</div></div>
+  </div>
+
+  <div class="faq-smooth" onclick="toggleFaq(this)">
+    <div class="faq-q">Is the Sibling Donor Program really free?<div class="icon"></div></div>
+    <div class="faq-a"><div class="faq-a-inner">Yes. For qualifying families, StemCyte covers the full cost of processing and storage. There are no hidden fees.</div></div>
+  </div>
+
+  <div class="faq-smooth" onclick="toggleFaq(this)">
+    <div class="faq-q">How do I verify my military or medical professional status?<div class="icon"></div></div>
+    <div class="faq-a"><div class="faq-a-inner">We accept standard forms of verification &mdash; military ID, DD-214, medical license, or hospital credentials. Our team will guide you through the process.</div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner anim">
+  <h2>Every family deserves access to <em>stem cell protection</em></h2>
+  <p>Call us to find out if you qualify for special pricing.</p>
+  <div class="btns">
+    <a href="tel:8663894659" class="btn-w">Call (866) 389-4659</a>
+    <a href="/pricing" class="btn-gd">View pricing</a>
+  </div>
+</section>
+
+`;
+
+const script = `// FAQ toggle
+function toggleFaq(el) {
+  var wasOpen = el.classList.contains('open');
+  document.querySelectorAll('.faq-smooth').forEach(function(f) {
+    f.classList.remove('open');
+    f.querySelector('.faq-a').style.maxHeight = '0';
+  });
+  if (!wasOpen) {
+    el.classList.add('open');
+    var a = el.querySelector('.faq-a');
+    var inner = el.querySelector('.faq-a-inner');
+    a.style.maxHeight = inner.scrollHeight + 'px';
+  }
+}
+
+// Scroll animations
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      setTimeout(function() { entry.target.classList.add('vis'); }, 150);
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });
+`;
+
+export default function Page() {
+  return <PageContent css={css} html={html} script={script} transparentNav={false} />;
+}

@@ -1,0 +1,283 @@
+import PageContent from '../../components/PageContent';
+
+export const metadata = {
+  title: 'LifeSaver Guarantee | StemCyte',
+  description: 'StemCyte\u2019s LifeSaver Guarantee: full refund of all fees, $50,000 financial support, and a replacement donor unit if your newborn\u2019s cord blood fails to engraft.',
+};
+
+const css = `
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; overflow-x:hidden; }
+
+/* HERO */
+.hero { position:relative; padding:160px 48px 80px; text-align:center; background:linear-gradient(180deg,#F3F0F8 0%,#FAF9F7 100%); overflow:hidden; }
+.hero .deco1 { position:absolute; width:400px; height:400px; border-radius:50%; background:rgba(192,106,165,0.06); top:-120px; left:-100px; pointer-events:none; }
+.hero .deco2 { position:absolute; width:300px; height:300px; border-radius:50%; background:rgba(192,106,165,0.06); bottom:-80px; right:-60px; pointer-events:none; }
+.hero .deco3 { position:absolute; width:200px; height:200px; border-radius:50%; background:rgba(192,106,165,0.04); top:60px; right:15%; pointer-events:none; }
+.hero .ct { position:relative; z-index:2; max-width:660px; margin:0 auto; }
+.hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:12px; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:46px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; margin-bottom:16px; color:#2C2A26; }
+.hero .sub { font-size:17px; color:#8A857A; max-width:600px; margin:0 auto; line-height:1.7; }
+
+/* SHARED */
+.section { padding:80px 48px; max-width:1100px; margin:0 auto; }
+.section-full { padding:80px 48px; }
+.section-full .inner { max-width:1100px; margin:0 auto; }
+.sh { text-align:center; margin-bottom:48px; }
+.sh .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:10px; }
+.sh h2 { font-family:'Playfair Display',serif; font-size:36px; font-weight:400; letter-spacing:-0.5px; margin-bottom:10px; line-height:1.15; }
+.sh p { font-size:16px; color:#8A857A; max-width:520px; margin:0 auto; line-height:1.7; }
+
+/* PROMISE CARDS */
+.promise-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.promise-card { background:#fff; border-radius:12px; padding:32px 28px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
+.promise-card .ic { width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+.promise-card h3 { font-size:17px; font-weight:700; margin-bottom:10px; }
+.promise-card p { font-size:15px; color:#8A857A; line-height:1.7; }
+
+/* HOW IT WORKS — SPLIT */
+.split { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+.split .photo { border-radius:16px; overflow:hidden; height:400px; }
+.split .photo img { width:100%; height:100%; object-fit:cover; }
+.split .text .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:10px; }
+.split .text h2 { font-family:'Playfair Display',serif; font-size:32px; font-weight:400; margin-bottom:16px; line-height:1.2; }
+.split .text .body-p { font-size:15px; color:#8A857A; line-height:1.7; margin-bottom:28px; }
+
+/* NUMBERED STEPS */
+.steps-list { display:flex; flex-direction:column; gap:20px; margin-bottom:24px; }
+.step-item { display:flex; gap:16px; align-items:flex-start; }
+.step-num { flex-shrink:0; width:36px; height:36px; border-radius:50%; background:#F3F0F8; display:flex; align-items:center; justify-content:center; font-family:'Source Serif 4',serif; font-size:16px; font-weight:400; color:#6C1A55; }
+.step-content h4 { font-size:15px; font-weight:700; margin-bottom:2px; }
+.step-content p { font-size:14px; color:#8A857A; line-height:1.6; }
+
+/* TAGS */
+.tag-row { display:flex; flex-wrap:wrap; gap:8px; }
+.tag { display:inline-block; padding:6px 14px; border-radius:100px; font-size:12px; font-weight:700; }
+.tag-green { background:#F0F7F4; color:#3D8B6A; }
+.tag-plum { background:#FBF5F9; color:#6C1A55; }
+
+/* WHY IT MATTERS */
+.lav-bg { background:#F3F0F8; }
+.matter-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:840px; margin:0 auto; }
+.matter-card { background:#fff; border-radius:12px; padding:32px 28px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
+.matter-card h3 { font-size:17px; font-weight:700; margin-bottom:10px; }
+.matter-card p { font-size:15px; color:#8A857A; line-height:1.7; }
+
+/* FAQ */
+.faq-wrap { max-width:740px; margin:0 auto; }
+.faq-smooth { border-bottom:1px solid #E8E2DC; }
+.faq-smooth:first-child { border-top:1px solid #E8E2DC; }
+.faq-q { width:100%; background:none; border:none; padding:20px 0; font-size:16px; font-weight:700; color:#2C2A26; text-align:left; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-family:'Lato',sans-serif; }
+.faq-q .faq-icon { font-size:22px; color:#C06AA5; transition:transform 0.3s ease; flex-shrink:0; margin-left:16px; line-height:1; }
+.faq-q.open .faq-icon { transform:rotate(45deg); }
+.faq-a { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+.faq-a-inner { padding:0 0 20px; font-size:15px; color:#8A857A; line-height:1.7; }
+
+/* CTA BANNER */
+.cta-banner { margin:80px 48px; border-radius:16px; background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:80px 64px; text-align:center; position:relative; overflow:hidden; }
+.cta-banner .deco { position:absolute; width:500px; height:500px; border-radius:50%; background:rgba(192,106,165,0.08); top:-200px; right:-100px; pointer-events:none; }
+.cta-banner h2 { font-family:'Playfair Display',serif; font-size:36px; color:#fff; margin-bottom:12px; position:relative; }
+.cta-banner h2 em { font-style:italic; color:#E8A0D0; }
+.cta-banner p { font-size:16px; color:rgba(255,255,255,0.5); margin-bottom:32px; position:relative; }
+.cta-banner .btns { display:flex; gap:12px; justify-content:center; position:relative; }
+.btn-w { display:inline-block; background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; text-decoration:none; }
+.btn-w:hover { background:rgba(255,255,255,0.85); }
+.btn-gd { display:inline-block; background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; text-decoration:none; }
+.btn-gd:hover { background:rgba(255,255,255,0.20); border-color:rgba(255,255,255,0.35); }
+
+/* ANIMATIONS */
+.anim { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.anim.vis { opacity:1; transform:translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width:900px) {
+  .hero { padding:140px 24px 56px; }
+  .hero h1 { font-size:34px; }
+  .section, .section-full { padding-left:24px; padding-right:24px; }
+  .promise-grid { grid-template-columns:1fr; }
+  .split { grid-template-columns:1fr; gap:32px; }
+  .split .photo { height:260px; }
+  .matter-grid { grid-template-columns:1fr; }
+  .cta-banner { margin:48px 20px; padding:48px 24px; }
+}
+@media (max-width:600px) {
+  .hero h1 { font-size:28px; }
+  .cta-banner h2 { font-size:28px; }
+  .cta-banner .btns { flex-direction:column; align-items:center; }
+  .tag-row { flex-direction:column; }
+}
+`;
+
+const html = `<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="deco1"></div>
+  <div class="deco2"></div>
+  <div class="deco3"></div>
+  <div class="ct">
+    <div class="lbl">Included with every plan</div>
+    <h1>The LifeSaver Guarantee</h1>
+    <p class="sub">If your newborn&rsquo;s cord blood fails to engraft, StemCyte has you covered &mdash; with a full refund, financial support, and a replacement unit.</p>
+  </div>
+</section>
+
+<!-- THREE PROMISE CARDS -->
+<section class="section">
+  <div class="sh anim">
+    <div class="lbl">The promise</div>
+    <h2>Three layers of protection</h2>
+  </div>
+  <div class="promise-grid">
+    <div class="promise-card anim">
+      <div class="ic" style="background:#FBF5F9">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+      </div>
+      <h3>Full refund of all fees</h3>
+      <p>StemCyte will refund every dollar you&rsquo;ve paid &mdash; processing fees, storage fees, all of it. No questions asked.</p>
+    </div>
+    <div class="promise-card anim">
+      <div class="ic" style="background:#F0F7F4">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D8B6A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div>
+      <h3>$50,000 financial support</h3>
+      <p>In addition to your full refund, StemCyte will pay $50,000 to help cover medical expenses during a difficult time.</p>
+    </div>
+    <div class="promise-card anim">
+      <div class="ic" style="background:#EDF5FF">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B6DC4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+      </div>
+      <h3>Replacement donor unit</h3>
+      <p>StemCyte will provide a matching replacement cord blood unit from our public donor bank &mdash; free of charge.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="split anim">
+    <div class="text">
+      <div class="lbl">How it works</div>
+      <h2>What happens if engraftment fails?</h2>
+      <p class="body-p">Engraftment is the process where transplanted stem cells begin producing new blood cells. In rare cases, this process doesn&rsquo;t succeed. If your child&rsquo;s cord blood unit is used in a transplant and fails to engraft, the LifeSaver Guarantee activates automatically.</p>
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>StemCyte is notified</h4>
+            <p>Your transplant center confirms the engraftment failure to StemCyte.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Refund + $50,000 issued</h4>
+            <p>All fees paid to StemCyte are refunded, plus the $50,000 support payment.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Replacement unit provided</h4>
+            <p>A matching donor unit from StemCyte&rsquo;s public bank is provided at no cost.</p>
+          </div>
+        </div>
+      </div>
+      <div class="tag-row">
+        <span class="tag tag-green">Included free with every plan</span>
+        <span class="tag tag-plum">No additional enrollment required</span>
+      </div>
+    </div>
+    <div class="photo"><img src="/images/tanks_2.png" alt="StemCyte cryogenic storage tanks" /></div>
+  </div>
+</section>
+
+<!-- WHY IT MATTERS -->
+<section class="section-full lav-bg">
+  <div class="inner">
+    <div class="sh anim">
+      <h2>Why this guarantee matters</h2>
+    </div>
+    <div class="matter-grid">
+      <div class="matter-card anim">
+        <h3>Most banks don&rsquo;t offer this</h3>
+        <p>The LifeSaver Guarantee is unique to StemCyte. Most private cord blood banks offer no financial protection if a transplant doesn&rsquo;t succeed.</p>
+      </div>
+      <div class="matter-card anim">
+        <h3>It&rsquo;s free &mdash; always</h3>
+        <p>There&rsquo;s no extra cost, no add-on fee, no fine print. The LifeSaver Guarantee is included with every StemCyte plan from day one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="sh anim">
+    <h2>Frequently asked questions</h2>
+  </div>
+  <div class="faq-wrap">
+    <div class="faq-smooth anim">
+      <button class="faq-q" onclick="toggleFaq(this)">Is the LifeSaver Guarantee included with all plans?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Yes. It&rsquo;s included free with every StemCyte plan &mdash; Annual, 18-year, and Lifetime. No enrollment or additional fees required.</div></div>
+    </div>
+    <div class="faq-smooth anim">
+      <button class="faq-q" onclick="toggleFaq(this)">What counts as an engraftment failure?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Engraftment failure occurs when transplanted stem cells do not successfully begin producing new blood cells. This is determined by the transplant center and treating physician.</div></div>
+    </div>
+    <div class="faq-smooth anim">
+      <button class="faq-q" onclick="toggleFaq(this)">Does the guarantee cover cord tissue?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">The LifeSaver Guarantee applies specifically to cord blood. Cord tissue is not currently used in transplantation, so the engraftment guarantee does not apply.</div></div>
+    </div>
+    <div class="faq-smooth anim">
+      <button class="faq-q" onclick="toggleFaq(this)">Is there a time limit on the guarantee?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner">The guarantee is valid for as long as your cord blood unit is stored with StemCyte. There is no expiration.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner anim">
+  <div class="deco"></div>
+  <h2>Every StemCyte plan includes the LifeSaver <em>Guarantee</em></h2>
+  <p>No extra cost. No fine print. Just protection.</p>
+  <div class="btns">
+    <a href="/pricing" class="btn-w">View pricing</a>
+    <a href="tel:8663894659" class="btn-gd">Call (866) 389-4659</a>
+  </div>
+</section>
+`;
+
+const script = `// Scroll animations
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      setTimeout(function() { entry.target.classList.add('vis'); }, 150);
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });
+
+// FAQ toggle — one open at a time
+function toggleFaq(btn) {
+  var item = btn.parentElement;
+  var answer = item.querySelector('.faq-a');
+  var isOpen = btn.classList.contains('open');
+
+  // Close all
+  document.querySelectorAll('.faq-smooth').forEach(function(faq) {
+    faq.querySelector('.faq-q').classList.remove('open');
+    faq.querySelector('.faq-a').style.maxHeight = null;
+  });
+
+  // Open clicked if it was closed
+  if (!isOpen) {
+    btn.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+window.toggleFaq = toggleFaq;`;
+
+export default function Page() {
+  return <PageContent css={css} html={html} script={script} transparentNav={false} />;
+}
