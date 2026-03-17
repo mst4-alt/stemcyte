@@ -44,8 +44,8 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 
 /* VALUE CARDS (WHY STEMCYTE) */
 .uv-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
-.uv-card { background:#fff; border-radius:12px; padding:28px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); text-decoration:none; color:inherit; display:block; transition:all 0.25s; position:relative; }
-.uv-card:hover { transform:translateY(-4px); box-shadow:0 8px 24px rgba(0,0,0,0.08),0 1px 3px rgba(0,0,0,0.04); }
+.uv-card { background:#fff; border-radius:12px; padding:28px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); text-decoration:none; color:inherit; display:block; transition:transform 0.25s ease, box-shadow 0.25s ease; position:relative; }
+.uv-card.vis:hover { transform:translateY(-4px); box-shadow:0 8px 24px rgba(0,0,0,0.08),0 1px 3px rgba(0,0,0,0.04); }
 .uv-card .ic { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
 .uv-card h3 { font-size:16px; font-weight:700; margin-bottom:8px; color:#2C2A26; }
 .uv-card p { font-size:15px; color:#8A857A; line-height:1.7; }
