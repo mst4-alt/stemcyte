@@ -593,6 +593,9 @@ const html = `<!-- HERO -->
       <div class="trial-stat anim"><div class="tv">500+</div><div class="td">Active MSC clinical trials worldwide</div></div>
       <div class="trial-stat anim"><div class="tv">3</div><div class="td">StemCyte-sponsored clinical trials</div></div>
     </div>
+    <div style="text-align:center;margin-top:32px;">
+      <a href="/clinical-trials" style="font-size:15px;font-weight:700;color:#6C1A55;text-decoration:none;">See our clinical trials &rarr;</a>
+    </div>
   </div>
 </section>
 

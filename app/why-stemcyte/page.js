@@ -408,6 +408,9 @@ const html = `<!-- HERO -->
       <p>A woman achieved HIV remission after receiving a cord blood stem cell transplant &mdash; the first woman and only the third person in history to potentially be cured. StemCyte provided the cord blood unit.</p>
       <p class="hiv-coda">What you bank today may enable breakthroughs that don&rsquo;t yet exist.</p>
     </div>
+    <div style="text-align:center;margin-top:32px;">
+      <a href="/clinical-trials" style="font-size:15px;font-weight:700;color:#6C1A55;text-decoration:none;">View all clinical trials &rarr;</a>
+    </div>
   </div>
 </section>
 
