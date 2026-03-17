@@ -364,7 +364,8 @@ const html = `
     <div class="bla-hero-inner">
       <div class="bla-hero-overline">FDA Biologics License &middot; BLA 125764/0</div>
       <h1>What an FDA BLA means</h1>
-      <p class="bla-hero-subtitle">A Biologics License Application is the highest standard of FDA approval for biological products. REGENECYTE&reg; is one of only a handful of cord blood products to earn it.</p>
+      <p class="bla-hero-subtitle">A Biologics License Application is the highest standard of FDA approval for biological products.</p>
+      <p class="bla-hero-subtitle">REGENECYTE&reg; is one of only a handful of cord blood products to earn it.</p>
       <div class="bla-hero-scroll">&darr; Scroll to learn more</div>
     </div>
   </section>
