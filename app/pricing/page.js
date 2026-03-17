@@ -512,8 +512,8 @@ const html = `<!-- HERO -->
   <h2>Have questions? We're here to <em>help</em></h2>
   <p>Our cord blood specialists are available 7 days a week to answer any questions.</p>
   <div class="btns">
-    <button class="btn-w" onclick="">Call (866) 389-4659</button>
-    <a href="tel:8663894659" class="btn-gd" style="display:inline-block;text-decoration:none">Call (866) 389-4659</a>
+    <a href="tel:8663894659" class="btn-w" style="display:inline-block;text-decoration:none">Call (866) 389-4659</a>
+    <a href="mailto:customerservice@stemcyte.com" class="btn-gd" style="display:inline-block;text-decoration:none">Email us</a>
   </div>
 </section>
 
