@@ -1,5 +1,6 @@
 import './globals.css';
 import Footer from '../components/Footer';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
   title: 'StemCyte - Cord Blood Banking & Stem Cell Therapy',
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>
