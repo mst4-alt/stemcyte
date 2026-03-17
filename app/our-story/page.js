@@ -881,8 +881,10 @@ const html = `
   <div class="legacy">
     <div class="inner">
       <div class="photo-side anim">
-        <img class="portrait" src="/images/our%20story/press_release_distribution_0452818_127664.jpg" alt="Dr. Lawrence D. Petz">
+        <a href="/our-story/lawrence-petz" style="text-decoration:none;color:inherit;">
+        <img class="portrait" src="/images/our%20story/press_release_distribution_0452818_127664.jpg" alt="Dr. Lawrence D. Petz" style="cursor:pointer;transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
         <div class="name">Lawrence D. Petz, MD</div>
+        </a>
         <div class="dates">Pioneer in cord blood medicine</div>
         <div class="dedication">&ldquo;A pioneer in the field of cord blood&rdquo;<br>&mdash; <em>Cell</em>, 2023</div>
       </div>

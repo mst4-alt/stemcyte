@@ -1,0 +1,1006 @@
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 72vh;
+  background: linear-gradient(175deg, #3D0F31 0%, #1A0714 50%, #0D0516 100%);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 48px 72px;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.orbA {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(192,106,165,0.1) 0%, transparent 70%);
+  top: -200px;
+  right: -100px;
+}
+
+.orbB {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(108,26,85,0.15) 0%, transparent 70%);
+  bottom: -150px;
+  left: -50px;
+}
+
+.heroInner {
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+  align-items: end;
+}
+
+.heroPortrait {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border: 4px solid rgba(255,255,255,0.12);
+  opacity: 0;
+  animation: heroFade 0.8s 0.2s ease forwards;
+}
+
+.heroText {
+  opacity: 0;
+  animation: heroFade 0.8s 0.4s ease forwards;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #C06AA5;
+  text-decoration: none;
+  margin-bottom: 20px;
+  transition: color 0.2s;
+}
+
+.backLink:hover {
+  color: #E8A0D0;
+}
+
+.backLink svg {
+  width: 16px;
+  height: 16px;
+}
+
+.heroName {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.heroRole {
+  font-size: 14px;
+  font-weight: 700;
+  color: #C06AA5;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+
+.heroSub {
+  font-size: 16px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.7;
+  max-width: 540px;
+}
+
+@keyframes heroFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── SHARED SECTIONS ── */
+.section {
+  padding: 80px 48px;
+  position: relative;
+}
+
+.sectionLav {
+  background: #F3F0F8;
+}
+
+.sectionPlum {
+  background: #FBF5F9;
+}
+
+.inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.secLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #6C1A55;
+  margin-bottom: 10px;
+}
+
+.secH2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-bottom: 20px;
+}
+
+.bodyP {
+  font-size: 15px;
+  color: #6B665D;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.bodyP:last-child {
+  margin-bottom: 0;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  padding: 0 48px;
+}
+
+.dividerLine {
+  max-width: 860px;
+  margin: 0 auto;
+  height: 1px;
+  background: #E8E2DC;
+}
+
+/* ── QUOTE / INSIGHT CARD ── */
+.insightCard {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  border: 1px solid #F0ECE6;
+  margin: 32px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.insightCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #E8A0D0, #6C1A55);
+  border-radius: 2px 0 0 2px;
+}
+
+.quoteText {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.5;
+  color: #3D0F31;
+  margin-bottom: 16px;
+  padding-left: 8px;
+}
+
+.quoteAttr {
+  font-size: 13px;
+  color: #8A857A;
+  padding-left: 8px;
+}
+
+/* ── AWARDS ALTERNATING TIMELINE ── */
+.awardsTimeline {
+  position: relative;
+  margin: 48px 0 32px;
+}
+
+.awardsTrack {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #C4943E;
+  transform: translateX(-50%);
+}
+
+.awardItem {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+  align-items: start;
+}
+
+.awardItem:last-child {
+  margin-bottom: 0;
+}
+
+.awardDot {
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #C4943E;
+  border: 3px solid #FAF7F2;
+  transform: translateX(-50%);
+  z-index: 2;
+  box-shadow: 0 0 0 3px rgba(196,148,62,0.15);
+}
+
+.awardContent {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  border: 1px solid #F0ECE6;
+}
+
+.awardLeft .awardContent {
+  text-align: right;
+}
+
+.awardLeft .awardContent {
+  grid-column: 1;
+}
+
+.awardRight .awardContent {
+  grid-column: 2;
+}
+
+.awardLeft .awardSpacer {
+  grid-column: 2;
+}
+
+.awardRight .awardSpacer {
+  grid-column: 1;
+}
+
+.awardYear {
+  font-family: 'Source Serif 4', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #C4943E;
+  margin-bottom: 4px;
+}
+
+.awardTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2C2A26;
+  margin-bottom: 4px;
+}
+
+.awardOrg {
+  font-size: 13px;
+  color: #8A857A;
+  line-height: 1.5;
+}
+
+.awardDesc {
+  font-size: 13px;
+  color: #6B665D;
+  line-height: 1.5;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ── SYMPOSIUM CARD ── */
+.symposiumCard {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  border: 1px solid #E8E2DC;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 32px;
+  align-items: start;
+  margin: 32px 0;
+}
+
+.symposiumBadge {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6C1A55, #3D0F31);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.symposiumBadgeYears {
+  font-family: 'Source Serif 4', serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.symposiumBadgePlace {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  opacity: 0.6;
+}
+
+.symposiumCard h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #2C2A26;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.symposiumCard p {
+  font-size: 15px;
+  color: #6B665D;
+  line-height: 1.8;
+}
+
+/* ── HIV DARK SECTION ── */
+.hivSection {
+  position: relative;
+  background: linear-gradient(175deg, #1A0714 0%, #2D0B23 50%, #3D0F31 100%);
+  overflow: hidden;
+  padding: 100px 48px;
+}
+
+.hivSection::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(192,106,165,0.08) 0%, transparent 70%);
+  top: -200px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.hivRing {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(192,106,165,0.06);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.hivRing1 {
+  width: 300px;
+  height: 300px;
+  animation: breathe 6s ease-in-out infinite;
+}
+
+.hivRing2 {
+  width: 500px;
+  height: 500px;
+  animation: breathe 6s ease-in-out 1s infinite;
+}
+
+.hivRing3 {
+  width: 700px;
+  height: 700px;
+  animation: breathe 6s ease-in-out 2s infinite;
+}
+
+.hivRing4 {
+  width: 900px;
+  height: 900px;
+  animation: breathe 6s ease-in-out 3s infinite;
+}
+
+.hivRing5 {
+  width: 1100px;
+  height: 1100px;
+  animation: breathe 6s ease-in-out 4s infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  50% { transform: translate(-50%, -50%) scale(1.05); opacity: 1; }
+}
+
+.hivInner {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.hivBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #E8A0D0;
+  margin-bottom: 24px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px;
+  padding: 8px 16px;
+}
+
+.hivBadgeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #E8A0D0;
+  animation: pulse 2.5s ease infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(232,160,208,0.5); }
+  50% { box-shadow: 0 0 0 10px rgba(232,160,208,0); }
+}
+
+.hivLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #C06AA5;
+  margin-bottom: 10px;
+}
+
+.hivH2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.hivH2 em {
+  font-style: italic;
+  color: #E8A0D0;
+}
+
+.hivSubheader {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.hivBody {
+  font-size: 15px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.hivCallout {
+  border-left: 3px solid #E8A0D0;
+  padding: 20px 24px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 0 8px 8px 0;
+  margin: 24px 0;
+}
+
+.hivCallout p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.7;
+}
+
+.hivCallout strong {
+  color: #E8A0D0;
+}
+
+.hivCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: #6C1A55;
+  color: #fff;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 12px rgba(108,26,85,0.3);
+  margin-top: 8px;
+}
+
+.hivCta:hover {
+  background: #5A1548;
+  transform: translateY(-1px);
+}
+
+.hivStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.hivStatCard {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.hivStatNum {
+  font-family: 'Source Serif 4', serif;
+  font-size: 32px;
+  color: #E8A0D0;
+  margin-bottom: 6px;
+}
+
+.hivStatLabel {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.4;
+}
+
+/* ── TEXTBOOK CARDS ── */
+.bookGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 32px 0;
+}
+
+.bookCard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  border: 1px solid #F0ECE6;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.bookCardLink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(108,26,85,0.08);
+}
+
+.bookCover {
+  width: 72px;
+  height: 100px;
+  border-radius: 6px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.bookCoverTitle {
+  font-size: 9px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.bookTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #2C2A26;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.bookMeta {
+  font-size: 13px;
+  color: #8A857A;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.bookEdition {
+  font-size: 12px;
+  color: #6C1A55;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.bookLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #6C1A55;
+  margin-top: 8px;
+}
+
+/* ── CAREER TIMELINE ── */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+  margin: 32px 0;
+}
+
+.tlTrack {
+  position: absolute;
+  left: 14px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #E8E2DC;
+  border-radius: 1px;
+}
+
+.tlItem {
+  position: relative;
+  margin-bottom: 36px;
+}
+
+.tlItem:last-child {
+  margin-bottom: 0;
+}
+
+.tlDot {
+  position: absolute;
+  left: -32px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #E8E2DC;
+  border: 3px solid #FAF7F2;
+  z-index: 2;
+}
+
+.tlDotActive {
+  background: #6C1A55;
+}
+
+.tlDotHighlight {
+  background: #C06AA5;
+  box-shadow: 0 0 0 4px rgba(192,106,165,0.2);
+}
+
+.tlYear {
+  font-family: 'Source Serif 4', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6C1A55;
+  margin-bottom: 4px;
+}
+
+.tlTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2C2A26;
+  margin-bottom: 6px;
+}
+
+.tlDesc {
+  font-size: 14px;
+  color: #6B665D;
+  line-height: 1.7;
+}
+
+/* ── FOCUS AREAS / TAGS ── */
+.tagGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+.tag {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6C1A55;
+  background: #FBF5F9;
+  border: 1px solid #F0E0EB;
+  padding: 8px 16px;
+  border-radius: 100px;
+}
+
+/* ── CTA BANNER ── */
+.ctaBanner {
+  background: linear-gradient(160deg, #6C1A55, #3D0F31);
+  padding: 64px 48px;
+  text-align: center;
+}
+
+.ctaBanner h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.ctaBanner p {
+  font-size: 15px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 28px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaBtn {
+  display: inline-block;
+  background: #fff;
+  color: #6C1A55;
+  padding: 14px 36px;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+
+.ctaBtn:hover {
+  background: rgba(255,255,255,0.85);
+}
+
+/* ── OTHER LEADERS ── */
+.otherLeaders {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 32px 0;
+}
+
+.otherCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  border: 1px solid #F0ECE6;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.otherCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(108,26,85,0.08);
+}
+
+.otherAvatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  flex-shrink: 0;
+}
+
+.otherInfo h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.otherInfo span {
+  font-size: 13px;
+  color: #6C1A55;
+  font-weight: 600;
+}
+
+.otherArrow {
+  margin-left: auto;
+  color: #C06AA5;
+  flex-shrink: 0;
+}
+
+/* ── SCROLL ANIMATIONS ── */
+.anim {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animD1 { transition-delay: 0.1s; }
+.animD2 { transition-delay: 0.2s; }
+.animD3 { transition-delay: 0.3s; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 120px 24px 48px;
+  }
+
+  .heroInner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .heroPortrait {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+  }
+
+  .heroName {
+    font-size: 32px;
+  }
+
+  .backLink {
+    justify-content: center;
+  }
+
+  .section {
+    padding: 56px 24px;
+  }
+
+  .secH2 {
+    font-size: 26px;
+  }
+
+  .divider {
+    padding: 0 24px;
+  }
+
+  .ctaBanner {
+    padding: 48px 24px;
+  }
+
+  .ctaBanner h2 {
+    font-size: 26px;
+  }
+
+  .insightCard {
+    padding: 28px 24px;
+  }
+
+  .quoteText {
+    font-size: 18px;
+  }
+
+  /* Awards timeline - collapse to single column */
+  .awardsTrack {
+    left: 14px;
+    transform: none;
+  }
+
+  .awardItem {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-left: 40px;
+    margin-bottom: 32px;
+  }
+
+  .awardDot {
+    left: 14px;
+    transform: translateX(-50%);
+  }
+
+  .awardLeft .awardContent,
+  .awardRight .awardContent {
+    grid-column: 1;
+    text-align: left;
+  }
+
+  .awardSpacer {
+    display: none;
+  }
+
+  /* Symposium */
+  .symposiumCard {
+    grid-template-columns: 1fr;
+    padding: 28px 24px;
+  }
+
+  .symposiumBadge {
+    margin: 0 auto;
+  }
+
+  .symposiumCard h3 {
+    text-align: center;
+  }
+
+  /* HIV section */
+  .hivSection {
+    padding: 64px 24px;
+  }
+
+  .hivInner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hivH2 {
+    font-size: 28px;
+  }
+
+  .hivStats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Books */
+  .bookGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Other leaders */
+  .otherLeaders {
+    grid-template-columns: 1fr;
+  }
+
+  /* Career timeline */
+  .timeline {
+    padding-left: 40px;
+  }
+}
+
+/* ── STAGGER DELAYS ── */
+.tlItem:nth-child(1) { transition-delay: 0s; }
+.tlItem:nth-child(2) { transition-delay: 0.08s; }
+.tlItem:nth-child(3) { transition-delay: 0.16s; }
+.tlItem:nth-child(4) { transition-delay: 0.24s; }
+.tlItem:nth-child(5) { transition-delay: 0.32s; }
+.tlItem:nth-child(6) { transition-delay: 0.4s; }
+.tlItem:nth-child(7) { transition-delay: 0.48s; }
+.tlItem:nth-child(8) { transition-delay: 0.56s; }
+.tlItem:nth-child(9) { transition-delay: 0.64s; }
+.tlItem:nth-child(10) { transition-delay: 0.72s; }
+
+.awardItem:nth-child(1) { transition-delay: 0s; }
+.awardItem:nth-child(2) { transition-delay: 0.08s; }
+.awardItem:nth-child(3) { transition-delay: 0.16s; }
+.awardItem:nth-child(4) { transition-delay: 0.24s; }
+.awardItem:nth-child(5) { transition-delay: 0.32s; }
+.awardItem:nth-child(6) { transition-delay: 0.4s; }
+.awardItem:nth-child(7) { transition-delay: 0.48s; }
+.awardItem:nth-child(8) { transition-delay: 0.56s; }
+.awardItem:nth-child(9) { transition-delay: 0.64s; }
