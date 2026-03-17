@@ -11,9 +11,8 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 
 /* HERO */
 .hero { position:relative; min-height:560px; display:flex; align-items:center; overflow:hidden; background-image:url('/images/pba_hero_2.jpeg'); background-size:cover; background-position:center; }
-.hero::before { content:''; position:absolute; inset:0; background:linear-gradient(90deg, rgba(250,249,247,0.92) 0%, rgba(250,249,247,0.75) 40%, rgba(250,249,247,0.15) 70%, transparent 100%); z-index:1; }
 .hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
-.hero .txt { max-width:520px; }
+.hero .txt { max-width:520px; background:rgba(250,249,247,0.75); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-radius:16px; padding:40px; }
 .hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:12px; }
 .hero h1 { font-family:'Playfair Display',serif; font-size:46px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; margin-bottom:16px; color:#2C2A26; }
 .hero .sub { font-size:17px; color:#8A857A; max-width:520px; line-height:1.7; }
