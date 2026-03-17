@@ -11,11 +11,12 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 
 /* HERO */
 .hero { position:relative; min-height:560px; display:flex; align-items:center; overflow:hidden; background-image:url('/images/pba_hero_2.jpeg'); background-size:cover; background-position:center; }
+.hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 55% 50%,transparent 0%,rgba(0,0,0,0.15) 50%,rgba(0,0,0,0.55) 100%); z-index:1; }
 .hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
-.hero .txt { max-width:520px; background:rgba(250,249,247,0.75); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-radius:16px; padding:40px; }
-.hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:12px; }
-.hero h1 { font-family:'Playfair Display',serif; font-size:46px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; margin-bottom:16px; color:#2C2A26; }
-.hero .sub { font-size:17px; color:#8A857A; max-width:520px; line-height:1.7; }
+.hero .txt { max-width:520px; }
+.hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:46px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; margin-bottom:16px; color:#fff; }
+.hero .sub { font-size:17px; color:rgba(255,255,255,0.6); max-width:520px; line-height:1.7; }
 
 /* SHARED */
 .section { padding:80px 48px; max-width:1100px; margin:0 auto; }
