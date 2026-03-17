@@ -56,20 +56,22 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .learn-link { display:inline-flex; align-items:center; gap:8px; margin-top:8px; font-size:14px; font-weight:700; color:#6C1A55; text-decoration:none; transition:gap 0.3s ease; }
 .learn-link:hover { gap:12px; }
 
-/* TWO WORLDS CARDS */
-.d-cards { display:flex; flex-direction:column; gap:12px; }
-.d-card { border-radius:12px; padding:24px 28px; }
-.d-card.top { background:#fff; border:1px solid #E8E2DC; }
-.d-card.bot { background:#6C1A55; color:#fff; }
-.d-card .tag { font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:8px; }
-.d-card.top .tag { color:#B0AB9E; }
-.d-card.bot .tag { color:#E8A0D0; }
-.d-card h4 { font-size:16px; font-weight:700; margin-bottom:4px; }
-.d-card.top h4 { color:#8A857A; }
-.d-card p { font-size:13px; line-height:1.55; margin:0; }
-.d-card.top p { color:#B0AB9E; }
-.d-card.bot p { color:rgba(255,255,255,0.55); }
-.d-vs { text-align:center; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#C8C3BB; padding:4px 0; }
+/* TRACK VISUALIZATION */
+.track-card { background:#fff; border-radius:16px; padding:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
+.track-bar { position:relative; height:6px; border-radius:100px; background:#E8E2DC; margin:16px 0 48px; }
+.track-fill { position:absolute; right:0; top:0; height:100%; width:40%; border-radius:100px; background:linear-gradient(90deg, #C06AA5, #6C1A55); }
+.track-pin { position:absolute; top:-8px; width:22px; height:22px; border-radius:50%; border:3px solid #fff; box-shadow:0 1px 6px rgba(0,0,0,0.15); }
+.track-pin.gray { left:12%; background:#D4D0CA; }
+.track-pin.plum { right:2%; background:#6C1A55; }
+.track-pin-label { position:absolute; top:28px; white-space:nowrap; font-size:11px; font-weight:700; }
+.track-pin.gray .track-pin-label { left:50%; transform:translateX(-50%); color:#A09A90; }
+.track-pin.plum .track-pin-label { right:0; color:#6C1A55; }
+.track-legend { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.track-legend-item .title { font-size:13px; font-weight:700; margin-bottom:3px; }
+.track-legend-item .title.gray { color:#A09A90; }
+.track-legend-item .title.plum { color:#6C1A55; }
+.track-legend-item p { font-size:12px; color:#B0AB9E; line-height:1.5; margin:0; }
+.track-legend-item.right { text-align:right; }
 
 /* FEATURE CARDS */
 .feat-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
@@ -195,17 +197,23 @@ const html = `<!-- HERO -->
       <p>Our cord blood product, <strong>REGENECYTE&reg;</strong>, earned an FDA biologics license &mdash; the same approval pathway used for vaccines and blood products.</p>
       <a href="/fda-bla" class="learn-link">Learn what that means <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
-    <div class="d-cards">
-      <div class="d-card top">
-        <div class="tag">Most cord blood banks</div>
-        <h4>FDA Registered</h4>
-        <p>Filed paperwork that they handle biological material</p>
-      </div>
-      <div class="d-vs">vs</div>
-      <div class="d-card bot">
-        <div class="tag">REGENECYTE&reg;</div>
-        <h4>FDA Licensed</h4>
-        <p>Clinical data reviewed, manufacturing validated, product approved</p>
+    <div>
+      <div class="track-card">
+        <div class="track-bar">
+          <div class="track-fill"></div>
+          <div class="track-pin gray"><div class="track-pin-label">Most banks</div></div>
+          <div class="track-pin plum"><div class="track-pin-label">REGENECYTE&reg;</div></div>
+        </div>
+        <div class="track-legend">
+          <div class="track-legend-item">
+            <div class="title gray">Registered</div>
+            <p>Notified the FDA they exist</p>
+          </div>
+          <div class="track-legend-item right">
+            <div class="title plum">Licensed</div>
+            <p>Product reviewed and approved</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
