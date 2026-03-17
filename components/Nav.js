@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { label: 'The Science', href: '/the-science' },
+  { label: 'Clinical Trials', href: '/clinical-trials' },
   { label: 'Why StemCyte', href: '/why-stemcyte' },
   { label: 'Public Bank Access', href: '/public-bank-access' },
   { label: 'Pricing', href: '/pricing' },
