@@ -1,0 +1,462 @@
+import PageContent from '../../components/PageContent';
+
+export const metadata = {
+  title: 'StemCyte Access | StemCyte',
+};
+
+const css = `
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
+
+/* HERO */
+.hero { position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; background:linear-gradient(170deg,#0A0412 0%,#1A0714 50%,#2A0E22 100%); }
+.hero .ambient-orb { position:absolute; border-radius:50%; pointer-events:none; }
+.hero .ambient-orb.a { width:800px; height:800px; background:radial-gradient(circle,rgba(192,106,165,0.12) 0%,transparent 70%); top:-200px; right:-200px; }
+.hero .ambient-orb.b { width:600px; height:600px; background:radial-gradient(circle,rgba(108,26,85,0.2) 0%,transparent 70%); bottom:-100px; left:-100px; }
+.hero .ct { position:relative; z-index:2; max-width:1200px; margin:0 auto; padding:160px 48px 80px; width:100%; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+.hero .txt { max-width:540px; }
+.hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:46px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; margin-bottom:16px; color:#fff; }
+.hero h1 em { font-style:italic; color:#E8A0D0; }
+.hero .sub { font-size:17px; color:rgba(255,255,255,0.4); max-width:540px; line-height:1.7; margin-bottom:32px; }
+.hero-btns { display:flex; gap:16px; flex-wrap:wrap; }
+.hero-btns .btn-w { padding:14px 32px; border-radius:100px; background:#fff; color:#6C1A55; font-size:15px; font-weight:700; text-decoration:none; transition:background 0.2s; }
+.hero-btns .btn-w:hover { background:#F3F0F8; }
+.hero-btns .btn-o { padding:14px 32px; border-radius:100px; background:transparent; color:#fff; font-size:15px; font-weight:700; text-decoration:none; border:1.5px solid rgba(255,255,255,0.3); transition:background 0.2s; }
+.hero-btns .btn-o:hover { background:rgba(255,255,255,0.1); }
+.canvas-wrap { position:relative; width:100%; height:480px; }
+.canvas-wrap canvas { position:absolute; top:0; left:0; width:100%; height:100%; }
+
+/* SHARED */
+.section { padding:80px 48px; max-width:1100px; margin:0 auto; }
+.section-lav { background:#F3F0F8; }
+.section-label { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:12px; text-align:center; }
+.section-title { font-family:'Playfair Display',serif; font-size:36px; font-weight:400; line-height:1.15; letter-spacing:-1px; text-align:center; margin-bottom:16px; color:#2C2A26; }
+.section-sub { font-size:16px; color:#8A857A; text-align:center; max-width:620px; margin:0 auto 48px; line-height:1.7; }
+
+/* ANIMATIONS */
+.anim { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease, transform 0.6s ease; }
+.anim.visible { opacity:1; transform:translateY(0); }
+
+/* WHAT IS SECTION — 2 col */
+.what-grid { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
+.what-narrative h2 { font-family:'Playfair Display',serif; font-size:36px; font-weight:400; line-height:1.15; letter-spacing:-1px; color:#2C2A26; margin-bottom:20px; }
+.what-narrative p { font-size:16px; color:#5A5750; line-height:1.75; margin-bottom:16px; }
+.what-narrative p:last-child { margin-bottom:0; }
+
+/* Highlights panel */
+.highlights { padding:0; }
+.hl-item { display:flex; gap:16px; align-items:flex-start; padding:20px 0; }
+.hl-item + .hl-item { border-top:1px solid #F0ECE6; }
+.hl-icon { width:36px; height:36px; min-width:36px; background:#FBF5F9; border-radius:8px; display:flex; align-items:center; justify-content:center; }
+.hl-icon svg { width:20px; height:20px; }
+.hl-text h4 { font-size:15px; font-weight:700; color:#2C2A26; margin-bottom:4px; }
+.hl-text p { font-size:14px; color:#8A857A; line-height:1.6; }
+
+/* TIER CARDS */
+.tiers-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:1100px; margin:0 auto; }
+.tier-card { background:#fff; border-radius:12px; border:1.5px solid #E8E2DC; padding:32px; position:relative; transition:box-shadow 0.25s ease; }
+.tier-card:hover { box-shadow:0 8px 32px rgba(108,26,85,0.08); }
+.tier-card.featured { border-color:#6C1A55; }
+.tier-badge { position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:#6C1A55; color:#fff; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:6px 16px; border-radius:100px; white-space:nowrap; }
+.tier-name { font-size:22px; font-weight:700; color:#2C2A26; margin-bottom:4px; }
+.tier-price { font-family:'Source Serif 4',serif; font-size:40px; font-weight:400; color:#6C1A55; margin-bottom:2px; }
+.tier-freq { font-size:13px; color:#8A857A; margin-bottom:20px; }
+.tier-desc { font-size:14px; color:#5A5750; line-height:1.6; margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #F0ECE6; }
+
+/* Key features with plum dots */
+.key-features { list-style:none; margin-bottom:20px; }
+.key-features li { font-size:14px; color:#2C2A26; line-height:1.6; padding:4px 0 4px 18px; position:relative; }
+.key-features li::before { content:''; position:absolute; left:0; top:11px; width:6px; height:6px; border-radius:50%; background:#6C1A55; }
+
+/* Expand toggle */
+.expand-btn { background:none; border:none; cursor:pointer; font-size:13px; font-weight:600; color:#6C1A55; padding:0; margin-bottom:20px; display:flex; align-items:center; gap:6px; }
+.expand-btn .arrow { display:inline-block; transition:transform 0.25s ease; font-size:11px; }
+.expand-btn.open .arrow { transform:rotate(180deg); }
+
+/* Full checklist */
+.full-details { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+.full-details.open { max-height:600px; }
+.checklist { list-style:none; margin-bottom:20px; }
+.checklist li { font-size:14px; color:#2C2A26; line-height:1.6; padding:6px 0 6px 30px; position:relative; }
+.checklist li .ck { position:absolute; left:0; top:6px; width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.checklist li .ck.yes { background:#D4E8DC; }
+.checklist li .ck.yes svg { stroke:#3D8B6A; }
+.checklist li .ck.no { background:#F0E0EB; }
+.checklist li .ck.no svg { stroke:#C06AA5; }
+.checklist li .ck svg { width:12px; height:12px; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+
+/* Tier CTA */
+.tier-cta { display:block; width:100%; text-align:center; padding:14px 0; border-radius:100px; font-size:15px; font-weight:700; text-decoration:none; transition:background 0.2s ease, color 0.2s ease; }
+.tier-cta.primary { background:#6C1A55; color:#fff; }
+.tier-cta.primary:hover { background:#5A1548; }
+.tier-cta.outline { background:transparent; color:#6C1A55; border:1.5px solid #6C1A55; }
+.tier-cta.outline:hover { background:#FBF5F9; }
+
+/* HOW IT WORKS STEPS */
+.steps-grid { display:flex; align-items:flex-start; justify-content:center; gap:0; max-width:900px; margin:0 auto; position:relative; }
+.step { display:flex; flex-direction:column; align-items:center; text-align:center; flex:1; position:relative; }
+.step-circle { width:40px; height:40px; border-radius:50%; background:#6C1A55; color:#fff; font-family:'Source Serif 4',serif; font-size:18px; font-weight:400; display:flex; align-items:center; justify-content:center; margin-bottom:16px; position:relative; z-index:2; }
+.step h3 { font-size:16px; font-weight:700; color:#2C2A26; margin-bottom:6px; }
+.step p { font-size:14px; color:#8A857A; line-height:1.6; max-width:180px; }
+.step-connector { position:absolute; top:20px; left:calc(50% + 20px); width:calc(100% - 40px); height:0; border-top:1.5px solid #D8D0E0; z-index:1; }
+
+/* FAQ */
+.faq-group { max-width:760px; margin:0 auto; }
+.faq-item { border-bottom:1px solid #E8E2DC; }
+.faq-q { width:100%; background:none; border:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; padding:20px 0; text-align:left; font-size:16px; font-weight:600; color:#2C2A26; font-family:'Lato',sans-serif; }
+.faq-q .icon { font-size:20px; color:#6C1A55; transition:transform 0.25s ease; min-width:24px; text-align:center; }
+.faq-q.open .icon { transform:rotate(45deg); }
+.faq-a { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+.faq-a-inner { padding:0 0 20px; font-size:15px; color:#5A5750; line-height:1.7; }
+
+/* CTA BANNER */
+.cta-banner { background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:72px 48px; text-align:center; }
+.cta-banner h2 { font-family:'Playfair Display',serif; font-size:36px; font-weight:400; color:#fff; margin-bottom:12px; letter-spacing:-1px; }
+.cta-banner p { font-size:16px; color:rgba(255,255,255,0.6); margin-bottom:32px; }
+.cta-btns { display:flex; gap:16px; justify-content:center; }
+.cta-btns .btn-w { padding:14px 32px; border-radius:100px; background:#fff; color:#6C1A55; font-size:15px; font-weight:700; text-decoration:none; transition:background 0.2s; }
+.cta-btns .btn-w:hover { background:#F3F0F8; }
+.cta-btns .btn-o { padding:14px 32px; border-radius:100px; background:transparent; color:#fff; font-size:15px; font-weight:700; text-decoration:none; border:1.5px solid rgba(255,255,255,0.3); transition:background 0.2s; }
+.cta-btns .btn-o:hover { background:rgba(255,255,255,0.1); }
+
+/* DISCLAIMER */
+.disclaimer { max-width:760px; margin:0 auto; padding:48px 48px 64px; }
+.disclaimer p { font-size:12px; color:#8A857A; line-height:1.7; }
+
+/* RESPONSIVE */
+@media (max-width:900px) {
+  .hero .ct { padding:140px 24px 48px; grid-template-columns:1fr; }
+  .hero h1 { font-size:34px; }
+  .canvas-wrap { display:none; }
+  .section { padding:64px 24px; }
+  .what-grid { grid-template-columns:1fr; gap:32px; }
+  .tiers-grid { grid-template-columns:1fr; max-width:440px; margin:0 auto; }
+  .steps-grid { flex-direction:column; align-items:center; gap:32px; }
+  .step-connector { display:none; }
+  .cta-btns { flex-direction:column; align-items:center; }
+  .cta-banner { padding:56px 24px; }
+  .disclaimer { padding:32px 24px 48px; }
+}
+@media (max-width:600px) {
+  .hero h1 { font-size:28px; }
+  .what-narrative h2 { font-size:28px; }
+  .section-title { font-size:28px; }
+  .tier-price { font-size:32px; }
+}
+`;
+
+const html = `<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="ambient-orb a"></div>
+  <div class="ambient-orb b"></div>
+  <div class="ct">
+    <div class="txt">
+      <div class="lbl">STEMCYTE ACCESS</div>
+      <h1>Your family&rsquo;s bridge to <em>life-saving</em> stem cells</h1>
+      <p class="sub">Proactive HLA typing and priority search access to StemCyte&rsquo;s public cord blood inventory &mdash; so if your family ever needs a transplant, you&rsquo;re already one step closer.</p>
+      <div class="hero-btns">
+        <a href="/pricing" class="btn-w">Enroll now</a>
+        <a href="#plans" class="btn-o">View plans</a>
+      </div>
+    </div>
+    <div class="canvas-wrap">
+      <canvas id="neural-canvas"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS STEMCYTE ACCESS -->
+<div class="section anim">
+  <div class="what-grid">
+    <div class="what-narrative">
+      <h2>What is StemCyte Access?</h2>
+      <p>StemCyte Access is a subscription that connects your family to one of the world&rsquo;s largest and most diverse public cord blood banks &mdash; before you ever need it.</p>
+      <p>When you enroll, we perform HLA typing for up to four family members. Your profiles are kept on file so that if a stem cell transplant is ever needed, we can immediately begin searching for a match in StemCyte&rsquo;s inventory of over 30,000 clinical-grade cord blood units.</p>
+      <p>Think of it as health insurance for stem cell access &mdash; a proactive step that eliminates the delay and uncertainty families face when searching for a donor match under pressure.</p>
+    </div>
+    <div class="highlights">
+      <div class="hl-item">
+        <div class="hl-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </div>
+        <div class="hl-text">
+          <h4>HLA typing for your family</h4>
+          <p>Covers up to 4 family members with clinical-grade HLA testing using a simple cheek swab kit mailed to your home.</p>
+        </div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18"/><path d="M9 3v18"/></svg>
+        </div>
+        <div class="hl-text">
+          <h4>Unit coverage included</h4>
+          <p>If a match is found, the cost of the cord blood unit itself is covered by your plan &mdash; no additional acquisition fee.</p>
+        </div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <div class="hl-text">
+          <h4>Search guarantee</h4>
+          <p>We guarantee a search of StemCyte&rsquo;s full public inventory within 48 hours of physician activation.</p>
+        </div>
+      </div>
+      <div class="hl-item">
+        <div class="hl-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="hl-text">
+          <h4>Physician activation</h4>
+          <p>When a transplant is needed, your physician contacts StemCyte directly to activate the search &mdash; no paperwork delay.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CHOOSE YOUR PLAN -->
+<div class="section-lav" id="plans">
+  <div class="section anim">
+    <div class="section-label">PLANS</div>
+    <h2 class="section-title">Choose your plan</h2>
+    <p class="section-sub">Every plan includes HLA typing, inventory search, and unit coverage. Choose the level of protection that fits your family.</p>
+    <div class="tiers-grid">
+
+      <!-- BASIC -->
+      <div class="tier-card" data-tier="basic">
+        <div class="tier-name">Basic</div>
+        <div class="tier-price">$795</div>
+        <div class="tier-freq">one-time enrollment</div>
+        <p class="tier-desc">Essential access for a single family member with HLA typing and search coverage.</p>
+        <ul class="key-features">
+          <li>HLA typing for 1 family member</li>
+          <li>48-hour search guarantee</li>
+          <li>Cord blood unit coverage</li>
+        </ul>
+        <button class="expand-btn" onclick="toggleDetails(this)">See full details <span class="arrow">&#9660;</span></button>
+        <div class="full-details">
+          <ul class="checklist">
+            <li><span class="ck yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>HLA typing &mdash; 1 member</li>
+            <li><span class="ck yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>48-hour search guarantee</li>
+            <li><span class="ck yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Cord blood unit included</li>
+            <li><span class="ck no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>REGENECYTE&reg; expanded access</li>
+            <li><span class="ck no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Dedicated case coordinator</li>
+            <li><span class="ck no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Match guarantee</li>
+          </ul>
+        </div>
+        <a href="/pricing" class="tier-cta outline">Get started</a>
+      </div>
+
+      <!-- CLASSIC (Featured) -->
+      <div class="tier-card featured" data-tier="classic">
+        <div class="tier-badge">Most popular</div>
+        <div class="tier-name">Classic</div>
+        <div class="tier-price">$995</div>
+        <div class="tier-freq">one-time enrollment</div>
+        <p class="tier-desc">Broader family coverage with REGENECYTE&reg; expanded access for investigational therapies.</p>
+        <ul class="key-features">
+          <li>HLA typing for up to 2 members</li>
+          <li>48-hour search guarantee</li>
+          <li>REGENECYTE&reg; expanded access</li>
+        </ul>
+        <button class="expand-btn" onclick="toggleDetails(this)">See full details <span class="arrow">&#9660;</span></button>
+        <div class="full-details">
+          <ul class="checklist">
+            <li><span class="ck yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>HLA typing &mdash; up to 2 members</li>
+            <li><span class="ck yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>48-hour search guarantee</li>
+            <li><span class="ck yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Cord blood unit included</li>
+            <li><span class="ck yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>REGENECYTE&reg; expanded access</li>
+            <li><span class="ck no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Dedicated case coordinator</li>
+            <li><span class="ck no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>Match guarantee</li>
+          </ul>
+        </div>
+        <a href="/pricing" class="tier-cta primary">Get started</a>
+      </div>
+
+      <!-- COMPLETE -->
+      <div class="tier-card" data-tier="complete">
+        <div class="tier-name">Complete</div>
+        <div class="tier-price">$1,195</div>
+        <div class="tier-freq">one-time enrollment</div>
+        <p class="tier-desc">Maximum protection with full family HLA typing, a dedicated coordinator, and our match guarantee.</p>
+        <ul class="key-features">
+          <li>HLA typing for up to 4 members</li>
+          <li>Dedicated case coordinator</li>
+          <li>Match guarantee</li>
+        </ul>
+        <button class="expand-btn" onclick="toggleDetails(this)">See full details <span class="arrow">&#9660;</span></button>
+        <div class="full-details">
+          <ul class="checklist">
+            <li><span class="ck yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>HLA typing &mdash; up to 4 members</li>
+            <li><span class="ck yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>48-hour search guarantee</li>
+            <li><span class="ck yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Cord blood unit included</li>
+            <li><span class="ck yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>REGENECYTE&reg; expanded access</li>
+            <li><span class="ck yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Dedicated case coordinator</li>
+            <li><span class="ck yes"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Match guarantee</li>
+          </ul>
+        </div>
+        <a href="/pricing" class="tier-cta outline">Get started</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section anim">
+  <div class="section-label">THE PROCESS</div>
+  <h2 class="section-title">How it works</h2>
+  <p class="section-sub">From enrollment to activation, StemCyte Access keeps your family prepared in four simple steps.</p>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-circle">1</div>
+      <h3>Enroll</h3>
+      <p>Choose your plan and complete a brief enrollment form online.</p>
+    </div>
+    <div class="step-connector"></div>
+    <div class="step">
+      <div class="step-circle">2</div>
+      <h3>HLA test</h3>
+      <p>We mail a cheek swab kit to your home. Return it in the prepaid envelope.</p>
+    </div>
+    <div class="step-connector"></div>
+    <div class="step">
+      <div class="step-circle">3</div>
+      <h3>Match</h3>
+      <p>Your HLA profiles are stored and pre-matched against our 30,000+ unit inventory.</p>
+    </div>
+    <div class="step-connector"></div>
+    <div class="step">
+      <div class="step-circle">4</div>
+      <h3>Activate</h3>
+      <p>If a transplant is needed, your physician contacts StemCyte to activate the search.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="section-lav">
+  <div class="section anim">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Common questions</h2>
+    <div class="faq-group">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Who is StemCyte Access for? <span class="icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">StemCyte Access is designed for families who want proactive stem cell preparedness without storing their own cord blood. It&rsquo;s ideal for families with children already born, adults concerned about hereditary conditions, or anyone who wants the peace of mind that comes with priority access to a matched cord blood unit.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How is this different from private cord blood banking? <span class="icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Private cord blood banking stores your baby&rsquo;s own cord blood at birth. StemCyte Access, by contrast, gives your family typed and pre-matched access to StemCyte&rsquo;s public cord blood inventory &mdash; meaning it can protect family members of any age, not just newborns. The two services complement each other.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What does the search guarantee mean? <span class="icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">When your physician activates a search, StemCyte guarantees a thorough search of our full public inventory within 48 hours. This eliminates the weeks-long wait families typically face when beginning a donor search through traditional registries.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What is REGENECYTE&reg; expanded access? <span class="icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">REGENECYTE&reg; is StemCyte&rsquo;s expanded access program that provides cord blood units for investigational therapies beyond standard transplant indications. Classic and Complete plan members have access to units through this program when approved by a treating physician.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What is the match guarantee? <span class="icon">+</span></button>
+        <div class="faq-a"><div class="faq-a-inner">The match guarantee, available with the Complete plan, means that if StemCyte cannot identify a suitable match within our inventory for your family member, we will extend your search to partner banks and registries at no additional cost. This is a one-time benefit per enrolled family.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<section class="cta-banner anim">
+  <h2>Be ready before you need to be</h2>
+  <p>Proactive HLA typing and priority access to 30,000+ cord blood units.</p>
+  <div class="cta-btns">
+    <a href="/pricing" class="btn-w">Enroll now</a>
+    <a href="tel:+18669007222" class="btn-o">Call (866) 900-7222</a>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer">
+  <p>StemCyte Access is a paid subscription product. Enrollment does not guarantee that a suitable match will be available in StemCyte&rsquo;s inventory or any partner inventory. The treating physician has final decision-making authority over transplant eligibility and unit selection. HLA typing, unit coverage, search guarantee, REGENECYTE&reg; expanded access, and match guarantee benefits are one-time use per enrolled family and are subject to the terms of your specific plan. StemCyte Access does not replace medical advice or guarantee any clinical outcome.</p>
+</div>
+`;
+
+const script = `
+// Toggle tier card details
+function toggleDetails(btn) {
+  var details = btn.nextElementSibling;
+  if (details.classList.contains('open')) {
+    details.classList.remove('open');
+    btn.classList.remove('open');
+  } else {
+    details.classList.add('open');
+    btn.classList.add('open');
+  }
+}
+
+// FAQ accordion
+function toggleFaq(btn) {
+  var answer = btn.nextElementSibling;
+  var isOpen = btn.classList.contains('open');
+
+  // Close all
+  document.querySelectorAll('.faq-q').forEach(function(q) {
+    q.classList.remove('open');
+    q.nextElementSibling.style.maxHeight = null;
+  });
+
+  if (!isOpen) {
+    btn.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+// Neural network canvas
+var nc=document.getElementById('neural-canvas');
+if(nc){
+var nctx=nc.getContext('2d');
+var ndpr=window.devicePixelRatio||1;
+function resizeNeural(){var w=nc.parentElement;nc.width=w.offsetWidth*ndpr;nc.height=w.offsetHeight*ndpr;nc.style.width=w.offsetWidth+'px';nc.style.height=w.offsetHeight+'px';nctx.setTransform(ndpr,0,0,ndpr,0,0);}
+resizeNeural();window.addEventListener('resize',resizeNeural);
+var P=[{r:232,g:160,b:208},{r:192,g:106,b:165},{r:123,g:168,b:224},{r:123,g:196,b:165},{r:196,g:148,b:62},{r:160,g:140,b:200}];
+function nrgba(c,a){return 'rgba('+c.r+','+c.g+','+c.b+','+a+')';}
+var nodes=[];
+for(var i=0;i<35;i++){nodes.push({x:Math.random(),y:Math.random(),r:Math.random()*5+3,col:P[Math.floor(Math.random()*P.length)],phase:Math.random()*Math.PI*2,pulseSpeed:Math.random()*0.003+0.001,vx:(Math.random()-0.5)*0.0002,vy:(Math.random()-0.5)*0.0002});}
+var edges=[];
+for(var i=0;i<nodes.length;i++){for(var j=i+1;j<nodes.length;j++){var dx=nodes[i].x-nodes[j].x,dy=nodes[i].y-nodes[j].y;var d=Math.sqrt(dx*dx+dy*dy);if(d<0.28)edges.push({a:i,b:j,d:d});}}
+var signals=[];
+function fireSignal(){if(edges.length===0)return;var e=edges[Math.floor(Math.random()*edges.length)];signals.push({edge:e,t:0,speed:Math.random()*0.015+0.008,col:P[Math.floor(Math.random()*P.length)]});}
+setInterval(fireSignal,300);
+function drawNeural(t){
+  var W=nc.width/ndpr,H=nc.height/ndpr;nctx.clearRect(0,0,W,H);
+  nodes.forEach(function(n){n.x+=n.vx;n.y+=n.vy;if(n.x<0.05||n.x>0.95)n.vx*=-1;if(n.y<0.05||n.y>0.95)n.vy*=-1;});
+  edges.forEach(function(e){var a=nodes[e.a],b=nodes[e.b];e.d=Math.sqrt((a.x-b.x)*(a.x-b.x)+(a.y-b.y)*(a.y-b.y));});
+  edges.forEach(function(e){if(e.d>0.3)return;var a=nodes[e.a],b=nodes[e.b];var alpha=(1-e.d/0.3)*0.08;nctx.beginPath();nctx.moveTo(a.x*W,a.y*H);nctx.lineTo(b.x*W,b.y*H);nctx.strokeStyle='rgba(232,160,208,'+(alpha*0.5)+')';nctx.lineWidth=4;nctx.stroke();nctx.beginPath();nctx.moveTo(a.x*W,a.y*H);nctx.lineTo(b.x*W,b.y*H);nctx.strokeStyle='rgba(232,160,208,'+alpha+')';nctx.lineWidth=1;nctx.stroke();});
+  for(var i=signals.length-1;i>=0;i--){var s=signals[i];s.t+=s.speed;if(s.t>1){signals.splice(i,1);continue;}var a=nodes[s.edge.a],b=nodes[s.edge.b];var x=a.x+(b.x-a.x)*s.t,y=a.y+(b.y-a.y)*s.t;var fade=Math.sin(s.t*Math.PI);nctx.beginPath();nctx.arc(x*W,y*H,8,0,Math.PI*2);nctx.fillStyle=nrgba(s.col,0.06*fade);nctx.fill();nctx.beginPath();nctx.arc(x*W,y*H,3,0,Math.PI*2);nctx.fillStyle=nrgba(s.col,0.5*fade);nctx.fill();}
+  nodes.forEach(function(n){var pulse=1+Math.sin(t*n.pulseSpeed+n.phase)*0.2;var x=n.x*W,y=n.y*H;nctx.beginPath();nctx.arc(x,y,n.r*pulse*4,0,Math.PI*2);nctx.fillStyle=nrgba(n.col,0.02);nctx.fill();nctx.beginPath();nctx.arc(x,y,n.r*pulse*2,0,Math.PI*2);nctx.fillStyle=nrgba(n.col,0.04);nctx.fill();nctx.beginPath();nctx.arc(x,y,n.r*pulse,0,Math.PI*2);nctx.fillStyle=nrgba(n.col,0.15);nctx.fill();nctx.strokeStyle=nrgba(n.col,0.2);nctx.lineWidth=1;nctx.stroke();nctx.beginPath();nctx.arc(x,y,n.r*pulse*0.35,0,Math.PI*2);nctx.fillStyle=nrgba(n.col,0.3);nctx.fill();});
+  requestAnimationFrame(drawNeural);
+}
+requestAnimationFrame(drawNeural);
+}
+
+// Scroll animations
+requestAnimationFrame(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold:0.15 });
+  document.querySelectorAll('.anim').forEach(function(el) {
+    observer.observe(el);
+  });
+});
+`;
+
+export default function Page() {
+  return <PageContent css={css} html={html} script={script} transparentNav={true} />;
+}

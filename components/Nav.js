@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'The Science', href: '/the-science' },
   { label: 'Why StemCyte', href: '/why-stemcyte' },
   { label: 'Public Bank Access', href: '/public-bank-access' },
+  { label: 'StemCyte Access', href: '/stemcyte-access' },
   { label: 'Pricing', href: '/pricing' },
   { label: 'Patient Stories', href: '/patient-stories' },
   { label: 'Our Story', href: '/our-story' },
