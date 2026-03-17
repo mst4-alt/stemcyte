@@ -814,7 +814,7 @@ const html = `
 <section class="section">
   <div class="sh">
     <div class="lbl">How it started</div>
-    <h2>A California lab with a global mission</h2>
+    <h2>From California and Taiwan to the world</h2>
   </div>
   <div class="split anim">
     <div class="photo">
@@ -823,7 +823,7 @@ const html = `
     <div class="text">
       <p>StemCyte opened its doors in 1997 with a bold idea: build the world&rsquo;s most ethnically diverse cord blood bank, and make it accessible to everyone &mdash; not just those who could afford private banking.</p>
       <p>That dual mission &mdash; private banking for families and public donation for patients &mdash; became the foundation of everything we do. Today, we&rsquo;re among the few cord blood banks in the world that operate both.</p>
-      <p>From a single lab in California, StemCyte has shipped over 2,300 cord blood units for transplant across 35 countries &mdash; one of the highest clinical track records in the industry.</p>
+      <p>From labs in Baldwin Park, California and Taiwan, StemCyte has shipped over 2,300 cord blood units for transplant across 35 countries &mdash; one of the highest clinical track records in the industry.</p>
     </div>
   </div>
 </section>
