@@ -487,13 +487,32 @@ export default function HivRemissionPage() {
           </div>
 
           <div className={s.compareGrid} ref={animRef}>
-            <div className={`${s.compareCard} ${s.compareOld}`}>
-              <h4>Previous approach: adult donor cells</h4>
-              <p>Required a very close HLA match. CCR5-delta32 donors almost exclusively white. Significant risk of graft-versus-host disease. Only two men cured in over a decade.</p>
-            </div>
-            <div className={`${s.compareCard} ${s.compareNew}`}>
-              <h4>Dr. Petz&rsquo;s approach: cord blood</h4>
-              <p>Less stringent HLA matching required. Pre-screened registry enables intentional donor selection. Lower risk of graft-versus-host disease. First woman and first person of diverse ancestry to achieve remission.</p>
+            <div className={s.compareTable}>
+              <div className={s.compareHeader}>
+                <div></div>
+                <div className={s.compareColOld}>Adult donor cells</div>
+                <div className={s.compareColNew}>Cord blood</div>
+              </div>
+              <div className={s.compareRow}>
+                <div className={s.compareLabel}>HLA matching</div>
+                <div className={s.compareOldVal}>Near-perfect match required</div>
+                <div className={s.compareNewVal}>Less stringent matching</div>
+              </div>
+              <div className={s.compareRow}>
+                <div className={s.compareLabel}>Donor diversity</div>
+                <div className={s.compareOldVal}>Almost exclusively white donors</div>
+                <div className={s.compareNewVal}>Pre-screened registry, diverse access</div>
+              </div>
+              <div className={s.compareRow}>
+                <div className={s.compareLabel}>GVHD risk</div>
+                <div className={s.compareOldVal}>Significant</div>
+                <div className={s.compareNewVal}>Lower</div>
+              </div>
+              <div className={s.compareRowLast}>
+                <div className={s.compareLabel}>Outcomes</div>
+                <div className={s.compareOldVal}>2 men cured in 10+ years</div>
+                <div className={s.compareNewVal}>First woman, first diverse patient</div>
+              </div>
             </div>
           </div>
 

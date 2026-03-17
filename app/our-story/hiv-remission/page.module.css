@@ -432,37 +432,73 @@
 
 /* ── COMPARE ── */
 .compareGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
   margin: 32px 0;
 }
 
-.compareCard {
+.compareTable {
   background: #fff;
-  border-radius: 12px;
-  padding: 28px;
+  border-radius: 14px;
+  padding: 36px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.04);
 }
 
-.compareCard h4 {
+.compareHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 24px;
+}
+
+.compareColOld {
+  font-size: 12px;
+  font-weight: 700;
+  color: #8A857A;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #E8E2DC;
+}
+
+.compareColNew {
+  font-size: 12px;
+  font-weight: 700;
+  color: #6C1A55;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #6C1A55;
+}
+
+.compareRow,
+.compareRowLast {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 16px 0;
+}
+
+.compareRow {
+  border-bottom: 1px solid #F0EEEB;
+}
+
+.compareLabel {
   font-size: 14px;
   font-weight: 700;
-  margin-bottom: 10px;
+  color: #2C2A26;
+  padding-right: 16px;
 }
 
-.compareCard p {
+.compareOldVal {
   font-size: 14px;
-  color: #6B665D;
-  line-height: 1.7;
+  color: #8A857A;
+  text-align: center;
 }
 
-.compareOld {
-  border-top: 3px solid #E8E2DC;
-}
-
-.compareNew {
-  border-top: 3px solid #6C1A55;
+.compareNewVal {
+  font-size: 14px;
+  color: #3D8B6A;
+  font-weight: 600;
+  text-align: center;
 }
 
 /* ── SOURCES ── */
@@ -624,6 +660,27 @@
 }
 
 /* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .compareHeader,
+  .compareRow,
+  .compareRowLast {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    text-align: left;
+  }
+
+  .compareColOld,
+  .compareColNew,
+  .compareOldVal,
+  .compareNewVal {
+    text-align: left;
+  }
+
+  .compareHeader {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
     min-height: 75vh;
@@ -658,10 +715,6 @@
   }
 
   .resultGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .compareGrid {
     grid-template-columns: 1fr;
   }
 
