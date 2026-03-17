@@ -25,7 +25,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .hero-dark .btn-primary:hover { background:rgba(255,255,255,0.85); }
 .hero-dark .btn-ghost { background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; text-decoration:none; display:inline-block; }
 .hero-dark .btn-ghost:hover { background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.35); }
-.hero-dark .canvas-wrap { position:relative; width:100%; height:100%; min-height:880px; }
+.hero-dark .canvas-wrap { position:relative; width:100%; height:100%; min-height:440px; }
 .hero-dark .canvas-wrap canvas { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); }
 
 /* Hero stats bar */
@@ -742,7 +742,7 @@ if (window.innerWidth <= 900) {
   function initSize(){
     var ww=wrap.clientWidth||500;
     var wh=wrap.clientHeight||500;
-    var SIZE=Math.min(ww,wh,1440);
+    var SIZE=Math.min(ww,wh,720);
     c.width=SIZE*dpr;c.height=SIZE*dpr;
     c.style.width=SIZE+'px';c.style.height=SIZE+'px';
     ctx.setTransform(1,0,0,1,0,0);
