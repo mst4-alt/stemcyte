@@ -31,7 +31,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .anim.visible { opacity:1; transform:translateY(0); }
 
 /* WHY IT MATTERS CARDS */
-.wim-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:1100px; margin:0 auto; }
+.wim-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:1100px; margin:48px auto 0; }
 .wim-card { background:#fff; border-radius:12px; padding:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
 .wim-icon { width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
 .wim-card h3 { font-family:'Playfair Display',serif; font-size:20px; font-weight:400; margin-bottom:8px; color:#2C2A26; }
