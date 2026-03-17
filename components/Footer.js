@@ -31,6 +31,7 @@ export default function Footer() {
           <h4>Support</h4>
           <Link href="/public-bank-access">Public Bank Access</Link>
           <Link href="/lifesaver-guarantee">LifeSaver Guarantee</Link>
+          <Link href="/expanded-access-policy">Expanded Access</Link>
           <Link href="/special-programs">Special Programs</Link>
           <Link href="/refer-a-friend">Refer a Friend</Link>
         </div>
