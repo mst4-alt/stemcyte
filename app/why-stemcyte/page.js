@@ -56,18 +56,20 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .learn-link { display:inline-flex; align-items:center; gap:8px; margin-top:8px; font-size:14px; font-weight:700; color:#6C1A55; text-decoration:none; transition:gap 0.3s ease; }
 .learn-link:hover { gap:12px; }
 
-/* BLA COMPARISON TABLE */
-.bla-card { background:#fff; border-radius:12px; padding:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
-.bla-table { width:100%; border-collapse:collapse; }
-.bla-table th { font-size:12px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase; padding:0 0 16px; text-align:center; }
-.bla-table th:first-child { text-align:left; }
-.bla-table th.col-regen { color:#6C1A55; }
-.bla-table th.col-typical { color:#B0AB9E; font-weight:400; }
-.bla-table td { font-size:14px; color:#6B665D; padding:12px 0; text-align:center; border-top:1px solid #F3EDE6; }
-.bla-table td:first-child { text-align:left; font-weight:600; color:#2C2A26; }
-.bla-check { color:#6C1A55; font-weight:700; font-size:18px; }
-.bla-dash { color:#D4D0CA; font-size:18px; }
-.bla-footnote { font-size:11px; color:#B0AB9E; margin-top:16px; }
+/* TWO WORLDS CARDS */
+.d-cards { display:flex; flex-direction:column; gap:12px; }
+.d-card { border-radius:12px; padding:24px 28px; }
+.d-card.top { background:#fff; border:1px solid #E8E2DC; }
+.d-card.bot { background:#6C1A55; color:#fff; }
+.d-card .tag { font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:8px; }
+.d-card.top .tag { color:#B0AB9E; }
+.d-card.bot .tag { color:#E8A0D0; }
+.d-card h4 { font-size:16px; font-weight:700; margin-bottom:4px; }
+.d-card.top h4 { color:#8A857A; }
+.d-card p { font-size:13px; line-height:1.55; margin:0; }
+.d-card.top p { color:#B0AB9E; }
+.d-card.bot p { color:rgba(255,255,255,0.55); }
+.d-vs { text-align:center; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#C8C3BB; padding:4px 0; }
 
 /* FEATURE CARDS */
 .feat-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
@@ -144,7 +146,6 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
   .stats { grid-template-columns:1fr 1fr; }
   .section, .section-full, .divider { padding-left:24px; padding-right:24px; }
   .split, .split.rev { grid-template-columns:1fr; gap:32px; direction:ltr; }
-  .bla-table th, .bla-table td { font-size:12px; }
   .split .photo { height:260px; }
   .feat-grid, .feat-grid.col3 { grid-template-columns:1fr; }
   .accred-row { grid-template-columns:1fr 1fr; }
@@ -187,47 +188,24 @@ const html = `<!-- HERO -->
 
 <!-- FDA BLA SPLIT -->
 <section class="section">
-  <div class="sh">
-    <div class="lbl">FDA-Licensed Product</div>
-    <h2>The only private cord blood bank with an FDA-licensed product</h2>
-    <p>A higher standard of quality, backed by the FDA&rsquo;s most rigorous review process.</p>
-  </div>
   <div class="split anim">
     <div class="text">
-      <p>Most cord blood banks store your baby&rsquo;s stem cells &mdash; and that&rsquo;s it. StemCyte is different. We&rsquo;re the only private bank whose cord blood product, <strong>REGENECYTE&reg;</strong>, has been reviewed and licensed by the FDA as a biologic.</p>
-      <p>That means the FDA evaluated our clinical data, validated our manufacturing process, and confirmed that every unit meets their standard for safety, purity, and potency. It&rsquo;s the same approval pathway used for vaccines and blood products.</p>
-      <p>It&rsquo;s not a certification you apply for. It&rsquo;s a license you earn.</p>
-      <a href="/fda-bla" class="learn-link">What is an FDA BLA? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <div class="lbl">FDA-Licensed Product</div>
+      <h2>Reviewed, tested, and licensed by the FDA</h2>
+      <p>Our cord blood product, <strong>REGENECYTE&reg;</strong>, earned an FDA biologics license &mdash; the same approval pathway used for vaccines and blood products.</p>
+      <a href="/fda-bla" class="learn-link">Learn what that means <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
-    <div style="background:#F3F0F8;border-radius:12px;padding:24px;">
-      <div class="bla-card">
-        <table class="bla-table">
-          <thead>
-            <tr>
-              <th></th>
-              <th class="col-regen">REGENECYTE&reg;</th>
-              <th class="col-typical">Typical Bank</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Clinical evidence</td>
-              <td><span class="bla-check">&check;</span></td>
-              <td><span class="bla-dash">&mdash;</span></td>
-            </tr>
-            <tr>
-              <td>FDA-reviewed product</td>
-              <td><span class="bla-check">&check;</span></td>
-              <td><span class="bla-dash">&mdash;</span></td>
-            </tr>
-            <tr>
-              <td>Manufacturing validated</td>
-              <td><span class="bla-check">&check;</span></td>
-              <td><span class="bla-dash">&mdash;</span></td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="bla-footnote">BLA 125764/0 &middot; Licensed 2024</div>
+    <div class="d-cards">
+      <div class="d-card top">
+        <div class="tag">Most cord blood banks</div>
+        <h4>FDA Registered</h4>
+        <p>Filed paperwork that they handle biological material</p>
+      </div>
+      <div class="d-vs">vs</div>
+      <div class="d-card bot">
+        <div class="tag">REGENECYTE&reg;</div>
+        <h4>FDA Licensed</h4>
+        <p>Clinical data reviewed, manufacturing validated, product approved</p>
       </div>
     </div>
   </div>
