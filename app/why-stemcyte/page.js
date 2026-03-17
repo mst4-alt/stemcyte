@@ -404,7 +404,7 @@ const html = `<!-- HERO -->
     <div class="hiv-block anim">
       <div class="deco-circle"></div>
       <div class="hiv-badge">Published in Cell, 2023</div>
-      <a href="/hiv-1-remission" style="text-decoration:none;color:inherit"><h3>StemCyte cord blood transplant may have cured HIV</h3></a>
+      <a href="/our-story/hiv-remission" style="text-decoration:none;color:inherit"><h3>StemCyte cord blood transplant may have cured HIV</h3></a>
       <p>A woman achieved HIV remission after receiving a cord blood stem cell transplant &mdash; the first woman and only the third person in history to potentially be cured. StemCyte provided the cord blood unit.</p>
       <p class="hiv-coda">What you bank today may enable breakthroughs that don&rsquo;t yet exist.</p>
     </div>
