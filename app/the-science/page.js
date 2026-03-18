@@ -182,9 +182,9 @@ export default function TheSciencePage() {
               </div>
               <div className={s.journeyLine} />
               <div className={s.journeyContent}>
-                <h4 style={{ color: '#2A6B4F' }}>They're younger and stronger</h4>
+                <h4 style={{ color: '#2A6B4F' }}>Younger, stronger, and unexposed</h4>
                 <p>
-                  Cord blood stem cells are <strong>more adaptable</strong> than adult bone marrow, cause fewer complications in transplant, and don't require a perfect donor match.
+                  Collected at the moment of birth, cord blood stem cells have had zero exposure to environmental toxins, illness, or aging. That makes them exceptionally potent and adaptable compared to adult stem cells &mdash; a biological snapshot of your child&rsquo;s health at its purest.
                 </p>
               </div>
             </div>
@@ -193,10 +193,11 @@ export default function TheSciencePage() {
               <div className={s.journeyCircle} style={{ background: '#FDF5EB' }}>
                 <span style={{ color: '#C4943E' }}>4</span>
               </div>
+              <div className={s.journeyLine} />
               <div className={s.journeyContent}>
-                <h4 style={{ color: '#C4943E' }}>You have one chance to collect them</h4>
+                <h4 style={{ color: '#C4943E' }}>Built-in protection for the whole family</h4>
                 <p>
-                  Collection happens in the minutes after birth, after the cord is clamped and cut. <strong>Zero risk to mother or baby.</strong> If they're not collected, they're discarded forever.
+                  Your baby&rsquo;s cord blood is a guaranteed perfect match for themselves and has a 75% chance of being a usable match for siblings. And because cord blood requires less strict HLA matching than bone marrow, it opens treatment possibilities for parents and extended family too.
                 </p>
               </div>
             </div>
@@ -440,22 +441,16 @@ export default function TheSciencePage() {
                 <span className={`${s.trialsBadge} ${s.trialsBadgePlum}`}>Our research</span>
               </div>
               <div className={s.scTrialCard}>
-                <div className="phase">Phase II · Expanded Access</div>
+                <div className="phase">Phase III &middot; Expanded Access</div>
                 <h4>Long COVID / Post-COVID syndrome</h4>
-                <p>Cord blood stem cells for symptoms that persist months or years after COVID-19 infection. Phase II complete; Expanded Access program cleared by FDA in 2026.</p>
-                <div className="source">REGENECYTE® · NCT05682560</div>
+                <p>Cord blood stem cells for symptoms that persist months or years after COVID-19 infection. RMAT designated by FDA in 2024. Phase II completed in 2025. Expanded Access program cleared by FDA in 2026.</p>
+                <div className="source">REGENECYTE&reg; &middot; NCT05682560 &middot; <Link href="/expanded-access-policy" style={{ fontSize: 11, fontWeight: 700, color: '#6C1A55', textDecoration: 'none' }}>Expanded Access Program &rarr;</Link></div>
               </div>
               <div className={s.scTrialCard}>
-                <div className="phase">Phase I complete</div>
+                <div className="phase">Phase I published</div>
                 <h4>Acute ischemic stroke</h4>
-                <p>Allogeneic cord blood for acute cerebral stroke within 10 days of onset. Phase I showed safety and encouraging neurological outcomes.</p>
-                <div className="source">Published in Cell Transplantation</div>
-              </div>
-              <div className={s.scTrialCard}>
-                <div className="phase">Phase II</div>
-                <h4>Spinal cord injury</h4>
-                <p>HLA-matched cord blood units for spinal cord injury treatment. StemCyte is the first hybrid bank with FDA Phase II approval for this indication.</p>
-                <div className="source">Program MC001</div>
+                <p>Allogeneic cord blood for acute cerebral stroke within 10 days of onset. Phase I demonstrated safety and encouraging neurological outcomes &mdash; including a 46-year-old patient successfully treated using a cord blood unit stored for 17 years.</p>
+                <div className="source">Published in Cell Transplantation &middot; <a href="https://www.prnewswire.com/news-releases/stemcyte-announces-successful-outcome-in-phase-i-clinical-trial-for-treating-acute-cerebral-stroke-using-allogeneic-human-umbilical-cord-blood-301468744.html" target="_blank" rel="noopener noreferrer" style={{ fontSize: 11, fontWeight: 700, color: '#6C1A55', textDecoration: 'none' }}>Press release &rarr;</a></div>
               </div>
             </div>
 

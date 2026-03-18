@@ -6,6 +6,12 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3000
+    },
+    {
+      "name": "astrodev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "/Users/michaelteufenkjian/Downloads/stemcyte-astro", "run", "dev"],
+      "port": 4321
     }
   ]
 }
