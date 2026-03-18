@@ -130,9 +130,9 @@ export default function TheSciencePage() {
         <div className={s.vig} />
         <div className={s.ct}>
           <div className={s.lbl}>The Science</div>
-          <h1>Your baby is born with the power to save a life {'\u2014'} including their own</h1>
+          <h1>Your baby is born with the power to save a life — including their own</h1>
           <p className={s.sub}>
-            Your newborn{'\u2019'}s umbilical cord contains stem cells that treat over 80 diseases today and are being researched for hundreds more.
+            Your newborn's umbilical cord contains stem cells that treat over 80 diseases today and are being researched for hundreds more.
           </p>
         </div>
       </section>
@@ -149,7 +149,7 @@ export default function TheSciencePage() {
             <h2>What are cord blood stem cells?</h2>
           </div>
           <p className={`${s.journeyIntro} ${s.anim}`}>
-            Think of stem cells as your body{'\u2019'}s starter kit. They{'\u2019'}re the original cells that every other cell in your body comes from.
+            Think of stem cells as your body's starter kit. They're the original cells that every other cell in your body comes from.
           </p>
           <div className={s.journey}>
             {/* Step 1 */}
@@ -161,7 +161,7 @@ export default function TheSciencePage() {
               <div className={s.journeyContent}>
                 <h4 style={{ color: '#3B6DC4' }}>Your baby is born with them</h4>
                 <p>
-                  The blood left in your baby{'\u2019'}s umbilical cord after birth is rich with <strong>stem cells</strong> {'\u2014'} the same type used in bone marrow transplants for decades. They build your baby{'\u2019'}s entire blood and immune system.
+                  The blood left in your baby's umbilical cord after birth is rich with <strong>stem cells</strong> — the same type used in bone marrow transplants for decades. They build your baby's entire blood and immune system.
                 </p>
               </div>
             </div>
@@ -172,7 +172,7 @@ export default function TheSciencePage() {
               </div>
               <div className={s.journeyLine} />
               <div className={s.journeyContent}>
-                <h4 style={{ color: '#6C1A55' }}>They can rebuild what{'\u2019'}s broken</h4>
+                <h4 style={{ color: '#6C1A55' }}>They can rebuild what's broken</h4>
                 <p>
                   Every red blood cell, white blood cell, and platelet traces back to these stem cells. When someone fights leukemia, sickle cell disease, or an immune deficiency, <strong>a transplant can regenerate their entire blood and immune system</strong>.
                 </p>
@@ -185,9 +185,9 @@ export default function TheSciencePage() {
               </div>
               <div className={s.journeyLine} />
               <div className={s.journeyContent}>
-                <h4 style={{ color: '#2A6B4F' }}>They{'\u2019'}re younger and stronger</h4>
+                <h4 style={{ color: '#2A6B4F' }}>They're younger and stronger</h4>
                 <p>
-                  Cord blood stem cells are <strong>more adaptable</strong> than adult bone marrow, cause fewer complications in transplant, and don{'\u2019'}t require a perfect donor match.
+                  Cord blood stem cells are <strong>more adaptable</strong> than adult bone marrow, cause fewer complications in transplant, and don't require a perfect donor match.
                 </p>
               </div>
             </div>
@@ -199,7 +199,7 @@ export default function TheSciencePage() {
               <div className={s.journeyContent}>
                 <h4 style={{ color: '#C4943E' }}>You have one chance to collect them</h4>
                 <p>
-                  Collection happens in the minutes after birth, after the cord is clamped and cut. <strong>Zero risk to mother or baby.</strong> If they{'\u2019'}re not collected, they{'\u2019'}re discarded forever.
+                  Collection happens in the minutes after birth, after the cord is clamped and cut. <strong>Zero risk to mother or baby.</strong> If they're not collected, they're discarded forever.
                 </p>
               </div>
             </div>
@@ -216,7 +216,7 @@ export default function TheSciencePage() {
         </div>
         <div className="inner" style={{ maxWidth: 1100 }}>
           <div className="tc">
-            <h2>Proven today {'\u2014'} treating 80+ diseases</h2>
+            <h2>Proven today — treating 80+ diseases</h2>
           </div>
 
           {/* Impact hero */}
@@ -230,7 +230,7 @@ export default function TheSciencePage() {
               <p>
                 Cord blood has been used in over <strong>60,000 transplants worldwide since 1988</strong>. It treats cancers like leukemia and lymphoma, blood disorders like sickle cell disease, inherited immune deficiencies, and metabolic conditions.
               </p>
-              <p>These aren{'\u2019'}t future possibilities {'\u2014'} they{'\u2019'}re treatments happening in hospitals right now, every day.</p>
+              <p>These aren't future possibilities — they're treatments happening in hospitals right now, every day.</p>
             </div>
           </div>
 
@@ -308,7 +308,7 @@ export default function TheSciencePage() {
           <div className="tc">
             <div className="zlbl">What cord blood treats</div>
             <h2>What these 80+ diseases actually are</h2>
-            <p className="lead">Hover over any condition to learn more. These are not future possibilities {'\u2014'} these are being treated right now.</p>
+            <p className="lead">Hover over any condition to learn more. These are not future possibilities — these are being treated right now.</p>
           </div>
           <div className={s.dgrid}>
             {/* ── Cancers & malignancies ── */}
@@ -319,14 +319,14 @@ export default function TheSciencePage() {
                 <div className="tag">T-cell ALL<div className="tip">An aggressive form of acute lymphoblastic leukemia affecting T-cells. Transplant offers a curative option when chemotherapy alone is insufficient.</div></div>
                 <div className="tag">Acute myeloid leukemia<div className="tip">Fast-growing cancer of blood-forming cells in the bone marrow. Cord blood transplant is often the best option when chemotherapy fails or disease relapses.</div></div>
                 <div className="tag">Chronic myeloid leukemia<div className="tip">Slower-growing blood cancer caused by an abnormal chromosome. Transplant can cure when targeted therapies like imatinib stop working.</div></div>
-                <div className="tag">JMML<div className="tip">Juvenile myelomonocytic leukemia {'\u2014'} a rare childhood leukemia. Stem cell transplant is currently the only known cure for this disease.</div></div>
+                <div className="tag">JMML<div className="tip">Juvenile myelomonocytic leukemia — a rare childhood leukemia. Stem cell transplant is currently the only known cure for this disease.</div></div>
                 <div className="tag">Hodgkin lymphoma<div className="tip">Cancer of the lymphatic system characterized by Reed-Sternberg cells. Transplant used for relapsed or treatment-resistant cases.</div></div>
-                <div className="tag">DLBCL<div className="tip">Diffuse large B-cell lymphoma {'\u2014'} the most common type of non-Hodgkin lymphoma. Transplant rebuilds the immune system after intensive treatment.</div></div>
+                <div className="tag">DLBCL<div className="tip">Diffuse large B-cell lymphoma — the most common type of non-Hodgkin lymphoma. Transplant rebuilds the immune system after intensive treatment.</div></div>
                 <div className="tag">Burkitt lymphoma<div className="tip">A very fast-growing form of non-Hodgkin lymphoma, most common in children. Transplant provides a curative pathway for aggressive cases.</div></div>
                 <div className="tag">Multiple myeloma<div className="tip">Cancer of plasma cells in the bone marrow. Transplant follows high-dose chemotherapy to restore healthy blood cell production.</div></div>
                 <div className="tag">Mantle cell lymphoma<div className="tip">A rare B-cell lymphoma that tends to recur. Transplant can extend remission and improve long-term outcomes.</div></div>
                 <div className="tag">Follicular lymphoma<div className="tip">A slow-growing but often recurring non-Hodgkin lymphoma. Transplant considered for cases that transform or stop responding to treatment.</div></div>
-                <div className="tag">Waldenstr{'\u00F6'}m{'\u2019'}s<div className="tip">Waldenstr{'\u00F6'}m{'\u2019'}s macroglobulinemia {'\u2014'} a rare lymphoma producing excess antibody protein. Transplant for aggressive or treatment-resistant disease.</div></div>
+                <div className="tag">Waldenström's<div className="tip">Waldenström's macroglobulinemia — a rare lymphoma producing excess antibody protein. Transplant for aggressive or treatment-resistant disease.</div></div>
               </div>
             </div>
 
@@ -339,11 +339,11 @@ export default function TheSciencePage() {
                 <div className="tag">Severe aplastic anemia<div className="tip">Bone marrow stops making enough blood cells, causing dangerous drops in all blood counts. Transplant replaces the damaged marrow entirely.</div></div>
                 <div className="tag">Fanconi anemia<div className="tip">Rare inherited condition causing progressive bone marrow failure and cancer predisposition. Transplant is the primary life-saving treatment.</div></div>
                 <div className="tag">Diamond-Blackfan anemia<div className="tip">The body cannot make enough red blood cells from birth. Transplant can cure the underlying genetic defect in the bone marrow.</div></div>
-                <div className="tag">MDS<div className="tip">Myelodysplastic syndromes {'\u2014'} bone marrow fails to produce healthy blood cells properly. Transplant replaces faulty marrow with healthy stem cells.</div></div>
+                <div className="tag">MDS<div className="tip">Myelodysplastic syndromes — bone marrow fails to produce healthy blood cells properly. Transplant replaces faulty marrow with healthy stem cells.</div></div>
                 <div className="tag">Myelofibrosis<div className="tip">Scar tissue replaces healthy bone marrow, disrupting normal blood cell production. Transplant is the only curative treatment available.</div></div>
                 <div className="tag">Dyskeratosis congenita<div className="tip">Rare genetic disorder causing bone marrow failure, abnormal skin, and nail changes. Transplant addresses the life-threatening marrow failure.</div></div>
                 <div className="tag">Shwachman-Diamond<div className="tip">Inherited condition affecting bone marrow, the pancreas, and skeletal development. Transplant treats the marrow failure component.</div></div>
-                <div className="tag">PNH<div className="tip">Paroxysmal nocturnal hemoglobinuria {'\u2014'} red blood cells break down prematurely due to a missing surface protein. Transplant is the only curative treatment.</div></div>
+                <div className="tag">PNH<div className="tip">Paroxysmal nocturnal hemoglobinuria — red blood cells break down prematurely due to a missing surface protein. Transplant is the only curative treatment.</div></div>
               </div>
             </div>
 
@@ -351,17 +351,17 @@ export default function TheSciencePage() {
             <div className={`${s.db} ${s.dbI} ${s.anim}`}>
               <div className="dh"><h4>Immune deficiencies</h4><div className="dc">30+</div></div>
               <div className={s.dt}>
-                <div className="tag">SCID<div className="tip">Severe combined immunodeficiency {'\u2014'} {'\u201C'}bubble boy disease.{'\u201D'} Without transplant, infants cannot survive normal infections. Early transplant is life-saving.</div></div>
+                <div className="tag">SCID<div className="tip">Severe combined immunodeficiency — “bubble boy disease.” Without transplant, infants cannot survive normal infections. Early transplant is life-saving.</div></div>
                 <div className="tag">Wiskott-Aldrich<div className="tip">Causes eczema, dangerously low platelets, and progressive immune deficiency. Transplant is the only known cure for this X-linked condition.</div></div>
-                <div className="tag">CGD<div className="tip">Chronic granulomatous disease {'\u2014'} white blood cells cannot kill certain bacteria and fungi, leading to severe recurrent infections. Transplant restores immune function.</div></div>
+                <div className="tag">CGD<div className="tip">Chronic granulomatous disease — white blood cells cannot kill certain bacteria and fungi, leading to severe recurrent infections. Transplant restores immune function.</div></div>
                 <div className="tag">Complete DiGeorge<div className="tip">The most severe form of DiGeorge syndrome with absent thymus function and no T-cells. Transplant can reconstitute the immune system.</div></div>
                 <div className="tag">Omenn syndrome<div className="tip">A severe form of SCID with widespread skin inflammation, enlarged organs, and elevated IgE. Transplant is urgently life-saving.</div></div>
                 <div className="tag">Bare lymphocyte syndrome<div className="tip">Immune cells lack critical MHC surface molecules needed to coordinate immune responses. Transplant provides cells with normal surface proteins.</div></div>
                 <div className="tag">Leukocyte adhesion deficiency<div className="tip">White blood cells cannot migrate to infection sites in the body. Even minor infections become life-threatening without transplant.</div></div>
-                <div className="tag">IPEX syndrome<div className="tip">Immune dysregulation, polyendocrinopathy, enteropathy, X-linked {'\u2014'} the immune system attacks the body{'\u2019'}s own organs. Transplant can reset the immune system.</div></div>
-                <div className="tag">HLH<div className="tip">Hemophagocytic lymphohistiocytosis {'\u2014'} immune cells become overactivated and attack the body{'\u2019'}s own tissues. Transplant is curative for the familial form.</div></div>
+                <div className="tag">IPEX syndrome<div className="tip">Immune dysregulation, polyendocrinopathy, enteropathy, X-linked — the immune system attacks the body's own organs. Transplant can reset the immune system.</div></div>
+                <div className="tag">HLH<div className="tip">Hemophagocytic lymphohistiocytosis — immune cells become overactivated and attack the body's own tissues. Transplant is curative for the familial form.</div></div>
                 <div className="tag">Hyper IgM syndromes<div className="tip">B-cells cannot switch from making IgM to other antibody types, leaving patients vulnerable to infections. Transplant restores normal antibody production.</div></div>
-                <div className="tag">+ 20 more SCIDs<div className="tip">Over 20 molecularly defined forms of SCID {'\u2014'} including CD45, CD3, ZAP70, Artemis, PNP, and DOCK2 deficiencies {'\u2014'} are treatable with cord blood transplant.</div></div>
+                <div className="tag">+ 20 more SCIDs<div className="tip">Over 20 molecularly defined forms of SCID — including CD45, CD3, ZAP70, Artemis, PNP, and DOCK2 deficiencies — are treatable with cord blood transplant.</div></div>
               </div>
             </div>
 
@@ -371,12 +371,12 @@ export default function TheSciencePage() {
               <div className={s.dt}>
                 <div className="tag">Hurler syndrome<div className="tip">Cannot break down complex sugar molecules, causing progressive damage to the brain, heart, and organs. Early transplant prevents irreversible decline.</div></div>
                 <div className="tag">Krabbe disease<div className="tip">Destroys the protective myelin coating of nerves in the brain and body. Early transplant before symptom onset can slow or halt progression.</div></div>
-                <div className="tag">ALD<div className="tip">Adrenoleukodystrophy {'\u2014'} damages the myelin sheath protecting brain nerves. Transplant in early stages can halt disease progression and preserve function.</div></div>
-                <div className="tag">MLD<div className="tip">Metachromatic leukodystrophy {'\u2014'} progressive loss of myelin in the nervous system. Early transplant can stabilize the disease before major symptoms appear.</div></div>
-                <div className="tag">Gaucher disease<div className="tip">Fat deposits accumulate in the spleen, liver, and bone marrow. Transplant addresses severe forms that don{'\u2019'}t respond to enzyme replacement therapy.</div></div>
+                <div className="tag">ALD<div className="tip">Adrenoleukodystrophy — damages the myelin sheath protecting brain nerves. Transplant in early stages can halt disease progression and preserve function.</div></div>
+                <div className="tag">MLD<div className="tip">Metachromatic leukodystrophy — progressive loss of myelin in the nervous system. Early transplant can stabilize the disease before major symptoms appear.</div></div>
+                <div className="tag">Gaucher disease<div className="tip">Fat deposits accumulate in the spleen, liver, and bone marrow. Transplant addresses severe forms that don't respond to enzyme replacement therapy.</div></div>
                 <div className="tag">Wolman disease<div className="tip">A severe lipid storage disorder causing organ damage in infancy. Transplant can provide the missing enzyme and prevent fatal organ failure.</div></div>
                 <div className="tag">Alpha-mannosidosis<div className="tip">A rare lysosomal storage disorder causing progressive intellectual disability and skeletal abnormalities. Transplant can slow disease progression.</div></div>
-                <div className="tag">Maroteaux-Lamy<div className="tip">MPS VI {'\u2014'} the body cannot break down certain complex sugars, leading to skeletal deformities and organ damage. Transplant provides the missing enzyme.</div></div>
+                <div className="tag">Maroteaux-Lamy<div className="tip">MPS VI — the body cannot break down certain complex sugars, leading to skeletal deformities and organ damage. Transplant provides the missing enzyme.</div></div>
                 <div className="tag">Osteopetrosis<div className="tip">Bones become abnormally dense and brittle due to faulty osteoclasts. Transplant provides healthy cells capable of proper bone remodeling.</div></div>
               </div>
             </div>
@@ -395,7 +395,7 @@ export default function TheSciencePage() {
           <div className="tc">
             <h2>The future of regenerative medicine</h2>
             <p className="lead">
-              Cord tissue contains mesenchymal stem cells (MSCs) that repair muscle, bone, cartilage, skin, and organs. No HLA matching required {'\u2014'} any family member can use them.
+              Cord tissue contains mesenchymal stem cells (MSCs) that repair muscle, bone, cartilage, skin, and organs. No HLA matching required — any family member can use them.
             </p>
           </div>
           <div className={s.compareGrid}>
@@ -429,7 +429,7 @@ export default function TheSciencePage() {
         <div className="inner">
           <div className="tc">
             <div className="zlbl">Active clinical research</div>
-            <h2>What{'\u2019'}s being researched right now</h2>
+            <h2>What's being researched right now</h2>
             <p className="lead">
               StemCyte sponsors 3 clinical trials directly, and over 500 active trials worldwide are investigating cord blood and cord tissue stem cells.
             </p>
@@ -443,10 +443,10 @@ export default function TheSciencePage() {
                 <span className={`${s.trialsBadge} ${s.trialsBadgePlum}`}>Our research</span>
               </div>
               <div className={s.scTrialCard}>
-                <div className="phase">Phase II {'\u00B7'} Expanded Access</div>
+                <div className="phase">Phase II · Expanded Access</div>
                 <h4>Long COVID / Post-COVID syndrome</h4>
                 <p>Cord blood stem cells for symptoms that persist months or years after COVID-19 infection. Phase II complete; Expanded Access program cleared by FDA in 2026.</p>
-                <div className="source">REGENECYTE{'\u00AE'} {'\u00B7'} NCT05682560</div>
+                <div className="source">REGENECYTE® · NCT05682560</div>
               </div>
               <div className={s.scTrialCard}>
                 <div className="phase">Phase I complete</div>
@@ -479,7 +479,7 @@ export default function TheSciencePage() {
                 <div className={`${s.globalDot} ${s.globalDotInv}`} />
                 <div className={s.globalContent}>
                   <h4>Hypoxic-ischemic encephalopathy <span className={`${s.tier} ${s.tierInv}`}>Investigational</span></h4>
-                  <p>Cord blood for birth-related brain injury (HIE) {'\u2014'} time-critical neonatal intervention</p>
+                  <p>Cord blood for birth-related brain injury (HIE) — time-critical neonatal intervention</p>
                 </div>
               </div>
               <div className={s.globalItem}>
@@ -493,7 +493,7 @@ export default function TheSciencePage() {
                 <div className={`${s.globalDot} ${s.globalDotInv}`} />
                 <div className={s.globalContent}>
                   <h4>Knee osteoarthritis <span className={`${s.tier} ${s.tierInv}`}>Investigational</span></h4>
-                  <p>Cord tissue MSCs for cartilage repair {'\u2014'} approved in South Korea (Cartistem)</p>
+                  <p>Cord tissue MSCs for cartilage repair — approved in South Korea (Cartistem)</p>
                 </div>
               </div>
               <div className={s.globalItem}>
@@ -506,7 +506,7 @@ export default function TheSciencePage() {
               <div className={s.globalItem}>
                 <div className={`${s.globalDot} ${s.globalDotPre}`} />
                 <div className={s.globalContent}>
-                  <h4>Alzheimer{'\u2019'}s &amp; Parkinson{'\u2019'}s <span className={`${s.tier} ${s.tierPre}`}>Preclinical</span></h4>
+                  <h4>Alzheimer's &amp; Parkinson's <span className={`${s.tier} ${s.tierPre}`}>Preclinical</span></h4>
                   <p>Both cord blood and cord tissue MSCs showing promise in reducing neuroinflammation</p>
                 </div>
               </div>
@@ -521,7 +521,7 @@ export default function TheSciencePage() {
                 <div className={`${s.globalDot} ${s.globalDotPre}`} />
                 <div className={s.globalContent}>
                   <h4>Neonatal conditions <span className={`${s.tier} ${s.tierPre}`}>Preclinical</span></h4>
-                  <p>BPD, NEC, retinopathy of prematurity {'\u2014'} cord-derived cells in neonatal repair research</p>
+                  <p>BPD, NEC, retinopathy of prematurity — cord-derived cells in neonatal repair research</p>
                 </div>
               </div>
             </div>
@@ -534,7 +534,7 @@ export default function TheSciencePage() {
           </div>
           <div style={{ textAlign: 'center', marginTop: 32 }}>
             <Link href="/clinical-trials" style={{ fontSize: 15, fontWeight: 700, color: '#6C1A55', textDecoration: 'none' }}>
-              See our clinical trials {'\u2192'}
+              See our clinical trials →
             </Link>
           </div>
         </div>
@@ -542,8 +542,8 @@ export default function TheSciencePage() {
 
       {/* ══ CTA BANNER ══ */}
       <section className={`${s.ctaBanner} ${s.anim}`}>
-        <h2>What happens if you don{'\u2019'}t <em>bank?</em></h2>
-        <p>If your baby{'\u2019'}s cord blood is not collected at birth, it{'\u2019'}s discarded as medical waste. There is no way to go back.</p>
+        <h2>What happens if you don't <em>bank?</em></h2>
+        <p>If your baby's cord blood is not collected at birth, it's discarded as medical waste. There is no way to go back.</p>
         <div className="btns">
           <Link href="/pricing" className={s.btnW}>View plans &amp; pricing</Link>
           <a href="tel:8663894659" className={s.btnGd}>Call (866) 389-4659</a>

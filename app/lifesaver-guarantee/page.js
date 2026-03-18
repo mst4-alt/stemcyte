@@ -2,7 +2,7 @@ import PageContent from '../../components/PageContent';
 
 export const metadata = {
   title: 'LifeSaver Guarantee | StemCyte',
-  description: 'StemCyte\u2019s LifeSaver Guarantee: full refund of all fees, $50,000 financial support, and a replacement donor unit if your newborn\u2019s cord blood fails to engraft.',
+  description: `StemCyte's LifeSaver Guarantee: full refund of all fees, $50,000 financial support, and a replacement donor unit if your newborn's cord blood fails to engraft.`,
 };
 
 const css = `

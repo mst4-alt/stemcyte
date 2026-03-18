@@ -2,7 +2,7 @@ import PageContent from '../../components/PageContent';
 
 export const metadata = {
   title: 'Expanded Access Policy | StemCyte',
-  description: 'StemCyte\u2019s Expanded Access (compassionate use) policy for REGENECYTE\u00AE (HPC, Cord Blood), including patient eligibility, physician requirements, and how to request access for Long COVID.',
+  description: `StemCyte's Expanded Access (compassionate use) policy for REGENECYTE® (HPC, Cord Blood), including patient eligibility, physician requirements, and how to request access for Long COVID.`,
 };
 
 const css = `

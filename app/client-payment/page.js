@@ -93,7 +93,7 @@ export default function ClientPayment() {
               <div className={s.field}>
                 <label htmlFor="pay-reason">Payment reason</label>
                 <select id="pay-reason" required defaultValue="">
-                  <option value="" disabled>Select{'\u2026'}</option>
+                  <option value="" disabled>Select…</option>
                   <option value="annual-storage">Annual storage fee</option>
                   <option value="processing">Processing fee</option>
                   <option value="installment">Installment payment</option>

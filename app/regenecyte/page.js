@@ -1,7 +1,7 @@
 import PageContent from '../../components/PageContent';
 
 export const metadata = {
-  title: 'REGENECYTE\u00AE | StemCyte',
+  title: 'REGENECYTE® | StemCyte',
 };
 
 const css = `

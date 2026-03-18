@@ -7,15 +7,15 @@ import Nav from '../../../components/Nav';
 import s from './page.module.css';
 
 const timeline = [
-  { year: 'Education', title: 'Hebrew University, Tel Aviv University & Harvard', desc: 'Earned his bachelor\u2019s degree from Hebrew University in Jerusalem, medical degree from the Sackler School of Medicine at Tel Aviv University, a master\u2019s degree in Health Care Management from Harvard School of Public Health, and a JD from Purdue University.', highlight: false },
+  { year: 'Education', title: 'Hebrew University, Tel Aviv University & Harvard', desc: `Earned his bachelor's degree from Hebrew University in Jerusalem, medical degree from the Sackler School of Medicine at Tel Aviv University, a master's degree in Health Care Management from Harvard School of Public Health, and a JD from Purdue University.`, highlight: false },
   { year: 'Israel', title: 'Pediatric Oncology Faculty', desc: 'Began his medical career in Israel, serving on the Pediatric Hematology/Oncology faculties at Soroka Medical Center in Beer Sheba, Sambur Center at Beilinson Hospital in Petach Tikva, and Rambam Medical Center in Haifa.', highlight: false },
-  { year: 'Colorado & CHOC', title: 'Fellowship Training', desc: 'Completed fellowship in Pediatric Hematology/Oncology at the University of Colorado School of Medicine in Denver, followed by Pediatric Cancer Research and Bone Marrow Transplantation at Children\u2019s Hospital of Orange County.', highlight: false },
-  { year: '1996', title: 'Joins City of Hope', desc: 'Joined City of Hope as Assistant Professor and Director of the Pediatric Hematopoietic Cell Transplantation Program, beginning what would become over 25 years of transformative leadership at one of America\u2019s premier cancer centers.', highlight: true },
+  { year: 'Colorado & CHOC', title: 'Fellowship Training', desc: `Completed fellowship in Pediatric Hematology/Oncology at the University of Colorado School of Medicine in Denver, followed by Pediatric Cancer Research and Bone Marrow Transplantation at Children's Hospital of Orange County.`, highlight: false },
+  { year: '1996', title: 'Joins City of Hope', desc: `Joined City of Hope as Assistant Professor and Director of the Pediatric Hematopoietic Cell Transplantation Program, beginning what would become over 25 years of transformative leadership at one of America's premier cancer centers.`, highlight: true },
   { year: '2002', title: 'Interim Chair, Department of Pediatrics', desc: 'Promoted to Associate Professor and took on the Interim Chair role for the Department of Pediatrics, guiding the department through a critical growth phase.', highlight: false },
-  { year: '2011', title: 'Chair of Pediatrics & Director, Pediatric Hematology/Oncology', desc: 'Named Chair of the Department of Pediatrics and Director of Pediatric Hematology/Oncology. Appointed the Barron Hilton Professor and Chair in Pediatrics\u2014an endowed chair reflecting the highest institutional recognition.', highlight: true },
+  { year: '2011', title: 'Chair of Pediatrics & Director, Pediatric Hematology/Oncology', desc: 'Named Chair of the Department of Pediatrics and Director of Pediatric Hematology/Oncology. Appointed the Barron Hilton Professor and Chair in Pediatrics—an endowed chair reflecting the highest institutional recognition.', highlight: true },
   { year: '2018', title: '$5.7M CIRM Grant for Sickle Cell Research', desc: 'Awarded a $5.74 million grant from the California Institute for Regenerative Medicine (CIRM) to advance a novel stem cell transplant approach for sickle cell disease using mixed chimerism and CD4+ T-cell depleted donor cells.', highlight: true },
-  { year: '2018', title: 'Certified for CAR T-Cell Therapy', desc: 'Led City of Hope\u2019s certification to provide the first FDA-approved CAR T-cell therapy (tisagenlecleucel) for pediatric and young adult patients with relapsed or refractory B-cell ALL.', highlight: true },
-  { year: 'Today', title: 'Chief Medical Officer, StemCyte', desc: 'Serves as CMO of StemCyte, bringing decades of clinical transplantation expertise to guide the company\u2019s cord blood product quality, clinical trial design, and medical strategy. Professor Emeritus at City of Hope.', highlight: true },
+  { year: '2018', title: 'Certified for CAR T-Cell Therapy', desc: `Led City of Hope's certification to provide the first FDA-approved CAR T-cell therapy (tisagenlecleucel) for pediatric and young adult patients with relapsed or refractory B-cell ALL.`, highlight: true },
+  { year: 'Today', title: 'Chief Medical Officer, StemCyte', desc: `Serves as CMO of StemCyte, bringing decades of clinical transplantation expertise to guide the company's cord blood product quality, clinical trial design, and medical strategy. Professor Emeritus at City of Hope.`, highlight: true },
 ];
 
 const HighlightIcon = ({ type }) => {
@@ -28,18 +28,18 @@ const HighlightIcon = ({ type }) => {
 };
 
 const highlights = [
-  { icon: 'hospital', label: '25+ Years at City of Hope', desc: 'Led the Pediatric Hematology/Oncology program and served as Barron Hilton Chair in Pediatrics at one of America\u2019s top NCI-designated cancer centers', bg: 'highlightIconPlum' },
+  { icon: 'hospital', label: '25+ Years at City of Hope', desc: `Led the Pediatric Hematology/Oncology program and served as Barron Hilton Chair in Pediatrics at one of America's top NCI-designated cancer centers`, bg: 'highlightIconPlum' },
   { icon: 'publication', label: '100+ Publications', desc: 'Authored over 100 scientific publications across hematology, oncology, stem cell transplantation, and regenerative medicine', bg: 'highlightIconSage' },
-  { icon: 'grant', label: '$5.7M CIRM Grant', desc: 'Awarded California\u2019s largest stem cell research grant for a novel curative approach to sickle cell disease', bg: 'highlightIconGold' },
+  { icon: 'grant', label: '$5.7M CIRM Grant', desc: `Awarded California's largest stem cell research grant for a novel curative approach to sickle cell disease`, bg: 'highlightIconGold' },
 ];
 
 const tags = ['Bone Marrow Transplantation', 'Cord Blood Transplants', 'Pediatric Oncology', 'Sickle Cell Disease', 'CAR T-Cell Therapy', 'Graft-vs-Host Disease', 'Alternative Donor Transplants', 'Gene Therapy', 'Clinical Trials'];
 
 const pubs = [
-  { text: 'Real-world evidence of tisagenlecleucel for pediatric ALL and non-Hodgkin lymphoma \u2014 Blood Advances, 2020' },
-  { text: 'Preclinical total marrow irradiation conditioning-based bone marrow transplant model for sickle cell disease \u2014 Frontiers in Oncology, 2022' },
-  { text: 'Targeted total marrow irradiation as alternative to total body irradiation for hematopoietic cell transplantation \u2014 Biology of Blood and Marrow Transplantation' },
-  { text: 'Hematopoietic stem cell transplantation for sickle cell disease using mixed chimerism and CD4+ T-cell depleted grafts \u2014 CIRM-funded research program' },
+  { text: 'Real-world evidence of tisagenlecleucel for pediatric ALL and non-Hodgkin lymphoma — Blood Advances, 2020' },
+  { text: 'Preclinical total marrow irradiation conditioning-based bone marrow transplant model for sickle cell disease — Frontiers in Oncology, 2022' },
+  { text: 'Targeted total marrow irradiation as alternative to total body irradiation for hematopoietic cell transplantation — Biology of Blood and Marrow Transplantation' },
+  { text: 'Hematopoietic stem cell transplantation for sickle cell disease using mixed chimerism and CD4+ T-cell depleted grafts — CIRM-funded research program' },
   { text: 'Multiple publications on infection control, nutrition, and supportive care in pediatric stem cell transplantation' },
 ];
 

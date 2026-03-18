@@ -443,7 +443,7 @@ export default function PricingPage() {
             </div>
             <div className={s.stepNav}>
               <button className={s.btnBack} onClick={() => goStep(5)}>&larr; Back</button>
-              <button className={s.btnNext} onClick={() => alert('This is a demo \u2014 no payment will be processed.')}>Complete enrollment &rarr;</button>
+              <button className={s.btnNext} onClick={() => alert('This is a demo — no payment will be processed.')}>Complete enrollment &rarr;</button>
             </div>
           </div>
         </div>

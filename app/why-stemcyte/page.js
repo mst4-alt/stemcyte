@@ -103,7 +103,7 @@ export default function Page() {
       {/* STATS */}
       <div className={s.statsWrap} ref={statsRef}>
         <div className={s.stats}>
-          {['Transplant units shipped worldwide', 'Of all cord blood transplants use StemCyte', 'Transplant hospitals in 35 countries', 'Founded \u2014 29+ years of experience'].map((desc, i) => (
+          {['Transplant units shipped worldwide', 'Of all cord blood transplants use StemCyte', 'Transplant hospitals in 35 countries', 'Founded — 29+ years of experience'].map((desc, i) => (
             <div key={i} className={`${s.stat} ${s.anim}`}>
               <div className="num" ref={(el) => { numRefs.current[i] = el; }} style={{ fontFamily: "var(--font-numbers),'Source Serif 4',serif", fontSize: 36, color: '#6C1A55', fontWeight: 400 }}>0</div>
               <div className="desc" style={{ fontSize: 12, color: '#8A857A', marginTop: 4 }}>{desc}</div>
@@ -120,7 +120,7 @@ export default function Page() {
           <div className="text" style={{}}>
             <div className="lbl" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6C1A55', marginBottom: 10 }}>FDA-Licensed Product</div>
             <h2 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 32, fontWeight: 400, marginBottom: 16, lineHeight: 1.2 }}>Reviewed, tested, and licensed by the FDA</h2>
-            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7, marginBottom: 12 }}>Our cord blood product, <strong>REGENECYTE\u00AE</strong>, earned an FDA biologics license \u2014 the same approval pathway used for vaccines and blood products.</p>
+            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7, marginBottom: 12 }}>Our cord blood product, <strong>REGENECYTE®</strong>, earned an FDA biologics license — the same approval pathway used for vaccines and blood products.</p>
             <Link href="/fda-bla" className={s.learnLink}>Learn what that means {learnArrow}</Link>
           </div>
           <div>
@@ -131,7 +131,7 @@ export default function Page() {
                   <div className={s.trackPinLabel} style={{ left: '50%', transform: 'translateX(-50%)', color: '#A09A90' }}>Most banks</div>
                 </div>
                 <div className={`${s.trackPin} plum`} style={{ right: '2%', background: '#6C1A55' }}>
-                  <div className={s.trackPinLabel} style={{ right: 0, color: '#6C1A55' }}>REGENECYTE\u00AE</div>
+                  <div className={s.trackPinLabel} style={{ right: 0, color: '#6C1A55' }}>REGENECYTE®</div>
                 </div>
               </div>
               <div className={s.trackLegend}>
@@ -177,7 +177,7 @@ export default function Page() {
           <div className="text" style={{ direction: 'ltr' }}>
             <div className="lbl" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6C1A55', marginBottom: 10 }}>Transplant experience</div>
             <h2 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 32, fontWeight: 400, marginBottom: 16, lineHeight: 1.2 }}>More transplants shipped than any other private bank</h2>
-            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7, marginBottom: 12 }}>StemCyte has shipped over 2,300 transplant units to 350+ hospitals in 35 countries \u2014 accounting for 1 in every 26 cord blood transplants worldwide.</p>
+            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7, marginBottom: 12 }}>StemCyte has shipped over 2,300 transplant units to 350+ hospitals in 35 countries — accounting for 1 in every 26 cord blood transplants worldwide.</p>
             <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7, marginBottom: 12 }}>That experience means our processing, storage, and release protocols have been validated in real clinical outcomes, not just lab tests.</p>
           </div>
         </div>
@@ -261,14 +261,14 @@ export default function Page() {
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D8B6A" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             </div>
             <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>Proprietary processing</h3>
-            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7 }}>StemCyte{'\u2019'}s processing protocols are developed in-house and optimized over 29 years of operation. Every unit is processed in our Baldwin Park, CA facility under cGMP conditions.</p>
+            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7 }}>StemCyte's processing protocols are developed in-house and optimized over 29 years of operation. Every unit is processed in our Baldwin Park, CA facility under cGMP conditions.</p>
           </div>
           <div className={`${s.featCard} ${s.anim}`}>
             <div className="ic" style={{ width: 48, height: 48, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16, background: '#EDF5FF' }}>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B6DC4" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
             </div>
             <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>24/7 medical courier</h3>
-            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7 }}>After collection, our courier picks up your baby{'\u2019'}s cord blood 24/7 \u2014 weekends and holidays included \u2014 and expedites it to our lab. Free on all plans.</p>
+            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7 }}>After collection, our courier picks up your baby's cord blood 24/7 — weekends and holidays included — and expedites it to our lab. Free on all plans.</p>
           </div>
         </div>
       </section>
@@ -310,7 +310,7 @@ export default function Page() {
             {/* Pipeline row 1 */}
             <div className={`${s.pipeRow} ${s.anim}`}>
               <div className={s.prTop}>
-                <div className={s.prName}><strong>REGENECYTE\u00AE</strong> \u2014 Long COVID</div>
+                <div className={s.prName}><strong>REGENECYTE®</strong> — Long COVID</div>
                 <div className={s.prPhase}>Phase III / Expanded Access</div>
               </div>
               <div className={s.thinBarTrack}>
@@ -357,11 +357,11 @@ export default function Page() {
           {/* REGENECYTE callout */}
           <div className={`${s.bCallout} ${s.anim}`}>
             <div>
-              <h3 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 24, fontWeight: 400, lineHeight: 1.25, marginBottom: 10 }}>REGENECYTE\u00AE \u2014 from our lab to FDA approval</h3>
-              <p style={{ fontSize: 15, color: '#6B665D', lineHeight: 1.7, maxWidth: 560 }}>StemCyte developed REGENECYTE\u00AE, an FDA-Licensed cord blood therapy now used to treat over 80 conditions. Your baby{'\u2019'}s cord blood is processed in the same Baldwin Park facility, held to the same standards required to produce a federally licensed biologic.</p>
+              <h3 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 24, fontWeight: 400, lineHeight: 1.25, marginBottom: 10 }}>REGENECYTE® — from our lab to FDA approval</h3>
+              <p style={{ fontSize: 15, color: '#6B665D', lineHeight: 1.7, maxWidth: 560 }}>StemCyte developed REGENECYTE®, an FDA-Licensed cord blood therapy now used to treat over 80 conditions. Your baby's cord blood is processed in the same Baldwin Park facility, held to the same standards required to produce a federally licensed biologic.</p>
               <div className={s.crLinkRow}>
-                <Link href="/regenecyte" className={s.btnRegen}>Learn about REGENECYTE\u00AE</Link>
-                <Link href="/the-science" style={{ fontSize: 14, fontWeight: 700, color: '#6C1A55', textDecoration: 'none' }}>See what cord blood treats \u2192</Link>
+                <Link href="/regenecyte" className={s.btnRegen}>Learn about REGENECYTE®</Link>
+                <Link href="/the-science" style={{ fontSize: 14, fontWeight: 700, color: '#6C1A55', textDecoration: 'none' }}>See what cord blood treats →</Link>
               </div>
             </div>
             <div className={s.crStat}>
@@ -377,20 +377,20 @@ export default function Page() {
             <Link href="/our-story/hiv-remission" style={{ textDecoration: 'none', color: 'inherit' }}>
               <h3 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 24, fontWeight: 400, color: '#fff', lineHeight: 1.25, marginBottom: 12 }}>StemCyte cord blood transplant may have cured HIV</h3>
             </Link>
-            <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, maxWidth: 640 }}>A woman achieved HIV remission after receiving a cord blood stem cell transplant \u2014 the first woman and only the third person in history to potentially be cured. StemCyte provided the cord blood unit.</p>
-            <p className={s.hivCoda}>What you bank today may enable breakthroughs that don{'\u2019'}t yet exist.</p>
+            <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, maxWidth: 640 }}>A woman achieved HIV remission after receiving a cord blood stem cell transplant — the first woman and only the third person in history to potentially be cured. StemCyte provided the cord blood unit.</p>
+            <p className={s.hivCoda}>What you bank today may enable breakthroughs that don't yet exist.</p>
           </div>
 
           <div style={{ textAlign: 'center', marginTop: 32 }}>
-            <Link href="/clinical-trials" style={{ fontSize: 15, fontWeight: 700, color: '#6C1A55', textDecoration: 'none' }}>View all clinical trials \u2192</Link>
+            <Link href="/clinical-trials" style={{ fontSize: 15, fontWeight: 700, color: '#6C1A55', textDecoration: 'none' }}>View all clinical trials →</Link>
           </div>
         </div>
       </section>
 
       {/* CTA */}
       <section className={`${s.ctaBanner} ${s.anim}`}>
-        <h2 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 36, color: '#fff', marginBottom: 12, position: 'relative' }}>Your baby{'\u2019'}s stem cells can only be collected at <em style={{ fontStyle: 'italic', color: '#E8A0D0' }}>birth</em></h2>
-        <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.5)', marginBottom: 32, position: 'relative' }}>Don{'\u2019'}t let this once-in-a-lifetime opportunity pass.</p>
+        <h2 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 36, color: '#fff', marginBottom: 12, position: 'relative' }}>Your baby's stem cells can only be collected at <em style={{ fontStyle: 'italic', color: '#E8A0D0' }}>birth</em></h2>
+        <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.5)', marginBottom: 32, position: 'relative' }}>Don't let this once-in-a-lifetime opportunity pass.</p>
         <div className="btns" style={{ display: 'flex', gap: 12, justifyContent: 'center', position: 'relative' }}>
           <Link href="/pricing" className={s.btnW}>View pricing</Link>
           <a href="tel:8663894659" className={s.btnGd}>Call (866) 389-4659</a>

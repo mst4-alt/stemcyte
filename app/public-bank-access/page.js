@@ -15,11 +15,11 @@ const CheckIcon = () => (
 );
 
 const faqItems = [
-  { q: 'How is PBA different from private banking?', a: 'Private banking stores your baby\u2019s own cord blood exclusively for your family. PBA is an add-on that gives your child access to additional matching donor units from StemCyte\u2019s public cord blood bank when more stem cells are needed.' },
-  { q: 'What\u2019s the difference between PBA and PBA+?', a: 'PBA covers your child. PBA+ includes everything in PBA and extends coverage to both parents \u2014 parents can access StemCyte\u2019s public bank for cord blood treatments, even without their own banked cord blood.' },
+  { q: 'How is PBA different from private banking?', a: `Private banking stores your baby's own cord blood exclusively for your family. PBA is an add-on that gives your child access to additional matching donor units from StemCyte's public cord blood bank when more stem cells are needed.` },
+  { q: `What's the difference between PBA and PBA+?`, a: `PBA covers your child. PBA+ includes everything in PBA and extends coverage to both parents — parents can access StemCyte's public bank for cord blood treatments, even without their own banked cord blood.` },
   { q: 'Is PBA included with any plan?', a: 'PBA is included free when you choose Cord Blood & Tissue banking. For Cord Blood only plans, PBA is a $299 one-time add-on. PBA+ is $699 regardless of plan.' },
   { q: 'Why can only StemCyte offer this?', a: 'StemCyte is the only private cord blood bank that also operates a public cord blood bank. That dual model is what makes it possible to offer private banking customers access to publicly-donated donor units.' },
-  { q: 'When would donor cells be needed instead of my child\u2019s own?', a: 'For certain cancers and genetic disorders, a child cannot use their own stem cells because the condition may be present in those cells too. Donor cells from a public bank are essential in these cases. PBA also helps when a larger cell volume is needed than a single unit provides.' },
+  { q: `When would donor cells be needed instead of my child's own?`, a: 'For certain cancers and genetic disorders, a child cannot use their own stem cells because the condition may be present in those cells too. Donor cells from a public bank are essential in these cases. PBA also helps when a larger cell volume is needed than a single unit provides.' },
 ];
 
 export default function PublicBankAccessPage() {
@@ -54,8 +54,8 @@ export default function PublicBankAccessPage() {
         <div className={s.ct}>
           <div className={`${s.txt} ${s.anim}`}>
             <div className={s.lbl}>ONLY AT STEMCYTE</div>
-            <h1>Protection that goes beyond your baby{'\u2019'}s own cord blood</h1>
-            <p className={s.sub}>StemCyte operates both a private and public cord blood bank {'\u2014'} giving your family access to donor stem cells that most banks simply can{'\u2019'}t provide.</p>
+            <h1>Protection that goes beyond your baby's own cord blood</h1>
+            <p className={s.sub}>StemCyte operates both a private and public cord blood bank — giving your family access to donor stem cells that most banks simply can't provide.</p>
           </div>
         </div>
       </section>
@@ -103,10 +103,10 @@ export default function PublicBankAccessPage() {
             <div className={s.comparePrice}>$299</div>
             <div className={s.comparePriceNote}>one-time add-on</div>
             <div className={s.compareFree}>Free with Cord Blood & Tissue</div>
-            <p className={s.compareDesc}>If your child ever needs additional cord blood stem cells {'\u2014'} whether for volume, a different condition, or because the original collection wasn{'\u2019'}t viable {'\u2014'} StemCyte provides a matching donor unit from our public bank.</p>
+            <p className={s.compareDesc}>If your child ever needs additional cord blood stem cells — whether for volume, a different condition, or because the original collection wasn't viable — StemCyte provides a matching donor unit from our public bank.</p>
             <ul className={s.compareChecks}>
               <li><CheckIcon />Covers your child</li>
-              <li><CheckIcon />Matching unit from StemCyte{'\u2019'}s public bank</li>
+              <li><CheckIcon />Matching unit from StemCyte's public bank</li>
               <li><CheckIcon />Global public bank search assistance</li>
               <li><CheckIcon />Add-on to any private banking plan</li>
             </ul>
@@ -118,11 +118,11 @@ export default function PublicBankAccessPage() {
             <h3>Public Bank Access+</h3>
             <div className={s.comparePrice}>$699</div>
             <div className={s.comparePriceNote}>one-time add-on</div>
-            <p className={s.compareDesc}>Everything in PBA, plus parents gain access to StemCyte{'\u2019'}s public bank inventory for diseases treatable with cord blood stem cells {'\u2014'} even if they didn{'\u2019'}t bank their own cord blood at birth.</p>
+            <p className={s.compareDesc}>Everything in PBA, plus parents gain access to StemCyte's public bank inventory for diseases treatable with cord blood stem cells — even if they didn't bank their own cord blood at birth.</p>
             <ul className={s.compareChecks}>
               <li><CheckIcon />Everything in PBA</li>
               <li><CheckIcon />Extends coverage to both parents</li>
-              <li><CheckIcon />Parents don{'\u2019'}t need their own banked cord blood</li>
+              <li><CheckIcon />Parents don't need their own banked cord blood</li>
               <li><CheckIcon />Cord blood treatments for eligible conditions</li>
             </ul>
             <Link href="/pricing" className={s.btnPlum}>Add PBA+ to your plan</Link>
@@ -136,17 +136,17 @@ export default function PublicBankAccessPage() {
           <h2 className={`${s.sectionTitle} ${s.anim}`}>What families are saying</h2>
           <div className={s.testGrid}>
             <div className={`${s.testCard} ${s.anim}`}>
-              <p>{'\u201C'}Our family is biracial so finding a match could be difficult in the future. Signing up with StemCyte to get Public Bank Access was a no brainer.{'\u201D'}</p>
+              <p>“Our family is biracial so finding a match could be difficult in the future. Signing up with StemCyte to get Public Bank Access was a no brainer.”</p>
               <div className={s.name}>Jennifer B.</div>
               <div className={s.detail}>Banked in 2022</div>
             </div>
             <div className={`${s.testCard} ${s.anim}`} style={{ transitionDelay: '0.15s' }}>
-              <p>{'\u201C'}As a cancer survivor, I know how important it is to have Public Bank Access. This gives me peace of mind!{'\u201D'}</p>
+              <p>“As a cancer survivor, I know how important it is to have Public Bank Access. This gives me peace of mind!”</p>
               <div className={s.name}>Nikki</div>
               <div className={s.detail}>Banked in 2021</div>
             </div>
             <div className={`${s.testCard} ${s.anim}`} style={{ transitionDelay: '0.3s' }}>
-              <p>{'\u201C'}Getting another stem cell unit that could save your life is the best gift, not a teddy bear.{'\u201D'}</p>
+              <p>“Getting another stem cell unit that could save your life is the best gift, not a teddy bear.”</p>
               <div className={s.name}>Sam M.</div>
               <div className={s.detail}>Banked in 2022</div>
             </div>
@@ -180,7 +180,7 @@ export default function PublicBankAccessPage() {
       <section className={s.ctaBanner}>
         <div className={s.circle}></div>
         <h2>Only StemCyte offers <em>both</em> private and public bank access</h2>
-        <p className={s.ctaSub}>Add PBA to your plan starting at $299 {'\u2014'} or get it free with Cord Blood & Tissue.</p>
+        <p className={s.ctaSub}>Add PBA to your plan starting at $299 — or get it free with Cord Blood & Tissue.</p>
         <div className={s.ctaBtns}>
           <Link href="/pricing" className={s.ctaBtnW}>Build your plan</Link>
           <a href="tel:8663894659" className={s.ctaBtnG}>Call (866) 389-4659</a>

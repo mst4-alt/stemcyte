@@ -37,7 +37,7 @@ export default function Page() {
         <div className={s.vig}></div>
         <div className={s.ct}>
           <div className={s.lbl}>Patient Stories</div>
-          <h1>It{'\u2019'}s not about saving blood {'\u2014'} it{'\u2019'}s about saving lives</h1>
+          <h1>It's not about saving blood — it's about saving lives</h1>
           <p className={s.sub}>Real families whose lives were changed by cord blood stem cells. Real physicians who trust StemCyte. Real outcomes.</p>
         </div>
       </section>
@@ -71,7 +71,7 @@ export default function Page() {
               rel="noopener"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', marginTop: '12px', fontSize: '14px', fontWeight: 600, color: '#6C1A55', textDecoration: 'none' }}
             >
-              Watch Bailey{'\u2019'}s story {'\u2192'}
+              Watch Bailey's story →
             </a>
           </div>
         </div>
@@ -87,18 +87,18 @@ export default function Page() {
             />
           </div>
           <div className={s.storyInner}>
-            <div className={s.tag} style={{ background: '#F0F7F4', color: '#3D8B6A' }}>Used his brother{'\u2019'}s stem cells</div>
+            <div className={s.tag} style={{ background: '#F0F7F4', color: '#3D8B6A' }}>Used his brother's stem cells</div>
             <h3>Ryden</h3>
             <div className={s.diag}>Diagnosis: Cerebral Palsy</div>
             <p>Heather was in labor when her uterus ruptured, depriving her fourth child Ryden of oxygen. The MRI showed catastrophic brain damage and a diagnosis of extremely severe cerebral palsy.</p>
-            <p>The family banked their fifth child{'\u2019'}s cord blood with StemCyte and used it for Ryden six months later in a clinical trial for cerebral palsy.</p>
+            <p>The family banked their fifth child's cord blood with StemCyte and used it for Ryden six months later in a clinical trial for cerebral palsy.</p>
             <a
               href="https://www.youtube.com/watch?v=9TyVpe7Id-4"
               target="_blank"
               rel="noopener"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', marginTop: '12px', fontSize: '14px', fontWeight: 600, color: '#6C1A55', textDecoration: 'none' }}
             >
-              Watch Ryden{'\u2019'}s story {'\u2192'}
+              Watch Ryden's story →
             </a>
           </div>
         </div>
@@ -127,7 +127,7 @@ export default function Page() {
 
       {/* FEATURED QUOTE */}
       <div className={`${s.featQuote} ${s.anim}`}>
-        <blockquote>{'\u201C'}After doing research, we chose StemCyte because of their dedication to continuous research, clinical trials, and their dedication to helping families by being the only private bank offering public bank access.{'\u201D'}</blockquote>
+        <blockquote>“After doing research, we chose StemCyte because of their dedication to continuous research, clinical trials, and their dedication to helping families by being the only private bank offering public bank access.”</blockquote>
         <cite>Gabrielle Stone</cite>
         <div className={s.role}>Author, Eat Pray FML</div>
       </div>
@@ -142,12 +142,12 @@ export default function Page() {
         </div>
         <div className={s.quotes}>
           <div className={`${s.quoteCard} ${s.anim}`}>
-            <blockquote>{'\u201C'}StemCyte really shines. Their experience in delivering valuable and viable stem cells for transplants is amazing. If you{'\u2019'}re thinking about preserving your baby{'\u2019'}s cord blood, I highly recommend StemCyte.{'\u201D'}</blockquote>
+            <blockquote>“StemCyte really shines. Their experience in delivering valuable and viable stem cells for transplants is amazing. If you're thinking about preserving your baby's cord blood, I highly recommend StemCyte.”</blockquote>
             <cite>Dr. Shahin Ghadir</cite>
             <div className={s.role}>Reproductive Endocrinologist</div>
           </div>
           <div className={`${s.quoteCard} ${s.anim}`}>
-            <blockquote>{'\u201C'}After a lot of research, that is why we chose StemCyte. This was super important to us and we wanted to make sure we were with the best company to preserve her cord blood for her future.{'\u201D'}</blockquote>
+            <blockquote>“After a lot of research, that is why we chose StemCyte. This was super important to us and we wanted to make sure we were with the best company to preserve her cord blood for her future.”</blockquote>
             <cite>Gretchen Rossi</cite>
             <div className={s.role}>Real Housewives of OC Alum</div>
           </div>
@@ -159,21 +159,21 @@ export default function Page() {
         <div className={s.inner}>
           <div className={s.sh}>
             <div className={s.lbl}>Public bank access stories</div>
-            <h2>Why families chose StemCyte{'\u2019'}s unique protection</h2>
+            <h2>Why families chose StemCyte's unique protection</h2>
           </div>
           <div className={s.pbaQuotes}>
             <div className={`${s.pbaCard} ${s.anim}`}>
-              <blockquote>{'\u201C'}Our family is biracial so finding a match could be difficult in the future. Signing up with StemCyte to get public bank access was a no brainer.{'\u201D'}</blockquote>
+              <blockquote>“Our family is biracial so finding a match could be difficult in the future. Signing up with StemCyte to get public bank access was a no brainer.”</blockquote>
               <cite>Jennifer B.</cite>
               <div className={s.when}>Banked Molly in 2022</div>
             </div>
             <div className={`${s.pbaCard} ${s.anim}`}>
-              <blockquote>{'\u201C'}As a cancer survivor, I know how important it is to have public bank access. This gives me peace of mind!{'\u201D'}</blockquote>
+              <blockquote>“As a cancer survivor, I know how important it is to have public bank access. This gives me peace of mind!”</blockquote>
               <cite>Nikki</cite>
               <div className={s.when}>Banked in 2021</div>
             </div>
             <div className={`${s.pbaCard} ${s.anim}`}>
-              <blockquote>{'\u201C'}Getting another stem cell unit that could save your life is the best gift, not a teddy bear.{'\u201D'}</blockquote>
+              <blockquote>“Getting another stem cell unit that could save your life is the best gift, not a teddy bear.”</blockquote>
               <cite>Sam M.</cite>
               <div className={s.when}>Banked Jake in 2022</div>
             </div>
@@ -183,8 +183,8 @@ export default function Page() {
 
       {/* CTA */}
       <section className={`${s.ctaBanner} ${s.anim}`}>
-        <h2>Your baby{'\u2019'}s stem cells can only be collected at <em>birth</em></h2>
-        <p>Join the families who chose to protect their children{'\u2019'}s future.</p>
+        <h2>Your baby's stem cells can only be collected at <em>birth</em></h2>
+        <p>Join the families who chose to protect their children's future.</p>
         <div className={s.btns}>
           <Link href="/pricing" className={s.btnW}>View plans & pricing</Link>
           <a href="tel:8663894659" className={s.btnGd}>Call (866) 389-4659</a>

@@ -13,8 +13,8 @@ const awards = [
   { side: 'right', year: null, title: 'NHLBI Transfusion Medicine Academic Award', org: 'National Heart, Lung, and Blood Institute', desc: null },
   { side: 'left', year: '2006', title: 'Landsteiner Award Lectureship', org: 'AABB', desc: 'Research of international significance' },
   { side: 'right', year: '2010', title: 'Lifetime Achievement Medal', org: 'AABB Bernard Fantus Medal', desc: 'Highest honor in the field' },
-  { side: 'left', year: null, title: "President\u2019s Award", org: 'AABB', desc: 'Exceptional service and leadership' },
-  { side: 'right', year: '2014', title: 'Cord Blood Symposium Leadership Award', org: null, desc: 'For founding & leading the symposium (2003\u20132014)' },
+  { side: 'left', year: null, title: "President's Award", org: 'AABB', desc: 'Exceptional service and leadership' },
+  { side: 'right', year: '2014', title: 'Cord Blood Symposium Leadership Award', org: null, desc: 'For founding & leading the symposium (2003–2014)' },
   { side: 'left', year: null, title: 'Owen Thomas & Service Awards', org: 'California Blood Bank Society', desc: null },
 ];
 
@@ -23,9 +23,9 @@ const careerTimeline = [
   { year: 'London', title: 'Hematology Fellowship, Royal Postgraduate Medical School', desc: 'Board certified in Internal Medicine with subspecialty in Hematology.', highlight: false },
   { year: 'Military', title: 'Chief of Medicine, Walker Air Force Base', desc: 'Served as Chief of Medicine during military service.', highlight: false },
   { year: 'City of Hope', title: 'Section Head, Hematology & Blood Transfusion', desc: 'Chairman of the Division of Medicine at the NCI-designated comprehensive cancer center.', highlight: true },
-  { year: 'UCLA', title: 'Professor of Pathology & Director of Transfusion Medicine', desc: 'Built UCLA\u2019s transfusion medicine program. President of the California Blood Bank Society.', highlight: true },
+  { year: 'UCLA', title: 'Professor of Pathology & Director of Transfusion Medicine', desc: `Built UCLA's transfusion medicine program. President of the California Blood Bank Society.`, highlight: true },
   { year: '1983', title: 'Clinical Bone Marrow Transplantation published', desc: 'First textbook on clinical bone marrow transplantation, co-edited with Karl Blume.', highlight: true },
-  { year: '2001', title: 'Joins StemCyte as Chief Medical Officer', desc: 'Built StemCyte\u2019s quality framework: 400+ SOPs, AABB/FACT/FDA accreditation.', highlight: true },
+  { year: '2001', title: 'Joins StemCyte as Chief Medical Officer', desc: `Built StemCyte's quality framework: 400+ SOPs, AABB/FACT/FDA accreditation.`, highlight: true },
   { year: 'Today', title: 'Emeritus Professor & Medical Director', desc: 'Emeritus Professor at UCLA. Medical Director of StemCyte International Cord Blood Bank.', highlight: true },
 ];
 
