@@ -13,8 +13,8 @@ body { font-family:var(--font-lato),'Lato',sans-serif; background:#FAF9F7; color
 
 /* HERO */
 .hero { position:relative; min-height:540px; display:flex; align-items:flex-end; overflow:hidden; }
-.hero .bg { position:absolute; inset:0; background-image:url('/images/tanks_2.png'); background-size:cover; background-position:center; mask-image:none; }
-.hero .bg-blur { position:absolute; inset:0; background-image:url('/images/tanks_2.png'); background-size:cover; background-position:center; filter:blur(6px); mask-image:linear-gradient(to bottom, black 0%, transparent 28%, transparent 72%, black 100%); -webkit-mask-image:linear-gradient(to bottom, black 0%, transparent 28%, transparent 72%, black 100%); }
+.hero .bg { position:absolute; inset:0; background-image:url('/images/tanks_2.jpg'); background-size:cover; background-position:center; mask-image:none; }
+.hero .bg-blur { position:absolute; inset:0; background-image:url('/images/tanks_2.jpg'); background-size:cover; background-position:center; filter:blur(6px); mask-image:linear-gradient(to bottom, black 0%, transparent 28%, transparent 72%, black 100%); -webkit-mask-image:linear-gradient(to bottom, black 0%, transparent 28%, transparent 72%, black 100%); }
 .hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%); }
 .hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
 .hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }

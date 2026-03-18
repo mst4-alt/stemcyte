@@ -187,7 +187,7 @@ const html = `<!-- HERO -->
         <span class="tag tag-plum">No additional enrollment required</span>
       </div>
     </div>
-    <div class="photo"><img src="/images/tanks_2.png" alt="StemCyte cryogenic storage tanks" width="768" height="512" loading="lazy" decoding="async" /></div>
+    <div class="photo"><img src="/images/tanks_2.jpg" alt="StemCyte cryogenic storage tanks" width="768" height="512" loading="lazy" decoding="async" /></div>
   </div>
 </section>
 
