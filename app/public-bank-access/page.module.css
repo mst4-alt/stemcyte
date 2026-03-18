@@ -1,0 +1,99 @@
+/* HERO */
+.hero { position:relative; min-height:560px; display:flex; align-items:center; overflow:hidden; }
+.vig { position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 55% 50%,transparent 0%,rgba(0,0,0,0.15) 50%,rgba(0,0,0,0.55) 100%); z-index:1; }
+.hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
+.hero .txt { max-width:520px; }
+.hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
+.hero h1 { font-family:var(--font-heading),'Playfair Display',serif; font-size:46px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; margin-bottom:16px; color:#fff; }
+.hero .sub { font-size:17px; color:rgba(255,255,255,0.6); max-width:520px; line-height:1.7; }
+
+/* SHARED */
+.section { padding:80px 48px; max-width:1100px; margin:0 auto; }
+.sectionLav { background:#F3F0F8; }
+.sectionLavDeep { background:#EDE8F5; }
+.sectionLabel { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:12px; text-align:center; }
+.sectionTitle { font-family:var(--font-heading),'Playfair Display',serif; font-size:36px; font-weight:400; line-height:1.15; letter-spacing:-1px; text-align:center; margin-bottom:16px; color:#2C2A26; }
+.sectionSub { font-size:16px; color:#8A857A; text-align:center; max-width:620px; margin:0 auto 48px; line-height:1.7; }
+
+/* ANIMATIONS */
+.anim { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease, transform 0.6s ease; }
+.visible { opacity:1; transform:translateY(0); }
+
+/* WHY IT MATTERS CARDS */
+.wimGrid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:1100px; margin:48px auto 0; }
+.wimCard { background:#fff; border-radius:12px; padding:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
+.wimIcon { width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+.wimCard h3 { font-size:16px; font-weight:700; margin-bottom:8px; color:#2C2A26; }
+.wimCard p { font-size:15px; color:#8A857A; line-height:1.7; }
+
+/* COMPARE CARDS */
+.compareWrap { display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:840px; margin:0 auto; }
+.compareCard { background:#fff; border-radius:12px; padding:32px; position:relative; }
+.standard { border:1px solid #E8E2DC; }
+.plus { border:2px solid #C06AA5; box-shadow:0 8px 32px rgba(108,26,85,0.08); }
+.compareBadge { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:#6C1A55; color:#fff; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:6px 16px; border-radius:100px; white-space:nowrap; }
+.compareSublabel { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#C06AA5; margin-bottom:8px; }
+.compareCard h3 { font-family:var(--font-heading),'Playfair Display',serif; font-size:28px; font-weight:400; margin-bottom:12px; color:#2C2A26; }
+.comparePrice { font-family:var(--font-numbers),'Source Serif 4',serif; font-size:36px; font-weight:400; color:#6C1A55; margin-bottom:4px; }
+.comparePriceNote { font-size:13px; color:#8A857A; margin-bottom:8px; }
+.compareFree { font-size:14px; font-weight:700; color:#3D8B6A; margin-bottom:12px; }
+.compareDesc { font-size:15px; color:#8A857A; line-height:1.7; margin-bottom:20px; }
+.compareChecks { list-style:none; margin-bottom:24px; padding:0; }
+.compareChecks li { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:#2C2A26; margin-bottom:12px; line-height:1.5; }
+.compareChecks li:last-child { margin-bottom:0; }
+.checkCircle { width:20px; height:20px; border-radius:50%; background:#D4E8DC; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+.checkCircle svg { width:12px; height:12px; }
+.btnGhost { display:inline-block; padding:14px 28px; border-radius:100px; font-size:14px; font-weight:700; border:1px solid #E8E2DC; background:transparent; color:#6C1A55; cursor:pointer; font-family:var(--font-lato),'Lato',sans-serif; text-decoration:none; text-align:center; width:100%; transition:all 0.25s; }
+.btnGhost:hover { background:rgba(108,26,85,0.12); border-color:rgba(108,26,85,0.25); }
+.btnPlum { display:inline-block; padding:14px 28px; border-radius:100px; font-size:14px; font-weight:700; border:none; background:#6C1A55; color:#fff; cursor:pointer; font-family:var(--font-lato),'Lato',sans-serif; text-decoration:none; text-align:center; width:100%; transition:all 0.25s; }
+.btnPlum:hover { background:#8B3572; }
+
+/* TESTIMONIALS */
+.testGrid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:1100px; margin:0 auto; }
+.testCard { background:#fff; border-radius:12px; padding:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
+.testCard p { font-size:15px; color:#2C2A26; line-height:1.7; margin-bottom:16px; font-style:italic; }
+.testCard .name { font-size:13px; font-weight:700; color:#6C1A55; }
+.testCard .detail { font-size:13px; color:#8A857A; }
+
+/* FAQ */
+.faqWrap { max-width:720px; margin:0 auto; }
+.faqSmooth { border-bottom:1px solid #E8E2DC; overflow:hidden; }
+.faqSmooth:last-child { border-bottom:none; }
+.faqSmooth .faqQ { padding:20px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:16px; font-weight:700; color:#2C2A26; user-select:none; }
+.faqSmooth .faqQ .icon { width:24px; height:24px; position:relative; flex-shrink:0; margin-left:16px; }
+.faqSmooth .faqQ .icon::before,
+.faqSmooth .faqQ .icon::after { content:''; position:absolute; background:#C06AA5; border-radius:1px; transition:transform 0.3s ease; }
+.faqSmooth .faqQ .icon::before { width:14px; height:2px; top:11px; left:5px; }
+.faqSmooth .faqQ .icon::after { width:2px; height:14px; top:5px; left:11px; }
+.open .faqQ .icon::after { transform:rotate(90deg); }
+.faqSmooth .faqA { max-height:0; overflow:hidden; transition:max-height 0.35s ease, opacity 0.3s ease; opacity:0; }
+.open .faqA { opacity:1; }
+.faqAInner { padding:0 0 20px; font-size:15px; color:#8A857A; line-height:1.7; max-width:720px; }
+
+/* CTA BANNER */
+.ctaBanner { background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:80px 48px; text-align:center; position:relative; overflow:hidden; }
+.ctaBanner .circle { position:absolute; width:340px; height:340px; border-radius:50%; border:1px solid rgba(255,255,255,0.06); top:-80px; right:-60px; pointer-events:none; }
+.ctaBanner h2 { font-family:var(--font-heading),'Playfair Display',serif; font-size:36px; font-weight:400; color:#fff; margin-bottom:12px; position:relative; z-index:2; }
+.ctaBanner h2 em { font-style:italic; color:#E8A0D0; }
+.ctaSub { font-size:16px; color:rgba(255,255,255,0.55); margin-bottom:32px; position:relative; z-index:2; }
+.ctaBtns { display:flex; gap:12px; justify-content:center; position:relative; z-index:2; }
+.ctaBtnW { display:inline-block; padding:14px 32px; border-radius:100px; font-size:14px; font-weight:700; background:#fff; color:#6C1A55; text-decoration:none; font-family:var(--font-lato),'Lato',sans-serif; transition:all 0.25s; }
+.ctaBtnW:hover { background:rgba(255,255,255,0.85); }
+.ctaBtnG { display:inline-block; padding:14px 32px; border-radius:100px; font-size:14px; font-weight:700; background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.25); text-decoration:none; font-family:var(--font-lato),'Lato',sans-serif; transition:all 0.25s; }
+.ctaBtnG:hover { background:rgba(255,255,255,0.20); border-color:rgba(255,255,255,0.35); }
+
+/* RESPONSIVE */
+@media (max-width:900px) {
+  .hero .ct { padding:140px 24px 48px; }
+  .hero h1 { font-size:34px; }
+  .section { padding:64px 24px; }
+  .wimGrid { grid-template-columns:1fr; }
+  .compareWrap { grid-template-columns:1fr; max-width:440px; }
+  .testGrid { grid-template-columns:1fr; }
+  .ctaBtns { flex-direction:column; align-items:center; }
+}
+@media (max-width:600px) {
+  .hero h1 { font-size:28px; }
+  .sectionTitle { font-size:28px; }
+  .compareCard { padding:24px; }
+}

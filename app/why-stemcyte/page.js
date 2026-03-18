@@ -1,489 +1,401 @@
-import PageContent from '../../components/PageContent';
+'use client';
 
-export const metadata = {
-  title: 'Why StemCyte | StemCyte',
-};
-
-const css = `
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body { font-family:var(--font-lato),'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
-
-/* NAV */
-
-/* HERO */
-.hero { position:relative; min-height:540px; display:flex; align-items:flex-end; overflow:hidden; }
-.hero .bg { position:absolute; inset:0; background-image:url('/images/tanks_2.jpg'); background-size:cover; background-position:center; mask-image:none; }
-.hero .bg-blur { position:absolute; inset:0; background-image:url('/images/tanks_2.jpg'); background-size:cover; background-position:center; filter:blur(6px); mask-image:linear-gradient(to bottom, black 0%, transparent 28%, transparent 72%, black 100%); -webkit-mask-image:linear-gradient(to bottom, black 0%, transparent 28%, transparent 72%, black 100%); }
-.hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%); }
-.hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
-.hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
-.hero h1 { font-family:var(--font-heading),'Playfair Display',serif; font-size:48px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:780px; margin-bottom:16px; color:#fff; }
-.hero p { font-size:17px; color:rgba(255,255,255,0.55); max-width:680px; line-height:1.7; }
-
-/* STATS */
-.stats-wrap { padding:80px 48px 0; max-width:1100px; margin:0 auto; }
-.stats { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
-.stat { background:#fff; border-radius:12px; padding:28px 20px; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
-.stat .num { font-family:var(--font-numbers),'Source Serif 4',serif; font-size:36px; color:#6C1A55; font-weight:400; }
-.stat .desc { font-size:12px; color:#8A857A; margin-top:4px; }
-
-/* SHARED */
-.divider { max-width:1100px; margin:0 auto; padding:0 48px; }
-.divider-line { height:1px; background:#E8E2DC; }
-.section { padding:80px 48px; max-width:1100px; margin:0 auto; }
-.section-full { padding:80px 48px; }
-.section-full .inner { max-width:1100px; margin:0 auto; }
-.sh { margin-bottom:40px; }
-.sh .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:10px; }
-.sh h2 { font-family:var(--font-heading),'Playfair Display',serif; font-size:36px; font-weight:400; letter-spacing:-0.5px; margin-bottom:10px; line-height:1.15; }
-.sh p { font-size:16px; color:#8A857A; max-width:520px; line-height:1.7; }
-
-/* SPLIT */
-.split { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; margin-bottom:48px; }
-.split.rev { direction:rtl; }
-.split.rev > * { direction:ltr; }
-.split .photo { border-radius:12px; overflow:hidden; height:360px; }
-.split .photo img { width:100%; height:100%; object-fit:cover; }
-.split .text .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:10px; }
-.split .text h2 { font-family:var(--font-heading),'Playfair Display',serif; font-size:32px; font-weight:400; margin-bottom:16px; line-height:1.2; }
-.split .text p { font-size:15px; color:#8A857A; line-height:1.7; margin-bottom:12px; }
-.split .text ul { list-style:none; margin-top:12px; }
-.split .text ul li { font-size:15px; color:#6B665D; padding:8px 0 8px 20px; position:relative; border-bottom:1px solid #F5EDE6; }
-.split .text ul li::before { content:''; position:absolute; left:0; top:14px; width:8px; height:8px; border-radius:50%; border:2px solid #C06AA5; }
-
-/* LEARN LINK */
-.learn-link { display:inline-flex; align-items:center; gap:8px; margin-top:8px; font-size:14px; font-weight:700; color:#6C1A55; text-decoration:none; transition:gap 0.3s ease; }
-.learn-link:hover { gap:12px; }
-
-/* TRACK VISUALIZATION */
-.track-card { background:#fff; border-radius:16px; padding:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
-.track-bar { position:relative; height:6px; border-radius:100px; background:#E8E2DC; margin:16px 0 48px; }
-.track-fill { position:absolute; right:0; top:0; height:100%; width:40%; border-radius:100px; background:linear-gradient(90deg, #C06AA5, #6C1A55); }
-.track-pin { position:absolute; top:-8px; width:22px; height:22px; border-radius:50%; border:3px solid #fff; box-shadow:0 1px 6px rgba(0,0,0,0.15); }
-.track-pin.gray { left:12%; background:#D4D0CA; }
-.track-pin.plum { right:2%; background:#6C1A55; }
-.track-pin-label { position:absolute; top:28px; white-space:nowrap; font-size:11px; font-weight:700; }
-.track-pin.gray .track-pin-label { left:50%; transform:translateX(-50%); color:#A09A90; }
-.track-pin.plum .track-pin-label { right:0; color:#6C1A55; }
-.track-legend { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
-.track-legend-item .title { font-size:13px; font-weight:700; margin-bottom:3px; }
-.track-legend-item .title.gray { color:#A09A90; }
-.track-legend-item .title.plum { color:#6C1A55; }
-.track-legend-item p { font-size:12px; color:#B0AB9E; line-height:1.5; margin:0; }
-.track-legend-item.right { text-align:right; }
-
-/* FEATURE CARDS */
-.feat-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
-.feat-grid.col3 { grid-template-columns:repeat(3,1fr); }
-.trust-bg { background:#F3F0F8; }
-.feat-card { position:relative; background:#fff; border-radius:12px; padding:28px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); transition:all 0.3s ease; }
-.feat-card.linked { cursor:pointer; text-decoration:none; display:block; color:inherit; }
-.feat-card.linked:hover { transform:translateY(-4px); box-shadow:0 8px 24px rgba(0,0,0,0.08); }
-.feat-card .ic { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
-.feat-card h3 { font-size:16px; font-weight:700; margin-bottom:8px; }
-.feat-card p { font-size:15px; color:#8A857A; line-height:1.7; }
-.feat-card .card-arrow { position:absolute; right:28px; top:50%; transform:translateY(-50%) translateX(-8px); opacity:0; transition:all 0.3s ease; }
-.feat-card.linked:hover .card-arrow { opacity:1; transform:translateY(-50%) translateX(0); }
-
-/* ACCREDITATIONS */
-.accred-row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
-.accred-badge { background:#fff; border-radius:12px; padding:32px 24px; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
-.accred-badge .name { font-family:var(--font-numbers),'Source Serif 4',serif; font-size:28px; color:#6C1A55; font-weight:400; margin-bottom:8px; }
-.accred-badge .desc { font-size:12px; color:#8A857A; line-height:1.5; }
-
-/* CLINICAL RESEARCH — PIPELINE */
-.pipe-row { padding:24px 0; border-bottom:1px solid #EDEAE6; }
-.pipe-row:first-child { border-top:1px solid #EDEAE6; }
-.pr-top { display:flex; align-items:baseline; justify-content:space-between; margin-bottom:10px; }
-.pr-name { font-size:15px; font-weight:700; }
-.pr-phase { font-size:12px; color:#8A857A; font-weight:600; }
-.thin-bar-track { height:6px; background:#EDEAE6; border-radius:100px; overflow:hidden; }
-.thin-bar-fill { height:100%; border-radius:100px; transition:width 1.4s cubic-bezier(0.23,1,0.32,1); }
-.thin-bar-fill.plum { background:#6C1A55; }
-.thin-bar-fill.warm-a { background:#8B6F9E; }
-.thin-bar-fill.warm-b { background:#C06AA5; }
-.pr-detail { display:flex; gap:24px; margin-top:10px; }
-.pr-detail .pd { font-size:11px; color:#8A857A; }
-.pr-detail .pd strong { color:#2C2A26; font-weight:700; }
-.pr-detail .pd strong.pv { color:#6C1A55; }
-.btn-regen:hover { background:#7D2066 !important; }
-.b-callout { margin-top:48px; background:#fff; border-radius:14px; padding:40px; box-shadow:0 1px 3px rgba(0,0,0,0.03); display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center; }
-.b-callout h3 { font-family:var(--font-heading),'Playfair Display',serif; font-size:24px; font-weight:400; line-height:1.25; margin-bottom:10px; }
-.b-callout p { font-size:15px; color:#6B665D; line-height:1.7; max-width:560px; }
-.b-callout .cr-link-row { margin-top:24px; display:flex; gap:24px; align-items:center; }
-.b-callout .cr-stat { text-align:center; min-width:140px; }
-.b-callout .cr-stat .cr-big { font-family:var(--font-numbers),'Source Serif 4',serif; font-size:56px; color:#6C1A55; font-weight:400; line-height:1; }
-.b-callout .cr-stat .cr-note { font-size:12px; color:#8A857A; margin-top:4px; }
-.hiv-block { background:linear-gradient(135deg,#3D0F31,#6C1A55); border-radius:14px; padding:40px; margin-top:32px; position:relative; overflow:hidden; }
-.hiv-block .deco-circle { position:absolute; width:300px; height:300px; border-radius:50%; background:rgba(192,106,165,0.08); top:-100px; right:-60px; }
-.hiv-block .hiv-badge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; background:rgba(255,255,255,0.1); color:#E8A0D0; padding:6px 14px; border-radius:100px; margin-bottom:16px; }
-.hiv-block h3 { font-family:var(--font-heading),'Playfair Display',serif; font-size:24px; font-weight:400; color:#fff; line-height:1.25; margin-bottom:12px; }
-.hiv-block p { font-size:15px; color:rgba(255,255,255,0.55); line-height:1.7; max-width:640px; }
-.hiv-block .hiv-coda { font-size:14px; color:rgba(255,255,255,0.35); margin-top:12px; }
-
-/* CTA */
-.cta-banner { margin:80px 48px; border-radius:16px; background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:80px 64px; text-align:center; position:relative; overflow:hidden; }
-.cta-banner::before { content:''; position:absolute; width:500px; height:500px; border-radius:50%; background:rgba(192,106,165,0.08); top:-200px; right:-100px; }
-.cta-banner h2 { font-family:var(--font-heading),'Playfair Display',serif; font-size:36px; color:#fff; margin-bottom:12px; position:relative; }
-.cta-banner h2 em { font-style:italic; color:#E8A0D0; }
-.cta-banner p { font-size:16px; color:rgba(255,255,255,0.5); margin-bottom:32px; position:relative; }
-.cta-banner .btns { display:flex; gap:12px; justify-content:center; position:relative; }
-.btn-w { background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:var(--font-lato),'Lato',sans-serif; transition:all 0.25s; }
-.btn-w:hover { background:rgba(255,255,255,0.85); }
-.btn-gd { background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:var(--font-lato),'Lato',sans-serif; transition:all 0.25s; }
-.btn-gd:hover { background:rgba(255,255,255,0.20); border-color:rgba(255,255,255,0.35); }
-
-/* FOOTER */
-
-/* ANIMATIONS */
-.anim { opacity:0; transform:translateY(28px); transition:opacity 0.7s ease, transform 0.7s ease; }
-.anim.vis { opacity:1; transform:translateY(0); }
-
-/* RESPONSIVE */
-@media (max-width:900px) {
-  .hero .ct { padding:140px 24px 48px; }
-  .hero h1 { font-size:34px; }
-  .stats-wrap { padding:64px 24px 0; }
-  .stats { grid-template-columns:1fr 1fr; }
-  .section, .section-full, .divider { padding-left:24px; padding-right:24px; }
-  .split, .split.rev { grid-template-columns:1fr; gap:32px; direction:ltr; }
-  .split .photo { height:260px; }
-  .feat-grid, .feat-grid.col3 { grid-template-columns:1fr; }
-  .accred-row { grid-template-columns:1fr 1fr; }
-  .pr-detail { flex-wrap:wrap; gap:12px; }
-  .b-callout { grid-template-columns:1fr; }
-  .b-callout .cr-link-row { flex-direction:column; align-items:flex-start; }
-  .cta-banner { margin:48px 20px; padding:48px 24px; }
-}
-@media (max-width:600px) {
-  .hero h1 { font-size:28px; }
-  .stats { grid-template-columns:1fr; }
-  .accred-row { grid-template-columns:1fr; }
-  .cta-banner .btns { flex-direction:column; align-items:center; }
-}
-`;
-
-const html = `<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="bg"></div>
-  <div class="bg-blur"></div>
-  <div class="vig"></div>
-  <div class="ct">
-    <div class="lbl">Why StemCyte</div>
-    <h1>The most trusted cord blood bank by OBGYN and transplant physicians</h1>
-    <p>More transplants shipped than any other private bank. The only hybrid private-public bank. Triple-accredited. There are clear reasons why physicians trust StemCyte.</p>
-  </div>
-</section>
-
-<!-- STATS -->
-<div class="stats-wrap">
-  <div class="stats">
-    <div class="stat anim"><div class="num" data-target="2300" data-suffix="+">0</div><div class="desc">Transplant units shipped worldwide</div></div>
-    <div class="stat anim"><div class="num" data-text="1 in 26">0</div><div class="desc">Of all cord blood transplants use StemCyte</div></div>
-    <div class="stat anim"><div class="num" data-target="350" data-suffix="+">0</div><div class="desc">Transplant hospitals in 35 countries</div></div>
-    <div class="stat anim"><div class="num" data-target="1997" data-from="1990" data-suffix="" data-noformat="true">0</div><div class="desc">Founded &mdash; 29+ years of experience</div></div>
-  </div>
-</div>
-
-<div class="divider"><div class="divider-line"></div></div>
-
-<!-- FDA BLA SPLIT -->
-<section class="section">
-  <div class="split anim">
-    <div class="text">
-      <div class="lbl">FDA-Licensed Product</div>
-      <h2>Reviewed, tested, and licensed by the FDA</h2>
-      <p>Our cord blood product, <strong>REGENECYTE&reg;</strong>, earned an FDA biologics license &mdash; the same approval pathway used for vaccines and blood products.</p>
-      <a href="/fda-bla" class="learn-link">Learn what that means <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-    <div>
-      <div class="track-card">
-        <div class="track-bar">
-          <div class="track-fill"></div>
-          <div class="track-pin gray"><div class="track-pin-label">Most banks</div></div>
-          <div class="track-pin plum"><div class="track-pin-label">REGENECYTE&reg;</div></div>
-        </div>
-        <div class="track-legend">
-          <div class="track-legend-item">
-            <div class="title gray">Registered</div>
-            <p>Notified the FDA they exist</p>
-          </div>
-          <div class="track-legend-item right">
-            <div class="title plum">Licensed</div>
-            <p>Product reviewed and approved</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"><div class="divider-line"></div></div>
-
-<!-- 1. PBA FEATURED SPLIT -->
-<section class="section">
-  <div class="split anim">
-    <div class="photo"><img src="/images/pba_hero_2.jpeg" alt="Public Bank Access" width="800" height="533" loading="lazy" decoding="async"></div>
-    <div class="text">
-      <div class="lbl">Only at StemCyte</div>
-      <h2>The only private bank with public bank access</h2>
-      <p>StemCyte operates both a private and public cord blood bank. When you add Public Bank Access, your family gets access to donor stem cells if your child ever needs more than their stored unit.</p>
-      <a href="/public-bank-access" class="learn-link">Learn more about PBA <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-    </div>
-  </div>
-</section>
-
-<div class="divider"><div class="divider-line"></div></div>
-
-<!-- 2. TRANSPLANT EXPERIENCE SPLIT (reversed) -->
-<section class="section">
-  <div class="split rev anim">
-    <div class="photo"><img src="/images/Hero_5.jpeg" alt="Transplant experience" width="800" height="448" loading="lazy" decoding="async"></div>
-    <div class="text">
-      <div class="lbl">Transplant experience</div>
-      <h2>More transplants shipped than any other private bank</h2>
-      <p>StemCyte has shipped over 2,300 transplant units to 350+ hospitals in 35 countries &mdash; accounting for 1 in every 26 cord blood transplants worldwide.</p>
-      <p>That experience means our processing, storage, and release protocols have been validated in real clinical outcomes, not just lab tests.</p>
-    </div>
-  </div>
-</section>
-
-<div class="divider"><div class="divider-line"></div></div>
-
-<!-- 3. PROTECTION & GUARANTEES -->
-<section class="section">
-  <div class="sh">
-    <div class="lbl">Protection &amp; guarantees</div>
-    <h2>Safety nets no other bank provides</h2>
-  </div>
-  <div class="feat-grid">
-    <a href="/lifesaver-guarantee" class="feat-card linked anim">
-      <div class="ic" style="background:#FBF5F9"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <h3>LifeSaver Guarantee</h3>
-      <p>Full refund, $50,000, and a replacement donor unit if engraftment fails. Included free with every plan.</p>
-      <div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-    </a>
-    <a href="/expanded-access-policy" class="feat-card linked anim">
-      <div class="ic" style="background:#FDF5EB"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C4943E" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-      <h3>Expanded Access Policy</h3>
-      <p>Investigational cord blood therapies for patients with serious conditions who have no other treatment options.</p>
-      <div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C4943E" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-    </a>
-  </div>
-</section>
-
-<div class="divider"><div class="divider-line"></div></div>
-
-<!-- 4. PROGRAMS & DISCOUNTS -->
-<section class="section">
-  <div class="sh">
-    <div class="lbl">Programs &amp; discounts</div>
-    <h2>Making stem cell banking accessible</h2>
-  </div>
-  <div class="feat-grid col3">
-    <a href="/special-programs" class="feat-card linked anim">
-      <div class="ic" style="background:#FBF5F9"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-      <h3>Sibling Donor Program</h3>
-      <p>Free banking for families where a sibling needs a transplant.</p>
-      <div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-    </a>
-    <a href="/special-programs" class="feat-card linked anim">
-      <div class="ic" style="background:#EDF5FF"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B6DC4" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-      <h3>Military &amp; Public Servant</h3>
-      <p>Special pricing for active and retired military, police, fire, and EMT.</p>
-      <div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B6DC4" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-    </a>
-    <a href="/special-programs" class="feat-card linked anim">
-      <div class="ic" style="background:#F0F7F4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D8B6A" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-      <h3>Medical Professional</h3>
-      <p>Special pricing for physicians, nurses, and allied health professionals.</p>
-      <div class="card-arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3D8B6A" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
-    </a>
-  </div>
-</section>
-
-<div class="divider"><div class="divider-line"></div></div>
-
-<!-- 5. OPERATIONS -->
-<section class="section">
-  <div class="sh">
-    <div class="lbl">How we operate</div>
-    <h2>Built for quality at every step</h2>
-  </div>
-  <div class="feat-grid">
-    <div class="feat-card anim">
-      <div class="ic" style="background:#F0F7F4"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D8B6A" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-      <h3>Proprietary processing</h3>
-      <p>StemCyte&rsquo;s processing protocols are developed in-house and optimized over 29 years of operation. Every unit is processed in our Baldwin Park, CA facility under cGMP conditions.</p>
-    </div>
-    <div class="feat-card anim">
-      <div class="ic" style="background:#EDF5FF"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B6DC4" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-      <h3>24/7 medical courier</h3>
-      <p>After collection, our courier picks up your baby&rsquo;s cord blood 24/7 &mdash; weekends and holidays included &mdash; and expedites it to our lab. Free on all plans.</p>
-    </div>
-  </div>
-</section>
-
-<div class="divider"><div class="divider-line"></div></div>
-
-<!-- 6. ACCREDITATIONS -->
-<section class="section-full trust-bg">
-  <div class="inner">
-    <div class="sh">
-      <div class="lbl">Quality &amp; credentials</div>
-      <h2>Why you can trust it</h2>
-    </div>
-    <div class="accred-row">
-      <div class="accred-badge anim"><div class="name">FDA</div><div class="desc">U.S. Food and Drug Administration Licensed</div></div>
-      <div class="accred-badge anim"><div class="name">FACT</div><div class="desc">Foundation for the Accreditation of Cellular Therapy</div></div>
-      <div class="accred-badge anim"><div class="name">AABB</div><div class="desc">American Association of Blood Banks</div></div>
-      <div class="accred-badge anim"><div class="name">cGMP</div><div class="desc">Current Good Manufacturing Practices</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 7. CLINICAL RESEARCH -->
-<section class="section-full" style="background:#F3F0F8">
-  <div class="inner">
-    <div class="sh">
-      <div class="lbl">Clinical research</div>
-      <h2>Cord blood is being used to treat <em style="font-style:italic;color:#6C1A55">real patients</em> today</h2>
-      <p>StemCyte sponsors 3 active clinical trials developing cord blood therapies for conditions beyond traditional transplantation.</p>
-    </div>
-    <div style="margin-top:40px">
-      <div class="pipe-row anim">
-        <div class="pr-top">
-          <div class="pr-name"><strong>REGENECYTE&reg;</strong> &mdash; Long COVID</div>
-          <div class="pr-phase">Phase III / Expanded Access</div>
-        </div>
-        <div class="thin-bar-track"><div class="thin-bar-fill plum" data-width="88"></div></div>
-        <div class="pr-detail">
-          <div class="pd"><strong class="pv">FDA BLA approved 2024</strong></div>
-          <div class="pd"><strong class="pv">RMAT designated</strong></div>
-          <div class="pd"><strong class="pv">Expanded Access 2026</strong></div>
-        </div>
-      </div>
-      <div class="pipe-row anim">
-        <div class="pr-top">
-          <div class="pr-name">Acute Ischemic Stroke</div>
-          <div class="pr-phase">Phase II</div>
-        </div>
-        <div class="thin-bar-track"><div class="thin-bar-fill warm-a" data-width="55"></div></div>
-        <div class="pr-detail">
-          <div class="pd">Phase I <strong>published</strong> in Cell Transplantation</div>
-          <div class="pd"><strong>Allogeneic</strong> cord blood</div>
-        </div>
-      </div>
-      <div class="pipe-row anim">
-        <div class="pr-top">
-          <div class="pr-name">Spinal Cord Injury</div>
-          <div class="pr-phase">Phase II</div>
-        </div>
-        <div class="thin-bar-track"><div class="thin-bar-fill warm-b" data-width="50"></div></div>
-        <div class="pr-detail">
-          <div class="pd">First hybrid bank with <strong>FDA Phase II</strong></div>
-          <div class="pd"><strong>HLA-matched</strong> cord blood</div>
-        </div>
-      </div>
-    </div>
-    <div class="b-callout anim">
-      <div>
-        <h3>REGENECYTE&reg; &mdash; from our lab to FDA approval</h3>
-        <p>StemCyte developed REGENECYTE&reg;, an FDA-Licensed cord blood therapy now used to treat over 80 conditions. Your baby&rsquo;s cord blood is processed in the same Baldwin Park facility, held to the same standards required to produce a federally licensed biologic.</p>
-        <div class="cr-link-row">
-          <a href="/regenecyte" class="btn-regen" style="display:inline-block;text-decoration:none;background:#6C1A55;color:#fff;padding:12px 28px;border-radius:100px;font-size:14px;font-weight:700;transition:all 0.25s;">Learn about REGENECYTE&reg;</a>
-          <a href="/the-science" style="font-size:14px;font-weight:700;color:#6C1A55;text-decoration:none;">See what cord blood treats &rarr;</a>
-        </div>
-      </div>
-      <div class="cr-stat">
-        <div class="cr-big">85%</div>
-        <div class="cr-note">Long COVID fatigue<br>resolution (Phase II)</div>
-      </div>
-    </div>
-    <div class="hiv-block anim">
-      <div class="deco-circle"></div>
-      <div class="hiv-badge">Published in Cell, 2023</div>
-      <a href="/our-story/hiv-remission" style="text-decoration:none;color:inherit"><h3>StemCyte cord blood transplant may have cured HIV</h3></a>
-      <p>A woman achieved HIV remission after receiving a cord blood stem cell transplant &mdash; the first woman and only the third person in history to potentially be cured. StemCyte provided the cord blood unit.</p>
-      <p class="hiv-coda">What you bank today may enable breakthroughs that don&rsquo;t yet exist.</p>
-    </div>
-    <div style="text-align:center;margin-top:32px;">
-      <a href="/clinical-trials" style="font-size:15px;font-weight:700;color:#6C1A55;text-decoration:none;">View all clinical trials &rarr;</a>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-banner anim">
-  <h2>Your baby's stem cells can only be collected at <em>birth</em></h2>
-  <p>Don't let this once-in-a-lifetime opportunity pass.</p>
-  <div class="btns">
-    <a href="/pricing" class="btn-w" style="display:inline-block;text-decoration:none">View pricing</a>
-    <a href="tel:8663894659" class="btn-gd" style="display:inline-block;text-decoration:none">Call (866) 389-4659</a>
-  </div>
-</section>
-
-`;
-
-const script = `// Init pipeline bars at 0
-document.querySelectorAll('[data-width]').forEach(function(bar) { bar.style.width = '0%'; });
-
-// Scroll animations
-var obs = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      setTimeout(function() { entry.target.classList.add('vis'); }, 150);
-      obs.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-document.querySelectorAll('.anim').forEach(function(el) { obs.observe(el); });
-
-// Animate pipeline bars on scroll
-var barObs = new IntersectionObserver(function(entries) {
-  entries.forEach(function(entry) {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('[data-width]').forEach(function(bar) {
-        bar.style.width = bar.getAttribute('data-width') + '%';
-      });
-      barObs.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.2 });
-var pipeEl = document.querySelector('.pipe-row');
-if (pipeEl) barObs.observe(pipeEl.parentElement);
-
-// Number counters
-document.querySelectorAll('.stat .num').forEach(function(el, idx) {
-  var textVal = el.dataset.text;
-  if (textVal) { el.textContent = textVal; return; }
-  var t = parseInt(el.dataset.target) || 0;
-  var s = el.dataset.suffix || '';
-  var from = parseInt(el.dataset.from) || Math.max(0, t - 10);
-  var nf = el.dataset.noformat === 'true';
-  el.textContent = (nf ? t : t.toLocaleString()) + s;
-  var profiles = [
-    { ticks:10, interval:80, startPause:100 },
-    { ticks:6, interval:120, startPause:300 },
-    { ticks:4, interval:160, startPause:600 },
-    { ticks:8, interval:130, startPause:700 }
-  ];
-  var p = profiles[idx % profiles.length];
-  var cobs = new IntersectionObserver(function(ent) {
-    if (ent[0].isIntersecting) {
-      var current = from;
-      el.textContent = (nf ? current : current.toLocaleString()) + s;
-      function tick() {
-        if (current < t) { current++; el.textContent = (nf ? current : current.toLocaleString()) + s; setTimeout(tick, p.interval); }
-      }
-      setTimeout(tick, p.startPause);
-      cobs.unobserve(el);
-    }
-  }, { threshold: 0.5 });
-  cobs.observe(el);
-});`;
+import { useEffect, useRef } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import Nav from '../../components/Nav';
+import s from './page.module.css';
 
 export default function Page() {
-  return <PageContent css={css} html={html} script={script} transparentNav={true} />;
+  const statsRef = useRef(null);
+  const numRefs = useRef([]);
+  const pipeRef = useRef(null);
+  const barRefs = useRef([]);
+
+  useEffect(() => {
+    /* Scroll animations */
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => { entry.target.classList.add(s.vis); }, 150);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(`.${s.anim}`).forEach((el) => obs.observe(el));
+
+    /* Pipeline bars */
+    const barObs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          barRefs.current.forEach((bar) => {
+            if (bar) bar.style.width = bar.dataset.width + '%';
+          });
+          barObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    if (pipeRef.current) barObs.observe(pipeRef.current);
+
+    /* Number counters */
+    const statData = [
+      { target: 2300, suffix: '+', ticks: 10, interval: 80, startPause: 100 },
+      { text: '1 in 26', ticks: 6, interval: 120, startPause: 300 },
+      { target: 350, suffix: '+', ticks: 4, interval: 160, startPause: 600 },
+      { target: 1997, from: 1990, suffix: '', noformat: true, ticks: 8, interval: 130, startPause: 700 },
+    ];
+
+    numRefs.current.forEach((el, idx) => {
+      if (!el) return;
+      const d = statData[idx];
+      if (d.text) { el.textContent = d.text; return; }
+      const t = d.target;
+      const sfx = d.suffix;
+      const from = d.from || Math.max(0, t - 10);
+      const nf = d.noformat;
+      el.textContent = (nf ? t : t.toLocaleString()) + sfx;
+
+      const cobs = new IntersectionObserver((ent) => {
+        if (ent[0].isIntersecting) {
+          let current = from;
+          el.textContent = (nf ? current : current.toLocaleString()) + sfx;
+          function tick() {
+            if (current < t) { current++; el.textContent = (nf ? current : current.toLocaleString()) + sfx; setTimeout(tick, d.interval); }
+          }
+          setTimeout(tick, d.startPause);
+          cobs.unobserve(el);
+        }
+      }, { threshold: 0.5 });
+      cobs.observe(el);
+    });
+
+    return () => { obs.disconnect(); barObs.disconnect(); };
+  }, []);
+
+  const arrowSvg = (color = '#6C1A55') => (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2">
+      <path d="M5 12h14M12 5l7 7-7 7"/>
+    </svg>
+  );
+
+  const learnArrow = (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M5 12h14M12 5l7 7-7 7"/>
+    </svg>
+  );
+
+  return (
+    <>
+      <Nav transparent />
+
+      {/* HERO */}
+      <section className={s.hero} id="hero">
+        <Image src="/images/tanks_2.jpg" fill priority sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center' }} alt="" />
+        <div className={s.bgBlur} />
+        <div className="vig" style={{ position: 'absolute', inset: 0, zIndex: 1, background: 'radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%)' }} />
+        <div className="ct" style={{ position: 'relative', zIndex: 2, maxWidth: 1100, margin: '0 auto', padding: '180px 48px 72px', width: '100%' }}>
+          <div className="lbl" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#E8A0D0', marginBottom: 12 }}>Why StemCyte</div>
+          <h1 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 48, fontWeight: 400, lineHeight: 1.1, letterSpacing: '-1.5px', maxWidth: 780, marginBottom: 16, color: '#fff' }}>The most trusted cord blood bank by OBGYN and transplant physicians</h1>
+          <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.55)', maxWidth: 680, lineHeight: 1.7 }}>More transplants shipped than any other private bank. The only hybrid private-public bank. Triple-accredited. There are clear reasons why physicians trust StemCyte.</p>
+        </div>
+      </section>
+
+      {/* STATS */}
+      <div className={s.statsWrap} ref={statsRef}>
+        <div className={s.stats}>
+          {['Transplant units shipped worldwide', 'Of all cord blood transplants use StemCyte', 'Transplant hospitals in 35 countries', 'Founded \u2014 29+ years of experience'].map((desc, i) => (
+            <div key={i} className={`${s.stat} ${s.anim}`}>
+              <div className="num" ref={(el) => { numRefs.current[i] = el; }} style={{ fontFamily: "var(--font-numbers),'Source Serif 4',serif", fontSize: 36, color: '#6C1A55', fontWeight: 400 }}>0</div>
+              <div className="desc" style={{ fontSize: 12, color: '#8A857A', marginTop: 4 }}>{desc}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className={s.divider}><div className={s.dividerLine} /></div>
+
+      {/* FDA BLA SPLIT */}
+      <section className={s.section}>
+        <div className={`${s.split} ${s.anim}`}>
+          <div className="text" style={{}}>
+            <div className="lbl" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6C1A55', marginBottom: 10 }}>FDA-Licensed Product</div>
+            <h2 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 32, fontWeight: 400, marginBottom: 16, lineHeight: 1.2 }}>Reviewed, tested, and licensed by the FDA</h2>
+            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7, marginBottom: 12 }}>Our cord blood product, <strong>REGENECYTE\u00AE</strong>, earned an FDA biologics license \u2014 the same approval pathway used for vaccines and blood products.</p>
+            <Link href="/fda-bla" className={s.learnLink}>Learn what that means {learnArrow}</Link>
+          </div>
+          <div>
+            <div className={s.trackCard}>
+              <div className={s.trackBar}>
+                <div className={s.trackFill} />
+                <div className={`${s.trackPin} gray`} style={{ left: '12%', background: '#D4D0CA' }}>
+                  <div className={s.trackPinLabel} style={{ left: '50%', transform: 'translateX(-50%)', color: '#A09A90' }}>Most banks</div>
+                </div>
+                <div className={`${s.trackPin} plum`} style={{ right: '2%', background: '#6C1A55' }}>
+                  <div className={s.trackPinLabel} style={{ right: 0, color: '#6C1A55' }}>REGENECYTE\u00AE</div>
+                </div>
+              </div>
+              <div className={s.trackLegend}>
+                <div className={s.trackLegendItem}>
+                  <div className="title" style={{ fontSize: 13, fontWeight: 700, marginBottom: 3, color: '#A09A90' }}>Registered</div>
+                  <p style={{ fontSize: 12, color: '#B0AB9E', lineHeight: 1.5, margin: 0 }}>Notified the FDA they exist</p>
+                </div>
+                <div className={s.trackLegendItem} style={{ textAlign: 'right' }}>
+                  <div className="title" style={{ fontSize: 13, fontWeight: 700, marginBottom: 3, color: '#6C1A55' }}>Licensed</div>
+                  <p style={{ fontSize: 12, color: '#B0AB9E', lineHeight: 1.5, margin: 0 }}>Product reviewed and approved</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className={s.divider}><div className={s.dividerLine} /></div>
+
+      {/* PBA FEATURED SPLIT */}
+      <section className={s.section}>
+        <div className={`${s.split} ${s.anim}`}>
+          <div className="photo" style={{ borderRadius: 12, overflow: 'hidden', height: 360, position: 'relative' }}>
+            <Image src="/images/pba_hero_2.jpeg" alt="Public Bank Access" fill sizes="(max-width:900px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
+          </div>
+          <div className="text">
+            <div className="lbl" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6C1A55', marginBottom: 10 }}>Only at StemCyte</div>
+            <h2 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 32, fontWeight: 400, marginBottom: 16, lineHeight: 1.2 }}>The only private bank with public bank access</h2>
+            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7, marginBottom: 12 }}>StemCyte operates both a private and public cord blood bank. When you add Public Bank Access, your family gets access to donor stem cells if your child ever needs more than their stored unit.</p>
+            <Link href="/public-bank-access" className={s.learnLink}>Learn more about PBA {learnArrow}</Link>
+          </div>
+        </div>
+      </section>
+
+      <div className={s.divider}><div className={s.dividerLine} /></div>
+
+      {/* TRANSPLANT EXPERIENCE SPLIT (reversed) */}
+      <section className={s.section}>
+        <div className={`${s.split} ${s.anim}`} style={{ direction: 'rtl' }}>
+          <div className="photo" style={{ borderRadius: 12, overflow: 'hidden', height: 360, position: 'relative', direction: 'ltr' }}>
+            <Image src="/images/Hero_5.jpeg" alt="Transplant experience" fill sizes="(max-width:900px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
+          </div>
+          <div className="text" style={{ direction: 'ltr' }}>
+            <div className="lbl" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6C1A55', marginBottom: 10 }}>Transplant experience</div>
+            <h2 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 32, fontWeight: 400, marginBottom: 16, lineHeight: 1.2 }}>More transplants shipped than any other private bank</h2>
+            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7, marginBottom: 12 }}>StemCyte has shipped over 2,300 transplant units to 350+ hospitals in 35 countries \u2014 accounting for 1 in every 26 cord blood transplants worldwide.</p>
+            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7, marginBottom: 12 }}>That experience means our processing, storage, and release protocols have been validated in real clinical outcomes, not just lab tests.</p>
+          </div>
+        </div>
+      </section>
+
+      <div className={s.divider}><div className={s.dividerLine} /></div>
+
+      {/* PROTECTION & GUARANTEES */}
+      <section className={s.section}>
+        <div className={s.sh}>
+          <div className="lbl" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6C1A55', marginBottom: 10 }}>Protection & guarantees</div>
+          <h2 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 36, fontWeight: 400, letterSpacing: '-0.5px', marginBottom: 10, lineHeight: 1.15 }}>Safety nets no other bank provides</h2>
+        </div>
+        <div className={s.featGrid}>
+          <Link href="/lifesaver-guarantee" className={`${s.featCard} linked`}>
+            <div className="ic" style={{ width: 48, height: 48, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16, background: '#FBF5F9' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" strokeWidth="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>LifeSaver Guarantee</h3>
+            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7 }}>Full refund, $50,000, and a replacement donor unit if engraftment fails. Included free with every plan.</p>
+            <div className={s.cardArrow}>{arrowSvg('#6C1A55')}</div>
+          </Link>
+          <Link href="/expanded-access-policy" className={`${s.featCard} linked`}>
+            <div className="ic" style={{ width: 48, height: 48, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16, background: '#FDF5EB' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C4943E" strokeWidth="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>Expanded Access Policy</h3>
+            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7 }}>Investigational cord blood therapies for patients with serious conditions who have no other treatment options.</p>
+            <div className={s.cardArrow}>{arrowSvg('#C4943E')}</div>
+          </Link>
+        </div>
+      </section>
+
+      <div className={s.divider}><div className={s.dividerLine} /></div>
+
+      {/* PROGRAMS & DISCOUNTS */}
+      <section className={s.section}>
+        <div className={s.sh}>
+          <div className="lbl" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6C1A55', marginBottom: 10 }}>Programs & discounts</div>
+          <h2 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 36, fontWeight: 400, letterSpacing: '-0.5px', marginBottom: 10, lineHeight: 1.15 }}>Making stem cell banking accessible</h2>
+        </div>
+        <div className={`${s.featGrid} col3`} style={{ gridTemplateColumns: 'repeat(3,1fr)' }}>
+          <Link href="/special-programs" className={`${s.featCard} linked ${s.anim}`}>
+            <div className="ic" style={{ width: 48, height: 48, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16, background: '#FBF5F9' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" strokeWidth="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>Sibling Donor Program</h3>
+            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7 }}>Free banking for families where a sibling needs a transplant.</p>
+            <div className={s.cardArrow}>{arrowSvg('#6C1A55')}</div>
+          </Link>
+          <Link href="/special-programs" className={`${s.featCard} linked ${s.anim}`}>
+            <div className="ic" style={{ width: 48, height: 48, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16, background: '#EDF5FF' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B6DC4" strokeWidth="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>Military & Public Servant</h3>
+            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7 }}>Special pricing for active and retired military, police, fire, and EMT.</p>
+            <div className={s.cardArrow}>{arrowSvg('#3B6DC4')}</div>
+          </Link>
+          <Link href="/special-programs" className={`${s.featCard} linked ${s.anim}`}>
+            <div className="ic" style={{ width: 48, height: 48, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16, background: '#F0F7F4' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D8B6A" strokeWidth="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>Medical Professional</h3>
+            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7 }}>Special pricing for physicians, nurses, and allied health professionals.</p>
+            <div className={s.cardArrow}>{arrowSvg('#3D8B6A')}</div>
+          </Link>
+        </div>
+      </section>
+
+      <div className={s.divider}><div className={s.dividerLine} /></div>
+
+      {/* OPERATIONS */}
+      <section className={s.section}>
+        <div className={s.sh}>
+          <div className="lbl" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6C1A55', marginBottom: 10 }}>How we operate</div>
+          <h2 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 36, fontWeight: 400, letterSpacing: '-0.5px', marginBottom: 10, lineHeight: 1.15 }}>Built for quality at every step</h2>
+        </div>
+        <div className={s.featGrid}>
+          <div className={`${s.featCard} ${s.anim}`}>
+            <div className="ic" style={{ width: 48, height: 48, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16, background: '#F0F7F4' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D8B6A" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>Proprietary processing</h3>
+            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7 }}>StemCyte{'\u2019'}s processing protocols are developed in-house and optimized over 29 years of operation. Every unit is processed in our Baldwin Park, CA facility under cGMP conditions.</p>
+          </div>
+          <div className={`${s.featCard} ${s.anim}`}>
+            <div className="ic" style={{ width: 48, height: 48, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16, background: '#EDF5FF' }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B6DC4" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3 style={{ fontSize: 16, fontWeight: 700, marginBottom: 8 }}>24/7 medical courier</h3>
+            <p style={{ fontSize: 15, color: '#8A857A', lineHeight: 1.7 }}>After collection, our courier picks up your baby{'\u2019'}s cord blood 24/7 \u2014 weekends and holidays included \u2014 and expedites it to our lab. Free on all plans.</p>
+          </div>
+        </div>
+      </section>
+
+      <div className={s.divider}><div className={s.dividerLine} /></div>
+
+      {/* ACCREDITATIONS */}
+      <section className={`${s.sectionFull} ${s.trustBg}`}>
+        <div className="inner" style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <div className={s.sh}>
+            <div className="lbl" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6C1A55', marginBottom: 10 }}>Quality & credentials</div>
+            <h2 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 36, fontWeight: 400, letterSpacing: '-0.5px', marginBottom: 10, lineHeight: 1.15 }}>Why you can trust it</h2>
+          </div>
+          <div className={s.accredRow}>
+            {[
+              { name: 'FDA', desc: 'U.S. Food and Drug Administration Licensed' },
+              { name: 'FACT', desc: 'Foundation for the Accreditation of Cellular Therapy' },
+              { name: 'AABB', desc: 'American Association of Blood Banks' },
+              { name: 'cGMP', desc: 'Current Good Manufacturing Practices' },
+            ].map((badge, i) => (
+              <div key={i} className={`${s.accredBadge} ${s.anim}`}>
+                <div className="name" style={{ fontFamily: "var(--font-numbers),'Source Serif 4',serif", fontSize: 28, color: '#6C1A55', fontWeight: 400, marginBottom: 8 }}>{badge.name}</div>
+                <div className="desc" style={{ fontSize: 12, color: '#8A857A', lineHeight: 1.5 }}>{badge.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CLINICAL RESEARCH */}
+      <section className={s.sectionFull} style={{ background: '#F3F0F8' }}>
+        <div className="inner" style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <div className={s.sh}>
+            <div className="lbl" style={{ fontSize: 11, fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: '#6C1A55', marginBottom: 10 }}>Clinical research</div>
+            <h2 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 36, fontWeight: 400, letterSpacing: '-0.5px', marginBottom: 10, lineHeight: 1.15 }}>Cord blood is being used to treat <em style={{ fontStyle: 'italic', color: '#6C1A55' }}>real patients</em> today</h2>
+            <p style={{ fontSize: 16, color: '#8A857A', maxWidth: 520, lineHeight: 1.7 }}>StemCyte sponsors 3 active clinical trials developing cord blood therapies for conditions beyond traditional transplantation.</p>
+          </div>
+          <div ref={pipeRef} style={{ marginTop: 40 }}>
+            {/* Pipeline row 1 */}
+            <div className={`${s.pipeRow} ${s.anim}`}>
+              <div className={s.prTop}>
+                <div className={s.prName}><strong>REGENECYTE\u00AE</strong> \u2014 Long COVID</div>
+                <div className={s.prPhase}>Phase III / Expanded Access</div>
+              </div>
+              <div className={s.thinBarTrack}>
+                <div className={`${s.thinBarFill} plum`} ref={(el) => { barRefs.current[0] = el; }} data-width="88" style={{ width: '0%', background: '#6C1A55' }} />
+              </div>
+              <div className={s.prDetail}>
+                <div className="pd" style={{ fontSize: 11, color: '#8A857A' }}><strong style={{ color: '#6C1A55', fontWeight: 700 }}>FDA BLA approved 2024</strong></div>
+                <div className="pd" style={{ fontSize: 11, color: '#8A857A' }}><strong style={{ color: '#6C1A55', fontWeight: 700 }}>RMAT designated</strong></div>
+                <div className="pd" style={{ fontSize: 11, color: '#8A857A' }}><strong style={{ color: '#6C1A55', fontWeight: 700 }}>Expanded Access 2026</strong></div>
+              </div>
+            </div>
+
+            {/* Pipeline row 2 */}
+            <div className={`${s.pipeRow} ${s.anim}`}>
+              <div className={s.prTop}>
+                <div className={s.prName}>Acute Ischemic Stroke</div>
+                <div className={s.prPhase}>Phase II</div>
+              </div>
+              <div className={s.thinBarTrack}>
+                <div className={`${s.thinBarFill} ${s.warmA}`} ref={(el) => { barRefs.current[1] = el; }} data-width="55" style={{ width: '0%' }} />
+              </div>
+              <div className={s.prDetail}>
+                <div className="pd" style={{ fontSize: 11, color: '#8A857A' }}>Phase I <strong style={{ color: '#2C2A26', fontWeight: 700 }}>published</strong> in Cell Transplantation</div>
+                <div className="pd" style={{ fontSize: 11, color: '#8A857A' }}><strong style={{ color: '#2C2A26', fontWeight: 700 }}>Allogeneic</strong> cord blood</div>
+              </div>
+            </div>
+
+            {/* Pipeline row 3 */}
+            <div className={`${s.pipeRow} ${s.anim}`}>
+              <div className={s.prTop}>
+                <div className={s.prName}>Spinal Cord Injury</div>
+                <div className={s.prPhase}>Phase II</div>
+              </div>
+              <div className={s.thinBarTrack}>
+                <div className={`${s.thinBarFill} ${s.warmB}`} ref={(el) => { barRefs.current[2] = el; }} data-width="50" style={{ width: '0%' }} />
+              </div>
+              <div className={s.prDetail}>
+                <div className="pd" style={{ fontSize: 11, color: '#8A857A' }}>First hybrid bank with <strong style={{ color: '#2C2A26', fontWeight: 700 }}>FDA Phase II</strong></div>
+                <div className="pd" style={{ fontSize: 11, color: '#8A857A' }}><strong style={{ color: '#2C2A26', fontWeight: 700 }}>HLA-matched</strong> cord blood</div>
+              </div>
+            </div>
+          </div>
+
+          {/* REGENECYTE callout */}
+          <div className={`${s.bCallout} ${s.anim}`}>
+            <div>
+              <h3 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 24, fontWeight: 400, lineHeight: 1.25, marginBottom: 10 }}>REGENECYTE\u00AE \u2014 from our lab to FDA approval</h3>
+              <p style={{ fontSize: 15, color: '#6B665D', lineHeight: 1.7, maxWidth: 560 }}>StemCyte developed REGENECYTE\u00AE, an FDA-Licensed cord blood therapy now used to treat over 80 conditions. Your baby{'\u2019'}s cord blood is processed in the same Baldwin Park facility, held to the same standards required to produce a federally licensed biologic.</p>
+              <div className={s.crLinkRow}>
+                <Link href="/regenecyte" className={s.btnRegen}>Learn about REGENECYTE\u00AE</Link>
+                <Link href="/the-science" style={{ fontSize: 14, fontWeight: 700, color: '#6C1A55', textDecoration: 'none' }}>See what cord blood treats \u2192</Link>
+              </div>
+            </div>
+            <div className={s.crStat}>
+              <div className={s.crBig}>85%</div>
+              <div className={s.crNote}>Long COVID fatigue<br/>resolution (Phase II)</div>
+            </div>
+          </div>
+
+          {/* HIV block */}
+          <div className={`${s.hivBlock} ${s.anim}`}>
+            <div className={s.decoCircle} />
+            <div className={s.hivBadge}>Published in Cell, 2023</div>
+            <Link href="/our-story/hiv-remission" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <h3 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 24, fontWeight: 400, color: '#fff', lineHeight: 1.25, marginBottom: 12 }}>StemCyte cord blood transplant may have cured HIV</h3>
+            </Link>
+            <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, maxWidth: 640 }}>A woman achieved HIV remission after receiving a cord blood stem cell transplant \u2014 the first woman and only the third person in history to potentially be cured. StemCyte provided the cord blood unit.</p>
+            <p className={s.hivCoda}>What you bank today may enable breakthroughs that don{'\u2019'}t yet exist.</p>
+          </div>
+
+          <div style={{ textAlign: 'center', marginTop: 32 }}>
+            <Link href="/clinical-trials" style={{ fontSize: 15, fontWeight: 700, color: '#6C1A55', textDecoration: 'none' }}>View all clinical trials \u2192</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className={`${s.ctaBanner} ${s.anim}`}>
+        <h2 style={{ fontFamily: "var(--font-heading),'Playfair Display',serif", fontSize: 36, color: '#fff', marginBottom: 12, position: 'relative' }}>Your baby{'\u2019'}s stem cells can only be collected at <em style={{ fontStyle: 'italic', color: '#E8A0D0' }}>birth</em></h2>
+        <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.5)', marginBottom: 32, position: 'relative' }}>Don{'\u2019'}t let this once-in-a-lifetime opportunity pass.</p>
+        <div className="btns" style={{ display: 'flex', gap: 12, justifyContent: 'center', position: 'relative' }}>
+          <Link href="/pricing" className={s.btnW}>View pricing</Link>
+          <a href="tel:8663894659" className={s.btnGd}>Call (866) 389-4659</a>
+        </div>
+      </section>
+    </>
+  );
 }

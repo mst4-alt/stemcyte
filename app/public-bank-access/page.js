@@ -1,289 +1,191 @@
-import PageContent from '../../components/PageContent';
+'use client';
 
-export const metadata = {
-  title: 'Public Bank Access | StemCyte',
-};
+import { useState, useEffect, useRef, useCallback } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import Nav from '../../components/Nav';
+import s from './page.module.css';
 
-const css = `
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body { font-family:var(--font-lato),'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
+const CheckIcon = () => (
+  <span className={s.checkCircle}>
+    <svg viewBox="0 0 12 12" fill="none">
+      <path d="M2.5 6l2.5 2.5 4.5-5" stroke="#3D8B6A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  </span>
+);
 
-/* HERO */
-.hero { position:relative; min-height:560px; display:flex; align-items:center; overflow:hidden; background-image:url('/images/pba_hero_2.jpeg'); background-size:cover; background-position:center; }
-.hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 55% 50%,transparent 0%,rgba(0,0,0,0.15) 50%,rgba(0,0,0,0.55) 100%); z-index:1; }
-.hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
-.hero .txt { max-width:520px; }
-.hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
-.hero h1 { font-family:var(--font-heading),'Playfair Display',serif; font-size:46px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; margin-bottom:16px; color:#fff; }
-.hero .sub { font-size:17px; color:rgba(255,255,255,0.6); max-width:520px; line-height:1.7; }
+const faqItems = [
+  { q: 'How is PBA different from private banking?', a: 'Private banking stores your baby\u2019s own cord blood exclusively for your family. PBA is an add-on that gives your child access to additional matching donor units from StemCyte\u2019s public cord blood bank when more stem cells are needed.' },
+  { q: 'What\u2019s the difference between PBA and PBA+?', a: 'PBA covers your child. PBA+ includes everything in PBA and extends coverage to both parents \u2014 parents can access StemCyte\u2019s public bank for cord blood treatments, even without their own banked cord blood.' },
+  { q: 'Is PBA included with any plan?', a: 'PBA is included free when you choose Cord Blood & Tissue banking. For Cord Blood only plans, PBA is a $299 one-time add-on. PBA+ is $699 regardless of plan.' },
+  { q: 'Why can only StemCyte offer this?', a: 'StemCyte is the only private cord blood bank that also operates a public cord blood bank. That dual model is what makes it possible to offer private banking customers access to publicly-donated donor units.' },
+  { q: 'When would donor cells be needed instead of my child\u2019s own?', a: 'For certain cancers and genetic disorders, a child cannot use their own stem cells because the condition may be present in those cells too. Donor cells from a public bank are essential in these cases. PBA also helps when a larger cell volume is needed than a single unit provides.' },
+];
 
-/* SHARED */
-.section { padding:80px 48px; max-width:1100px; margin:0 auto; }
-.section-lav { background:#F3F0F8; }
-.section-lav-deep { background:#EDE8F5; }
-.section-label { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:12px; text-align:center; }
-.section-title { font-family:var(--font-heading),'Playfair Display',serif; font-size:36px; font-weight:400; line-height:1.15; letter-spacing:-1px; text-align:center; margin-bottom:16px; color:#2C2A26; }
-.section-sub { font-size:16px; color:#8A857A; text-align:center; max-width:620px; margin:0 auto 48px; line-height:1.7; }
+export default function PublicBankAccessPage() {
+  const [openIndex, setOpenIndex] = useState(null);
+  const answerRefs = useRef({});
 
-/* ANIMATIONS */
-.anim { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease, transform 0.6s ease; }
-.anim.visible { opacity:1; transform:translateY(0); }
+  const toggleFaq = useCallback((i) => {
+    setOpenIndex(prev => prev === i ? null : i);
+  }, []);
 
-/* WHY IT MATTERS CARDS */
-.wim-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:1100px; margin:48px auto 0; }
-.wim-card { background:#fff; border-radius:12px; padding:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
-.wim-icon { width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
-.wim-card h3 { font-size:16px; font-weight:700; margin-bottom:8px; color:#2C2A26; }
-.wim-card p { font-size:15px; color:#8A857A; line-height:1.7; }
+  useEffect(() => {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add(s.visible);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll(`.${s.anim}`).forEach(el => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
 
-/* COMPARE CARDS */
-.compare-wrap { display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:840px; margin:0 auto; }
-.compare-card { background:#fff; border-radius:12px; padding:32px; position:relative; }
-.compare-card.standard { border:1px solid #E8E2DC; }
-.compare-card.plus { border:2px solid #C06AA5; box-shadow:0 8px 32px rgba(108,26,85,0.08); }
-.compare-badge { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:#6C1A55; color:#fff; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:6px 16px; border-radius:100px; white-space:nowrap; }
-.compare-sublabel { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#C06AA5; margin-bottom:8px; }
-.compare-card h3 { font-family:var(--font-heading),'Playfair Display',serif; font-size:28px; font-weight:400; margin-bottom:12px; color:#2C2A26; }
-.compare-price { font-family:var(--font-numbers),'Source Serif 4',serif; font-size:36px; font-weight:400; color:#6C1A55; margin-bottom:4px; }
-.compare-price-note { font-size:13px; color:#8A857A; margin-bottom:8px; }
-.compare-free { font-size:14px; font-weight:700; color:#3D8B6A; margin-bottom:12px; }
-.compare-desc { font-size:15px; color:#8A857A; line-height:1.7; margin-bottom:20px; }
-.compare-checks { list-style:none; margin-bottom:24px; }
-.compare-checks li { display:flex; align-items:flex-start; gap:10px; font-size:14px; color:#2C2A26; margin-bottom:12px; line-height:1.5; }
-.compare-checks li:last-child { margin-bottom:0; }
-.check-circle { width:20px; height:20px; border-radius:50%; background:#D4E8DC; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
-.check-circle svg { width:12px; height:12px; }
-.btn-ghost { display:inline-block; padding:14px 28px; border-radius:100px; font-size:14px; font-weight:700; border:1px solid #E8E2DC; background:transparent; color:#6C1A55; cursor:pointer; font-family:var(--font-lato),'Lato',sans-serif; text-decoration:none; text-align:center; width:100%; transition:all 0.25s; }
-.btn-ghost:hover { background:rgba(108,26,85,0.12); border-color:rgba(108,26,85,0.25); }
-.btn-plum { display:inline-block; padding:14px 28px; border-radius:100px; font-size:14px; font-weight:700; border:none; background:#6C1A55; color:#fff; cursor:pointer; font-family:var(--font-lato),'Lato',sans-serif; text-decoration:none; text-align:center; width:100%; transition:all 0.25s; }
-.btn-plum:hover { background:#8B3572; }
+  return (
+    <>
+      <Nav transparentHero={false} />
 
-/* TESTIMONIALS */
-.test-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:1100px; margin:0 auto; }
-.test-card { background:#fff; border-radius:12px; padding:32px; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
-.test-card p { font-size:15px; color:#2C2A26; line-height:1.7; margin-bottom:16px; font-style:italic; }
-.test-card .name { font-size:13px; font-weight:700; color:#6C1A55; }
-.test-card .detail { font-size:13px; color:#8A857A; }
-
-/* FAQ */
-.faq-wrap { max-width:720px; margin:0 auto; }
-.faq-smooth { border-bottom:1px solid #E8E2DC; overflow:hidden; }
-.faq-smooth:last-child { border-bottom:none; }
-.faq-smooth .faq-q { padding:20px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:16px; font-weight:700; color:#2C2A26; user-select:none; }
-.faq-smooth .faq-q .icon { width:24px; height:24px; position:relative; flex-shrink:0; margin-left:16px; }
-.faq-smooth .faq-q .icon::before,
-.faq-smooth .faq-q .icon::after { content:''; position:absolute; background:#C06AA5; border-radius:1px; transition:transform 0.3s ease; }
-.faq-smooth .faq-q .icon::before { width:14px; height:2px; top:11px; left:5px; }
-.faq-smooth .faq-q .icon::after { width:2px; height:14px; top:5px; left:11px; }
-.faq-smooth.open .faq-q .icon::after { transform:rotate(90deg); }
-.faq-smooth .faq-a { max-height:0; overflow:hidden; transition:max-height 0.35s ease, opacity 0.3s ease; opacity:0; }
-.faq-smooth.open .faq-a { opacity:1; }
-.faq-smooth .faq-a-inner { padding:0 0 20px; font-size:15px; color:#8A857A; line-height:1.7; max-width:720px; }
-
-/* CTA BANNER */
-.cta-banner { background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:80px 48px; text-align:center; position:relative; overflow:hidden; }
-.cta-banner .circle { position:absolute; width:340px; height:340px; border-radius:50%; border:1px solid rgba(255,255,255,0.06); top:-80px; right:-60px; pointer-events:none; }
-.cta-banner h2 { font-family:var(--font-heading),'Playfair Display',serif; font-size:36px; font-weight:400; color:#fff; margin-bottom:12px; position:relative; z-index:2; }
-.cta-banner h2 em { font-style:italic; color:#E8A0D0; }
-.cta-banner .cta-sub { font-size:16px; color:rgba(255,255,255,0.55); margin-bottom:32px; position:relative; z-index:2; }
-.cta-btns { display:flex; gap:12px; justify-content:center; position:relative; z-index:2; }
-.cta-btn-w { display:inline-block; padding:14px 32px; border-radius:100px; font-size:14px; font-weight:700; background:#fff; color:#6C1A55; text-decoration:none; font-family:var(--font-lato),'Lato',sans-serif; transition:all 0.25s; }
-.cta-btn-w:hover { background:rgba(255,255,255,0.85); }
-.cta-btn-g { display:inline-block; padding:14px 32px; border-radius:100px; font-size:14px; font-weight:700; background:transparent; color:#fff; border:1px solid rgba(255,255,255,0.25); text-decoration:none; font-family:var(--font-lato),'Lato',sans-serif; transition:all 0.25s; }
-.cta-btn-g:hover { background:rgba(255,255,255,0.20); border-color:rgba(255,255,255,0.35); }
-
-/* RESPONSIVE */
-@media (max-width:900px) {
-  .hero .ct { padding:140px 24px 48px; }
-  .hero h1 { font-size:34px; }
-  .section { padding:64px 24px; }
-  .wim-grid { grid-template-columns:1fr; }
-  .compare-wrap { grid-template-columns:1fr; max-width:440px; }
-  .test-grid { grid-template-columns:1fr; }
-  .cta-btns { flex-direction:column; align-items:center; }
-}
-@media (max-width:600px) {
-  .hero h1 { font-size:28px; }
-  .section-title { font-size:28px; }
-  .compare-card { padding:24px; }
-}
-`;
-
-const html = `<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="ct">
-    <div class="txt anim">
-      <div class="lbl">ONLY AT STEMCYTE</div>
-      <h1>Protection that goes beyond your baby&rsquo;s own cord blood</h1>
-      <p class="sub">StemCyte operates both a private and public cord blood bank &mdash; giving your family access to donor stem cells that most banks simply can&rsquo;t provide.</p>
-    </div>
-  </div>
-</section>
-
-<!-- WHY IT MATTERS -->
-<section class="section-lav">
-  <div class="section">
-    <div class="section-label anim">WHY IT MATTERS</div>
-    <h2 class="section-title anim">When would your family need Public Bank Access?</h2>
-    <div class="wim-grid">
-      <div class="wim-card anim">
-        <div class="wim-icon" style="background:#FBF5F9">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="6" x2="12" y2="18"/></svg>
+      {/* HERO */}
+      <section className={s.hero} id="hero">
+        <Image src="/images/pba_hero_2.jpeg" alt="Public Bank Access" fill priority sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
+        <div className={s.vig}></div>
+        <div className={s.ct}>
+          <div className={`${s.txt} ${s.anim}`}>
+            <div className={s.lbl}>ONLY AT STEMCYTE</div>
+            <h1>Protection that goes beyond your baby{'\u2019'}s own cord blood</h1>
+            <p className={s.sub}>StemCyte operates both a private and public cord blood bank {'\u2014'} giving your family access to donor stem cells that most banks simply can{'\u2019'}t provide.</p>
+          </div>
         </div>
-        <h3>Expandable conditions</h3>
-        <p>Private cells can be ideal for regeneration and acquired conditions. Donor cells are essential for treating certain cancers and genetic disorders where a child cannot use their own. PBA gives your family access to those donor units.</p>
-      </div>
-      <div class="wim-card anim" style="transition-delay:0.15s">
-        <div class="wim-icon" style="background:#F0F7F4">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D8B6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      </section>
+
+      {/* WHY IT MATTERS */}
+      <section className={s.sectionLav}>
+        <div className={s.section}>
+          <div className={`${s.sectionLabel} ${s.anim}`}>WHY IT MATTERS</div>
+          <h2 className={`${s.sectionTitle} ${s.anim}`}>When would your family need Public Bank Access?</h2>
+          <div className={s.wimGrid}>
+            <div className={`${s.wimCard} ${s.anim}`}>
+              <div className={s.wimIcon} style={{ background: '#FBF5F9' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6C1A55" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="6" width="20" height="12" rx="2" /><line x1="2" y1="12" x2="22" y2="12" /><line x1="12" y1="6" x2="12" y2="18" /></svg>
+              </div>
+              <h3>Expandable conditions</h3>
+              <p>Private cells can be ideal for regeneration and acquired conditions. Donor cells are essential for treating certain cancers and genetic disorders where a child cannot use their own. PBA gives your family access to those donor units.</p>
+            </div>
+            <div className={`${s.wimCard} ${s.anim}`} style={{ transitionDelay: '0.15s' }}>
+              <div className={s.wimIcon} style={{ background: '#F0F7F4' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3D8B6A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg>
+              </div>
+              <h3>More volume when it counts</h3>
+              <p>As children grow, volume needs increase. A single privately-banked unit may not be enough. Access to our public inventory ensures even adults can receive effective treatment.</p>
+            </div>
+            <div className={`${s.wimCard} ${s.anim}`} style={{ transitionDelay: '0.3s' }}>
+              <div className={s.wimIcon} style={{ background: '#EDF5FF' }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B6DC4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+              </div>
+              <h3>Viability assurance</h3>
+              <p>Birth is unpredictable. In the rare event a hospital collection yields low volume or the sample is not usable, PBA provides access to a viable, sterile donor unit as a backup.</p>
+            </div>
+          </div>
         </div>
-        <h3>More volume when it counts</h3>
-        <p>As children grow, volume needs increase. A single privately-banked unit may not be enough. Access to our public inventory ensures even adults can receive effective treatment.</p>
-      </div>
-      <div class="wim-card anim" style="transition-delay:0.3s">
-        <div class="wim-icon" style="background:#EDF5FF">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3B6DC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </section>
+
+      {/* COMPARE */}
+      <div className={s.section}>
+        <div className={`${s.sectionLabel} ${s.anim}`}>COMPARE</div>
+        <h2 className={`${s.sectionTitle} ${s.anim}`}>Public Bank Access vs Public Bank Access+</h2>
+        <p className={`${s.sectionSub} ${s.anim}`}>PBA covers your child. PBA+ extends that coverage to both parents. Both are add-ons to any private banking plan.</p>
+        <div className={s.compareWrap}>
+          <div className={`${s.compareCard} ${s.standard} ${s.anim}`}>
+            <div className={s.compareSublabel}>FOR YOUR CHILD</div>
+            <h3>Public Bank Access</h3>
+            <div className={s.comparePrice}>$299</div>
+            <div className={s.comparePriceNote}>one-time add-on</div>
+            <div className={s.compareFree}>Free with Cord Blood & Tissue</div>
+            <p className={s.compareDesc}>If your child ever needs additional cord blood stem cells {'\u2014'} whether for volume, a different condition, or because the original collection wasn{'\u2019'}t viable {'\u2014'} StemCyte provides a matching donor unit from our public bank.</p>
+            <ul className={s.compareChecks}>
+              <li><CheckIcon />Covers your child</li>
+              <li><CheckIcon />Matching unit from StemCyte{'\u2019'}s public bank</li>
+              <li><CheckIcon />Global public bank search assistance</li>
+              <li><CheckIcon />Add-on to any private banking plan</li>
+            </ul>
+            <Link href="/pricing" className={s.btnGhost}>Add PBA to your plan</Link>
+          </div>
+          <div className={`${s.compareCard} ${s.plus} ${s.anim}`} style={{ transitionDelay: '0.15s' }}>
+            <div className={s.compareBadge}>COVERS PARENTS TOO</div>
+            <div className={s.compareSublabel}>FOR YOUR CHILD + PARENTS</div>
+            <h3>Public Bank Access+</h3>
+            <div className={s.comparePrice}>$699</div>
+            <div className={s.comparePriceNote}>one-time add-on</div>
+            <p className={s.compareDesc}>Everything in PBA, plus parents gain access to StemCyte{'\u2019'}s public bank inventory for diseases treatable with cord blood stem cells {'\u2014'} even if they didn{'\u2019'}t bank their own cord blood at birth.</p>
+            <ul className={s.compareChecks}>
+              <li><CheckIcon />Everything in PBA</li>
+              <li><CheckIcon />Extends coverage to both parents</li>
+              <li><CheckIcon />Parents don{'\u2019'}t need their own banked cord blood</li>
+              <li><CheckIcon />Cord blood treatments for eligible conditions</li>
+            </ul>
+            <Link href="/pricing" className={s.btnPlum}>Add PBA+ to your plan</Link>
+          </div>
         </div>
-        <h3>Viability assurance</h3>
-        <p>Birth is unpredictable. In the rare event a hospital collection yields low volume or the sample is not usable, PBA provides access to a viable, sterile donor unit as a backup.</p>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- COMPARE -->
-<section class="section">
-  <div class="section-label anim">COMPARE</div>
-  <h2 class="section-title anim">Public Bank Access vs Public Bank Access+</h2>
-  <p class="section-sub anim">PBA covers your child. PBA+ extends that coverage to both parents. Both are add-ons to any private banking plan.</p>
-  <div class="compare-wrap">
-    <div class="compare-card standard anim">
-      <div class="compare-sublabel">FOR YOUR CHILD</div>
-      <h3>Public Bank Access</h3>
-      <div class="compare-price">$299</div>
-      <div class="compare-price-note">one-time add-on</div>
-      <div class="compare-free">Free with Cord Blood &amp; Tissue</div>
-      <p class="compare-desc">If your child ever needs additional cord blood stem cells &mdash; whether for volume, a different condition, or because the original collection wasn&rsquo;t viable &mdash; StemCyte provides a matching donor unit from our public bank.</p>
-      <ul class="compare-checks">
-        <li><span class="check-circle"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.5 2.5 4.5-5" stroke="#3D8B6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Covers your child</li>
-        <li><span class="check-circle"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.5 2.5 4.5-5" stroke="#3D8B6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Matching unit from StemCyte&rsquo;s public bank</li>
-        <li><span class="check-circle"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.5 2.5 4.5-5" stroke="#3D8B6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Global public bank search assistance</li>
-        <li><span class="check-circle"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.5 2.5 4.5-5" stroke="#3D8B6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Add-on to any private banking plan</li>
-      </ul>
-      <a href="/pricing" class="btn-ghost">Add PBA to your plan</a>
-    </div>
-    <div class="compare-card plus anim" style="transition-delay:0.15s">
-      <div class="compare-badge">COVERS PARENTS TOO</div>
-      <div class="compare-sublabel">FOR YOUR CHILD + PARENTS</div>
-      <h3>Public Bank Access+</h3>
-      <div class="compare-price">$699</div>
-      <div class="compare-price-note">one-time add-on</div>
-      <p class="compare-desc">Everything in PBA, plus parents gain access to StemCyte&rsquo;s public bank inventory for diseases treatable with cord blood stem cells &mdash; even if they didn&rsquo;t bank their own cord blood at birth.</p>
-      <ul class="compare-checks">
-        <li><span class="check-circle"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.5 2.5 4.5-5" stroke="#3D8B6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Everything in PBA</li>
-        <li><span class="check-circle"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.5 2.5 4.5-5" stroke="#3D8B6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Extends coverage to both parents</li>
-        <li><span class="check-circle"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.5 2.5 4.5-5" stroke="#3D8B6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Parents don&rsquo;t need their own banked cord blood</li>
-        <li><span class="check-circle"><svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6l2.5 2.5 4.5-5" stroke="#3D8B6A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Cord blood treatments for eligible conditions</li>
-      </ul>
-      <a href="/pricing" class="btn-plum">Add PBA+ to your plan</a>
-    </div>
-  </div>
-</section>
+      {/* TESTIMONIALS */}
+      <section className={s.sectionLavDeep}>
+        <div className={s.section}>
+          <h2 className={`${s.sectionTitle} ${s.anim}`}>What families are saying</h2>
+          <div className={s.testGrid}>
+            <div className={`${s.testCard} ${s.anim}`}>
+              <p>{'\u201C'}Our family is biracial so finding a match could be difficult in the future. Signing up with StemCyte to get Public Bank Access was a no brainer.{'\u201D'}</p>
+              <div className={s.name}>Jennifer B.</div>
+              <div className={s.detail}>Banked in 2022</div>
+            </div>
+            <div className={`${s.testCard} ${s.anim}`} style={{ transitionDelay: '0.15s' }}>
+              <p>{'\u201C'}As a cancer survivor, I know how important it is to have Public Bank Access. This gives me peace of mind!{'\u201D'}</p>
+              <div className={s.name}>Nikki</div>
+              <div className={s.detail}>Banked in 2021</div>
+            </div>
+            <div className={`${s.testCard} ${s.anim}`} style={{ transitionDelay: '0.3s' }}>
+              <p>{'\u201C'}Getting another stem cell unit that could save your life is the best gift, not a teddy bear.{'\u201D'}</p>
+              <div className={s.name}>Sam M.</div>
+              <div className={s.detail}>Banked in 2022</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<!-- TESTIMONIALS -->
-<section class="section-lav-deep">
-  <div class="section">
-    <h2 class="section-title anim">What families are saying</h2>
-    <div class="test-grid">
-      <div class="test-card anim">
-        <p>&ldquo;Our family is biracial so finding a match could be difficult in the future. Signing up with StemCyte to get Public Bank Access was a no brainer.&rdquo;</p>
-        <div class="name">Jennifer B.</div>
-        <div class="detail">Banked in 2022</div>
+      {/* FAQ */}
+      <div className={s.section}>
+        <h2 className={`${s.sectionTitle} ${s.anim}`}>Frequently asked questions</h2>
+        <div className={s.faqWrap}>
+          {faqItems.map((item, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <div className={`${s.faqSmooth}${isOpen ? ' ' + s.open : ''}`} key={i} onClick={() => toggleFaq(i)}>
+                <div className={s.faqQ}>{item.q}<div className={s.icon}></div></div>
+                <div
+                  className={s.faqA}
+                  ref={el => { if (el) answerRefs.current[i] = el; }}
+                  style={{ maxHeight: isOpen ? (answerRefs.current[i]?.scrollHeight || 0) + 'px' : '0' }}
+                >
+                  <div className={s.faqAInner}>{item.a}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
-      <div class="test-card anim" style="transition-delay:0.15s">
-        <p>&ldquo;As a cancer survivor, I know how important it is to have Public Bank Access. This gives me peace of mind!&rdquo;</p>
-        <div class="name">Nikki</div>
-        <div class="detail">Banked in 2021</div>
-      </div>
-      <div class="test-card anim" style="transition-delay:0.3s">
-        <p>&ldquo;Getting another stem cell unit that could save your life is the best gift, not a teddy bear.&rdquo;</p>
-        <div class="name">Sam M.</div>
-        <div class="detail">Banked in 2022</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- FAQ -->
-<section class="section">
-  <h2 class="section-title anim">Frequently asked questions</h2>
-  <div class="faq-wrap">
-    <div class="faq-smooth" onclick="toggleFaq(this)">
-      <div class="faq-q">How is PBA different from private banking?<div class="icon"></div></div>
-      <div class="faq-a"><div class="faq-a-inner">Private banking stores your baby&rsquo;s own cord blood exclusively for your family. PBA is an add-on that gives your child access to additional matching donor units from StemCyte&rsquo;s public cord blood bank when more stem cells are needed.</div></div>
-    </div>
-    <div class="faq-smooth" onclick="toggleFaq(this)">
-      <div class="faq-q">What&rsquo;s the difference between PBA and PBA+?<div class="icon"></div></div>
-      <div class="faq-a"><div class="faq-a-inner">PBA covers your child. PBA+ includes everything in PBA and extends coverage to both parents &mdash; parents can access StemCyte&rsquo;s public bank for cord blood treatments, even without their own banked cord blood.</div></div>
-    </div>
-    <div class="faq-smooth" onclick="toggleFaq(this)">
-      <div class="faq-q">Is PBA included with any plan?<div class="icon"></div></div>
-      <div class="faq-a"><div class="faq-a-inner">PBA is included free when you choose Cord Blood &amp; Tissue banking. For Cord Blood only plans, PBA is a $299 one-time add-on. PBA+ is $699 regardless of plan.</div></div>
-    </div>
-    <div class="faq-smooth" onclick="toggleFaq(this)">
-      <div class="faq-q">Why can only StemCyte offer this?<div class="icon"></div></div>
-      <div class="faq-a"><div class="faq-a-inner">StemCyte is the only private cord blood bank that also operates a public cord blood bank. That dual model is what makes it possible to offer private banking customers access to publicly-donated donor units.</div></div>
-    </div>
-    <div class="faq-smooth" onclick="toggleFaq(this)">
-      <div class="faq-q">When would donor cells be needed instead of my child&rsquo;s own?<div class="icon"></div></div>
-      <div class="faq-a"><div class="faq-a-inner">For certain cancers and genetic disorders, a child cannot use their own stem cells because the condition may be present in those cells too. Donor cells from a public bank are essential in these cases. PBA also helps when a larger cell volume is needed than a single unit provides.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BANNER -->
-<section class="cta-banner">
-  <div class="circle"></div>
-  <h2>Only StemCyte offers <em>both</em> private and public bank access</h2>
-  <p class="cta-sub">Add PBA to your plan starting at $299 &mdash; or get it free with Cord Blood &amp; Tissue.</p>
-  <div class="cta-btns">
-    <a href="/pricing" class="cta-btn-w">Build your plan</a>
-    <a href="tel:8663894659" class="cta-btn-g">Call (866) 389-4659</a>
-  </div>
-</section>
-`;
-
-const script = `// FAQ toggle
-function toggleFaq(el) {
-  var wasOpen = el.classList.contains('open');
-  document.querySelectorAll('.faq-smooth').forEach(function(f) {
-    f.classList.remove('open');
-    f.querySelector('.faq-a').style.maxHeight = '0';
-  });
-  if (!wasOpen) {
-    el.classList.add('open');
-    var a = el.querySelector('.faq-a');
-    var inner = el.querySelector('.faq-a-inner');
-    a.style.maxHeight = inner.scrollHeight + 'px';
-  }
-}
-
-// Scroll animations
-requestAnimationFrame(function() {
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold:0.15 });
-  document.querySelectorAll('.anim').forEach(function(el) {
-    observer.observe(el);
-  });
-});`;
-
-export default function Page() {
-  return <PageContent css={css} html={html} script={script} transparentNav={false} />;
+      {/* CTA BANNER */}
+      <section className={s.ctaBanner}>
+        <div className={s.circle}></div>
+        <h2>Only StemCyte offers <em>both</em> private and public bank access</h2>
+        <p className={s.ctaSub}>Add PBA to your plan starting at $299 {'\u2014'} or get it free with Cord Blood & Tissue.</p>
+        <div className={s.ctaBtns}>
+          <Link href="/pricing" className={s.ctaBtnW}>Build your plan</Link>
+          <a href="tel:8663894659" className={s.ctaBtnG}>Call (866) 389-4659</a>
+        </div>
+      </section>
+    </>
+  );
 }
