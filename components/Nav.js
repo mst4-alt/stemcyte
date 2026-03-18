@@ -44,7 +44,7 @@ export default function Nav() {
     ckNav();
 
     return () => window.removeEventListener('scroll', ckNav);
-  }, []);
+  }, [pathname]);
 
   // Close menu on navigation
   useEffect(() => {
