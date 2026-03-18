@@ -237,13 +237,8 @@
 /* ── HIV DARK SECTION ── */
 .hivSection { position: relative; overflow: hidden; padding: 100px 48px; background: linear-gradient(175deg, #1A0714 0%, #2D0B23 50%, #3D0F31 100%); }
 .hivSection::before { content: ''; position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(232,160,208,0.12) 0%, transparent 70%); top: 50%; right: -150px; transform: translateY(-50%); }
-.ringWrap { position: absolute; top: 50%; right: 15%; transform: translate(50%,-50%); width: 500px; height: 500px; pointer-events: none; z-index: 1; }
-.ring { position: absolute; inset: 0; border-radius: 50%; border: 1.5px solid rgba(232,160,208,0.07); animation: breathe 5s ease-in-out infinite; }
-.ring:nth-child(2) { inset: 30px; animation-delay: 0.8s; border-color: rgba(232,160,208,0.1); }
-.ring:nth-child(3) { inset: 60px; animation-delay: 1.6s; border-color: rgba(232,160,208,0.13); }
-.ring:nth-child(4) { inset: 90px; animation-delay: 2.4s; border-color: rgba(232,160,208,0.09); }
-.ring:nth-child(5) { inset: 120px; animation-delay: 3.2s; border-color: rgba(232,160,208,0.06); }
-@keyframes breathe { 0%,100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.06); opacity: 1; } }
+.cellCanvasWrap { position: absolute; top: 50%; right: 8%; transform: translate(0, -50%); width: 500px; height: 500px; pointer-events: none; z-index: 1; opacity: 0.6; }
+.cellCanvasWrap canvas { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 .hivInner { max-width: 860px; margin: 0 auto; position: relative; z-index: 3; }
 .hivGrid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
 .hivBadge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.3); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 20px; padding: 6px 14px; border: 1px solid rgba(255,255,255,0.08); border-radius: 100px; }
@@ -607,7 +602,7 @@
   .hivSection { padding: 64px 24px; }
   .hivGrid { grid-template-columns: 1fr; gap: 32px; }
   .hivH2 { font-size: 32px; }
-  .ringWrap { width: 300px; height: 300px; right: 0; transform: translate(30%,-50%); }
+  .cellCanvasWrap { width: 300px; height: 300px; right: -50px; opacity: 0.35; }
 
   /* Books */
   .bookGrid {
