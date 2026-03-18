@@ -519,7 +519,7 @@ export default function PricingPage() {
             <div className={s.sConn}><div className={s.sLn} /></div>
             <div className={s.sCard}>
               <div className={s.sTop}><div className={s.sChip}>3</div><h3>Store</h3></div>
-              <p>Our 24/7 courier picks up. Processed at our FDA-licensed Baldwin Park lab. Cryopreserved for life.</p>
+              <p>Our 24/7 courier picks up. Processed at our cGMP facility. Cryopreserved for life.</p>
             </div>
           </div>
         </div>
