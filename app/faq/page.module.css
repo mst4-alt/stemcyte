@@ -1,0 +1,49 @@
+.hero { position:relative; min-height:540px; display:flex; align-items:flex-end; overflow:hidden; }
+.hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%); z-index:1; }
+.hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
+.hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
+.hero h1 { font-family:var(--font-heading),'Playfair Display',serif; font-size:48px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:680px; margin-bottom:16px; color:#fff; }
+.hero .sub { font-size:17px; color:rgba(255,255,255,0.55); max-width:540px; line-height:1.7; }
+
+.section { padding:80px 48px; max-width:1100px; margin:0 auto; }
+
+.faqCategory { margin-bottom:64px; }
+.faqCategory:last-of-type { margin-bottom:0; }
+
+.catLabel { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:20px; }
+
+.faqSmooth { border-bottom:1px solid #E8E2DC; overflow:hidden; }
+.faqSmooth:last-child { border-bottom:none; }
+
+.faqSmooth .faqQ { padding:20px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-size:16px; font-weight:700; color:#2C2A26; user-select:none; }
+.faqSmooth .faqQ .icon { width:24px; height:24px; position:relative; flex-shrink:0; margin-left:16px; }
+.faqSmooth .faqQ .icon::before,
+.faqSmooth .faqQ .icon::after { content:''; position:absolute; background:#C06AA5; border-radius:1px; transition:transform 0.3s ease; }
+.faqSmooth .faqQ .icon::before { width:14px; height:2px; top:11px; left:5px; }
+.faqSmooth .faqQ .icon::after { width:2px; height:14px; top:5px; left:11px; }
+
+.open .faqQ .icon::after { transform:rotate(90deg); }
+
+.faqSmooth .faqA { max-height:0; overflow:hidden; transition:max-height 0.35s ease, opacity 0.3s ease; opacity:0; }
+.open .faqA { opacity:1; }
+
+.faqSmooth .faqAInner { padding:0 0 20px; font-size:15px; color:#8A857A; line-height:1.7; max-width:720px; }
+
+.contactBox { background:#F3F0F8; border-radius:12px; padding:40px; text-align:center; margin-top:64px; }
+.contactBox h3 { font-family:var(--font-heading),'Playfair Display',serif; font-size:24px; font-weight:400; margin-bottom:8px; }
+.contactBox p { font-size:15px; color:#8A857A; margin-bottom:20px; }
+.contactBox .btns { display:flex; gap:12px; justify-content:center; }
+
+.btnP { background:#6C1A55; color:#fff; padding:14px 32px; border-radius:100px; font-size:14px; font-weight:700; border:none; cursor:pointer; font-family:var(--font-lato),'Lato',sans-serif; display:inline-block; text-decoration:none; }
+.btnS { background:transparent; color:#6C1A55; padding:14px 32px; border-radius:100px; font-size:14px; font-weight:700; border:1px solid #E8E2DC; cursor:pointer; font-family:var(--font-lato),'Lato',sans-serif; display:inline-block; text-decoration:none; }
+
+@media (max-width:900px) {
+  .hero .ct { padding:140px 24px 48px; }
+  .hero h1 { font-size:34px; }
+  .section { padding:64px 24px; }
+  .contactBox .btns { flex-direction:column; }
+}
+
+@media (max-width:600px) {
+  .hero h1 { font-size:28px; }
+}
