@@ -43,7 +43,7 @@ const css = `
     max-width: 700px;
   }
   .ct-label {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
@@ -52,7 +52,7 @@ const css = `
     margin-bottom: 16px;
   }
   .ct-hero h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading), 'Playfair Display', serif;
     font-size: 46px;
     font-weight: 700;
     color: #2C2A26;
@@ -64,7 +64,7 @@ const css = `
     color: #6C1A55;
   }
   .ct-hero-sub {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 17px;
     line-height: 1.7;
     color: #8A857A;
@@ -84,7 +84,7 @@ const css = `
     margin-bottom: 40px;
   }
   .ct-sh h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading), 'Playfair Display', serif;
     font-size: 36px;
     font-weight: 700;
     color: #2C2A26;
@@ -92,7 +92,7 @@ const css = `
     margin: 0 0 12px 0;
   }
   .ct-sh-sub {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 16px;
     color: #8A857A;
     line-height: 1.7;
@@ -117,13 +117,13 @@ const css = `
     margin-bottom: 10px;
   }
   .pr-name {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 15px;
     font-weight: 700;
     color: #2C2A26;
   }
   .pr-phase {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 12px;
     color: #8A857A;
     font-weight: 600;
@@ -156,7 +156,7 @@ const css = `
     flex-wrap: wrap;
   }
   .pr-detail .pd {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 11px;
     color: #8A857A;
   }
@@ -195,7 +195,7 @@ const css = `
   }
   .ct-badge {
     display: inline-block;
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
@@ -212,7 +212,7 @@ const css = `
     color: #3D8B6A;
   }
   .ct-card h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading), 'Playfair Display', serif;
     font-size: 24px;
     font-weight: 700;
     color: #2C2A26;
@@ -220,7 +220,7 @@ const css = `
     line-height: 1.3;
   }
   .ct-card p {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 16px;
     color: #6B665D;
     line-height: 1.7;
@@ -238,7 +238,7 @@ const css = `
   }
   .ct-btn-plum {
     display: inline-block;
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 15px;
     font-weight: 700;
     color: #ffffff;
@@ -263,7 +263,7 @@ const css = `
     text-align: center;
   }
   .ct-stat-num {
-    font-family: 'Source Serif 4', serif;
+    font-family: var(--font-numbers), 'Source Serif 4', serif;
     font-size: 36px;
     font-weight: 400;
     color: #6C1A55;
@@ -273,7 +273,7 @@ const css = `
     font-size: 24px;
   }
   .ct-stat-desc {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 12px;
     color: #8A857A;
   }
@@ -289,7 +289,7 @@ const css = `
     align-items: start;
   }
   .ct-hiv-left p {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 16px;
     color: #6B665D;
     line-height: 1.7;
@@ -306,7 +306,7 @@ const css = `
     padding: 32px;
   }
   .ct-hiv-panel-label {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
@@ -315,7 +315,7 @@ const css = `
     margin-bottom: 16px;
   }
   .ct-hiv-panel p {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 15px;
     color: #2C2A26;
     line-height: 1.7;
@@ -339,7 +339,7 @@ const css = `
     background: #ffffff;
     border-radius: 12px;
     padding: 20px 24px;
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 15px;
     font-weight: 600;
     color: #2C2A26;
@@ -348,7 +348,7 @@ const css = `
   }
   .ct-ghost-btn {
     display: inline-block;
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 15px;
     font-weight: 700;
     color: #6C1A55;
@@ -375,7 +375,7 @@ const css = `
     text-align: center;
   }
   .ct-cta-banner h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading), 'Playfair Display', serif;
     font-size: 36px;
     font-weight: 700;
     color: #ffffff;
@@ -387,7 +387,7 @@ const css = `
     color: #E8A0D0;
   }
   .ct-cta-banner p {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 17px;
     color: rgba(255,255,255,0.7);
     line-height: 1.7;
@@ -402,7 +402,7 @@ const css = `
   }
   .ct-btn-white {
     display: inline-block;
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 15px;
     font-weight: 700;
     color: #6C1A55;
@@ -417,7 +417,7 @@ const css = `
   }
   .ct-btn-ghost-w {
     display: inline-block;
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 15px;
     font-weight: 700;
     color: #ffffff;

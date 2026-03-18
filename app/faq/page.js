@@ -7,7 +7,7 @@ export const metadata = {
 const css = `
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
+body { font-family:var(--font-lato),'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
 
 /* NAV */
 
@@ -17,7 +17,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%); }
 .hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
 .hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
-.hero h1 { font-family:'Playfair Display',serif; font-size:48px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:680px; margin-bottom:16px; color:#fff; }
+.hero h1 { font-family:var(--font-heading),'Playfair Display',serif; font-size:48px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:680px; margin-bottom:16px; color:#fff; }
 .hero .sub { font-size:17px; color:rgba(255,255,255,0.55); max-width:540px; line-height:1.7; }
 
 /* SHARED */
@@ -44,11 +44,11 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 
 /* CONTACT BOX */
 .contact-box { background:#F3F0F8; border-radius:12px; padding:40px; text-align:center; margin-top:64px; }
-.contact-box h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; margin-bottom:8px; }
+.contact-box h3 { font-family:var(--font-heading),'Playfair Display',serif; font-size:24px; font-weight:400; margin-bottom:8px; }
 .contact-box p { font-size:15px; color:#8A857A; margin-bottom:20px; }
 .contact-box .btns { display:flex; gap:12px; justify-content:center; }
-.contact-box .btn-p { background:#6C1A55; color:#fff; padding:14px 32px; border-radius:100px; font-size:14px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; }
-.contact-box .btn-s { background:transparent; color:#6C1A55; padding:14px 32px; border-radius:100px; font-size:14px; font-weight:700; border:1px solid #E8E2DC; cursor:pointer; font-family:'Lato',sans-serif; }
+.contact-box .btn-p { background:#6C1A55; color:#fff; padding:14px 32px; border-radius:100px; font-size:14px; font-weight:700; border:none; cursor:pointer; font-family:var(--font-lato),'Lato',sans-serif; }
+.contact-box .btn-s { background:transparent; color:#6C1A55; padding:14px 32px; border-radius:100px; font-size:14px; font-weight:700; border:1px solid #E8E2DC; cursor:pointer; font-family:var(--font-lato),'Lato',sans-serif; }
 
 /* FOOTER */
 

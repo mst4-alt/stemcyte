@@ -3,7 +3,7 @@
 /* Base */
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: var(--font-lato), 'Lato', sans-serif;
   color: #2C2A26;
   background: #FAF9F7;
   -webkit-font-smoothing: antialiased;
@@ -245,7 +245,7 @@ body {
   font-size: 15px;
   font-weight: 700;
   text-decoration: none;
-  font-family: 'Lato', sans-serif;
+  font-family: var(--font-lato), 'Lato', sans-serif;
 }
 
 /* === RESPONSIVE (shared nav/footer) === */

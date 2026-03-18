@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -6,7 +7,7 @@ export default function Footer() {
       <div className="footer-in">
         <div>
           <div className="brand">
-            <img src="/images/logos/white_stemcyte.png" alt="StemCyte" style={{ height: '20px', width: 'auto', opacity: 0.3 }} />
+            <Image src="/images/logos/white_stemcyte.png" alt="StemCyte" width={108} height={20} style={{ opacity: 0.3 }} />
           </div>
           <p className="bd">A global regenerative therapeutics company since 1997.</p>
           <div className="tags"><span>FDA</span><span>FACT</span><span>AABB</span><span>cGMP</span></div>

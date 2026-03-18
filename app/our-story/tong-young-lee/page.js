@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import Nav from '../../../components/Nav';
 import s from './page.module.css';
@@ -115,7 +116,7 @@ export default function TongYoungLeePage() {
         <div className={s.orb + ' ' + s.orbA}></div>
         <div className={s.orb + ' ' + s.orbB}></div>
         <div className={s.heroInner}>
-          <img className={s.heroPortrait} src="/images/our%20story/lee.jpg" alt="Tong-Young Lee, PhD" />
+          <Image className={s.heroPortrait} src="/images/our%20story/lee.jpg" alt="Tong-Young Lee, PhD" width={200} height={200} priority sizes="(max-width: 768px) 140px, 200px" />
           <div className={s.heroText}>
             <Link href="/our-story" className={s.backLink}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
@@ -237,7 +238,7 @@ export default function TongYoungLeePage() {
           <h2 className={s.secH2}>Meet our team</h2>
           <div className={s.otherLeaders}>
             <Link href="/our-story/jonas-wang" className={s.otherCard}>
-              <img className={s.otherAvatar} src="/images/our%20story/jonas-sm.jpg" alt="Jonas Wang, PhD" />
+              <Image className={s.otherAvatar} src="/images/our%20story/jonas-sm.jpg" alt="Jonas Wang, PhD" width={64} height={64} sizes="64px" />
               <div className={s.otherInfo}>
                 <h4>Jonas Wang, PhD</h4>
                 <span>Chairman</span>
@@ -245,7 +246,7 @@ export default function TongYoungLeePage() {
               <svg className={s.otherArrow} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
             </Link>
             <Link href="/our-story/joseph-rosenthal" className={s.otherCard}>
-              <img className={s.otherAvatar} src="/images/our%20story/rosenthal-sm.jpg" alt="Joseph Rosenthal, MD" />
+              <Image className={s.otherAvatar} src="/images/our%20story/rosenthal-sm.jpg" alt="Joseph Rosenthal, MD" width={64} height={64} sizes="64px" />
               <div className={s.otherInfo}>
                 <h4>Joseph Rosenthal, MD</h4>
                 <span>Chief Medical Officer</span>

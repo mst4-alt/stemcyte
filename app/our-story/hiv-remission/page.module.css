@@ -85,7 +85,7 @@
 }
 
 .heroH1 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading), 'Playfair Display', serif;
   font-size: 48px;
   font-weight: 400;
   line-height: 1.1;
@@ -168,7 +168,7 @@
 }
 
 .secH2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading), 'Playfair Display', serif;
   font-size: 32px;
   font-weight: 400;
   line-height: 1.15;
@@ -280,7 +280,7 @@
 }
 
 .quote {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading), 'Playfair Display', serif;
   font-size: 20px;
   font-style: italic;
   line-height: 1.5;
@@ -329,7 +329,7 @@
 }
 
 .num {
-  font-family: 'Source Serif 4', serif;
+  font-family: var(--font-numbers), 'Source Serif 4', serif;
   font-size: 36px;
   color: #6C1A55;
   margin-bottom: 4px;
@@ -410,7 +410,7 @@
 }
 
 .tlYear {
-  font-family: 'Source Serif 4', serif;
+  font-family: var(--font-numbers), 'Source Serif 4', serif;
   font-size: 14px;
   font-weight: 600;
   color: #6C1A55;
@@ -572,7 +572,7 @@
 }
 
 .dedText {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading), 'Playfair Display', serif;
   font-size: 22px;
   font-style: italic;
   color: #3D0F31;
@@ -602,7 +602,7 @@
 }
 
 .ctaBanner h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading), 'Playfair Display', serif;
   font-size: 32px;
   font-weight: 400;
   color: #fff;

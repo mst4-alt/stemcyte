@@ -7,7 +7,7 @@ export const metadata = {
 const css = `
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
+body { font-family:var(--font-lato),'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
 
 /* HERO */
 .hero { position:relative; min-height:420px; display:flex; align-items:flex-end; overflow:hidden; }
@@ -15,7 +15,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%); }
 .hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:160px 48px 56px; width:100%; }
 .hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
-.hero h1 { font-family:'Playfair Display',serif; font-size:44px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:680px; margin-bottom:12px; color:#fff; }
+.hero h1 { font-family:var(--font-heading),'Playfair Display',serif; font-size:44px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:680px; margin-bottom:12px; color:#fff; }
 .hero .sub { font-size:17px; color:rgba(255,255,255,0.55); max-width:540px; line-height:1.7; }
 
 /* SECTION */
@@ -41,7 +41,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .field label { display:block; font-size:13px; font-weight:700; color:#2C2A26; margin-bottom:6px; }
 .field input,
 .field select,
-.field textarea { width:100%; padding:12px 16px; border:1px solid #E8E2DC; border-radius:8px; font-size:15px; font-family:'Lato',sans-serif; color:#2C2A26; background:#FAF9F7; transition:border-color 0.2s, box-shadow 0.2s; outline:none; -webkit-appearance:none; }
+.field textarea { width:100%; padding:12px 16px; border:1px solid #E8E2DC; border-radius:8px; font-size:15px; font-family:var(--font-lato),'Lato',sans-serif; color:#2C2A26; background:#FAF9F7; transition:border-color 0.2s, box-shadow 0.2s; outline:none; -webkit-appearance:none; }
 .field input:focus,
 .field select:focus,
 .field textarea:focus { border-color:#C06AA5; box-shadow:0 0 0 3px rgba(192,106,165,0.12); }
@@ -63,7 +63,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 
 /* SUBMIT */
 .submit-row { margin-top:32px; text-align:center; }
-.btn-submit { background:#6C1A55; color:#fff; padding:16px 48px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-submit { background:#6C1A55; color:#fff; padding:16px 48px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:var(--font-lato),'Lato',sans-serif; transition:all 0.25s; }
 .btn-submit:hover { background:#8B3572; }
 
 /* RESPONSIVE */

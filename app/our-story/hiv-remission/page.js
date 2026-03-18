@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useCallback } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import Nav from '../../../components/Nav';
 import s from './page.module.css';
@@ -321,7 +322,7 @@ export default function HivRemissionPage() {
 
           <div className={s.portraitSection}>
             <div className={s.portraitCol} ref={animRef}>
-              <img src="/images/our%20story/press_release_distribution_0452818_127664.jpg" alt="Dr. Lawrence D. Petz" />
+              <Image src="/images/our%20story/press_release_distribution_0452818_127664.jpg" alt="Dr. Lawrence D. Petz" width={280} height={336} sizes="(max-width: 768px) 200px, 280px" />
               <div className={s.name}>Lawrence D. Petz, MD</div>
               <div className={s.titleText}>Chief Medical Officer, StemCyte<br />Emeritus Professor, UCLA</div>
             </div>

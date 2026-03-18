@@ -46,7 +46,7 @@ const css = `
     padding: 0 24px;
   }
   .bla-hero-overline {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
@@ -55,7 +55,7 @@ const css = `
     margin-bottom: 24px;
   }
   .bla-hero h1 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading), 'Playfair Display', serif;
     font-size: 56px;
     font-weight: 700;
     color: #ffffff;
@@ -67,7 +67,7 @@ const css = `
     color: #E8A0D0;
   }
   .bla-hero-subtitle {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 17px;
     line-height: 1.7;
     color: rgba(255,255,255,0.4);
@@ -75,7 +75,7 @@ const css = `
     margin: 0 auto 48px auto;
   }
   .bla-hero-scroll {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 12px;
     color: rgba(255,255,255,0.2);
   }
@@ -90,7 +90,7 @@ const css = `
     margin: 0 auto;
   }
   .bla-label {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
@@ -99,7 +99,7 @@ const css = `
     margin-bottom: 16px;
   }
   .bla-understanding h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading), 'Playfair Display', serif;
     font-size: 40px;
     font-weight: 700;
     color: #2C2A26;
@@ -107,7 +107,7 @@ const css = `
     line-height: 1.2;
   }
   .bla-understanding p {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 17px;
     line-height: 1.8;
     color: #6B665D;
@@ -131,14 +131,14 @@ const css = `
     text-align: center;
   }
   .bla-stat-number {
-    font-family: 'Source Serif 4', serif;
+    font-family: var(--font-numbers), 'Source Serif 4', serif;
     font-size: 42px;
     font-weight: 400;
     color: #ffffff;
     margin-bottom: 8px;
   }
   .bla-stat-desc {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 13px;
     line-height: 1.5;
     color: rgba(255,255,255,0.45);
@@ -154,7 +154,7 @@ const css = `
     margin: 0 auto;
   }
   .bla-comparison h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading), 'Playfair Display', serif;
     font-size: 40px;
     font-weight: 700;
     color: #2C2A26;
@@ -174,7 +174,7 @@ const css = `
   }
   .bla-chip {
     display: inline-block;
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
@@ -192,14 +192,14 @@ const css = `
     color: #6B665D;
   }
   .bla-card-title {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 18px;
     font-weight: 700;
     color: #2C2A26;
     margin: 0 0 6px 0;
   }
   .bla-card-subtitle {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 14px;
     color: #8A857A;
     margin: 0 0 24px 0;
@@ -211,7 +211,7 @@ const css = `
     margin: 0;
   }
   .bla-card-list li {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 15px;
     color: #2C2A26;
     padding: 8px 0;
@@ -245,7 +245,7 @@ const css = `
     text-align: center;
   }
   .bla-family-cta h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading), 'Playfair Display', serif;
     font-size: 36px;
     font-weight: 700;
     color: #2C2A26;
@@ -253,7 +253,7 @@ const css = `
     line-height: 1.2;
   }
   .bla-family-cta p {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 17px;
     color: #6B665D;
     line-height: 1.7;
@@ -262,7 +262,7 @@ const css = `
   }
   .bla-btn-plum {
     display: inline-block;
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 15px;
     font-weight: 700;
     color: #ffffff;
@@ -283,7 +283,7 @@ const css = `
     text-align: center;
   }
   .bla-cta-banner h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading), 'Playfair Display', serif;
     font-size: 36px;
     font-weight: 700;
     color: #ffffff;
@@ -291,7 +291,7 @@ const css = `
     line-height: 1.2;
   }
   .bla-cta-banner p {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 17px;
     color: rgba(255,255,255,0.7);
     line-height: 1.7;
@@ -300,7 +300,7 @@ const css = `
   }
   .bla-btn-white {
     display: inline-block;
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-lato), 'Lato', sans-serif;
     font-size: 15px;
     font-weight: 700;
     color: #6C1A55;

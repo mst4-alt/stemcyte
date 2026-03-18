@@ -83,7 +83,7 @@
 }
 
 .heroName {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading), 'Playfair Display', serif;
   font-size: 42px;
   font-weight: 400;
   line-height: 1.1;
@@ -141,7 +141,7 @@
 }
 
 .secH2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading), 'Playfair Display', serif;
   font-size: 32px;
   font-weight: 400;
   line-height: 1.15;
@@ -196,7 +196,7 @@
 }
 
 .quoteText {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading), 'Playfair Display', serif;
   font-size: 20px;
   font-style: italic;
   line-height: 1.5;
@@ -283,7 +283,7 @@
 }
 
 .awardYear {
-  font-family: 'Source Serif 4', serif;
+  font-family: var(--font-numbers), 'Source Serif 4', serif;
   font-size: 14px;
   font-weight: 600;
   color: #C4943E;
@@ -340,7 +340,7 @@
 }
 
 .symposiumBadgeYears {
-  font-family: 'Source Serif 4', serif;
+  font-family: var(--font-numbers), 'Source Serif 4', serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.2;
@@ -355,7 +355,7 @@
 }
 
 .symposiumCard h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading), 'Playfair Display', serif;
   font-size: 22px;
   font-weight: 400;
   color: #2C2A26;
@@ -481,7 +481,7 @@
 }
 
 .hivH2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading), 'Playfair Display', serif;
   font-size: 36px;
   font-weight: 400;
   line-height: 1.15;
@@ -496,7 +496,7 @@
 }
 
 .hivSubheader {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading), 'Playfair Display', serif;
   font-size: 18px;
   font-style: italic;
   color: rgba(255,255,255,0.5);
@@ -565,7 +565,7 @@
 }
 
 .hivStatNum {
-  font-family: 'Source Serif 4', serif;
+  font-family: var(--font-numbers), 'Source Serif 4', serif;
   font-size: 32px;
   color: #E8A0D0;
   margin-bottom: 6px;
@@ -703,7 +703,7 @@
 }
 
 .tlYear {
-  font-family: 'Source Serif 4', serif;
+  font-family: var(--font-numbers), 'Source Serif 4', serif;
   font-size: 14px;
   font-weight: 600;
   color: #6C1A55;
@@ -749,7 +749,7 @@
 }
 
 .ctaBanner h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading), 'Playfair Display', serif;
   font-size: 32px;
   font-weight: 400;
   color: #fff;

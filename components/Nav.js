@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -63,8 +64,8 @@ export default function Nav({ transparentHero = true }) {
     <>
       <nav className={navClass} id="nav" ref={navRef}>
         <Link href="/" className="logo">
-          <img src="/images/logos/white_stemcyte.png" alt="StemCyte" className="logo-white" />
-          <img src="/images/logos/fullcolor_stemcyte.png" alt="StemCyte" className="logo-color" />
+          <Image src="/images/logos/white_stemcyte.png" alt="StemCyte" className="logo-white" width={150} height={28} priority />
+          <Image src="/images/logos/fullcolor_stemcyte.png" alt="StemCyte" className="logo-color" width={150} height={28} priority />
         </Link>
         <div className="links">
           {navLinks.map(({ label, href }) => {

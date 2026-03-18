@@ -7,7 +7,7 @@ export const metadata = {
 const css = `
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
+body { font-family:var(--font-lato),'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
 
 /* NAV */
 
@@ -17,7 +17,7 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 .hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%); }
 .hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
 .hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
-.hero h1 { font-family:'Playfair Display',serif; font-size:48px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:680px; margin-bottom:16px; color:#fff; }
+.hero h1 { font-family:var(--font-heading),'Playfair Display',serif; font-size:48px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:680px; margin-bottom:16px; color:#fff; }
 .hero .sub { font-size:17px; color:rgba(255,255,255,0.55); max-width:540px; line-height:1.7; }
 
 /* SHARED */
@@ -28,7 +28,7 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 .divider-line { height:1px; background:#E8E2DC; }
 .sh { margin-bottom:40px; }
 .sh .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:10px; }
-.sh h2 { font-family:'Playfair Display',serif; font-size:36px; font-weight:400; letter-spacing:-0.5px; margin-bottom:10px; line-height:1.15; }
+.sh h2 { font-family:var(--font-heading),'Playfair Display',serif; font-size:36px; font-weight:400; letter-spacing:-0.5px; margin-bottom:10px; line-height:1.15; }
 .sh p { font-size:16px; color:#8A857A; max-width:520px; line-height:1.7; }
 
 /* PATIENT STORIES */
@@ -38,14 +38,14 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 .story .story-img .placeholder { font-size:12px; color:#B0AB9E; text-align:center; padding:20px; }
 .story .story-inner { padding:40px; }
 .story .tag { display:inline-block; padding:4px 12px; border-radius:100px; font-size:10px; font-weight:700; margin-bottom:16px; }
-.story h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; margin-bottom:8px; line-height:1.3; }
+.story h3 { font-family:var(--font-heading),'Playfair Display',serif; font-size:24px; font-weight:400; margin-bottom:8px; line-height:1.3; }
 .story .diag { font-size:13px; color:#6C1A55; font-weight:700; margin-bottom:12px; }
 .story p { font-size:15px; color:#8A857A; line-height:1.7; margin-bottom:8px; }
 
 /* FEATURED QUOTE */
 .feat-quote { text-align:center; padding:80px 48px; max-width:720px; margin:0 auto; }
-.feat-quote blockquote { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; font-style:italic; color:#2C2A26; line-height:1.4; margin-bottom:16px; }
-.feat-quote cite { font-family:'Lato',sans-serif; font-size:14px; font-style:normal; font-weight:700; color:#2C2A26; display:block; }
+.feat-quote blockquote { font-family:var(--font-heading),'Playfair Display',serif; font-size:24px; font-weight:400; font-style:italic; color:#2C2A26; line-height:1.4; margin-bottom:16px; }
+.feat-quote cite { font-family:var(--font-lato),'Lato',sans-serif; font-size:14px; font-style:normal; font-weight:700; color:#2C2A26; display:block; }
 .feat-quote .role { font-size:12px; color:#B0AB9E; font-weight:400; }
 
 /* QUOTE CARDS */
@@ -65,13 +65,13 @@ body { font-family:'Lato',sans-serif; background:#FAF7F2; color:#2C2A26; -webkit
 /* CTA */
 .cta-banner { margin:80px 48px; border-radius:16px; background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:80px 64px; text-align:center; position:relative; overflow:hidden; }
 .cta-banner::before { content:''; position:absolute; width:500px; height:500px; border-radius:50%; background:rgba(192,106,165,0.08); top:-200px; right:-100px; }
-.cta-banner h2 { font-family:'Playfair Display',serif; font-size:36px; color:#fff; margin-bottom:12px; position:relative; }
+.cta-banner h2 { font-family:var(--font-heading),'Playfair Display',serif; font-size:36px; color:#fff; margin-bottom:12px; position:relative; }
 .cta-banner h2 em { font-style:italic; color:#E8A0D0; }
 .cta-banner p { font-size:16px; color:rgba(255,255,255,0.5); margin-bottom:32px; position:relative; }
 .cta-banner .btns { display:flex; gap:12px; justify-content:center; position:relative; }
-.btn-w { background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-w { background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:var(--font-lato),'Lato',sans-serif; transition:all 0.25s; }
 .btn-w:hover { background:rgba(255,255,255,0.85); }
-.btn-gd { background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-gd { background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:var(--font-lato),'Lato',sans-serif; transition:all 0.25s; }
 .btn-gd:hover { background:rgba(255,255,255,0.20); border-color:rgba(255,255,255,0.35); }
 
 /* FOOTER */
@@ -116,7 +116,7 @@ const html = `<!-- HERO -->
   </div>
 
   <div class="story anim">
-    <div class="story-img"><img src="/images/bailey.jpg" alt="Bailey"></div>
+    <div class="story-img"><img src="/images/bailey.jpg" alt="Bailey" width="400" height="429" loading="lazy" decoding="async"></div>
     <div class="story-inner">
       <div class="tag" style="background:#FBF5F9;color:#6C1A55">Used her own stem cells</div>
       <h3>Bailey</h3>
@@ -128,7 +128,7 @@ const html = `<!-- HERO -->
   </div>
 
   <div class="story anim">
-    <div class="story-img"><img src="/images/ryden.jpg" alt="Ryden"></div>
+    <div class="story-img"><img src="/images/ryden.jpg" alt="Ryden" width="400" height="223" loading="lazy" decoding="async"></div>
     <div class="story-inner">
       <div class="tag" style="background:#F0F7F4;color:#3D8B6A">Used his brother's stem cells</div>
       <h3>Ryden</h3>
@@ -140,7 +140,7 @@ const html = `<!-- HERO -->
   </div>
 
   <div class="story anim">
-    <div class="story-img"><img src="/images/itzel.jpg" alt="Itzel"></div>
+    <div class="story-img"><img src="/images/itzel.jpg" alt="Itzel" width="400" height="262" loading="lazy" decoding="async"></div>
     <div class="story-inner">
       <div class="tag" style="background:#EDF5FF;color:#3B6DC4">Used donated stem cells</div>
       <h3>Itzel</h3>

@@ -7,7 +7,7 @@ export const metadata = {
 const css = `
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
+body { font-family:var(--font-lato),'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit-font-smoothing:antialiased; line-height:1.65; }
 
 /* NAV */
 
@@ -18,14 +18,14 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%); }
 .hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:180px 48px 72px; width:100%; }
 .hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
-.hero h1 { font-family:'Playfair Display',serif; font-size:48px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:780px; margin-bottom:16px; color:#fff; }
+.hero h1 { font-family:var(--font-heading),'Playfair Display',serif; font-size:48px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:780px; margin-bottom:16px; color:#fff; }
 .hero p { font-size:17px; color:rgba(255,255,255,0.55); max-width:680px; line-height:1.7; }
 
 /* STATS */
 .stats-wrap { padding:80px 48px 0; max-width:1100px; margin:0 auto; }
 .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
 .stat { background:#fff; border-radius:12px; padding:28px 20px; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
-.stat .num { font-family:'Source Serif 4',serif; font-size:36px; color:#6C1A55; font-weight:400; }
+.stat .num { font-family:var(--font-numbers),'Source Serif 4',serif; font-size:36px; color:#6C1A55; font-weight:400; }
 .stat .desc { font-size:12px; color:#8A857A; margin-top:4px; }
 
 /* SHARED */
@@ -36,7 +36,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .section-full .inner { max-width:1100px; margin:0 auto; }
 .sh { margin-bottom:40px; }
 .sh .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:10px; }
-.sh h2 { font-family:'Playfair Display',serif; font-size:36px; font-weight:400; letter-spacing:-0.5px; margin-bottom:10px; line-height:1.15; }
+.sh h2 { font-family:var(--font-heading),'Playfair Display',serif; font-size:36px; font-weight:400; letter-spacing:-0.5px; margin-bottom:10px; line-height:1.15; }
 .sh p { font-size:16px; color:#8A857A; max-width:520px; line-height:1.7; }
 
 /* SPLIT */
@@ -46,7 +46,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .split .photo { border-radius:12px; overflow:hidden; height:360px; }
 .split .photo img { width:100%; height:100%; object-fit:cover; }
 .split .text .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:10px; }
-.split .text h2 { font-family:'Playfair Display',serif; font-size:32px; font-weight:400; margin-bottom:16px; line-height:1.2; }
+.split .text h2 { font-family:var(--font-heading),'Playfair Display',serif; font-size:32px; font-weight:400; margin-bottom:16px; line-height:1.2; }
 .split .text p { font-size:15px; color:#8A857A; line-height:1.7; margin-bottom:12px; }
 .split .text ul { list-style:none; margin-top:12px; }
 .split .text ul li { font-size:15px; color:#6B665D; padding:8px 0 8px 20px; position:relative; border-bottom:1px solid #F5EDE6; }
@@ -89,7 +89,7 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 /* ACCREDITATIONS */
 .accred-row { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
 .accred-badge { background:#fff; border-radius:12px; padding:32px 24px; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,0.04),0 1px 2px rgba(0,0,0,0.03); }
-.accred-badge .name { font-family:'Source Serif 4',serif; font-size:28px; color:#6C1A55; font-weight:400; margin-bottom:8px; }
+.accred-badge .name { font-family:var(--font-numbers),'Source Serif 4',serif; font-size:28px; color:#6C1A55; font-weight:400; margin-bottom:8px; }
 .accred-badge .desc { font-size:12px; color:#8A857A; line-height:1.5; }
 
 /* CLINICAL RESEARCH — PIPELINE */
@@ -109,29 +109,29 @@ body { font-family:'Lato',sans-serif; background:#FAF9F7; color:#2C2A26; -webkit
 .pr-detail .pd strong.pv { color:#6C1A55; }
 .btn-regen:hover { background:#7D2066 !important; }
 .b-callout { margin-top:48px; background:#fff; border-radius:14px; padding:40px; box-shadow:0 1px 3px rgba(0,0,0,0.03); display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center; }
-.b-callout h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; line-height:1.25; margin-bottom:10px; }
+.b-callout h3 { font-family:var(--font-heading),'Playfair Display',serif; font-size:24px; font-weight:400; line-height:1.25; margin-bottom:10px; }
 .b-callout p { font-size:15px; color:#6B665D; line-height:1.7; max-width:560px; }
 .b-callout .cr-link-row { margin-top:24px; display:flex; gap:24px; align-items:center; }
 .b-callout .cr-stat { text-align:center; min-width:140px; }
-.b-callout .cr-stat .cr-big { font-family:'Source Serif 4',serif; font-size:56px; color:#6C1A55; font-weight:400; line-height:1; }
+.b-callout .cr-stat .cr-big { font-family:var(--font-numbers),'Source Serif 4',serif; font-size:56px; color:#6C1A55; font-weight:400; line-height:1; }
 .b-callout .cr-stat .cr-note { font-size:12px; color:#8A857A; margin-top:4px; }
 .hiv-block { background:linear-gradient(135deg,#3D0F31,#6C1A55); border-radius:14px; padding:40px; margin-top:32px; position:relative; overflow:hidden; }
 .hiv-block .deco-circle { position:absolute; width:300px; height:300px; border-radius:50%; background:rgba(192,106,165,0.08); top:-100px; right:-60px; }
 .hiv-block .hiv-badge { display:inline-block; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; background:rgba(255,255,255,0.1); color:#E8A0D0; padding:6px 14px; border-radius:100px; margin-bottom:16px; }
-.hiv-block h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:400; color:#fff; line-height:1.25; margin-bottom:12px; }
+.hiv-block h3 { font-family:var(--font-heading),'Playfair Display',serif; font-size:24px; font-weight:400; color:#fff; line-height:1.25; margin-bottom:12px; }
 .hiv-block p { font-size:15px; color:rgba(255,255,255,0.55); line-height:1.7; max-width:640px; }
 .hiv-block .hiv-coda { font-size:14px; color:rgba(255,255,255,0.35); margin-top:12px; }
 
 /* CTA */
 .cta-banner { margin:80px 48px; border-radius:16px; background:linear-gradient(160deg,#6C1A55,#3D0F31); padding:80px 64px; text-align:center; position:relative; overflow:hidden; }
 .cta-banner::before { content:''; position:absolute; width:500px; height:500px; border-radius:50%; background:rgba(192,106,165,0.08); top:-200px; right:-100px; }
-.cta-banner h2 { font-family:'Playfair Display',serif; font-size:36px; color:#fff; margin-bottom:12px; position:relative; }
+.cta-banner h2 { font-family:var(--font-heading),'Playfair Display',serif; font-size:36px; color:#fff; margin-bottom:12px; position:relative; }
 .cta-banner h2 em { font-style:italic; color:#E8A0D0; }
 .cta-banner p { font-size:16px; color:rgba(255,255,255,0.5); margin-bottom:32px; position:relative; }
 .cta-banner .btns { display:flex; gap:12px; justify-content:center; position:relative; }
-.btn-w { background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-w { background:#fff; color:#6C1A55; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:var(--font-lato),'Lato',sans-serif; transition:all 0.25s; }
 .btn-w:hover { background:rgba(255,255,255,0.85); }
-.btn-gd { background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:'Lato',sans-serif; transition:all 0.25s; }
+.btn-gd { background:transparent; color:#fff; padding:16px 36px; border-radius:100px; font-size:15px; font-weight:700; border:1px solid rgba(255,255,255,0.25); cursor:pointer; font-family:var(--font-lato),'Lato',sans-serif; transition:all 0.25s; }
 .btn-gd:hover { background:rgba(255,255,255,0.20); border-color:rgba(255,255,255,0.35); }
 
 /* FOOTER */
@@ -224,7 +224,7 @@ const html = `<!-- HERO -->
 <!-- 1. PBA FEATURED SPLIT -->
 <section class="section">
   <div class="split anim">
-    <div class="photo"><img src="/images/pba_hero_2.jpeg" alt="Public Bank Access"></div>
+    <div class="photo"><img src="/images/pba_hero_2.jpeg" alt="Public Bank Access" width="800" height="533" loading="lazy" decoding="async"></div>
     <div class="text">
       <div class="lbl">Only at StemCyte</div>
       <h2>The only private bank with public bank access</h2>
@@ -239,7 +239,7 @@ const html = `<!-- HERO -->
 <!-- 2. TRANSPLANT EXPERIENCE SPLIT (reversed) -->
 <section class="section">
   <div class="split rev anim">
-    <div class="photo"><img src="/images/Hero_5.jpeg" alt="Transplant experience"></div>
+    <div class="photo"><img src="/images/Hero_5.jpeg" alt="Transplant experience" width="800" height="448" loading="lazy" decoding="async"></div>
     <div class="text">
       <div class="lbl">Transplant experience</div>
       <h2>More transplants shipped than any other private bank</h2>

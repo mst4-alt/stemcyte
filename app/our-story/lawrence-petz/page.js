@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import Nav from '../../../components/Nav';
 import s from './page.module.css';
@@ -114,7 +115,7 @@ export default function LawrencePetzPage() {
         <div className={s.orb + ' ' + s.orbA}></div>
         <div className={s.orb + ' ' + s.orbB}></div>
         <div className={s.heroInner}>
-          <img className={s.heroPortrait} src="/images/our%20story/press_release_distribution_0452818_127664.jpg" alt="Lawrence D. Petz, MD" />
+          <Image className={s.heroPortrait} src="/images/our%20story/press_release_distribution_0452818_127664.jpg" alt="Lawrence D. Petz, MD" width={200} height={200} priority sizes="(max-width: 768px) 140px, 200px" />
           <div className={s.heroText}>
             <Link href="/our-story" className={s.backLink}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
@@ -157,21 +158,26 @@ export default function LawrencePetzPage() {
         <div className={s.inner}>
           <div className={s.secLabel + ' ' + s.anim} data-anim="">Awards</div>
           <h2 className={s.secH2 + ' ' + s.anim} data-anim="">Honors and recognition</h2>
-          <div className={s.awardsTimeline}>
-            <div className={s.awardsTrack}></div>
-            {awards.map((a, i) => (
-              <div className={`${s.awardItem} ${a.side === 'left' ? s.awardLeft : s.awardRight} ${s.anim}`} data-anim="" key={i}>
-                <div className={s.awardDot}></div>
-                {a.side === 'right' && <div className={s.awardSpacer}></div>}
-                <div className={s.awardContent}>
-                  {a.year && <div className={s.awardYear}>{a.year}</div>}
-                  <div className={s.awardTitle}>{a.title}</div>
-                  {a.org && <div className={s.awardOrg}>{a.org}</div>}
-                  {a.desc && <div className={s.awardDesc}>{a.desc}</div>}
-                </div>
-                {a.side === 'left' && <div className={s.awardSpacer}></div>}
-              </div>
-            ))}
+          <div className={s.awTl}>
+            <div className={s.awTrack}></div>
+            {/* LEFT */}
+            <div className={s.awItem + ' ' + s.anim} data-anim=""><div className={s.awLeft}><div className={s.awYear}>1991</div><div className={s.awTitle}>Emily Cooley Memorial Award</div><div className={s.awOrg}>AABB &mdash; Outstanding scientific and teaching contributions</div></div><div className={s.awDotW}><div className={s.awDot}></div></div></div>
+            {/* RIGHT */}
+            <div className={s.awItem + ' ' + s.anim} data-anim=""><div className={s.awDotW}><div className={s.awDot}></div></div><div className={s.awRight}><div className={s.awYear}>1994</div><div className={s.awTitle}>Tibor Greenwalt Scientific Award</div><div className={s.awOrg}>AABB &mdash; With George Garratty</div></div></div>
+            {/* LEFT */}
+            <div className={s.awItem + ' ' + s.anim} data-anim=""><div className={s.awLeft}><div className={s.awYear}></div><div className={s.awTitle}>Morten Grove-Rasmussen Award</div><div className={s.awOrg}>AABB</div></div><div className={s.awDotW}><div className={s.awDot}></div></div></div>
+            {/* RIGHT */}
+            <div className={s.awItem + ' ' + s.anim} data-anim=""><div className={s.awDotW}><div className={s.awDot}></div></div><div className={s.awRight}><div className={s.awYear}></div><div className={s.awTitle}>NHLBI Transfusion Medicine Academic Award</div><div className={s.awOrg}>National Heart, Lung, and Blood Institute</div></div></div>
+            {/* LEFT */}
+            <div className={s.awItem + ' ' + s.anim} data-anim=""><div className={s.awLeft}><div className={s.awYear}>2006</div><div className={s.awTitle}>Landsteiner Award Lectureship</div><div className={s.awOrg}>AABB &mdash; Research of international significance</div></div><div className={s.awDotW}><div className={s.awDot}></div></div></div>
+            {/* RIGHT */}
+            <div className={s.awItem + ' ' + s.anim} data-anim=""><div className={s.awDotW}><div className={s.awDot}></div></div><div className={s.awRight}><div className={s.awYear}>2010</div><div className={s.awTitle}>Lifetime Achievement Medal</div><div className={s.awOrg}>AABB Bernard Fantus Medal &mdash; Highest honor in the field</div></div></div>
+            {/* LEFT */}
+            <div className={s.awItem + ' ' + s.anim} data-anim=""><div className={s.awLeft}><div className={s.awYear}></div><div className={s.awTitle}>President&rsquo;s Award</div><div className={s.awOrg}>AABB &mdash; Exceptional service and leadership</div></div><div className={s.awDotW}><div className={s.awDot}></div></div></div>
+            {/* RIGHT */}
+            <div className={s.awItem + ' ' + s.anim} data-anim=""><div className={s.awDotW}><div className={s.awDot}></div></div><div className={s.awRight}><div className={s.awYear}>2014</div><div className={s.awTitle}>Cord Blood Symposium Leadership Award</div><div className={s.awOrg}>For founding &amp; leading the symposium (2003&ndash;2014)</div></div></div>
+            {/* LEFT */}
+            <div className={s.awItem + ' ' + s.anim} data-anim=""><div className={s.awLeft}><div className={s.awYear}></div><div className={s.awTitle}>Owen Thomas &amp; Service Awards</div><div className={s.awOrg}>California Blood Bank Society</div></div><div className={s.awDotW}><div className={s.awDot}></div></div></div>
           </div>
         </div>
       </section>
@@ -184,67 +190,48 @@ export default function LawrencePetzPage() {
         <div className={s.inner}>
           <div className={s.secLabel + ' ' + s.anim} data-anim="">Convening the field</div>
           <h2 className={s.secH2 + ' ' + s.anim} data-anim="">International Cord Blood Symposium</h2>
-          <div className={s.symposiumCard + ' ' + s.anim} data-anim="">
-            <div className={s.symposiumBadge}>
-              <div className={s.symposiumBadgeYears}>2003&ndash;14</div>
-              <div className={s.symposiumBadgePlace}>City of Hope</div>
+          <div className={s.syCard + ' ' + s.anim} data-anim="">
+            <div className={s.syIcon}>
+              <div className={s.syYears}>2003&ndash;2014</div>
+              <div className={s.sySub}>Annual symposium at City of Hope</div>
             </div>
             <div>
               <h3>A global gathering of transplant leaders</h3>
-              <p>Dr. Petz founded and organized the annual International Symposium on Cord Blood Transplantation, convening 31-member faculty from the U.S., France, Japan, Spain, Taiwan, and beyond&mdash;with attendees from over 20 countries sharing advances in cord blood science and clinical practice.</p>
+              <p className={s.syBody}>Dr. Petz founded and organized the annual International Symposium on Cord Blood Transplantation. The symposium convened 31-member faculty from the United States, France, Japan, Spain, Taiwan, and beyond&mdash;with attendees from over 20 countries sharing advances in cord blood science and clinical practice.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* ── 7. HIV REMISSION (full-width dark) ── */}
-      <div className={s.hivSection}>
-        <div className={s.hivRing + ' ' + s.hivRing1}></div>
-        <div className={s.hivRing + ' ' + s.hivRing2}></div>
-        <div className={s.hivRing + ' ' + s.hivRing3}></div>
-        <div className={s.hivRing + ' ' + s.hivRing4}></div>
-        <div className={s.hivRing + ' ' + s.hivRing5}></div>
+      <section className={s.hivSection}>
+        <div className={s.ringWrap}>
+          <div className={s.ring}></div>
+          <div className={s.ring}></div>
+          <div className={s.ring}></div>
+          <div className={s.ring}></div>
+          <div className={s.ring}></div>
+        </div>
         <div className={s.hivInner}>
-          <div>
-            <div className={s.hivBadge + ' ' + s.anim} data-anim="">
-              <div className={s.hivBadgeDot}></div>
-              Published in <em>Cell</em> &middot; 2023
+          <div className={s.hivGrid}>
+            <div>
+              <div className={s.hivBadge + ' ' + s.anim} data-anim=""><span className={s.hivPDot}></span>Published in Cell &middot; 2023</div>
+              <div className={s.hivLabel + ' ' + s.anim} data-anim="">HIV Remission</div>
+              <h2 className={s.hivH2 + ' ' + s.anim} data-anim="">The First Potential <em className={s.hivEm}>Cure for HIV</em></h2>
+              <p className={s.hivPatient + ' ' + s.anim} data-anim="">The New York Patient became the first woman&mdash;and the first person of mixed-race ancestry&mdash;to achieve HIV remission through a stem cell transplant. A StemCyte cord blood unit made it possible.</p>
+              <p className={s.hivDesc + ' ' + s.anim} data-anim="">Through the NIH-funded IMPAACT P1107 study, Dr. Petz helped pioneer a novel approach: combining a CCR5&#916;32 cord blood unit with adult stem cells from a relative. By day 100, the patient&rsquo;s immune system was fully reconstituted by cord blood cells. She has remained off antiretroviral therapy with no viral rebound since.</p>
+              <p className={s.hivStemcyte + ' ' + s.anim} data-anim="">The cord blood unit came from StemCyte&rsquo;s registry&mdash;one of over 300 homozygous CCR5&#916;32 units Dr. Petz had identified by screening more than 18,000 donated units for the HIV-resistant mutation.</p>
+              <Link href="/our-story/hiv-remission" className={s.hivCta + ' ' + s.anim} data-anim="">Read the full story <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
             </div>
-            <div className={s.hivLabel + ' ' + s.anim} data-anim="">HIV Remission</div>
-            <h2 className={s.hivH2 + ' ' + s.anim} data-anim="">The First Potential <em>Cure for HIV</em></h2>
-            <p className={s.hivSubheader + ' ' + s.anim} data-anim="">
-              The New York Patient became the first woman&mdash;and the first person of mixed-race ancestry&mdash;to achieve HIV remission through a stem cell transplant. A StemCyte cord blood unit made it possible.
-            </p>
-            <p className={s.hivBody + ' ' + s.anim} data-anim="">
-              Dr. Petz conceived the hypothesis that cord blood units carrying the CCR5&Delta;32 mutation could be used to achieve HIV remission. His work became the foundation of the NIH-funded IMPAACT P1107 clinical study. In 2017, the New York Patient received a haplo-cord transplant combining adult donor cells with a CCR5&Delta;32 cord blood unit from StemCyte&rsquo;s registry. By day 100, her immune system had been fully reconstituted. She achieved complete cancer remission and sustained HIV-1 remission.
-            </p>
-            <div className={s.hivCallout + ' ' + s.anim} data-anim="">
-              <p>StemCyte screened over <strong>18,000+ cord blood units</strong> across its inventory and collaborating banks worldwide, identifying more than <strong>300+ homozygous CCR5&Delta;32 units</strong>&mdash;a purpose-built registry that exists nowhere else in the world.</p>
-            </div>
-            <Link href="/our-story/hiv-remission" className={s.hivCta + ' ' + s.anim} data-anim="">
-              Read the full story &rarr;
-            </Link>
-          </div>
-          <div className={s.hivStats}>
-            <div className={s.hivStatCard + ' ' + s.anim} data-anim="">
-              <div className={s.hivStatNum}>7+</div>
-              <div className={s.hivStatLabel}>Years in sustained HIV remission</div>
-            </div>
-            <div className={s.hivStatCard + ' ' + s.anim} data-anim="">
-              <div className={s.hivStatNum}>100%</div>
-              <div className={s.hivStatLabel}>Immune reconstitution from cord blood</div>
-            </div>
-            <div className={s.hivStatCard + ' ' + s.anim} data-anim="">
-              <div className={s.hivStatNum}>18,000+</div>
-              <div className={s.hivStatLabel}>Cord blood units screened for CCR5&Delta;32</div>
-            </div>
-            <div className={s.hivStatCard + ' ' + s.anim} data-anim="">
-              <div className={s.hivStatNum}>300+</div>
-              <div className={s.hivStatLabel}>Homozygous CCR5&Delta;32 units identified</div>
+            <div className={s.hivRight}>
+              <div className={s.hivStatCard + ' ' + s.anim} data-anim=""><div className={s.hivStatNum}>7+ yrs</div><div className={s.hivStatLabel}>Post-transplant with no detectable HIV and cancer in remission</div></div>
+              <div className={s.hivStatCard + ' ' + s.anim} data-anim=""><div className={s.hivStatNum}>100%</div><div className={s.hivStatLabel}>Immune reconstitution by cord blood cells at day 100</div></div>
+              <div className={s.hivStatCard + ' ' + s.anim} data-anim=""><div className={s.hivStatNum}>18,000+</div><div className={s.hivStatLabel}>Cord blood units screened for the CCR5&#916;32 mutation</div></div>
+              <div className={s.hivStatCard + ' ' + s.anim} data-anim=""><div className={s.hivStatNum}>300+</div><div className={s.hivStatLabel}>Homozygous CCR5&#916;32 units identified in StemCyte&rsquo;s registry</div></div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* ── 8. TEXTBOOKS ── */}
       <section className={s.section + ' ' + s.sectionPlum}>
@@ -325,7 +312,7 @@ export default function LawrencePetzPage() {
           <div className={s.otherLeaders}>
             {otherLeaders.map((leader, i) => (
               <Link href={leader.href} className={s.otherCard} key={i}>
-                <img className={s.otherAvatar} src={leader.img} alt={leader.name} />
+                <Image className={s.otherAvatar} src={leader.img} alt={leader.name} width={64} height={64} sizes="64px" />
                 <div className={s.otherInfo}>
                   <h4>{leader.name}</h4>
                   <span>{leader.role}</span>
