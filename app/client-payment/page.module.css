@@ -1,0 +1,69 @@
+/* HERO */
+.hero { position:relative; min-height:420px; display:flex; align-items:flex-end; overflow:hidden; }
+.hero .vig { position:absolute; inset:0; background:radial-gradient(ellipse at center,rgba(0,0,0,0.08) 0%,rgba(0,0,0,0.5) 65%,rgba(0,0,0,0.72) 100%); z-index:1; }
+.hero .ct { position:relative; z-index:2; max-width:1100px; margin:0 auto; padding:160px 48px 56px; width:100%; }
+.hero .lbl { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#E8A0D0; margin-bottom:12px; }
+.hero h1 { font-family:var(--font-heading),'Playfair Display',serif; font-size:44px; font-weight:400; line-height:1.1; letter-spacing:-1.5px; max-width:680px; margin-bottom:12px; color:#fff; }
+.hero .sub { font-size:17px; color:rgba(255,255,255,0.55); max-width:540px; line-height:1.7; }
+
+/* SECTION */
+.section { padding:80px 48px; max-width:900px; margin:0 auto; }
+
+/* HELP BOX */
+.helpBox { background:#F3F0F8; border-radius:12px; padding:24px 32px; margin-bottom:48px; display:flex; align-items:center; gap:16px; }
+.helpIcon { width:48px; height:48px; border-radius:50%; background:#6C1A55; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.helpIcon svg { width:24px; height:24px; }
+.helpText h3 { font-size:16px; font-weight:700; margin-bottom:2px; }
+.helpText p { font-size:14px; color:#8A857A; line-height:1.6; }
+.helpText a { color:#6C1A55; text-decoration:none; font-weight:700; }
+.helpText a:hover { text-decoration:underline; }
+
+/* FORM */
+.formCard { background:#fff; border-radius:16px; padding:40px; box-shadow:0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.03); }
+.formSectionLabel { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#6C1A55; margin-bottom:20px; padding-bottom:12px; border-bottom:1px solid #E8E2DC; }
+.formSectionLabel:not(:first-child) { margin-top:32px; }
+
+.formRow { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+.single { grid-template-columns:1fr; }
+
+.field label { display:block; font-size:13px; font-weight:700; color:#2C2A26; margin-bottom:6px; }
+.field input,
+.field select,
+.field textarea { width:100%; padding:12px 16px; border:1px solid #E8E2DC; border-radius:8px; font-size:15px; font-family:var(--font-lato),'Lato',sans-serif; color:#2C2A26; background:#FAF9F7; transition:border-color 0.2s, box-shadow 0.2s; outline:none; -webkit-appearance:none; }
+.field input:focus,
+.field select:focus,
+.field textarea:focus { border-color:#C06AA5; box-shadow:0 0 0 3px rgba(192,106,165,0.12); }
+.field input::placeholder,
+.field textarea::placeholder { color:#B0AB9E; }
+.field select { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A857A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; padding-right:40px; }
+.field textarea { resize:vertical; min-height:80px; }
+
+/* AMOUNT INPUT */
+.amountWrap { position:relative; }
+.amountWrap .dollar { position:absolute; left:16px; top:50%; transform:translateY(-50%); font-size:15px; color:#8A857A; font-weight:700; pointer-events:none; }
+.amountWrap input { padding-left:28px; }
+
+/* PAYMENT MOCK */
+.paymentSection { margin-top:32px; }
+.cardRow { display:grid; grid-template-columns:1fr 80px 80px; gap:16px; margin-bottom:16px; }
+.secureNote { display:flex; align-items:center; gap:8px; font-size:12px; color:#B0AB9E; margin-top:12px; }
+.secureNote svg { width:14px; height:14px; flex-shrink:0; }
+
+/* SUBMIT */
+.submitRow { margin-top:32px; text-align:center; }
+.btnSubmit { background:#6C1A55; color:#fff; padding:16px 48px; border-radius:100px; font-size:15px; font-weight:700; border:none; cursor:pointer; font-family:var(--font-lato),'Lato',sans-serif; transition:all 0.25s; }
+.btnSubmit:hover { background:#8B3572; }
+
+/* RESPONSIVE */
+@media (max-width:900px) {
+  .hero .ct { padding:140px 24px 40px; }
+  .hero h1 { font-size:32px; }
+  .section { padding:64px 24px; }
+  .formRow { grid-template-columns:1fr; }
+  .cardRow { grid-template-columns:1fr 1fr; }
+  .helpBox { flex-direction:column; text-align:center; }
+  .formCard { padding:28px 20px; }
+}
+@media (max-width:500px) {
+  .cardRow { grid-template-columns:1fr; }
+}
