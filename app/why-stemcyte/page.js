@@ -3,7 +3,6 @@
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Nav from '../../components/Nav';
 import s from './page.module.css';
 
 export default function Page() {
@@ -86,8 +85,6 @@ export default function Page() {
 
   return (
     <>
-      <Nav transparent />
-
       {/* HERO */}
       <section className={s.hero} id="hero">
         <Image src="/images/tanks_2.jpg" fill priority sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center' }} alt="" />

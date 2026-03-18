@@ -3,7 +3,6 @@
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Nav from '../../../components/Nav';
 import s from './page.module.css';
 
 const awards = [
@@ -264,8 +263,6 @@ export default function LawrencePetzPage() {
 
   return (
     <>
-      <Nav transparentHero={true} />
-
       {/* ── 1. HERO ── */}
       <section className={s.hero} id="hero">
         <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, zIndex: 0, width: '100%', height: '100%', pointerEvents: 'none' }} />

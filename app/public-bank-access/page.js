@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Nav from '../../components/Nav';
 import s from './page.module.css';
 
 const CheckIcon = () => (
@@ -45,8 +44,6 @@ export default function PublicBankAccessPage() {
 
   return (
     <>
-      <Nav transparentHero={false} />
-
       {/* HERO */}
       <section className={s.hero} id="hero">
         <Image src="/images/pba_hero_2.jpeg" alt="Public Bank Access" fill priority sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />

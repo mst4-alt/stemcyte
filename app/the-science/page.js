@@ -3,7 +3,6 @@
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Nav from '../../components/Nav';
 import s from './page.module.css';
 
 export default function TheSciencePage() {
@@ -115,8 +114,6 @@ export default function TheSciencePage() {
 
   return (
     <div ref={pageRef}>
-      <Nav transparentHero={true} />
-
       {/* ══ HERO ══ */}
       <section className={s.hero} id="hero">
         <Image

@@ -13,17 +13,22 @@ const navLinks = [
   { label: 'Our Story', href: '/our-story' },
 ];
 
-export default function Nav({ transparentHero = true }) {
+export default function Nav() {
   const navRef = useRef(null);
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    if (!transparentHero) return;
-
     const nav = navRef.current;
     const hero = document.getElementById('hero');
-    if (!nav || !hero) return;
+    if (!nav) return;
+
+    // If no hero element, start in scrolled (cream) state
+    if (!hero) {
+      nav.classList.remove('at-top');
+      nav.classList.add('scrolled');
+      return;
+    }
 
     function ckNav() {
       if (hero.getBoundingClientRect().bottom < 80) {
@@ -39,7 +44,7 @@ export default function Nav({ transparentHero = true }) {
     ckNav();
 
     return () => window.removeEventListener('scroll', ckNav);
-  }, [transparentHero]);
+  }, []);
 
   // Close menu on navigation
   useEffect(() => {
@@ -58,7 +63,7 @@ export default function Nav({ transparentHero = true }) {
     };
   }, [menuOpen]);
 
-  const navClass = transparentHero ? 'nav at-top' : 'nav scrolled';
+  const navClass = 'nav at-top';
 
   return (
     <>

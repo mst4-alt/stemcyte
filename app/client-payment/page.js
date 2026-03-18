@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Nav from '../../components/Nav';
 import s from './page.module.css';
 
 export default function ClientPayment() {
@@ -27,8 +26,6 @@ export default function ClientPayment() {
 
   return (
     <>
-      <Nav transparentHero={true} />
-
       <div id="hero" className={s.hero}>
         <Image
           src="/images/payment/hero.jpeg"

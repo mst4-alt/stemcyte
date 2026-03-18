@@ -3,7 +3,6 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Nav from '../../components/Nav';
 import s from './page.module.css';
 
 export default function Page() {
@@ -22,8 +21,6 @@ export default function Page() {
 
   return (
     <>
-      <Nav transparentHero={true} />
-
       {/* HERO */}
       <section className={s.hero} id="hero">
         <Image

@@ -1,9 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Nav from './Nav';
-
-export default function PageContent({ css, html, script, transparentNav = true }) {
+export default function PageContent({ css, html, script }) {
   const scriptRan = useRef(false);
 
   useEffect(() => {
@@ -34,7 +32,6 @@ export default function PageContent({ css, html, script, transparentNav = true }
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: css }} />
-      <Nav transparentHero={transparentNav} />
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </>
   );

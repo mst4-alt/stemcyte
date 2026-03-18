@@ -1,4 +1,5 @@
 import './globals.css';
+import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import { Analytics } from '@vercel/analytics/react';
 import { Lato, Playfair_Display, Source_Serif_4 } from 'next/font/google';
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${lato.variable} ${playfair.variable} ${sourceSerif.variable}`}>
       <body>
+        <Nav />
         {children}
         <Analytics />
         <Footer />

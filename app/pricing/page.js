@@ -3,7 +3,6 @@
 import { useState, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Nav from '../../components/Nav';
 import s from './page.module.css';
 
 /* ── PRICING DATA ── */
@@ -140,8 +139,6 @@ export default function PricingPage() {
 
   return (
     <>
-      <Nav transparentHero={true} />
-
       {/* HERO */}
       <section className={s.hero} id="hero">
         <Image src="/images/Hero_1.jpeg" alt="Pricing" fill priority sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />

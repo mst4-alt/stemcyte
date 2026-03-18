@@ -2,7 +2,6 @@
 
 import { useState, useRef, useCallback } from 'react';
 import Image from 'next/image';
-import Nav from '../../components/Nav';
 import s from './page.module.css';
 
 const faqData = [
@@ -55,7 +54,6 @@ export default function FAQPage() {
 
   return (
     <>
-      <Nav transparentHero={true} />
       <section className={s.hero} id="hero">
         <Image src="/images/Hero_2.jpeg" alt="FAQ" fill priority sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
         <div className={s.vig}></div>

@@ -3,7 +3,6 @@
 import { useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Nav from '../../../components/Nav';
 import s from './page.module.css';
 
 /* ── Metadata is exported from a separate file since this is a client component ── */
@@ -287,8 +286,6 @@ export default function HivRemissionPage() {
 
   return (
     <>
-      <Nav transparentHero={true} />
-
       {/* HERO */}
       <div className={s.hero} id="hero" ref={heroRef}>
         <canvas className={s.heroBgCanvas} ref={canvasRef} />

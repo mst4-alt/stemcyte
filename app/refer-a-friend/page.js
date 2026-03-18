@@ -2,7 +2,6 @@
 
 import { useRef } from 'react';
 import Image from 'next/image';
-import Nav from '../../components/Nav';
 import s from './page.module.css';
 
 export default function ReferAFriend() {
@@ -16,8 +15,6 @@ export default function ReferAFriend() {
 
   return (
     <>
-      <Nav transparentHero={true} />
-
       <section className={s.hero} id="hero">
         <Image src="/images/Hero_2.jpeg" alt="StemCyte refer a friend" fill priority sizes="100vw" style={{ objectFit: 'cover', objectPosition: 'center' }} />
         <div className={s.vig}></div>
