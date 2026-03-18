@@ -191,9 +191,13 @@ export default function LawrencePetzPage() {
           <div className={s.secLabel + ' ' + s.anim} data-anim="">Convening the field</div>
           <h2 className={s.secH2 + ' ' + s.anim} data-anim="">International Cord Blood Symposium</h2>
           <div className={s.syCard + ' ' + s.anim} data-anim="">
-            <div className={s.syIcon}>
-              <div className={s.syYears}>2003&ndash;2014</div>
-              <div className={s.sySub}>Annual symposium at City of Hope</div>
+            <div className={s.syLeft}>
+              <div className={s.syImageWrap}>
+                <div className={s.syOverlay}>
+                  <div className={s.syYears}>2003&ndash;2014</div>
+                  <div className={s.sySub}>Annual symposium at City of Hope</div>
+                </div>
+              </div>
             </div>
             <div>
               <h3>A global gathering of transplant leaders</h3>
@@ -217,8 +221,8 @@ export default function LawrencePetzPage() {
             <div>
               <div className={s.hivBadge + ' ' + s.anim} data-anim=""><span className={s.hivPDot}></span>Published in Cell &middot; 2023</div>
               <div className={s.hivLabel + ' ' + s.anim} data-anim="">HIV Remission</div>
-              <h2 className={s.hivH2 + ' ' + s.anim} data-anim="">The First Potential <em className={s.hivEm}>Cure for HIV</em></h2>
-              <p className={s.hivPatient + ' ' + s.anim} data-anim="">The New York Patient became the first woman&mdash;and the first person of mixed-race ancestry&mdash;to achieve HIV remission through a stem cell transplant. A StemCyte cord blood unit made it possible.</p>
+              <h2 className={s.hivH2 + ' ' + s.anim} data-anim="">The <em className={s.hivEm}>Cure for HIV</em></h2>
+              <p className={s.hivPatient + ' ' + s.anim} data-anim="">The New York Patient became the first person to achieve HIV remission through a stem cell transplant. A StemCyte cord blood unit made it possible.</p>
               <p className={s.hivDesc + ' ' + s.anim} data-anim="">Through the NIH-funded IMPAACT P1107 study, Dr. Petz helped pioneer a novel approach: combining a CCR5&#916;32 cord blood unit with adult stem cells from a relative. By day 100, the patient&rsquo;s immune system was fully reconstituted by cord blood cells. She has remained off antiretroviral therapy with no viral rebound since.</p>
               <p className={s.hivStemcyte + ' ' + s.anim} data-anim="">The cord blood unit came from StemCyte&rsquo;s registry&mdash;one of over 300 homozygous CCR5&#916;32 units Dr. Petz had identified by screening more than 18,000 donated units for the HIV-resistant mutation.</p>
               <Link href="/our-story/hiv-remission" className={s.hivCta + ' ' + s.anim} data-anim="">Read the full story <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></Link>
@@ -239,14 +243,15 @@ export default function LawrencePetzPage() {
           <div className={s.secLabel + ' ' + s.anim} data-anim="">Textbooks</div>
           <h2 className={s.secH2 + ' ' + s.anim} data-anim="">Landmark publications</h2>
           <div className={s.bookGrid}>
-            <div className={s.bookCard + ' ' + s.anim} data-anim="">
+            <a href="https://www.amazon.com/Clinical-Bone-Marrow-Blood-Transplantation/dp/0521829127" target="_blank" rel="noopener noreferrer" className={s.bookCard + ' ' + s.bookCardLink + ' ' + s.anim} data-anim="">
               <div className={s.bookCover} style={{ background: 'linear-gradient(135deg, #3D0F31, #6C1A55)' }}>
                 <div className={s.bookCoverTitle}>Clinical Bone Marrow Transplantation</div>
               </div>
               <div className={s.bookTitle}>Clinical Bone Marrow Transplantation</div>
               <div className={s.bookMeta}>With Karl Blume &middot; Churchill Livingstone &middot; 1983</div>
               <div className={s.bookEdition}>First textbook in the field</div>
-            </div>
+              <div className={s.bookLink}>View on Amazon &#8599;</div>
+            </a>
             <a href="https://www.amazon.com/Immune-Hemolytic-Anemias-Lawrence-Petz/dp/0443085595" target="_blank" rel="noopener noreferrer" className={s.bookCard + ' ' + s.bookCardLink + ' ' + s.anim} data-anim="">
               <div className={s.bookCover} style={{ background: 'linear-gradient(135deg, #8A3030, #C45050)' }}>
                 <div className={s.bookCoverTitle}>Immune Hemolytic Anemias</div>
@@ -256,14 +261,14 @@ export default function LawrencePetzPage() {
               <div className={s.bookEdition}>Now in its 3rd edition (Petz &amp; Garratty&rsquo;s)</div>
               <div className={s.bookLink}>View on Amazon &#8599;</div>
             </a>
-            <a href="https://www.sciencedirect.com/book/9780443085598/immune-hemolytic-anemias" target="_blank" rel="noopener noreferrer" className={s.bookCard + ' ' + s.bookCardLink + ' ' + s.anim} data-anim="">
+            <a href="https://www.amazon.com/Clinical-Practice-Transfusion-Medicine-Lawrence/dp/0443089817" target="_blank" rel="noopener noreferrer" className={s.bookCard + ' ' + s.bookCardLink + ' ' + s.anim} data-anim="">
               <div className={s.bookCover} style={{ background: 'linear-gradient(135deg, #2A6B4F, #3D8B6A)' }}>
                 <div className={s.bookCoverTitle}>Clinical Practice of Transfusion Medicine</div>
               </div>
               <div className={s.bookTitle}>Clinical Practice of Transfusion Medicine</div>
               <div className={s.bookMeta}>Co-editor &middot; Churchill Livingstone</div>
               <div className={s.bookEdition}>3 editions</div>
-              <div className={s.bookLink}>View on ScienceDirect &#8599;</div>
+              <div className={s.bookLink}>View on Amazon &#8599;</div>
             </a>
           </div>
         </div>

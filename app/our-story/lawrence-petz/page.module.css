@@ -226,10 +226,12 @@
 
 /* ── SYMPOSIUM CARD ── */
 .syCard { background: #fff; border-radius: 16px; padding: 40px; box-shadow: 0 1px 3px rgba(0,0,0,0.04); border: 1px solid #F0ECE6; margin: 32px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
-.syIcon { width: 100%; aspect-ratio: 4/3; border-radius: 12px; background: linear-gradient(135deg, #F3F0F8, #EDE8F5); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 8px; }
-.syYears { font-family: var(--font-numbers), 'Source Serif 4', serif; font-size: 28px; color: #6C1A55; }
-.sySub { font-size: 12px; color: #8A857A; }
-.syCard h3 { font-family: var(--font-heading), 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: #2C2A26; margin-bottom: 12px; }
+.syLeft { flex-shrink: 0; }
+.syImageWrap { position: relative; width: 260px; height: 180px; border-radius: 12px; overflow: hidden; background: linear-gradient(135deg, #3D0F31 0%, #6C1A55 40%, #9B6B8E 100%); }
+.syOverlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(60,15,49,0.85) 0%, rgba(60,15,49,0.3) 50%, transparent 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; border-radius: 12px; }
+.syYears { font-family: var(--font-numbers), 'Source Serif 4', serif; font-size: 28px; color: #fff; }
+.sySub { font-size: 12px; color: rgba(255,255,255,0.7); }
+.syCard h3 { font-family: var(--font-heading), 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: #2C2A26; margin-bottom: 12px; white-space: nowrap; }
 .syBody { font-size: 14px; color: #6B665D; line-height: 1.7; }
 
 /* ── HIV DARK SECTION ── */
@@ -599,6 +601,7 @@
 
   /* Symposium */
   .syCard { grid-template-columns: 1fr; }
+  .syImageWrap { width: 100%; height: 160px; }
 
   /* HIV section */
   .hivSection { padding: 64px 24px; }
